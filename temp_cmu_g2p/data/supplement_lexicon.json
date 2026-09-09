@@ -1,0 +1,10352 @@
+{
+  "source": "arpa_manifest_alignments",
+  "cmudict": "data/cmudict-0.7b",
+  "entries": {
+    "ROADMAP": {
+      "phones": [
+        "R",
+        "OW1",
+        "D",
+        "M",
+        "AE2",
+        "P"
+      ],
+      "count": 1,
+      "example": "roadmap"
+    },
+    "FIRMWARE": {
+      "phones": [
+        "F",
+        "ER1",
+        "M",
+        "W",
+        "EH2",
+        "R"
+      ],
+      "count": 1,
+      "example": "firmware"
+    },
+    "LEMONHEADS": {
+      "phones": [
+        "L",
+        "EH1",
+        "M",
+        "AH0",
+        "N",
+        "HH",
+        "EH2",
+        "D",
+        "Z"
+      ]
+    },
+    "SMARTPHONE": {
+      "phones": [
+        "S",
+        "M",
+        "AA1",
+        "R",
+        "T",
+        "F",
+        "OW2",
+        "N"
+      ]
+    },
+    "MUNTEANU": {
+      "phones": [
+        "M",
+        "AH0",
+        "N",
+        "T",
+        "IY1",
+        "N",
+        "UW0"
+      ]
+    },
+    "RE-SHOT": {
+      "phones": [
+        "R",
+        "EY1",
+        "SH",
+        "AA1",
+        "T"
+      ]
+    },
+    "FARCES": {
+      "phones": [
+        "F",
+        "AA1",
+        "R",
+        "S",
+        "IH0",
+        "Z"
+      ]
+    },
+    "APOLOGETICS": {
+      "phones": [
+        "AH0",
+        "P",
+        "AA2",
+        "L",
+        "AH0",
+        "JH",
+        "EH1",
+        "T",
+        "IH0",
+        "K",
+        "S"
+      ]
+    },
+    "LIERSE": {
+      "phones": [
+        "L",
+        "IH1",
+        "R",
+        "S"
+      ]
+    },
+    "PRE-RENDERED": {
+      "phones": [
+        "P",
+        "R",
+        "IY1",
+        "R",
+        "EH1",
+        "N",
+        "D",
+        "ER0",
+        "D"
+      ]
+    },
+    "CINEMATICS": {
+      "phones": [
+        "S",
+        "IH2",
+        "N",
+        "AH0",
+        "M",
+        "AE1",
+        "T",
+        "IH0",
+        "K",
+        "S"
+      ]
+    },
+    "ALCHEMISTS": {
+      "phones": [
+        "AE1",
+        "L",
+        "CH",
+        "AH0",
+        "M",
+        "IH0",
+        "S",
+        "T",
+        "S"
+      ]
+    },
+    "DECRYPTION": {
+      "phones": [
+        "D",
+        "IH0",
+        "K",
+        "R",
+        "IH1",
+        "P",
+        "SH",
+        "AH0",
+        "N"
+      ]
+    },
+    "HASLET": {
+      "phones": [
+        "HH",
+        "AE1",
+        "S",
+        "L",
+        "IH0",
+        "T"
+      ]
+    },
+    "LABIAL": {
+      "phones": [
+        "L",
+        "EY1",
+        "B",
+        "IY0",
+        "AH0",
+        "L"
+      ]
+    },
+    "PALPS": {
+      "phones": [
+        "P",
+        "AE1",
+        "L",
+        "P",
+        "S"
+      ]
+    },
+    "WINDBREAK": {
+      "phones": [
+        "W",
+        "IH1",
+        "N",
+        "B",
+        "R",
+        "EY2",
+        "K"
+      ]
+    },
+    "LEXIFIER": {
+      "phones": [
+        "L",
+        "EH0",
+        "K",
+        "S",
+        "AH0",
+        "F",
+        "AY2",
+        "ER0"
+      ]
+    },
+    "KINISON'S": {
+      "phones": [
+        "K",
+        "IH1",
+        "N",
+        "IH0",
+        "S",
+        "AH0",
+        "N",
+        "Z"
+      ]
+    },
+    "LATERAN": {
+      "phones": [
+        "L",
+        "AE1",
+        "T",
+        "ER0",
+        "AH0",
+        "N"
+      ]
+    },
+    "JUON": {
+      "phones": [
+        "JH",
+        "UW1",
+        "AO0",
+        "N"
+      ]
+    },
+    "CUSTOMIZATION": {
+      "phones": [
+        "K",
+        "AH1",
+        "S",
+        "T",
+        "AH0",
+        "M",
+        "AH0",
+        "Z",
+        "EY1",
+        "SH",
+        "AH0",
+        "N"
+      ]
+    },
+    "BITCOIN": {
+      "phones": [
+        "B",
+        "IH1",
+        "T",
+        "K",
+        "OY0",
+        "N"
+      ]
+    },
+    "PARFREY": {
+      "phones": [
+        "P",
+        "AA2",
+        "R",
+        "F",
+        "R",
+        "IY0"
+      ]
+    },
+    "LINDPERE": {
+      "phones": [
+        "L",
+        "IH1",
+        "N",
+        "D",
+        "P",
+        "ER1"
+      ]
+    },
+    "PREFECTS": {
+      "phones": [
+        "P",
+        "R",
+        "IY1",
+        "F",
+        "EH2",
+        "K",
+        "T",
+        "S"
+      ]
+    },
+    "LEVET": {
+      "phones": [
+        "L",
+        "EH1",
+        "V",
+        "AH0",
+        "T"
+      ]
+    },
+    "LARNACA": {
+      "phones": [
+        "L",
+        "AA1",
+        "R",
+        "N",
+        "AH0",
+        "K",
+        "AH0"
+      ]
+    },
+    "SUBGENRE": {
+      "phones": [
+        "S",
+        "AH1",
+        "B",
+        "ZH",
+        "AA1",
+        "N",
+        "R",
+        "AH0"
+      ]
+    },
+    "GABONESE": {
+      "phones": [
+        "G",
+        "AE1",
+        "B",
+        "AH0",
+        "N",
+        "IY1",
+        "Z"
+      ]
+    },
+    "POLISHERS": {
+      "phones": [
+        "P",
+        "AA1",
+        "L",
+        "IH0",
+        "SH",
+        "ER0",
+        "Z"
+      ]
+    },
+    "COVEDALE": {
+      "phones": [
+        "K",
+        "AH1",
+        "V",
+        "AH0",
+        "D",
+        "EY2",
+        "L"
+      ]
+    },
+    "NORWEGIA": {
+      "phones": [
+        "N",
+        "AO2",
+        "R",
+        "W",
+        "IY1",
+        "JH",
+        "AH0"
+      ]
+    },
+    "FRAT": {
+      "phones": [
+        "F",
+        "R",
+        "AE1",
+        "T"
+      ]
+    },
+    "BARASSI": {
+      "phones": [
+        "B",
+        "AA0",
+        "R",
+        "AA1",
+        "S",
+        "IY0"
+      ]
+    },
+    "DEXTEROUS": {
+      "phones": [
+        "D",
+        "EH1",
+        "K",
+        "S",
+        "T",
+        "ER0",
+        "AH0",
+        "S"
+      ]
+    },
+    "VITELLIUS": {
+      "phones": [
+        "V",
+        "IH0",
+        "T",
+        "EH1",
+        "L",
+        "IY0",
+        "IH0",
+        "S"
+      ]
+    },
+    "SLITHERED": {
+      "phones": [
+        "S",
+        "L",
+        "IH1",
+        "DH",
+        "ER0",
+        "D"
+      ]
+    },
+    "SUBSECTIONS": {
+      "phones": [
+        "S",
+        "AH1",
+        "B",
+        "S",
+        "EH0",
+        "K",
+        "SH",
+        "AH0",
+        "N",
+        "Z"
+      ]
+    },
+    "MOGADORE": {
+      "phones": [
+        "M",
+        "OW2",
+        "G",
+        "AH0",
+        "D",
+        "AO2",
+        "R"
+      ]
+    },
+    "SHANDAR": {
+      "phones": [
+        "SH",
+        "AE1",
+        "N",
+        "D",
+        "AA0",
+        "R"
+      ]
+    },
+    "WARTY": {
+      "phones": [
+        "W",
+        "AO1",
+        "R",
+        "T",
+        "IY0"
+      ]
+    },
+    "RAHAT": {
+      "phones": [
+        "R",
+        "AH0",
+        "HH",
+        "AE0",
+        "T"
+      ]
+    },
+    "ROTUNDAS": {
+      "phones": [
+        "R",
+        "OW0",
+        "T",
+        "AH1",
+        "N",
+        "D",
+        "AH0",
+        "Z"
+      ]
+    },
+    "COPPEROPOLIS": {
+      "phones": [
+        "K",
+        "AA1",
+        "P",
+        "ER0",
+        "AO1",
+        "P",
+        "AH0",
+        "L",
+        "IH0",
+        "S"
+      ]
+    },
+    "PALATINATE": {
+      "phones": [
+        "P",
+        "IY1",
+        "AH0",
+        "EH1",
+        "L",
+        "AH0",
+        "T",
+        "IY1",
+        "AY1",
+        "EH1",
+        "N",
+        "AH0",
+        "T",
+        "IY1",
+        "IY1"
+      ]
+    },
+    "PRUSSIANS": {
+      "phones": [
+        "P",
+        "R",
+        "AH1",
+        "SH",
+        "AH0",
+        "N",
+        "Z"
+      ]
+    },
+    "HYPERGAMY": {
+      "phones": [
+        "HH",
+        "AY0",
+        "P",
+        "ER1",
+        "G",
+        "AH0",
+        "M",
+        "IY0"
+      ]
+    },
+    "MOLDE": {
+      "phones": [
+        "M",
+        "OW1",
+        "L",
+        "D"
+      ]
+    },
+    "ABYDOS": {
+      "phones": [
+        "AH0",
+        "B",
+        "IH1",
+        "D",
+        "OW0",
+        "Z"
+      ]
+    },
+    "ORTHOREXIA": {
+      "phones": [
+        "AO1",
+        "R",
+        "TH",
+        "ER0",
+        "EH1",
+        "K",
+        "S",
+        "IY0",
+        "AH0"
+      ]
+    },
+    "WORRYINGLY": {
+      "phones": [
+        "W",
+        "ER1",
+        "IY0",
+        "IH0",
+        "NG",
+        "L",
+        "IY0"
+      ]
+    },
+    "PROGRAMMES": {
+      "phones": [
+        "P",
+        "R",
+        "OW1",
+        "G",
+        "R",
+        "AE2",
+        "M",
+        "Z"
+      ]
+    },
+    "MEDALING": {
+      "phones": [
+        "M",
+        "EH1",
+        "D",
+        "AH0",
+        "L",
+        "IH0",
+        "NG"
+      ]
+    },
+    "SURTEES'S": {
+      "phones": [
+        "S",
+        "ER1",
+        "T",
+        "IY0",
+        "Z",
+        "IH0",
+        "Z"
+      ]
+    },
+    "CHARACTERISED": {
+      "phones": [
+        "K",
+        "EH2",
+        "R",
+        "AH0",
+        "K",
+        "T",
+        "ER0",
+        "IH1",
+        "S",
+        "T"
+      ]
+    },
+    "TEKNO": {
+      "phones": [
+        "T",
+        "EH1",
+        "K",
+        "N",
+        "OW0"
+      ]
+    },
+    "ATTRIBUTIONS": {
+      "phones": [
+        "AE2",
+        "T",
+        "R",
+        "IH0",
+        "B",
+        "Y",
+        "UW1",
+        "SH",
+        "AH0",
+        "N",
+        "Z"
+      ]
+    },
+    "MURAT'S": {
+      "phones": [
+        "M",
+        "ER0",
+        "AA1",
+        "T",
+        "S"
+      ]
+    },
+    "TWITTERING": {
+      "phones": [
+        "T",
+        "W",
+        "IH1",
+        "T",
+        "ER0",
+        "IH0",
+        "NG"
+      ]
+    },
+    "COLLEGIUM": {
+      "phones": [
+        "K",
+        "AH0",
+        "L",
+        "IY1",
+        "JH",
+        "IY0",
+        "AH0",
+        "M"
+      ]
+    },
+    "CAPRANICA": {
+      "phones": [
+        "K",
+        "AE1",
+        "P",
+        "R",
+        "AA0",
+        "N",
+        "IY1",
+        "K",
+        "AH0"
+      ]
+    },
+    "MENOMONEE": {
+      "phones": [
+        "M",
+        "IH0",
+        "N",
+        "OW0",
+        "M",
+        "OW1",
+        "N",
+        "IY0"
+      ]
+    },
+    "SOTHO": {
+      "phones": [
+        "S",
+        "OW1",
+        "TH",
+        "OW0"
+      ]
+    },
+    "STRAFFORD": {
+      "phones": [
+        "S",
+        "T",
+        "R",
+        "AE1",
+        "F",
+        "ER0",
+        "D"
+      ]
+    },
+    "PRE-CONFIGURED": {
+      "phones": [
+        "P",
+        "R",
+        "IY1",
+        "K",
+        "AH0",
+        "N",
+        "F",
+        "IH1",
+        "G",
+        "Y",
+        "ER0",
+        "D"
+      ]
+    },
+    "LAVENDERS": {
+      "phones": [
+        "L",
+        "AE1",
+        "V",
+        "AH0",
+        "N",
+        "D",
+        "ER0",
+        "Z"
+      ]
+    },
+    "PELAGIANISM": {
+      "phones": [
+        "P",
+        "IH0",
+        "L",
+        "EY1",
+        "JH",
+        "IY0",
+        "AH0",
+        "N",
+        "IH2",
+        "Z",
+        "AH0",
+        "M"
+      ]
+    },
+    "TOUCEY": {
+      "phones": [
+        "T",
+        "UW2",
+        "S",
+        "IY0"
+      ]
+    },
+    "DERFEL": {
+      "phones": [
+        "D",
+        "ER1",
+        "F",
+        "AH0",
+        "L"
+      ]
+    },
+    "NIMUE": {
+      "phones": [
+        "N",
+        "IH1",
+        "M",
+        "Y",
+        "UW2"
+      ]
+    },
+    "ATRIPLEX": {
+      "phones": [
+        "AE1",
+        "T",
+        "R",
+        "IH0",
+        "P",
+        "L",
+        "EH1",
+        "K",
+        "S"
+      ]
+    },
+    "ELYTRA": {
+      "phones": [
+        "IH0",
+        "L",
+        "IH1",
+        "T",
+        "R",
+        "AH0"
+      ]
+    },
+    "WINCOTT": {
+      "phones": [
+        "W",
+        "IH1",
+        "N",
+        "K",
+        "AH0",
+        "T"
+      ]
+    },
+    "CRYPTOGRAPHY": {
+      "phones": [
+        "K",
+        "R",
+        "IH1",
+        "P",
+        "T",
+        "AA1",
+        "G",
+        "R",
+        "AH0",
+        "F",
+        "IY0"
+      ]
+    },
+    "FOOTWALK": {
+      "phones": [
+        "F",
+        "UH1",
+        "T",
+        "W",
+        "AO2",
+        "K"
+      ]
+    },
+    "BOMBELLES": {
+      "phones": [
+        "B",
+        "AA0",
+        "M",
+        "B",
+        "EH1",
+        "L",
+        "Z"
+      ]
+    },
+    "AVIVA": {
+      "phones": [
+        "AE0",
+        "V",
+        "IY1",
+        "V",
+        "AA0"
+      ]
+    },
+    "SUBOTSKY": {
+      "phones": [
+        "S",
+        "AH0",
+        "B",
+        "AA1",
+        "T",
+        "S",
+        "K",
+        "IY2"
+      ]
+    },
+    "ULTRON": {
+      "phones": [
+        "AH1",
+        "L",
+        "T",
+        "R",
+        "AA0",
+        "N"
+      ]
+    },
+    "AVENGERS": {
+      "phones": [
+        "AH0",
+        "V",
+        "EH1",
+        "N",
+        "JH",
+        "ER0",
+        "Z"
+      ]
+    },
+    "CO-SPONSOR": {
+      "phones": [
+        "K",
+        "OW1",
+        "S",
+        "P",
+        "AA1",
+        "N",
+        "S",
+        "ER0"
+      ]
+    },
+    "HAMWORTHY": {
+      "phones": [
+        "HH",
+        "AE1",
+        "M",
+        "W",
+        "ER2",
+        "DH",
+        "IY0"
+      ]
+    },
+    "BADBURY": {
+      "phones": [
+        "B",
+        "AE1",
+        "D",
+        "B",
+        "EH2",
+        "R",
+        "IY0"
+      ]
+    },
+    "ENDOSYMBIOTIC": {
+      "phones": [
+        "EH2",
+        "N",
+        "D",
+        "OW0",
+        "S",
+        "IH2",
+        "M",
+        "B",
+        "IY0",
+        "AA1",
+        "T",
+        "IH0",
+        "K"
+      ]
+    },
+    "REDEVELOPED": {
+      "phones": [
+        "R",
+        "IY0",
+        "D",
+        "IH0",
+        "V",
+        "EH1",
+        "L",
+        "AH0",
+        "P",
+        "T"
+      ]
+    },
+    "ENDURABLE": {
+      "phones": [
+        "IH0",
+        "N",
+        "D",
+        "UH1",
+        "R",
+        "AH0",
+        "B",
+        "AH0",
+        "L"
+      ]
+    },
+    "TUTTING": {
+      "phones": [
+        "T",
+        "AH1",
+        "T",
+        "IH0",
+        "NG"
+      ]
+    },
+    "HISPANIA": {
+      "phones": [
+        "HH",
+        "IH0",
+        "S",
+        "P",
+        "AA1",
+        "N",
+        "IY0",
+        "AH0"
+      ]
+    },
+    "URBANISED": {
+      "phones": [
+        "ER1",
+        "B",
+        "AH0",
+        "N",
+        "AY2",
+        "Z",
+        "D"
+      ]
+    },
+    "DIPOLIEIA": {
+      "phones": [
+        "D",
+        "AY1",
+        "P",
+        "OW2",
+        "L",
+        "IY1",
+        "IY1",
+        "AH0"
+      ]
+    },
+    "GOWANDA": {
+      "phones": [
+        "G",
+        "AW1",
+        "AH0",
+        "N",
+        "D",
+        "AH0"
+      ]
+    },
+    "BABELE": {
+      "phones": [
+        "B",
+        "AH0",
+        "B",
+        "EH1",
+        "L",
+        "EY0"
+      ]
+    },
+    "WALLETT": {
+      "phones": [
+        "W",
+        "AO1",
+        "L",
+        "IH0",
+        "T"
+      ]
+    },
+    "YEASTIE": {
+      "phones": [
+        "Y",
+        "IY1",
+        "S",
+        "T",
+        "IY0"
+      ]
+    },
+    "ACCEPTATION": {
+      "phones": [
+        "AE0",
+        "K",
+        "S",
+        "EH1",
+        "P",
+        "T",
+        "EY1",
+        "SH",
+        "AH0",
+        "N"
+      ]
+    },
+    "HYPERVISOR": {
+      "phones": [
+        "HH",
+        "AY2",
+        "P",
+        "ER0",
+        "V",
+        "AY1",
+        "Z",
+        "ER0"
+      ]
+    },
+    "SIGNORIA": {
+      "phones": [
+        "S",
+        "IH0",
+        "G",
+        "N",
+        "AO1",
+        "R",
+        "IY0",
+        "AH0"
+      ]
+    },
+    "DAMASKINOS": {
+      "phones": [
+        "D",
+        "AE1",
+        "M",
+        "AH0",
+        "S",
+        "K",
+        "IY0",
+        "N",
+        "OW0",
+        "Z"
+      ]
+    },
+    "SAMBAR": {
+      "phones": [
+        "S",
+        "AE1",
+        "M",
+        "B",
+        "AA2",
+        "R"
+      ]
+    },
+    "EX-OFFICIO": {
+      "phones": [
+        "EH1",
+        "K",
+        "S",
+        "AH0",
+        "F",
+        "IH1",
+        "S",
+        "IY0",
+        "OW0"
+      ]
+    },
+    "SCHEIMER'S": {
+      "phones": [
+        "SH",
+        "AY1",
+        "M",
+        "ER0",
+        "Z"
+      ]
+    },
+    "ABROARD": {
+      "phones": [
+        "AH0",
+        "B",
+        "R",
+        "AO1",
+        "R",
+        "D"
+      ]
+    },
+    "BOLSHAYA": {
+      "phones": [
+        "B",
+        "OW1",
+        "L",
+        "SH",
+        "AA1",
+        "Y",
+        "AH0"
+      ]
+    },
+    "ATRIAL": {
+      "phones": [
+        "EY1",
+        "T",
+        "R",
+        "IY0",
+        "AH0",
+        "L"
+      ]
+    },
+    "ALLOYED": {
+      "phones": [
+        "AE1",
+        "L",
+        "OY2",
+        "D"
+      ]
+    },
+    "FREDRIK": {
+      "phones": [
+        "F",
+        "R",
+        "EH1",
+        "D",
+        "R",
+        "IH0",
+        "K"
+      ]
+    },
+    "IRO": {
+      "phones": [
+        "IH1",
+        "R",
+        "OW0"
+      ]
+    },
+    "MASHU": {
+      "phones": [
+        "M",
+        "AE1",
+        "SH",
+        "UW0"
+      ]
+    },
+    "DEXYS": {
+      "phones": [
+        "D",
+        "EH1",
+        "K",
+        "S",
+        "IY0",
+        "Z"
+      ]
+    },
+    "VARBERG": {
+      "phones": [
+        "V",
+        "AA1",
+        "R",
+        "B",
+        "ER0",
+        "G"
+      ]
+    },
+    "ILHABELA": {
+      "phones": [
+        "IH2",
+        "L",
+        "HH",
+        "AA0",
+        "B",
+        "EH1",
+        "L",
+        "AH0"
+      ]
+    },
+    "SMARTPHONES": {
+      "phones": [
+        "S",
+        "M",
+        "AA1",
+        "R",
+        "T",
+        "F",
+        "OW2",
+        "N",
+        "Z"
+      ]
+    },
+    "MANGALORE": {
+      "phones": [
+        "M",
+        "AE1",
+        "NG",
+        "G",
+        "AH0",
+        "L",
+        "AO2",
+        "R"
+      ]
+    },
+    "MYSORE": {
+      "phones": [
+        "M",
+        "AY1",
+        "S",
+        "AO2",
+        "R"
+      ]
+    },
+    "NOVELIZATION": {
+      "phones": [
+        "N",
+        "AA1",
+        "V",
+        "AH0",
+        "L",
+        "AH0",
+        "Z",
+        "EY1",
+        "SH",
+        "AH0",
+        "N"
+      ]
+    },
+    "GRAMMARS": {
+      "phones": [
+        "G",
+        "R",
+        "AE1",
+        "M",
+        "ER0",
+        "Z"
+      ]
+    },
+    "WATAMU": {
+      "phones": [
+        "W",
+        "AA1",
+        "T",
+        "AA0",
+        "M",
+        "UW1"
+      ]
+    },
+    "TULU": {
+      "phones": [
+        "T",
+        "UW1",
+        "L",
+        "UW2"
+      ]
+    },
+    "ONZA": {
+      "phones": [
+        "AA1",
+        "N",
+        "Z",
+        "AH0"
+      ]
+    },
+    "ESTHERVILLE": {
+      "phones": [
+        "EH1",
+        "S",
+        "T",
+        "ER0",
+        "V",
+        "IH2",
+        "L"
+      ]
+    },
+    "MARIMBAS": {
+      "phones": [
+        "M",
+        "ER0",
+        "IH1",
+        "M",
+        "B",
+        "AH0",
+        "Z"
+      ]
+    },
+    "ZABUTON": {
+      "phones": [
+        "Z",
+        "AH0",
+        "B",
+        "Y",
+        "UW1",
+        "T",
+        "AH0",
+        "N"
+      ]
+    },
+    "HAKUTO": {
+      "phones": [
+        "HH",
+        "AA0",
+        "K",
+        "UW1",
+        "T",
+        "OW0"
+      ]
+    },
+    "INABA": {
+      "phones": [
+        "IH2",
+        "N",
+        "AH0",
+        "B",
+        "AH0"
+      ]
+    },
+    "BLOCKCHAIN": {
+      "phones": [
+        "B",
+        "L",
+        "AA1",
+        "K",
+        "CH",
+        "EY0",
+        "N"
+      ]
+    },
+    "NICHROME": {
+      "phones": [
+        "N",
+        "IH1",
+        "K",
+        "R",
+        "OW2",
+        "M"
+      ]
+    },
+    "SOMETINES": {
+      "phones": [
+        "S",
+        "AH1",
+        "M",
+        "T",
+        "AY2",
+        "N",
+        "Z"
+      ]
+    },
+    "XANDER": {
+      "phones": [
+        "Z",
+        "AE1",
+        "N",
+        "D",
+        "ER0"
+      ]
+    },
+    "PLAYLIST": {
+      "phones": [
+        "P",
+        "L",
+        "EY1",
+        "L",
+        "IH0",
+        "S",
+        "T"
+      ]
+    },
+    "WOLVERCOTE": {
+      "phones": [
+        "W",
+        "UH2",
+        "L",
+        "V",
+        "ER0",
+        "K",
+        "OW2",
+        "T"
+      ]
+    },
+    "DARSHAN": {
+      "phones": [
+        "D",
+        "AA1",
+        "R",
+        "SH",
+        "AH0",
+        "N"
+      ]
+    },
+    "IRST": {
+      "phones": [
+        "ER1",
+        "S",
+        "T"
+      ]
+    },
+    "XBOX": {
+      "phones": [
+        "EH1",
+        "K",
+        "S",
+        "B",
+        "AA2",
+        "K",
+        "S"
+      ]
+    },
+    "SPIRALLED": {
+      "phones": [
+        "S",
+        "P",
+        "AY1",
+        "R",
+        "AH0",
+        "L",
+        "D"
+      ]
+    },
+    "EASTOFENGLANDNEWS": {
+      "phones": [
+        "IY1",
+        "S",
+        "T",
+        "AH0",
+        "F",
+        "IH1",
+        "NG",
+        "L",
+        "AE0",
+        "N",
+        "D",
+        "N",
+        "UW2",
+        "Z"
+      ]
+    },
+    "COVISHIELD": {
+      "phones": [
+        "K",
+        "OW1",
+        "V",
+        "IH2",
+        "SH",
+        "IY2",
+        "L",
+        "D"
+      ]
+    },
+    "OXFORD-ASTRAZENECA": {
+      "phones": [
+        "AA1",
+        "K",
+        "S",
+        "F",
+        "ER0",
+        "D",
+        "AH0",
+        "EH1",
+        "S",
+        "T",
+        "IY1",
+        "AA1",
+        "R",
+        "AH0",
+        "Z",
+        "IY1",
+        "IY1",
+        "EH1",
+        "N",
+        "IY1",
+        "S",
+        "IY1",
+        "AH0"
+      ]
+    },
+    "COVAXIN": {
+      "phones": [
+        "K",
+        "OW1",
+        "V",
+        "AE0",
+        "K",
+        "S",
+        "IY1",
+        "N"
+      ]
+    },
+    "PAHLAVI": {
+      "phones": [
+        "P",
+        "AA1",
+        "L",
+        "AA1",
+        "V",
+        "IY0"
+      ]
+    },
+    "FORTY-ONE": {
+      "phones": [
+        "F",
+        "AO1",
+        "R",
+        "T",
+        "IY0",
+        "W",
+        "AH1",
+        "N"
+      ]
+    },
+    "SEVENTY-NINE": {
+      "phones": [
+        "S",
+        "EH1",
+        "V",
+        "AH0",
+        "N",
+        "T",
+        "IY0",
+        "N",
+        "AY1",
+        "N"
+      ]
+    },
+    "SHAHANSHAH": {
+      "phones": [
+        "K",
+        "IH1",
+        "NG"
+      ]
+    },
+    "TWENTY-SIXTH": {
+      "phones": [
+        "T",
+        "W",
+        "EH1",
+        "N",
+        "T",
+        "IY0",
+        "S",
+        "IH1",
+        "K",
+        "S",
+        "TH"
+      ]
+    },
+    "SIXTY-SEVEN": {
+      "phones": [
+        "S",
+        "IH1",
+        "K",
+        "S",
+        "T",
+        "IY0",
+        "S",
+        "EH1",
+        "V",
+        "AH0",
+        "N"
+      ]
+    },
+    "ARYAMEHR": {
+      "phones": [
+        "AA1",
+        "R",
+        "IY0",
+        "AH0",
+        "M",
+        "EH2",
+        "R"
+      ]
+    },
+    "ARYANS": {
+      "phones": [
+        "AA1",
+        "R",
+        "IY0",
+        "AH0",
+        "N",
+        "Z"
+      ]
+    },
+    "BOZORG": {
+      "phones": [
+        "B",
+        "AH0",
+        "Z",
+        "AO1",
+        "R",
+        "G"
+      ]
+    },
+    "ARTESHTARAN": {
+      "phones": [
+        "AA0",
+        "R",
+        "T",
+        "EH1",
+        "SH",
+        "T",
+        "AA0",
+        "R",
+        "AA1",
+        "N"
+      ]
+    },
+    "CIVILISATION": {
+      "phones": [
+        "S",
+        "AH0",
+        "V",
+        "IH1",
+        "L",
+        "AH0",
+        "Z",
+        "EY1",
+        "SH",
+        "AH0",
+        "N"
+      ]
+    },
+    "MODERNISATION": {
+      "phones": [
+        "M",
+        "AA1",
+        "D",
+        "ER0",
+        "N",
+        "IH0",
+        "Z",
+        "EY1",
+        "SH",
+        "AH0",
+        "N"
+      ]
+    },
+    "PARASTATALS": {
+      "phones": [
+        "P",
+        "EH2",
+        "R",
+        "AH0",
+        "S",
+        "T",
+        "EY1",
+        "T",
+        "AH0",
+        "L",
+        "Z"
+      ]
+    },
+    "OSUN": {
+      "phones": [
+        "AA1",
+        "S",
+        "AH0",
+        "N"
+      ]
+    },
+    "THIRTY-SIX": {
+      "phones": [
+        "TH",
+        "ER1",
+        "D",
+        "IY2",
+        "S",
+        "IH1",
+        "K",
+        "S"
+      ]
+    },
+    "FIFTY-FOUR": {
+      "phones": [
+        "F",
+        "IH1",
+        "F",
+        "T",
+        "IY0",
+        "F",
+        "AO1",
+        "R"
+      ]
+    },
+    "XLIVE": {
+      "phones": [
+        "Z",
+        "L",
+        "AY1",
+        "V"
+      ]
+    },
+    "IPCC": {
+      "phones": [
+        "AY1",
+        "P",
+        "IY1",
+        "S",
+        "IY1",
+        "S",
+        "IY1"
+      ]
+    },
+    "THIRTY-EIGHT": {
+      "phones": [
+        "TH",
+        "ER1",
+        "D",
+        "IY2",
+        "EY1",
+        "T"
+      ]
+    },
+    "JHU": {
+      "phones": [
+        "JH",
+        "EY1",
+        "EY1",
+        "CH",
+        "Y",
+        "UW1"
+      ]
+    },
+    "GEOSTORM": {
+      "phones": [
+        "JH",
+        "IY2",
+        "OW0",
+        "S",
+        "T",
+        "AO2",
+        "R",
+        "M"
+      ]
+    },
+    "PLEVNELIEV": {
+      "phones": [
+        "P",
+        "L",
+        "EH1",
+        "V",
+        "N",
+        "AH0",
+        "L",
+        "IY2",
+        "V"
+      ]
+    },
+    "BOYANA": {
+      "phones": [
+        "B",
+        "OY1",
+        "AA0",
+        "N",
+        "AH0"
+      ]
+    },
+    "NINETY-THREE": {
+      "phones": [
+        "N",
+        "AY1",
+        "N",
+        "T",
+        "IY0",
+        "TH",
+        "R",
+        "IY1"
+      ]
+    },
+    "NETFLIX": {
+      "phones": [
+        "N",
+        "EH1",
+        "T",
+        "F",
+        "L",
+        "IH0",
+        "K",
+        "S"
+      ]
+    },
+    "HOTNESS": {
+      "phones": [
+        "HH",
+        "AA1",
+        "T",
+        "N",
+        "AH0",
+        "S"
+      ]
+    },
+    "US-CUBAN": {
+      "phones": [
+        "AH1",
+        "S",
+        "K",
+        "Y",
+        "UW1",
+        "B",
+        "AH0",
+        "N"
+      ]
+    },
+    "FORTY-THREE": {
+      "phones": [
+        "F",
+        "AO1",
+        "R",
+        "T",
+        "IY0",
+        "TH",
+        "R",
+        "IY1"
+      ]
+    },
+    "MENSTRUATORS": {
+      "phones": [
+        "M",
+        "EH1",
+        "N",
+        "S",
+        "T",
+        "R",
+        "UW0",
+        "EY2",
+        "T",
+        "ER0",
+        "Z"
+      ]
+    },
+    "FANDOU": {
+      "phones": [
+        "F",
+        "AE1",
+        "N",
+        "D",
+        "OW2"
+      ]
+    },
+    "AUTHORISATION": {
+      "phones": [
+        "AO2",
+        "TH",
+        "ER0",
+        "AH0",
+        "Z",
+        "EY1",
+        "SH",
+        "AH0",
+        "N"
+      ]
+    },
+    "FA": {
+      "phones": [
+        "EH1",
+        "F",
+        "EY1"
+      ]
+    },
+    "TWENTY-SEVEN": {
+      "phones": [
+        "T",
+        "W",
+        "EH1",
+        "N",
+        "T",
+        "IY0",
+        "S",
+        "EH1",
+        "V",
+        "AH0",
+        "N"
+      ]
+    },
+    "THIRTY-TWO": {
+      "phones": [
+        "TH",
+        "ER1",
+        "D",
+        "IY2",
+        "T",
+        "UW1"
+      ]
+    },
+    "ORGANISERS": {
+      "phones": [
+        "AO2",
+        "R",
+        "G",
+        "AH0",
+        "N",
+        "IH0",
+        "Z",
+        "ER0",
+        "Z"
+      ]
+    },
+    "FORTY-SIX": {
+      "phones": [
+        "F",
+        "AO1",
+        "R",
+        "T",
+        "IY0",
+        "S",
+        "IH1",
+        "K",
+        "S"
+      ]
+    },
+    "CIPD": {
+      "phones": [
+        "S",
+        "IY1",
+        "AY1",
+        "P",
+        "IY1",
+        "D",
+        "IY1"
+      ]
+    },
+    "EAT-LANCET": {
+      "phones": [
+        "IY1",
+        "T",
+        "L",
+        "AE1",
+        "N",
+        "S",
+        "AH0",
+        "T"
+      ]
+    },
+    "THIRTY-SEVEN": {
+      "phones": [
+        "TH",
+        "ER1",
+        "D",
+        "IY2",
+        "S",
+        "EH1",
+        "V",
+        "AH0",
+        "N"
+      ]
+    },
+    "ELUMELU": {
+      "phones": [
+        "IH0",
+        "L",
+        "UW1",
+        "M",
+        "AH0",
+        "L",
+        "UW2"
+      ]
+    },
+    "EMEFIELE": {
+      "phones": [
+        "EH1",
+        "M",
+        "IH0",
+        "F",
+        "IY0",
+        "L"
+      ]
+    },
+    "SACASA": {
+      "phones": [
+        "S",
+        "AE1",
+        "K",
+        "AA1",
+        "S",
+        "AH0"
+      ]
+    },
+    "OSMA": {
+      "phones": [
+        "AA1",
+        "S",
+        "M",
+        "AH0"
+      ]
+    },
+    "HALIME": {
+      "phones": [
+        "HH",
+        "AH0",
+        "L",
+        "IY1",
+        "M"
+      ]
+    },
+    "MALVOLIO": {
+      "phones": [
+        "M",
+        "AE1",
+        "L",
+        "V",
+        "AH0",
+        "L",
+        "IY2",
+        "OW0"
+      ]
+    },
+    "FORTY-EIGHT": {
+      "phones": [
+        "F",
+        "AO1",
+        "R",
+        "T",
+        "IY0",
+        "EY1",
+        "T"
+      ]
+    },
+    "TWENTY-THIRD": {
+      "phones": [
+        "T",
+        "W",
+        "EH1",
+        "N",
+        "T",
+        "IY0",
+        "TH",
+        "ER1",
+        "D"
+      ]
+    },
+    "COVID": {
+      "phones": [
+        "K",
+        "AA1",
+        "V",
+        "AH0",
+        "D"
+      ]
+    },
+    "HOME-BASED": {
+      "phones": [
+        "HH",
+        "OW1",
+        "M",
+        "B",
+        "EY1",
+        "S",
+        "T"
+      ]
+    },
+    "WTA": {
+      "phones": [
+        "D",
+        "AH1",
+        "B",
+        "AH0",
+        "L",
+        "Y",
+        "UW0",
+        "T",
+        "IY1",
+        "EY1"
+      ]
+    },
+    "JDFPG": {
+      "phones": [
+        "JH",
+        "EY1",
+        "D",
+        "IY1",
+        "EH1",
+        "F",
+        "P",
+        "IY1",
+        "JH",
+        "IY1"
+      ]
+    },
+    "MAULANA": {
+      "phones": [
+        "M",
+        "AO1",
+        "L",
+        "AA1",
+        "N",
+        "AH0"
+      ]
+    },
+    "ABUL": {
+      "phones": [
+        "M",
+        "UH0",
+        "HH",
+        "IH0",
+        "Y",
+        "AH1",
+        "D",
+        "IH0",
+        "N"
+      ]
+    },
+    "KALAM": {
+      "phones": [
+        "AA1",
+        "M",
+        "AH0",
+        "D"
+      ]
+    },
+    "MUHIYUDDIN": {
+      "phones": [
+        "P",
+        "R",
+        "OW0",
+        "N",
+        "AH2",
+        "N",
+        "S",
+        "IY0",
+        "EY1",
+        "SH",
+        "AH0",
+        "N"
+      ]
+    },
+    "AZAD": {
+      "phones": [
+        "AE1",
+        "Z",
+        "AE0",
+        "D"
+      ]
+    },
+    "EIGHTY-EIGHT": {
+      "phones": [
+        "EY1",
+        "T",
+        "IY0",
+        "EY1",
+        "T"
+      ]
+    },
+    "TWENTY-SECOND": {
+      "phones": [
+        "T",
+        "W",
+        "EH1",
+        "N",
+        "T",
+        "IY0",
+        "S",
+        "EH1",
+        "K",
+        "AH0",
+        "N",
+        "D"
+      ]
+    },
+    "FIFTY-EIGHT": {
+      "phones": [
+        "F",
+        "IH1",
+        "F",
+        "T",
+        "IY0",
+        "EY1",
+        "T"
+      ]
+    },
+    "CES": {
+      "phones": [
+        "S",
+        "IY1",
+        "IY1",
+        "EH1",
+        "S"
+      ]
+    },
+    "LEASEHOLDER": {
+      "phones": [
+        "L",
+        "IY1",
+        "S",
+        "HH",
+        "OW2",
+        "L",
+        "D",
+        "ER0"
+      ]
+    },
+    "RIIS": {
+      "phones": [
+        "R",
+        "IY1",
+        "Z"
+      ]
+    },
+    "MALAYALAM": {
+      "phones": [
+        "M",
+        "AH0",
+        "L",
+        "EY1",
+        "AH0",
+        "L",
+        "AE1",
+        "M"
+      ]
+    },
+    "CO-MORBIDITIES": {
+      "phones": [
+        "K",
+        "OW1",
+        "M",
+        "AO0",
+        "R",
+        "B",
+        "IH1",
+        "D",
+        "AH0",
+        "T",
+        "IY0",
+        "Z"
+      ]
+    },
+    "PRIORITISED": {
+      "phones": [
+        "P",
+        "R",
+        "AY0",
+        "AO1",
+        "R",
+        "AH0",
+        "T",
+        "AY2",
+        "Z",
+        "D"
+      ]
+    },
+    "FORTY-SEVEN": {
+      "phones": [
+        "F",
+        "AO1",
+        "R",
+        "T",
+        "IY0",
+        "S",
+        "EH1",
+        "V",
+        "AH0",
+        "N"
+      ]
+    },
+    "ITALKI": {
+      "phones": [
+        "AY1",
+        "T",
+        "AO2",
+        "K",
+        "IY0"
+      ]
+    },
+    "FORTY-FOUR": {
+      "phones": [
+        "F",
+        "AO1",
+        "R",
+        "T",
+        "IY0",
+        "F",
+        "AO1",
+        "R"
+      ]
+    },
+    "EU": {
+      "phones": [
+        "IY1",
+        "Y",
+        "UW1"
+      ]
+    },
+    "SEVENTY-EIGHT": {
+      "phones": [
+        "S",
+        "EH1",
+        "V",
+        "AH0",
+        "N",
+        "T",
+        "IY0",
+        "EY1",
+        "T"
+      ]
+    },
+    "SEVENTY-THREE": {
+      "phones": [
+        "S",
+        "EH1",
+        "V",
+        "AH0",
+        "N",
+        "T",
+        "IY0",
+        "TH",
+        "R",
+        "IY1"
+      ]
+    },
+    "THIRTY-FOUR": {
+      "phones": [
+        "TH",
+        "ER1",
+        "D",
+        "IY2",
+        "F",
+        "AO1",
+        "R"
+      ]
+    },
+    "MAGA": {
+      "phones": [
+        "M",
+        "AE1",
+        "G",
+        "AH0"
+      ]
+    },
+    "GIAMBATTISTA": {
+      "phones": [
+        "JH",
+        "AA1",
+        "M",
+        "B",
+        "AA0",
+        "T",
+        "IY1",
+        "S",
+        "T",
+        "AH0"
+      ]
+    },
+    "PENTAMERONE": {
+      "phones": [
+        "P",
+        "EH2",
+        "N",
+        "T",
+        "AE1",
+        "M",
+        "ER0",
+        "OW1",
+        "N",
+        "IY0"
+      ]
+    },
+    "CUNTO": {
+      "phones": [
+        "K",
+        "AH1",
+        "N",
+        "T",
+        "OW0"
+      ]
+    },
+    "CUNTI": {
+      "phones": [
+        "K",
+        "AH1",
+        "N",
+        "T",
+        "IY0"
+      ]
+    },
+    "LG": {
+      "phones": [
+        "EH1",
+        "L",
+        "JH",
+        "IY1"
+      ]
+    },
+    "TCL": {
+      "phones": [
+        "T",
+        "IY1",
+        "S",
+        "IY1",
+        "EH1",
+        "L"
+      ]
+    },
+    "ROLLABLE": {
+      "phones": [
+        "R",
+        "OW1",
+        "L",
+        "AH0",
+        "B",
+        "AH0",
+        "L"
+      ]
+    },
+    "NEWSBEAT": {
+      "phones": [
+        "N",
+        "UW1",
+        "Z",
+        "B",
+        "IY2",
+        "T"
+      ]
+    },
+    "NINETY-FOUR": {
+      "phones": [
+        "N",
+        "AY1",
+        "N",
+        "T",
+        "IY0",
+        "F",
+        "AO1",
+        "R"
+      ]
+    },
+    "X-MEN": {
+      "phones": [
+        "EH1",
+        "K",
+        "S",
+        "M",
+        "EH1",
+        "N"
+      ]
+    },
+    "NINETY-SEVEN": {
+      "phones": [
+        "N",
+        "AY1",
+        "N",
+        "T",
+        "IY0",
+        "S",
+        "EH1",
+        "V",
+        "AH0",
+        "N"
+      ]
+    },
+    "NFSA": {
+      "phones": [
+        "EH1",
+        "N",
+        "EH1",
+        "F",
+        "EH1",
+        "S",
+        "EY1"
+      ]
+    },
+    "IPC": {
+      "phones": [
+        "AY1",
+        "P",
+        "IY1",
+        "S",
+        "IY1"
+      ]
+    },
+    "WORDINGS": {
+      "phones": [
+        "W",
+        "ER1",
+        "D",
+        "IH0",
+        "NG",
+        "Z"
+      ]
+    },
+    "PCT": {
+      "phones": [
+        "P",
+        "IY1",
+        "S",
+        "IY1",
+        "T",
+        "IY1"
+      ]
+    },
+    "TWEETS": {
+      "phones": [
+        "T",
+        "W",
+        "IY1",
+        "T",
+        "S"
+      ]
+    },
+    "MUYIWA": {
+      "phones": [
+        "M",
+        "Y",
+        "UW1",
+        "W",
+        "AY1",
+        "AY1",
+        "W",
+        "AH0"
+      ]
+    },
+    "ADEJOBI": {
+      "phones": [
+        "AH0",
+        "D",
+        "EY1",
+        "Y",
+        "OW0",
+        "B",
+        "IY1"
+      ]
+    },
+    "SIXTY-THREE": {
+      "phones": [
+        "S",
+        "IH1",
+        "K",
+        "S",
+        "T",
+        "IY0",
+        "TH",
+        "R",
+        "IY1"
+      ]
+    },
+    "NINETY-TWO": {
+      "phones": [
+        "N",
+        "AY1",
+        "N",
+        "T",
+        "IY0",
+        "T",
+        "UW2"
+      ]
+    },
+    "GEOGRAPHERS": {
+      "phones": [
+        "JH",
+        "IY0",
+        "AA1",
+        "G",
+        "R",
+        "AH0",
+        "F",
+        "ER0",
+        "Z"
+      ]
+    },
+    "ANTHROPOGEOGRAPHY": {
+      "phones": [
+        "AE2",
+        "N",
+        "TH",
+        "R",
+        "AH0",
+        "P",
+        "AH0",
+        "JH",
+        "IY0",
+        "AA1",
+        "G",
+        "R",
+        "AH0",
+        "F",
+        "IY0"
+      ]
+    },
+    "KARNATAKA": {
+      "phones": [
+        "K",
+        "AA1",
+        "R",
+        "N",
+        "AA0",
+        "T",
+        "AA1",
+        "K",
+        "AH0"
+      ]
+    },
+    "PINBOARD": {
+      "phones": [
+        "P",
+        "IH1",
+        "N",
+        "B",
+        "AO2",
+        "R",
+        "D"
+      ]
+    },
+    "NOTICEBOARD": {
+      "phones": [
+        "N",
+        "OW1",
+        "T",
+        "AH0",
+        "S",
+        "B",
+        "AO2",
+        "R",
+        "D"
+      ]
+    },
+    "WHITEBOARD": {
+      "phones": [
+        "HH",
+        "W",
+        "AY1",
+        "T",
+        "B",
+        "AO2",
+        "R",
+        "D"
+      ]
+    },
+    "CORKBOARD": {
+      "phones": [
+        "K",
+        "AO1",
+        "R",
+        "K",
+        "B",
+        "AO2",
+        "R",
+        "D"
+      ]
+    },
+    "KOJARENA": {
+      "phones": [
+        "K",
+        "AH0",
+        "Y",
+        "ER0",
+        "IY1",
+        "N",
+        "AH0"
+      ]
+    },
+    "GERALDTON": {
+      "phones": [
+        "JH",
+        "EH1",
+        "R",
+        "AH0",
+        "L",
+        "D",
+        "T",
+        "AH0",
+        "N"
+      ]
+    },
+    "BEST-SELLING": {
+      "phones": [
+        "B",
+        "EH1",
+        "S",
+        "T",
+        "S",
+        "EH1",
+        "L",
+        "IH0",
+        "NG"
+      ]
+    },
+    "ALL-ELECTRIC": {
+      "phones": [
+        "AO1",
+        "L",
+        "IH0",
+        "L",
+        "EH1",
+        "K",
+        "T",
+        "R",
+        "IH0",
+        "K"
+      ]
+    },
+    "SIXTY-FIVE": {
+      "phones": [
+        "S",
+        "IH1",
+        "K",
+        "S",
+        "T",
+        "IY0",
+        "F",
+        "AY1",
+        "V"
+      ]
+    },
+    "GNTB": {
+      "phones": [
+        "JH",
+        "IY1",
+        "EH1",
+        "N",
+        "T",
+        "IY1",
+        "B",
+        "IY1"
+      ]
+    },
+    "HEDORFER": {
+      "phones": [
+        "HH",
+        "EH1",
+        "D",
+        "AO0",
+        "R",
+        "F",
+        "ER0"
+      ]
+    },
+    "CORONAVIRUS": {
+      "phones": [
+        "K",
+        "ER0",
+        "OW1",
+        "N",
+        "AH0",
+        "V",
+        "AY2",
+        "R",
+        "AH0",
+        "S"
+      ]
+    },
+    "NINETY-FIVE": {
+      "phones": [
+        "N",
+        "AY1",
+        "N",
+        "T",
+        "IY0",
+        "F",
+        "AY1",
+        "V"
+      ]
+    },
+    "SARWARY": {
+      "phones": [
+        "S",
+        "AA1",
+        "R",
+        "W",
+        "EH2",
+        "R",
+        "IY0"
+      ]
+    },
+    "TWENTY-FIFTH": {
+      "phones": [
+        "T",
+        "W",
+        "EH1",
+        "N",
+        "T",
+        "IY0",
+        "F",
+        "IH1",
+        "F",
+        "TH"
+      ]
+    },
+    "VIDHAN": {
+      "phones": [
+        "V",
+        "IH0",
+        "D",
+        "AH0",
+        "N"
+      ]
+    },
+    "SABHA": {
+      "phones": [
+        "S",
+        "AA1",
+        "B",
+        "AH0"
+      ]
+    },
+    "A-WEEK": {
+      "phones": [
+        "AH0",
+        "W",
+        "IY1",
+        "K"
+      ]
+    },
+    "ANKI": {
+      "phones": [
+        "AE1",
+        "NG",
+        "K",
+        "IY0"
+      ]
+    },
+    "EVS": {
+      "phones": [
+        "IY1",
+        "V",
+        "IY1",
+        "S"
+      ]
+    },
+    "TWENTY-SIX": {
+      "phones": [
+        "T",
+        "W",
+        "EH1",
+        "N",
+        "T",
+        "IY0",
+        "S",
+        "IH1",
+        "K",
+        "S"
+      ]
+    },
+    "THIRTY-ONE": {
+      "phones": [
+        "TH",
+        "ER1",
+        "D",
+        "IY2",
+        "W",
+        "AH1",
+        "N"
+      ]
+    },
+    "SEVENTY-TWO": {
+      "phones": [
+        "S",
+        "EH1",
+        "V",
+        "AH0",
+        "N",
+        "T",
+        "IY0",
+        "T",
+        "UW1"
+      ]
+    },
+    "TWENTY-NINE": {
+      "phones": [
+        "T",
+        "W",
+        "EH1",
+        "N",
+        "T",
+        "IY0",
+        "N",
+        "AY1",
+        "N"
+      ]
+    },
+    "PAPILLA": {
+      "phones": [
+        "P",
+        "AH0",
+        "P",
+        "IH1",
+        "L",
+        "AH0"
+      ]
+    },
+    "RADLEYS": {
+      "phones": [
+        "R",
+        "AE1",
+        "D",
+        "L",
+        "IY0",
+        "Z"
+      ]
+    },
+    "NNAMDI": {
+      "phones": [
+        "N",
+        "AA1",
+        "M",
+        "D",
+        "IY0"
+      ]
+    },
+    "KANU'S": {
+      "phones": [
+        "K",
+        "EY1",
+        "AH0",
+        "EH1",
+        "N",
+        "Y",
+        "UW1",
+        "EH1",
+        "S"
+      ]
+    },
+    "ORJI": {
+      "phones": [
+        "K",
+        "AH0",
+        "L",
+        "UW1"
+      ]
+    },
+    "KALU": {
+      "phones": [
+        "K",
+        "AH0",
+        "L",
+        "UW1"
+      ]
+    },
+    "IPOB": {
+      "phones": [
+        "L",
+        "IY1",
+        "D",
+        "ER0"
+      ]
+    },
+    "FCA": {
+      "phones": [
+        "EH1",
+        "F",
+        "S",
+        "IY1",
+        "EY1"
+      ]
+    },
+    "SELF-ISOLATE": {
+      "phones": [
+        "S",
+        "EH1",
+        "L",
+        "F",
+        "AY1",
+        "S",
+        "AH0",
+        "L",
+        "EY2",
+        "T"
+      ]
+    },
+    "DEVOLVES": {
+      "phones": [
+        "D",
+        "IH0",
+        "V",
+        "AA1",
+        "L",
+        "V",
+        "Z"
+      ]
+    },
+    "BALLYMUN": {
+      "phones": [
+        "B",
+        "AE1",
+        "L",
+        "IY0",
+        "M",
+        "AH0",
+        "N"
+      ]
+    },
+    "ELYSIAN": {
+      "phones": [
+        "IY0",
+        "L",
+        "IH1",
+        "Z",
+        "AH0",
+        "N"
+      ]
+    },
+    "STOREYED": {
+      "phones": [
+        "S",
+        "T",
+        "AO1",
+        "R",
+        "AY1",
+        "D"
+      ]
+    },
+    "OBEL": {
+      "phones": [
+        "OW1",
+        "B",
+        "AH0",
+        "L"
+      ]
+    },
+    "SEVENTY-ONE": {
+      "phones": [
+        "S",
+        "EH1",
+        "V",
+        "AH0",
+        "N",
+        "T",
+        "IY0",
+        "W",
+        "AH1",
+        "N"
+      ]
+    },
+    "THIRTY-THREE": {
+      "phones": [
+        "TH",
+        "ER1",
+        "D",
+        "IY2",
+        "TH",
+        "R",
+        "IY1"
+      ]
+    },
+    "STRATFORD-UPON-AVON": {
+      "phones": [
+        "S",
+        "T",
+        "R",
+        "AE1",
+        "T",
+        "F",
+        "ER0",
+        "D",
+        "AH0",
+        "P",
+        "AA1",
+        "N",
+        "EY1",
+        "V",
+        "AA0",
+        "N"
+      ]
+    },
+    "FIFTY-ONE": {
+      "phones": [
+        "F",
+        "IH1",
+        "F",
+        "T",
+        "IY0",
+        "W",
+        "AH1",
+        "N"
+      ]
+    },
+    "BHS": {
+      "phones": [
+        "B",
+        "IY1",
+        "EY1",
+        "CH",
+        "EH1",
+        "S"
+      ]
+    },
+    "FORTY-NINE": {
+      "phones": [
+        "F",
+        "AO1",
+        "R",
+        "T",
+        "IY0",
+        "N",
+        "AY1",
+        "N"
+      ]
+    },
+    "PEINTRE": {
+      "phones": [
+        "P",
+        "EY0",
+        "IY0",
+        "N",
+        "T",
+        "ER0"
+      ]
+    },
+    "TWENTY-EIGHT": {
+      "phones": [
+        "T",
+        "W",
+        "EH1",
+        "N",
+        "T",
+        "IY0",
+        "EY1",
+        "T"
+      ]
+    },
+    "VOA": {
+      "phones": [
+        "V",
+        "IY1",
+        "OW1",
+        "EY1"
+      ]
+    },
+    "FOOTBALLER": {
+      "phones": [
+        "F",
+        "UH1",
+        "T",
+        "B",
+        "AO2",
+        "L",
+        "ER0"
+      ]
+    },
+    "FIFA": {
+      "phones": [
+        "F",
+        "IY1",
+        "F",
+        "AH0"
+      ]
+    },
+    "FLAT-RATE": {
+      "phones": [
+        "F",
+        "L",
+        "AE1",
+        "T",
+        "R",
+        "EY1",
+        "T"
+      ]
+    },
+    "MID-OCTOBER": {
+      "phones": [
+        "M",
+        "IH1",
+        "D",
+        "AA0",
+        "K",
+        "T",
+        "OW1",
+        "B",
+        "ER0"
+      ]
+    },
+    "NINETY-NINE": {
+      "phones": [
+        "N",
+        "AY1",
+        "N",
+        "T",
+        "IY0",
+        "N",
+        "AY1",
+        "N"
+      ]
+    },
+    "HMP": {
+      "phones": [
+        "EY1",
+        "CH",
+        "EH1",
+        "M",
+        "P",
+        "IY1"
+      ]
+    },
+    "TIBERIUS": {
+      "phones": [
+        "T",
+        "IH0",
+        "B",
+        "IY1",
+        "R",
+        "IY0",
+        "AH0",
+        "S"
+      ]
+    },
+    "NORDVPN": {
+      "phones": [
+        "V",
+        "IY1",
+        "P",
+        "IY1",
+        "EH1",
+        "N"
+      ]
+    },
+    "EEC": {
+      "phones": [
+        "IY1",
+        "IY1",
+        "S",
+        "IY1"
+      ]
+    },
+    "WETHERSPOONS": {
+      "phones": [
+        "W",
+        "EH1",
+        "DH",
+        "ER0",
+        "S",
+        "P",
+        "UW2",
+        "N",
+        "Z"
+      ]
+    },
+    "YEAR-OLD": {
+      "phones": [
+        "Y",
+        "IH1",
+        "R",
+        "OW1",
+        "L",
+        "D"
+      ]
+    },
+    "FORAMS": {
+      "phones": [
+        "F",
+        "AO1",
+        "R",
+        "AH0",
+        "M",
+        "Z"
+      ]
+    },
+    "MOLLUSCS": {
+      "phones": [
+        "M",
+        "AA1",
+        "L",
+        "AH0",
+        "S",
+        "K",
+        "S"
+      ]
+    },
+    "ARAGONITE": {
+      "phones": [
+        "ER0",
+        "AE1",
+        "G",
+        "AH0",
+        "N",
+        "AY2",
+        "T"
+      ]
+    },
+    "CACO": {
+      "phones": [
+        "K",
+        "AH1",
+        "S",
+        "IY1",
+        "OW1"
+      ]
+    },
+    "PEATTIE": {
+      "phones": [
+        "P",
+        "IY1",
+        "T",
+        "IY0"
+      ]
+    },
+    "ARTI": {
+      "phones": [
+        "ER1",
+        "T",
+        "IY0"
+      ]
+    },
+    "DALHOUSIE": {
+      "phones": [
+        "D",
+        "AO1",
+        "L",
+        "HH",
+        "AW2",
+        "S",
+        "IY0"
+      ]
+    },
+    "KUFRI": {
+      "phones": [
+        "K",
+        "AH1",
+        "F",
+        "R",
+        "IY0"
+      ]
+    },
+    "THEUSA": {
+      "phones": [
+        "DH",
+        "AH0",
+        "Y",
+        "UW1",
+        "EH1",
+        "S",
+        "EY1"
+      ]
+    },
+    "UTILISING": {
+      "phones": [
+        "Y",
+        "UW1",
+        "T",
+        "AH0",
+        "L",
+        "AY2",
+        "Z",
+        "IH0",
+        "NG"
+      ]
+    },
+    "LONDON-BASED": {
+      "phones": [
+        "L",
+        "AH1",
+        "N",
+        "D",
+        "AH0",
+        "N",
+        "B",
+        "EY1",
+        "S",
+        "T"
+      ]
+    },
+    "RSVP": {
+      "phones": [
+        "AA1",
+        "R",
+        "EH1",
+        "S",
+        "V",
+        "IY1",
+        "P",
+        "IY1"
+      ]
+    },
+    "EIGHTY-SEVEN": {
+      "phones": [
+        "EY1",
+        "T",
+        "IY0",
+        "S",
+        "EH1",
+        "V",
+        "AH0",
+        "N"
+      ]
+    },
+    "DREAMLINER": {
+      "phones": [
+        "D",
+        "R",
+        "IY1",
+        "M",
+        "L",
+        "AY2",
+        "N",
+        "ER0"
+      ]
+    },
+    "HMS": {
+      "phones": [
+        "EY1",
+        "CH",
+        "EH1",
+        "M",
+        "EH1",
+        "S"
+      ]
+    },
+    "GENOMES": {
+      "phones": [
+        "JH",
+        "IY1",
+        "N",
+        "OW2",
+        "M",
+        "Z"
+      ]
+    },
+    "KB": {
+      "phones": [
+        "K",
+        "EY1",
+        "B",
+        "IY1"
+      ]
+    },
+    "MYOCARDITIS": {
+      "phones": [
+        "M",
+        "AY2",
+        "AH0",
+        "K",
+        "AA1",
+        "R",
+        "D",
+        "AY1",
+        "T",
+        "AH0",
+        "S"
+      ]
+    },
+    "HULDRYCH": {
+      "phones": [
+        "HH",
+        "AH1",
+        "L",
+        "D",
+        "R",
+        "IH1",
+        "CH"
+      ]
+    },
+    "ZWINGLI": {
+      "phones": [
+        "Z",
+        "W",
+        "IH1",
+        "NG",
+        "L",
+        "AY2"
+      ]
+    },
+    "UTRAQUIST": {
+      "phones": [
+        "Y",
+        "UW0",
+        "T",
+        "R",
+        "AE2",
+        "K",
+        "W",
+        "IH0",
+        "S",
+        "T"
+      ]
+    },
+    "HUSSITISM": {
+      "phones": [
+        "HH",
+        "AH1",
+        "S",
+        "AY2",
+        "T",
+        "IH2",
+        "Z",
+        "AH0",
+        "M"
+      ]
+    },
+    "SIXTY-FOUR": {
+      "phones": [
+        "S",
+        "IH1",
+        "K",
+        "S",
+        "T",
+        "IY0",
+        "F",
+        "AO1",
+        "R"
+      ]
+    },
+    "TWENTY-NINTH": {
+      "phones": [
+        "T",
+        "W",
+        "EH1",
+        "N",
+        "T",
+        "IY0",
+        "N",
+        "AY1",
+        "N",
+        "TH"
+      ]
+    },
+    "UNDERSURFACE": {
+      "phones": [
+        "AH2",
+        "N",
+        "D",
+        "ER0",
+        "S",
+        "ER2",
+        "F",
+        "AH0",
+        "S"
+      ]
+    },
+    "CITYMAPPER": {
+      "phones": [
+        "S",
+        "IH1",
+        "T",
+        "IY0",
+        "M",
+        "AE2",
+        "P",
+        "ER0"
+      ]
+    },
+    "DROP-IN": {
+      "phones": [
+        "D",
+        "R",
+        "AA1",
+        "P",
+        "IH0",
+        "N"
+      ]
+    },
+    "YEAR-OLDS": {
+      "phones": [
+        "Y",
+        "IH1",
+        "R",
+        "OW1",
+        "L",
+        "D",
+        "Z"
+      ]
+    },
+    "GFPS": {
+      "phones": [
+        "JH",
+        "IY1",
+        "EH1",
+        "F",
+        "P",
+        "IY1",
+        "EH1",
+        "S"
+      ]
+    },
+    "CHIBUEZE": {
+      "phones": [
+        "CH",
+        "IY1",
+        "B",
+        "EH2",
+        "Z"
+      ]
+    },
+    "IYELE": {
+      "phones": [
+        "AY1",
+        "AH0",
+        "L"
+      ]
+    },
+    "BROADWATER": {
+      "phones": [
+        "B",
+        "R",
+        "AO1",
+        "D",
+        "W",
+        "AO2",
+        "T",
+        "ER0"
+      ]
+    },
+    "VIHARI'S": {
+      "phones": [
+        "V",
+        "IY0",
+        "HH",
+        "AA1",
+        "R",
+        "IY0",
+        "Z"
+      ]
+    },
+    "TWENTY-SEVENTH": {
+      "phones": [
+        "T",
+        "W",
+        "EH1",
+        "N",
+        "T",
+        "IY0",
+        "S",
+        "EH1",
+        "V",
+        "AH0",
+        "N",
+        "TH"
+      ]
+    },
+    "DEADSHOT": {
+      "phones": [
+        "D",
+        "EH1",
+        "D",
+        "SH",
+        "AA2",
+        "T"
+      ]
+    },
+    "EXPRESSOINS": {
+      "phones": [
+        "IH0",
+        "K",
+        "S",
+        "P",
+        "R",
+        "EH1",
+        "S",
+        "OW2",
+        "AH0",
+        "N",
+        "Z"
+      ]
+    },
+    "NHS": {
+      "phones": [
+        "EH1",
+        "N",
+        "EY1",
+        "CH",
+        "EH1",
+        "S"
+      ]
+    },
+    "EIGHTYS": {
+      "phones": [
+        "EY1",
+        "T",
+        "IY0",
+        "S"
+      ]
+    },
+    "UTC": {
+      "phones": [
+        "Y",
+        "UW1",
+        "T",
+        "IY1",
+        "S",
+        "IY1"
+      ]
+    },
+    "DJ": {
+      "phones": [
+        "D",
+        "IY1",
+        "JH",
+        "EY1"
+      ]
+    },
+    "QUAVO": {
+      "phones": [
+        "K",
+        "W",
+        "AA1",
+        "V",
+        "OW0"
+      ]
+    },
+    "SALCHOW": {
+      "phones": [
+        "S",
+        "AA1",
+        "L",
+        "HH",
+        "AW0"
+      ]
+    },
+    "MIKI": {
+      "phones": [
+        "M",
+        "IH1",
+        "K",
+        "IY0"
+      ]
+    },
+    "CAPTIONTEENAGERS": {
+      "phones": [
+        "K",
+        "AE1",
+        "P",
+        "SH",
+        "AH0",
+        "N",
+        "T",
+        "IY1",
+        "N",
+        "EY2",
+        "JH",
+        "ER0",
+        "Z"
+      ]
+    },
+    "YEAR-OLD'S": {
+      "phones": [
+        "Y",
+        "IH1",
+        "R",
+        "OW1",
+        "L",
+        "D",
+        "Z"
+      ]
+    },
+    "ETSY": {
+      "phones": [
+        "EH1",
+        "T",
+        "S",
+        "IY0"
+      ]
+    },
+    "PASTO": {
+      "phones": [
+        "P",
+        "AA1",
+        "S",
+        "T",
+        "OW0"
+      ]
+    },
+    "CORDILLERA": {
+      "phones": [
+        "K",
+        "AO1",
+        "R",
+        "D",
+        "AH0",
+        "L",
+        "EH1",
+        "R",
+        "AH0"
+      ]
+    },
+    "PLUSNET": {
+      "phones": [
+        "P",
+        "L",
+        "AH1",
+        "S",
+        "N",
+        "EH2",
+        "T"
+      ]
+    },
+    "SEVENTY-FOUR": {
+      "phones": [
+        "S",
+        "EH1",
+        "V",
+        "AH0",
+        "N",
+        "T",
+        "IY0",
+        "F",
+        "AO1",
+        "R"
+      ]
+    },
+    "POLAIR": {
+      "phones": [
+        "P",
+        "AO1",
+        "L",
+        "EH1",
+        "R"
+      ]
+    },
+    "AJ": {
+      "phones": [
+        "EY1",
+        "JH",
+        "EY1"
+      ]
+    },
+    "NEVERSOFT": {
+      "phones": [
+        "N",
+        "EH1",
+        "V",
+        "ER0",
+        "S",
+        "AA2",
+        "F",
+        "T"
+      ]
+    },
+    "TREYARCH": {
+      "phones": [
+        "T",
+        "R",
+        "EY1",
+        "ER0",
+        "CH"
+      ]
+    },
+    "SEVENTY-SEVEN": {
+      "phones": [
+        "S",
+        "EH1",
+        "V",
+        "AH0",
+        "N",
+        "T",
+        "IY0",
+        "S",
+        "EH1",
+        "V",
+        "AH0",
+        "N"
+      ]
+    },
+    "SAHARAREPORTERS": {
+      "phones": [
+        "S",
+        "AH0",
+        "HH",
+        "EH1",
+        "R",
+        "AH0",
+        "R",
+        "IH0",
+        "P",
+        "AO1",
+        "R",
+        "T",
+        "ER0",
+        "Z"
+      ]
+    },
+    "OKWUDILI": {
+      "phones": [
+        "AO1",
+        "K",
+        "W",
+        "UW0",
+        "D",
+        "IY1",
+        "L",
+        "IY0"
+      ]
+    },
+    "OGBUNIKE": {
+      "phones": [
+        "AA1",
+        "G",
+        "B",
+        "Y",
+        "UW1",
+        "N",
+        "IH0",
+        "K"
+      ]
+    },
+    "OYI": {
+      "phones": [
+        "OW0",
+        "Y",
+        "IY0"
+      ]
+    },
+    "ANAMBRA": {
+      "phones": [
+        "AH0",
+        "N",
+        "AE1",
+        "M",
+        "B",
+        "R",
+        "AH0"
+      ]
+    },
+    "MALMAISON": {
+      "phones": [
+        "M",
+        "AE1",
+        "L",
+        "M",
+        "EY1",
+        "Z",
+        "AH0",
+        "N"
+      ]
+    },
+    "PERCIER": {
+      "phones": [
+        "P",
+        "ER1",
+        "S",
+        "IY0",
+        "ER0"
+      ]
+    },
+    "HAVEYOURSAY": {
+      "phones": [
+        "HH",
+        "EY1",
+        "V",
+        "Y",
+        "AO2",
+        "R",
+        "S",
+        "EY1"
+      ]
+    },
+    "BMPA": {
+      "phones": [
+        "B",
+        "IY1",
+        "EH1",
+        "M",
+        "P",
+        "IY1",
+        "EY1"
+      ]
+    },
+    "AMAZON-OWNED": {
+      "phones": [
+        "AE1",
+        "M",
+        "AH0",
+        "Z",
+        "AA2",
+        "N",
+        "OW1",
+        "N",
+        "D"
+      ]
+    },
+    "COMIXOLOGY": {
+      "phones": [
+        "K",
+        "AH0",
+        "M",
+        "IH1",
+        "K",
+        "S",
+        "AO1",
+        "L",
+        "AH0",
+        "G",
+        "IY2"
+      ]
+    },
+    "GMT": {
+      "phones": [
+        "JH",
+        "IY1",
+        "EH1",
+        "M",
+        "T",
+        "IY1"
+      ]
+    },
+    "CHICHEWA": {
+      "phones": [
+        "CH",
+        "IH1",
+        "CH",
+        "AH0",
+        "W",
+        "AA2"
+      ]
+    },
+    "CANIS": {
+      "phones": [
+        "K",
+        "AE1",
+        "N",
+        "IH0",
+        "S"
+      ]
+    },
+    "SAGITTARIUS": {
+      "phones": [
+        "S",
+        "AE1",
+        "JH",
+        "AH0",
+        "T",
+        "AA1",
+        "R",
+        "IY0",
+        "AH0",
+        "S"
+      ]
+    },
+    "SEXTANS": {
+      "phones": [
+        "S",
+        "EH1",
+        "K",
+        "S",
+        "T",
+        "AH0",
+        "N",
+        "Z"
+      ]
+    },
+    "FORNAX": {
+      "phones": [
+        "F",
+        "AO1",
+        "R",
+        "N",
+        "AE0",
+        "K",
+        "S"
+      ]
+    },
+    "CARINA": {
+      "phones": [
+        "K",
+        "AH0",
+        "R",
+        "IY1",
+        "N",
+        "AH0"
+      ]
+    },
+    "BAMIRO": {
+      "phones": [
+        "B",
+        "AA0",
+        "M",
+        "IH1",
+        "R",
+        "OW0"
+      ]
+    },
+    "VR'S": {
+      "phones": [
+        "V",
+        "IY1",
+        "AA1",
+        "R",
+        "S"
+      ]
+    },
+    "HD": {
+      "phones": [
+        "EY1",
+        "CH",
+        "D",
+        "IY1"
+      ]
+    },
+    "FORTY-SIXTH": {
+      "phones": [
+        "F",
+        "AO1",
+        "R",
+        "T",
+        "IY0",
+        "S",
+        "IH1",
+        "K",
+        "S",
+        "TH"
+      ]
+    },
+    "ACTUALIZATION": {
+      "phones": [
+        "AE1",
+        "K",
+        "CH",
+        "UW2",
+        "AH0",
+        "L",
+        "AH0",
+        "Z",
+        "EY1",
+        "SH",
+        "AH0",
+        "N"
+      ]
+    },
+    "BIAFRA": {
+      "phones": [
+        "B",
+        "AY0",
+        "AE1",
+        "F",
+        "R",
+        "AH0"
+      ]
+    },
+    "MASSOB": {
+      "phones": [
+        "EH1",
+        "M",
+        "EY1",
+        "EH1",
+        "S",
+        "EH1",
+        "S",
+        "OW1",
+        "B",
+        "IY1"
+      ]
+    },
+    "NDIGBO": {
+      "phones": [
+        "N",
+        "D",
+        "IH1",
+        "G",
+        "B",
+        "OW0"
+      ]
+    },
+    "MARATHWADA": {
+      "phones": [
+        "M",
+        "EH1",
+        "R",
+        "AH0",
+        "TH",
+        "W",
+        "AA1",
+        "D",
+        "AH0"
+      ]
+    },
+    "ANDHRA": {
+      "phones": [
+        "AE1",
+        "N",
+        "D",
+        "R",
+        "AH0"
+      ]
+    },
+    "YANAM": {
+      "phones": [
+        "Y",
+        "AE1",
+        "N",
+        "AH0",
+        "M"
+      ]
+    },
+    "E-SPORTS": {
+      "phones": [
+        "IY1",
+        "S",
+        "P",
+        "AO1",
+        "R",
+        "T",
+        "S"
+      ]
+    },
+    "BACK-TO-BACK": {
+      "phones": [
+        "B",
+        "AE1",
+        "K",
+        "T",
+        "UW1",
+        "B",
+        "AE1",
+        "K"
+      ]
+    },
+    "SIDE-TO-SIDE": {
+      "phones": [
+        "S",
+        "AY1",
+        "D",
+        "T",
+        "UW1",
+        "S",
+        "AY1",
+        "D"
+      ]
+    },
+    "DUANIE": {
+      "phones": [
+        "D",
+        "W",
+        "EY1",
+        "N",
+        "IY0"
+      ]
+    },
+    "ABERYSTWYTH": {
+      "phones": [
+        "AE1",
+        "B",
+        "ER0",
+        "IH1",
+        "S",
+        "T",
+        "W",
+        "IH1",
+        "TH"
+      ]
+    },
+    "GBP'S": {
+      "phones": [
+        "JH",
+        "IY1",
+        "B",
+        "IY1",
+        "P",
+        "IY1",
+        "S"
+      ]
+    },
+    "HSR": {
+      "phones": [
+        "EY1",
+        "CH",
+        "EH1",
+        "S",
+        "AA1",
+        "R"
+      ]
+    },
+    "CN": {
+      "phones": [
+        "S",
+        "IY1",
+        "EH1",
+        "N"
+      ]
+    },
+    "COOKPAD": {
+      "phones": [
+        "K",
+        "UH1",
+        "K",
+        "P",
+        "AE2",
+        "D"
+      ]
+    },
+    "TRU": {
+      "phones": [
+        "T",
+        "R",
+        "UW0"
+      ]
+    },
+    "ZNAK": {
+      "phones": [
+        "Z",
+        "N",
+        "AH0",
+        "K"
+      ]
+    },
+    "FIFTY-SIX": {
+      "phones": [
+        "F",
+        "IH1",
+        "F",
+        "T",
+        "IY0",
+        "S",
+        "IH1",
+        "K",
+        "S"
+      ]
+    },
+    "GB": {
+      "phones": [
+        "JH",
+        "IY2",
+        "B",
+        "IY1"
+      ]
+    },
+    "EIGHTY-FIVE": {
+      "phones": [
+        "EY1",
+        "T",
+        "IY0",
+        "F",
+        "AY1",
+        "V"
+      ]
+    },
+    "QPR": {
+      "phones": [
+        "K",
+        "Y",
+        "UW1",
+        "P",
+        "IY1",
+        "AA1",
+        "R"
+      ]
+    },
+    "FIFTY-THREE": {
+      "phones": [
+        "F",
+        "IH1",
+        "F",
+        "T",
+        "IY0",
+        "TH",
+        "R",
+        "IY1"
+      ]
+    },
+    "ONEWORLD": {
+      "phones": [
+        "W",
+        "AH1",
+        "N",
+        "W",
+        "ER2",
+        "L",
+        "D"
+      ]
+    },
+    "THIRTY-FIRST": {
+      "phones": [
+        "TH",
+        "ER1",
+        "D",
+        "IY2",
+        "F",
+        "ER1",
+        "S",
+        "T"
+      ]
+    },
+    "RE-SKILL": {
+      "phones": [
+        "R",
+        "EY1",
+        "S",
+        "K",
+        "IH1",
+        "L"
+      ]
+    },
+    "LABRADORS": {
+      "phones": [
+        "L",
+        "AE1",
+        "B",
+        "R",
+        "AH0",
+        "D",
+        "AO2",
+        "R",
+        "Z"
+      ]
+    },
+    "FIFTY-FIVE": {
+      "phones": [
+        "F",
+        "IH1",
+        "F",
+        "T",
+        "IY0",
+        "F",
+        "AY1",
+        "V"
+      ]
+    },
+    "FIFTY-SEVEN": {
+      "phones": [
+        "F",
+        "IH1",
+        "F",
+        "T",
+        "IY0",
+        "S",
+        "EH1",
+        "V",
+        "AH0",
+        "N"
+      ]
+    },
+    "SIXTY-TWO": {
+      "phones": [
+        "S",
+        "IH1",
+        "K",
+        "S",
+        "T",
+        "IY0",
+        "T",
+        "UW1"
+      ]
+    },
+    "FCI": {
+      "phones": [
+        "F",
+        "CH",
+        "IY0"
+      ]
+    },
+    "CONSIGNMENTS": {
+      "phones": [
+        "K",
+        "AH0",
+        "N",
+        "S",
+        "AY1",
+        "N",
+        "M",
+        "AH0",
+        "N",
+        "T",
+        "S"
+      ]
+    },
+    "SANITISER": {
+      "phones": [
+        "S",
+        "AE1",
+        "N",
+        "IH0",
+        "T",
+        "AY2",
+        "Z",
+        "ER0"
+      ]
+    },
+    "MAYAKOVSKY": {
+      "phones": [
+        "M",
+        "AA1",
+        "Y",
+        "AH0",
+        "K",
+        "AA1",
+        "V",
+        "S",
+        "K",
+        "IY0"
+      ]
+    },
+    "TUSCANIA": {
+      "phones": [
+        "T",
+        "AH1",
+        "S",
+        "K",
+        "AH0",
+        "N",
+        "IY1",
+        "AH0"
+      ]
+    },
+    "HEATWAVES": {
+      "phones": [
+        "HH",
+        "IY1",
+        "T",
+        "W",
+        "EY2",
+        "V",
+        "Z"
+      ]
+    },
+    "PIENZA": {
+      "phones": [
+        "P",
+        "IY1",
+        "N",
+        "Z",
+        "AH0"
+      ]
+    },
+    "CINECITTA": {
+      "phones": [
+        "S",
+        "IH2",
+        "N",
+        "IH0",
+        "CH",
+        "IY1",
+        "T",
+        "AH0"
+      ]
+    },
+    "VOULEZ": {
+      "phones": [
+        "V",
+        "UW1",
+        "L",
+        "EH2",
+        "Z"
+      ]
+    },
+    "WESTLIFE": {
+      "phones": [
+        "W",
+        "EH0",
+        "S",
+        "T",
+        "L",
+        "AY1",
+        "F"
+      ]
+    },
+    "OFFSIDE": {
+      "phones": [
+        "AO1",
+        "F",
+        "S",
+        "AY2",
+        "D"
+      ]
+    },
+    "SURANNE": {
+      "phones": [
+        "S",
+        "ER0",
+        "IH0",
+        "N"
+      ]
+    },
+    "CWU": {
+      "phones": [
+        "S",
+        "IY1",
+        "D",
+        "AH1",
+        "B",
+        "AH0",
+        "L",
+        "Y",
+        "UW0",
+        "Y",
+        "UW1"
+      ]
+    },
+    "WARHAMMER": {
+      "phones": [
+        "W",
+        "AO1",
+        "R",
+        "HH",
+        "AE2",
+        "M",
+        "ER0"
+      ]
+    },
+    "DASHTI": {
+      "phones": [
+        "D",
+        "AE1",
+        "SH",
+        "T",
+        "IY0"
+      ]
+    },
+    "PPE": {
+      "phones": [
+        "P",
+        "IY1",
+        "P",
+        "IY1",
+        "IY1"
+      ]
+    },
+    "BCE": {
+      "phones": [
+        "B",
+        "IY1",
+        "S",
+        "IY1",
+        "IY1"
+      ]
+    },
+    "EMPEDOCLES": {
+      "phones": [
+        "EH1",
+        "M",
+        "P",
+        "EH1",
+        "D",
+        "AH0",
+        "K",
+        "AH0",
+        "L",
+        "Z"
+      ]
+    },
+    "EKPA": {
+      "phones": [
+        "EH1",
+        "K",
+        "P",
+        "AH0"
+      ]
+    },
+    "OHANAEZE": {
+      "phones": [
+        "OW0",
+        "HH",
+        "AH0",
+        "N",
+        "EY1",
+        "Z"
+      ]
+    },
+    "THIRD-PARTIES": {
+      "phones": [
+        "TH",
+        "ER1",
+        "D",
+        "P",
+        "AA1",
+        "R",
+        "T",
+        "IY0",
+        "Z"
+      ]
+    },
+    "ADVERTS": {
+      "phones": [
+        "AE0",
+        "D",
+        "V",
+        "ER1",
+        "T",
+        "S"
+      ]
+    },
+    "TWENTY-EIGHTH": {
+      "phones": [
+        "T",
+        "W",
+        "EH1",
+        "N",
+        "T",
+        "IY0",
+        "EY1",
+        "T",
+        "TH"
+      ]
+    },
+    "SEVENTY-SIX": {
+      "phones": [
+        "S",
+        "EH1",
+        "V",
+        "AH0",
+        "N",
+        "T",
+        "IY0",
+        "S",
+        "IH1",
+        "K",
+        "S"
+      ]
+    },
+    "TWINNING": {
+      "phones": [
+        "T",
+        "W",
+        "IH1",
+        "N",
+        "IH0",
+        "NG"
+      ]
+    },
+    "PHYTOESTROGEN": {
+      "phones": [
+        "F",
+        "AY0",
+        "T",
+        "OW0",
+        "S",
+        "T",
+        "R",
+        "AH0",
+        "JH",
+        "AH0",
+        "N"
+      ]
+    },
+    "GREENHOW'S": {
+      "phones": [
+        "G",
+        "R",
+        "IY1",
+        "N",
+        "HH",
+        "OW0",
+        "Z"
+      ]
+    },
+    "AMLIN": {
+      "phones": [
+        "AE1",
+        "M",
+        "L",
+        "IH0",
+        "N"
+      ]
+    },
+    "QBE": {
+      "phones": [
+        "K",
+        "Y",
+        "UW1",
+        "B",
+        "IY1",
+        "IY1"
+      ]
+    },
+    "OLANIYI": {
+      "phones": [
+        "AA1",
+        "L",
+        "AH0",
+        "N",
+        "IH0",
+        "Y",
+        "IY0"
+      ]
+    },
+    "AKINPELU": {
+      "phones": [
+        "EY1",
+        "K",
+        "IH0",
+        "N",
+        "P",
+        "EH1",
+        "L",
+        "UW0"
+      ]
+    },
+    "COLBIE": {
+      "phones": [
+        "K",
+        "OW1",
+        "L",
+        "B",
+        "IH0"
+      ]
+    },
+    "CAILLAT": {
+      "phones": [
+        "K",
+        "EY1",
+        "L",
+        "AE0",
+        "T"
+      ]
+    },
+    "REMASTERED": {
+      "phones": [
+        "R",
+        "IY2",
+        "M",
+        "AE2",
+        "S",
+        "T",
+        "ER0",
+        "D"
+      ]
+    },
+    "LEUKAEMIA": {
+      "phones": [
+        "L",
+        "UW1",
+        "K",
+        "IY1",
+        "M",
+        "IY0",
+        "AH0"
+      ]
+    },
+    "KESHA": {
+      "phones": [
+        "K",
+        "IH1",
+        "SH",
+        "AH0"
+      ]
+    },
+    "BASILAR": {
+      "phones": [
+        "B",
+        "AH0",
+        "S",
+        "IH1",
+        "L",
+        "ER0"
+      ]
+    },
+    "BIBASAL": {
+      "phones": [
+        "B",
+        "AY1",
+        "B",
+        "AE1",
+        "S",
+        "AH0",
+        "L"
+      ]
+    },
+    "BIBASILAR": {
+      "phones": [
+        "B",
+        "AY1",
+        "B",
+        "AH0",
+        "Z",
+        "IH1",
+        "L",
+        "ER0"
+      ]
+    },
+    "COPD": {
+      "phones": [
+        "S",
+        "IY1",
+        "OW1",
+        "P",
+        "IY1",
+        "D",
+        "IY1"
+      ]
+    },
+    "RBI": {
+      "phones": [
+        "AA1",
+        "R",
+        "B",
+        "IY1",
+        "AY1"
+      ]
+    },
+    "SUPERINTENDENCE": {
+      "phones": [
+        "S",
+        "UW2",
+        "P",
+        "ER0",
+        "IH0",
+        "N",
+        "T",
+        "EH1",
+        "N",
+        "D",
+        "AH0",
+        "N",
+        "S"
+      ]
+    },
+    "KOLKATA": {
+      "phones": [
+        "K",
+        "OW1",
+        "L",
+        "K",
+        "AA1",
+        "T",
+        "AH0"
+      ]
+    },
+    "INTERMEDIATE-RANGE": {
+      "phones": [
+        "IH2",
+        "N",
+        "T",
+        "ER0",
+        "M",
+        "IY1",
+        "D",
+        "IY0",
+        "IH0",
+        "T",
+        "R",
+        "EY1",
+        "N",
+        "JH"
+      ]
+    },
+    "BLU": {
+      "phones": [
+        "B",
+        "L",
+        "UW1"
+      ]
+    },
+    "FOUR-GOLD": {
+      "phones": [
+        "F",
+        "AO1",
+        "R",
+        "G",
+        "OW1",
+        "L",
+        "D"
+      ]
+    },
+    "INEC": {
+      "phones": [
+        "AY1",
+        "EH1",
+        "N",
+        "IY1",
+        "S",
+        "IY1"
+      ]
+    },
+    "LUGBE": {
+      "phones": [
+        "L",
+        "AH1",
+        "G",
+        "B",
+        "IY2"
+      ]
+    },
+    "ASR": {
+      "phones": [
+        "EY1",
+        "EH1",
+        "S",
+        "AA1",
+        "R"
+      ]
+    },
+    "VW": {
+      "phones": [
+        "V",
+        "IY1",
+        "D",
+        "AH1",
+        "B",
+        "AH0",
+        "L",
+        "Y",
+        "UW0"
+      ]
+    },
+    "OAE": {
+      "phones": [
+        "OW1",
+        "IY0"
+      ]
+    },
+    "GDPR": {
+      "phones": [
+        "JH",
+        "IY1",
+        "D",
+        "IY1",
+        "P",
+        "IY1",
+        "AA1",
+        "R"
+      ]
+    },
+    "CCPA": {
+      "phones": [
+        "S",
+        "IY1",
+        "S",
+        "IY1",
+        "P",
+        "IY1",
+        "EY1"
+      ]
+    },
+    "FIRST-EVER": {
+      "phones": [
+        "F",
+        "ER1",
+        "S",
+        "T",
+        "EH1",
+        "V",
+        "ER0"
+      ]
+    },
+    "SPELTHORNE": {
+      "phones": [
+        "S",
+        "P",
+        "EH1",
+        "L",
+        "TH",
+        "AO0",
+        "R",
+        "N"
+      ]
+    },
+    "MP": {
+      "phones": [
+        "EH1",
+        "M",
+        "P",
+        "IY1"
+      ]
+    },
+    "GMDSS": {
+      "phones": [
+        "JH",
+        "IY1",
+        "EH1",
+        "M",
+        "D",
+        "IY1",
+        "EH1",
+        "S",
+        "EH1",
+        "S"
+      ]
+    },
+    "METAREA": {
+      "phones": [
+        "M",
+        "AH0",
+        "T",
+        "EH1",
+        "R",
+        "IY0",
+        "AH0"
+      ]
+    },
+    "NZR": {
+      "phones": [
+        "EH1",
+        "N",
+        "Z",
+        "IY1",
+        "AA1",
+        "R"
+      ]
+    },
+    "NZ": {
+      "phones": [
+        "EH1",
+        "N",
+        "Z",
+        "IY1"
+      ]
+    },
+    "MASSOUD": {
+      "phones": [
+        "M",
+        "AE1",
+        "S",
+        "UW0",
+        "D"
+      ]
+    },
+    "SHIZHONG": {
+      "phones": [
+        "HH",
+        "Y",
+        "UW1",
+        "AH0",
+        "CH",
+        "AO1",
+        "NG"
+      ]
+    },
+    "HUOCHONG": {
+      "phones": [
+        "K",
+        "AE1",
+        "P",
+        "CH",
+        "ER0"
+      ]
+    },
+    "HEILONGJIANG": {
+      "phones": [
+        "K",
+        "AE1",
+        "N",
+        "AH0",
+        "N"
+      ]
+    },
+    "ERUPTOR": {
+      "phones": [
+        "IH2",
+        "R",
+        "AH1",
+        "P",
+        "T",
+        "ER0"
+      ]
+    },
+    "MORBIDITIES": {
+      "phones": [
+        "M",
+        "AO0",
+        "R",
+        "B",
+        "IH1",
+        "D",
+        "AH0",
+        "T",
+        "IY0",
+        "Z"
+      ]
+    },
+    "DEMOCRATISE": {
+      "phones": [
+        "D",
+        "IH0",
+        "M",
+        "AA1",
+        "K",
+        "R",
+        "AH0",
+        "T",
+        "AY2",
+        "Z"
+      ]
+    },
+    "OKUPE": {
+      "phones": [
+        "OW0",
+        "K",
+        "UW1",
+        "P"
+      ]
+    },
+    "EFCC": {
+      "phones": [
+        "IY1",
+        "EH2",
+        "F",
+        "S",
+        "IY2",
+        "S",
+        "IY1"
+      ]
+    },
+    "OJUKWU": {
+      "phones": [
+        "OW0",
+        "Y",
+        "UW0",
+        "K",
+        "W",
+        "UW0"
+      ]
+    },
+    "SIXTY-ONE": {
+      "phones": [
+        "S",
+        "IH1",
+        "K",
+        "S",
+        "T",
+        "IY0",
+        "W",
+        "AH1",
+        "N"
+      ]
+    },
+    "ADJUDICATIONS": {
+      "phones": [
+        "AH0",
+        "JH",
+        "UW2",
+        "D",
+        "AH0",
+        "K",
+        "EY1",
+        "SH",
+        "AH0",
+        "N",
+        "Z"
+      ]
+    },
+    "COLOURISATION": {
+      "phones": [
+        "K",
+        "AH1",
+        "L",
+        "ER0",
+        "IH0",
+        "Z",
+        "EY1",
+        "SH",
+        "AH0",
+        "N"
+      ]
+    },
+    "MONEY-LOSER": {
+      "phones": [
+        "M",
+        "AH1",
+        "N",
+        "IY0",
+        "L",
+        "UW1",
+        "Z",
+        "ER0"
+      ]
+    },
+    "FAQ": {
+      "phones": [
+        "P",
+        "OW1",
+        "S",
+        "T"
+      ]
+    },
+    "WHATSAPP": {
+      "phones": [
+        "W",
+        "AH0",
+        "T",
+        "S",
+        "AE1",
+        "P"
+      ]
+    },
+    "TRUBISKY": {
+      "phones": [
+        "T",
+        "R",
+        "UW1",
+        "B",
+        "IH0",
+        "S",
+        "K",
+        "IY0"
+      ]
+    },
+    "LIDOCAINE": {
+      "phones": [
+        "L",
+        "IY1",
+        "D",
+        "OW0",
+        "K",
+        "EY1",
+        "N"
+      ]
+    },
+    "PSU": {
+      "phones": [
+        "S",
+        "UW0"
+      ]
+    },
+    "BLACKPLAYER": {
+      "phones": [
+        "P",
+        "L",
+        "EY1",
+        "ER0"
+      ]
+    },
+    "NFC": {
+      "phones": [
+        "EH1",
+        "N",
+        "EH1",
+        "F",
+        "S",
+        "IY1"
+      ]
+    },
+    "MITRIBAH": {
+      "phones": [
+        "M",
+        "IH1",
+        "T",
+        "R",
+        "AY1",
+        "B",
+        "AH0"
+      ]
+    },
+    "RITU": {
+      "phones": [
+        "R",
+        "IH1",
+        "T",
+        "UH0"
+      ]
+    },
+    "DJ'S": {
+      "phones": [
+        "D",
+        "IY1",
+        "JH",
+        "EY1",
+        "S"
+      ]
+    },
+    "RVE": {
+      "phones": [
+        "AA1",
+        "R",
+        "V",
+        "IY1",
+        "IY1"
+      ]
+    },
+    "TREASURING": {
+      "phones": [
+        "T",
+        "R",
+        "EH1",
+        "ZH",
+        "ER0",
+        "IH0",
+        "NG"
+      ]
+    },
+    "LEC": {
+      "phones": [
+        "EH1",
+        "L",
+        "IY1",
+        "S",
+        "IY1"
+      ]
+    },
+    "FESTIVALOFMUSLIMCULTURES": {
+      "phones": [
+        "F",
+        "EH1",
+        "S",
+        "T",
+        "IH0",
+        "V",
+        "AH0",
+        "L",
+        "AO0",
+        "F",
+        "M",
+        "AH1",
+        "Z",
+        "L",
+        "AH0",
+        "M",
+        "K",
+        "AH1",
+        "L",
+        "CH",
+        "ER0",
+        "Z"
+      ]
+    },
+    "PDFASTHANA": {
+      "phones": [
+        "TH",
+        "AW1",
+        "Z",
+        "AH0",
+        "N",
+        "D"
+      ]
+    },
+    "ANUSHKA": {
+      "phones": [
+        "AH0",
+        "N",
+        "UH1",
+        "SH",
+        "K",
+        "AH0"
+      ]
+    },
+    "CROYDON": {
+      "phones": [
+        "K",
+        "R",
+        "OY1",
+        "D",
+        "AH0",
+        "N"
+      ]
+    },
+    "COLLOQUIALLY": {
+      "phones": [
+        "N",
+        "OW1",
+        "N"
+      ]
+    },
+    "NON-PLAYER": {
+      "phones": [
+        "N",
+        "AA1",
+        "N",
+        "P",
+        "L",
+        "EY1",
+        "ER0"
+      ]
+    },
+    "EJECTABLE": {
+      "phones": [
+        "IH0",
+        "JH",
+        "EH1",
+        "K",
+        "T",
+        "AH0",
+        "B",
+        "AH0",
+        "L"
+      ]
+    },
+    "SENTIENT": {
+      "phones": [
+        "S",
+        "EH1",
+        "N",
+        "T",
+        "AH0",
+        "N",
+        "T"
+      ]
+    },
+    "SIXTY-EIGHT": {
+      "phones": [
+        "S",
+        "IH1",
+        "K",
+        "S",
+        "T",
+        "IY0",
+        "EY1",
+        "T"
+      ]
+    },
+    "OFP": {
+      "phones": [
+        "OW0",
+        "F",
+        "P",
+        "IY1"
+      ]
+    },
+    "LGBT": {
+      "phones": [
+        "EH1",
+        "L",
+        "JH",
+        "IY1",
+        "B",
+        "IY1",
+        "T",
+        "IY1"
+      ]
+    },
+    "KFC": {
+      "phones": [
+        "K",
+        "EY1",
+        "EH1",
+        "F",
+        "S",
+        "IY1"
+      ]
+    },
+    "TIE-UP": {
+      "phones": [
+        "T",
+        "AY1",
+        "AH1",
+        "P"
+      ]
+    },
+    "NEWQUAY'S": {
+      "phones": [
+        "N",
+        "UW1",
+        "K",
+        "W",
+        "EY2",
+        "Z"
+      ]
+    },
+    "CBEST": {
+      "phones": [
+        "S",
+        "IY2",
+        "B",
+        "IY2",
+        "AH0",
+        "S",
+        "T"
+      ]
+    },
+    "CSET": {
+      "phones": [
+        "K",
+        "S",
+        "EH2",
+        "T"
+      ]
+    },
+    "CATEGORISED": {
+      "phones": [
+        "K",
+        "AE1",
+        "T",
+        "AH0",
+        "G",
+        "ER0",
+        "AY2",
+        "Z",
+        "D"
+      ]
+    },
+    "KRUMHOLTZ": {
+      "phones": [
+        "K",
+        "R",
+        "AH1",
+        "M",
+        "HH",
+        "OW2",
+        "L",
+        "T",
+        "S"
+      ]
+    },
+    "LEMONGRASS": {
+      "phones": [
+        "L",
+        "EH1",
+        "M",
+        "AH0",
+        "N",
+        "G",
+        "R",
+        "AE2",
+        "S"
+      ]
+    },
+    "AIR-CONDITIONER": {
+      "phones": [
+        "EH1",
+        "R",
+        "K",
+        "AH0",
+        "N",
+        "D",
+        "IH1",
+        "SH",
+        "AH0",
+        "N",
+        "ER0"
+      ]
+    },
+    "FLAT-SCREEN": {
+      "phones": [
+        "F",
+        "L",
+        "AE1",
+        "T",
+        "S",
+        "K",
+        "R",
+        "IY1",
+        "N"
+      ]
+    },
+    "DRAPPIE": {
+      "phones": [
+        "DH",
+        "AH0"
+      ]
+    },
+    "DEIL": {
+      "phones": [
+        "D",
+        "IY1",
+        "L"
+      ]
+    },
+    "UBL": {
+      "phones": [
+        "Y",
+        "UW1",
+        "B",
+        "AH0",
+        "L"
+      ]
+    },
+    "UNBANKED": {
+      "phones": [
+        "AH0",
+        "N",
+        "B",
+        "AE1",
+        "NG",
+        "K",
+        "T"
+      ]
+    },
+    "MYFITNESSPAL": {
+      "phones": [
+        "M",
+        "AY1",
+        "F",
+        "IH1",
+        "T",
+        "N",
+        "AH0",
+        "S",
+        "P",
+        "AE1",
+        "L"
+      ]
+    },
+    "PGA": {
+      "phones": [
+        "P",
+        "IY1",
+        "JH",
+        "IY1",
+        "EY1"
+      ]
+    },
+    "ABEOKUTA": {
+      "phones": [
+        "AE2",
+        "B",
+        "EH0",
+        "OW0",
+        "K",
+        "UW1",
+        "T",
+        "AH0"
+      ]
+    },
+    "OGUN": {
+      "phones": [
+        "OW1",
+        "G",
+        "AH0",
+        "N"
+      ]
+    },
+    "OLAYEMI": {
+      "phones": [
+        "AH0",
+        "L",
+        "AY1",
+        "Y",
+        "EH0",
+        "M",
+        "IY0"
+      ]
+    },
+    "ADEJARE": {
+      "phones": [
+        "AE1",
+        "D",
+        "IH0",
+        "JH",
+        "AA1",
+        "R",
+        "IY0"
+      ]
+    },
+    "EEYORE": {
+      "phones": [
+        "IY1",
+        "EY2",
+        "ER0"
+      ]
+    },
+    "FORTY-TWO": {
+      "phones": [
+        "F",
+        "AO1",
+        "R",
+        "T",
+        "IY0",
+        "T",
+        "UW1"
+      ]
+    },
+    "BILAL": {
+      "phones": [
+        "B",
+        "IH0",
+        "L",
+        "AA1",
+        "L"
+      ]
+    },
+    "BAOSHAN": {
+      "phones": [
+        "B",
+        "AW2",
+        "SH",
+        "AH0",
+        "N"
+      ]
+    },
+    "PPRO": {
+      "phones": [
+        "P",
+        "IY1",
+        "P",
+        "IY1",
+        "AA1",
+        "R",
+        "OW1"
+      ]
+    },
+    "CAILLEACH": {
+      "phones": [
+        "K",
+        "AY1",
+        "L",
+        "AH0"
+      ]
+    },
+    "LOMOND": {
+      "phones": [
+        "L",
+        "AH0",
+        "M",
+        "AH0",
+        "N",
+        "D"
+      ]
+    },
+    "XRSOIS": {
+      "phones": [
+        "EH1",
+        "K",
+        "S",
+        "AA0",
+        "R",
+        "S",
+        "OW2",
+        "IY0",
+        "S"
+      ]
+    },
+    "TWENTY-FOURTH": {
+      "phones": [
+        "T",
+        "W",
+        "EH1",
+        "N",
+        "T",
+        "IY0",
+        "F",
+        "AO1",
+        "R",
+        "TH"
+      ]
+    },
+    "PRE-ASSEMBLED": {
+      "phones": [
+        "P",
+        "R",
+        "IY1",
+        "AH0",
+        "S",
+        "EH1",
+        "M",
+        "B",
+        "AH0",
+        "L",
+        "D"
+      ]
+    },
+    "TEDDINGTON": {
+      "phones": [
+        "T",
+        "EH1",
+        "D",
+        "IH0",
+        "NG",
+        "T",
+        "AH0",
+        "N"
+      ]
+    },
+    "FDI": {
+      "phones": [
+        "F",
+        "D",
+        "IY0"
+      ]
+    },
+    "ROCHDALE": {
+      "phones": [
+        "R",
+        "AA1",
+        "CH",
+        "D",
+        "EY2",
+        "L"
+      ]
+    },
+    "FC": {
+      "phones": [
+        "EH1",
+        "F",
+        "S",
+        "IY1"
+      ]
+    },
+    "QUARTERFINALS": {
+      "phones": [
+        "K",
+        "W",
+        "AO1",
+        "R",
+        "T",
+        "ER0",
+        "F",
+        "AY1",
+        "N",
+        "AH0",
+        "L",
+        "Z"
+      ]
+    },
+    "KIPNER": {
+      "phones": [
+        "K",
+        "IH1",
+        "P",
+        "N",
+        "ER0"
+      ]
+    },
+    "EIGHTY-FOUR": {
+      "phones": [
+        "EY1",
+        "T",
+        "IY0",
+        "F",
+        "AO1",
+        "R"
+      ]
+    },
+    "ANAHIM": {
+      "phones": [
+        "AE1",
+        "N",
+        "AH0",
+        "HH",
+        "IY1",
+        "M"
+      ]
+    },
+    "FENCHURCH": {
+      "phones": [
+        "F",
+        "EH1",
+        "N",
+        "CH",
+        "ER2",
+        "CH"
+      ]
+    },
+    "BLACKWALL": {
+      "phones": [
+        "B",
+        "L",
+        "AE1",
+        "K",
+        "W",
+        "AO2",
+        "L"
+      ]
+    },
+    "BR": {
+      "phones": [
+        "B",
+        "IY1",
+        "AA1",
+        "R"
+      ]
+    },
+    "SOUTHEND": {
+      "phones": [
+        "S",
+        "AW1",
+        "TH",
+        "AH0",
+        "N",
+        "D"
+      ]
+    },
+    "LTSR": {
+      "phones": [
+        "EH1",
+        "L",
+        "T",
+        "IY1",
+        "EH1",
+        "S",
+        "AA1",
+        "R"
+      ]
+    },
+    "UPMINSTER": {
+      "phones": [
+        "AH1",
+        "P",
+        "M",
+        "IH2",
+        "N",
+        "S",
+        "T",
+        "ER0"
+      ]
+    },
+    "BASILDON": {
+      "phones": [
+        "B",
+        "AA0",
+        "S",
+        "IY1",
+        "L",
+        "D",
+        "AH0",
+        "N"
+      ]
+    },
+    "SHOEBURYNESS": {
+      "phones": [
+        "SH",
+        "OW1",
+        "B",
+        "ER0",
+        "AY1",
+        "N",
+        "AH0",
+        "S"
+      ]
+    },
+    "AMBANI": {
+      "phones": [
+        "AE1",
+        "M",
+        "B",
+        "AA1",
+        "N",
+        "IY0"
+      ]
+    },
+    "A-STORYLINE": {
+      "phones": [
+        "AH0",
+        "S",
+        "T",
+        "AO1",
+        "R",
+        "IY0",
+        "L",
+        "AY2",
+        "N"
+      ]
+    },
+    "SIXTY-NINE": {
+      "phones": [
+        "S",
+        "IH1",
+        "K",
+        "S",
+        "T",
+        "IY0",
+        "N",
+        "AY1",
+        "N"
+      ]
+    },
+    "HESSMAN": {
+      "phones": [
+        "HH",
+        "OW1",
+        "L",
+        "D",
+        "Z"
+      ]
+    },
+    "FIFTY-NINTH": {
+      "phones": [
+        "F",
+        "IH1",
+        "F",
+        "T",
+        "IY0",
+        "N",
+        "AY1",
+        "N",
+        "TH"
+      ]
+    },
+    "ARLETT": {
+      "phones": [
+        "AA1",
+        "R",
+        "L",
+        "IH0",
+        "T"
+      ]
+    },
+    "THIRTY-THIRD": {
+      "phones": [
+        "TH",
+        "ER1",
+        "D",
+        "IY2",
+        "TH",
+        "ER1",
+        "D"
+      ]
+    },
+    "BUSIS": {
+      "phones": [
+        "B",
+        "AH1",
+        "S",
+        "IH0",
+        "S"
+      ]
+    },
+    "FLTLT": {
+      "phones": [
+        "EH1",
+        "F",
+        "EH1",
+        "L",
+        "T",
+        "IY1",
+        "EH1",
+        "L",
+        "T",
+        "IY1"
+      ]
+    },
+    "NPO": {
+      "phones": [
+        "EH1",
+        "N",
+        "P",
+        "IY1",
+        "OW1"
+      ]
+    },
+    "TAMMI": {
+      "phones": [
+        "T",
+        "AE1",
+        "M",
+        "IH0"
+      ]
+    },
+    "MAZZINI": {
+      "phones": [
+        "M",
+        "AA0",
+        "T",
+        "S",
+        "IY1",
+        "N",
+        "IY0"
+      ]
+    },
+    "PROVAL": {
+      "phones": [
+        "P",
+        "R",
+        "UW1",
+        "V",
+        "AH0",
+        "L"
+      ]
+    },
+    "ASANA": {
+      "phones": [
+        "AA0",
+        "S",
+        "AA1",
+        "N",
+        "AH0"
+      ]
+    },
+    "MTLE": {
+      "phones": [
+        "M",
+        "T",
+        "AH0",
+        "L"
+      ]
+    },
+    "PHOTO-SHARING": {
+      "phones": [
+        "F",
+        "OW1",
+        "T",
+        "OW2",
+        "SH",
+        "EH1",
+        "R",
+        "IH0",
+        "NG"
+      ]
+    },
+    "DIY": {
+      "phones": [
+        "D",
+        "IY1",
+        "AY1",
+        "W",
+        "AY1"
+      ]
+    },
+    "RECURVE": {
+      "phones": [
+        "R",
+        "IY0",
+        "K",
+        "ER1",
+        "V"
+      ]
+    },
+    "NORTHEASTWARDS": {
+      "phones": [
+        "N",
+        "AO2",
+        "R",
+        "TH",
+        "IY1",
+        "S",
+        "T",
+        "W",
+        "ER0",
+        "D",
+        "Z"
+      ]
+    },
+    "COSCELLI": {
+      "phones": [
+        "K",
+        "AH0",
+        "S",
+        "CH",
+        "EH1",
+        "L",
+        "IY0"
+      ]
+    },
+    "CMA": {
+      "phones": [
+        "S",
+        "IY1",
+        "EH1",
+        "M",
+        "EY1"
+      ]
+    },
+    "KOLESNIKOVA": {
+      "phones": [
+        "K",
+        "AH0",
+        "L",
+        "EH1",
+        "S",
+        "N",
+        "IH0",
+        "K",
+        "OW1",
+        "V",
+        "AH0"
+      ]
+    },
+    "AK": {
+      "phones": [
+        "EY1",
+        "K",
+        "EY1"
+      ]
+    },
+    "FORTY-SEVENS": {
+      "phones": [
+        "F",
+        "AO1",
+        "R",
+        "T",
+        "IY0",
+        "S",
+        "EH1",
+        "V",
+        "AH0",
+        "N",
+        "Z"
+      ]
+    },
+    "NINE-MONTH-OLD": {
+      "phones": [
+        "N",
+        "AY1",
+        "N",
+        "M",
+        "AH1",
+        "N",
+        "TH",
+        "OW1",
+        "L",
+        "D"
+      ]
+    },
+    "KNOPFLER": {
+      "phones": [
+        "N",
+        "AA1",
+        "P",
+        "F",
+        "L",
+        "ER0"
+      ]
+    },
+    "MDT": {
+      "phones": [
+        "EH1",
+        "M",
+        "D",
+        "IY1",
+        "T",
+        "IY1"
+      ]
+    },
+    "BRYNN": {
+      "phones": [
+        "B",
+        "R",
+        "IH1",
+        "N"
+      ]
+    },
+    "CARTELLI": {
+      "phones": [
+        "K",
+        "AA0",
+        "R",
+        "T",
+        "EH1",
+        "L",
+        "IY0"
+      ]
+    },
+    "CATALYSE": {
+      "phones": [
+        "K",
+        "AE1",
+        "T",
+        "AH0",
+        "L",
+        "AH0",
+        "S"
+      ]
+    },
+    "CATALYZES": {
+      "phones": [
+        "K",
+        "AE1",
+        "T",
+        "AH0",
+        "L",
+        "AY2",
+        "Z",
+        "IH0",
+        "Z"
+      ]
+    },
+    "GACE": {
+      "phones": [
+        "G",
+        "AA1",
+        "CH",
+        "IY0"
+      ]
+    },
+    "NRS": {
+      "phones": [
+        "EH1",
+        "N",
+        "AA1",
+        "R",
+        "EH1",
+        "S"
+      ]
+    },
+    "PECKETT": {
+      "phones": [
+        "P",
+        "R",
+        "EH1",
+        "S",
+        "T"
+      ]
+    },
+    "DREADFULS": {
+      "phones": [
+        "D",
+        "R",
+        "EH1",
+        "D",
+        "F",
+        "AH0",
+        "L",
+        "Z"
+      ]
+    },
+    "MID-NINETEEN": {
+      "phones": [
+        "M",
+        "IH1",
+        "D",
+        "N",
+        "AY1",
+        "N",
+        "T",
+        "IY1",
+        "N"
+      ]
+    },
+    "POWYS": {
+      "phones": [
+        "P",
+        "AW1",
+        "IY0",
+        "Z"
+      ]
+    },
+    "THIRTY-NINE": {
+      "phones": [
+        "TH",
+        "ER1",
+        "D",
+        "IY2",
+        "N",
+        "AY1",
+        "N"
+      ]
+    },
+    "FIFTY-TWO": {
+      "phones": [
+        "F",
+        "IH1",
+        "F",
+        "T",
+        "IY0",
+        "T",
+        "UW1"
+      ]
+    },
+    "PANDEMRIX": {
+      "phones": [
+        "P",
+        "AE0",
+        "N",
+        "D",
+        "EH1",
+        "M",
+        "R",
+        "IH0",
+        "K",
+        "S"
+      ]
+    },
+    "NUNAVUMMIUT": {
+      "phones": [
+        "N",
+        "UH1",
+        "N",
+        "AH0",
+        "V",
+        "AH0",
+        "M",
+        "IY0",
+        "AH0",
+        "T"
+      ]
+    },
+    "LEVINIA": {
+      "phones": [
+        "L",
+        "IH0",
+        "V",
+        "IH1",
+        "N",
+        "Y",
+        "AH0"
+      ]
+    },
+    "BAUDELAIRE": {
+      "phones": [
+        "B",
+        "AW1",
+        "D",
+        "IH0",
+        "L",
+        "EY1",
+        "R"
+      ]
+    },
+    "OFFENCE": {
+      "phones": [
+        "AH0",
+        "F",
+        "EH1",
+        "N",
+        "S"
+      ]
+    },
+    "INEBRIATION": {
+      "phones": [
+        "IH2",
+        "N",
+        "EH1",
+        "B",
+        "R",
+        "IY0",
+        "EY2",
+        "SH",
+        "AH0",
+        "N"
+      ]
+    },
+    "CALIGARI": {
+      "phones": [
+        "K",
+        "AE1",
+        "L",
+        "IH0",
+        "G",
+        "AA1",
+        "R",
+        "IY0"
+      ]
+    },
+    "WIENE": {
+      "phones": [
+        "W",
+        "IY1",
+        "N"
+      ]
+    },
+    "SOMNAMBULIST": {
+      "phones": [
+        "S",
+        "AA1",
+        "M",
+        "N",
+        "AE0",
+        "M",
+        "B",
+        "UW1",
+        "L",
+        "IH0",
+        "S",
+        "T"
+      ]
+    },
+    "VEIDT": {
+      "phones": [
+        "V",
+        "AY1",
+        "T"
+      ]
+    },
+    "DUOLINGO": {
+      "phones": [
+        "D",
+        "UW0",
+        "OW0",
+        "L",
+        "IH1",
+        "NG",
+        "G",
+        "OW0"
+      ]
+    },
+    "BLIDWORTH": {
+      "phones": [
+        "B",
+        "L",
+        "IH1",
+        "D",
+        "W",
+        "ER2",
+        "TH"
+      ]
+    },
+    "NOTTINGHAMSHIRE": {
+      "phones": [
+        "N",
+        "AA1",
+        "T",
+        "IH0",
+        "NG",
+        "HH",
+        "AE2",
+        "M",
+        "SH",
+        "AY2",
+        "R"
+      ]
+    },
+    "TOPONYM": {
+      "phones": [
+        "T",
+        "AH0",
+        "P",
+        "AO1",
+        "N",
+        "IH0",
+        "M"
+      ]
+    },
+    "HYDROLOGICAL": {
+      "phones": [
+        "HH",
+        "AY1",
+        "D",
+        "R",
+        "AH0",
+        "L",
+        "AA1",
+        "JH",
+        "IH0",
+        "K",
+        "AH0",
+        "L"
+      ]
+    },
+    "HYDROLOGIC": {
+      "phones": [
+        "HH",
+        "AY1",
+        "D",
+        "R",
+        "AH0",
+        "L",
+        "AA1",
+        "JH",
+        "IH0",
+        "K"
+      ]
+    },
+    "TINUBU": {
+      "phones": [
+        "T",
+        "IH1",
+        "N",
+        "Y",
+        "UW0",
+        "B",
+        "UW0"
+      ]
+    },
+    "AIRCREWS": {
+      "phones": [
+        "EH1",
+        "R",
+        "K",
+        "R",
+        "UW2",
+        "Z"
+      ]
+    },
+    "NET-ZERO": {
+      "phones": [
+        "N",
+        "EH1",
+        "T",
+        "Z",
+        "IY1",
+        "R",
+        "OW0"
+      ]
+    },
+    "STOCKPORT": {
+      "phones": [
+        "S",
+        "T",
+        "AA1",
+        "K",
+        "P",
+        "AO2",
+        "R",
+        "T"
+      ]
+    },
+    "BARUCHEL": {
+      "phones": [
+        "B",
+        "AA2",
+        "R",
+        "UW1",
+        "K",
+        "AH0",
+        "L"
+      ]
+    },
+    "STOICK": {
+      "phones": [
+        "S",
+        "T",
+        "OW1",
+        "IH0",
+        "K"
+      ]
+    },
+    "VALKA": {
+      "phones": [
+        "V",
+        "AE1",
+        "L",
+        "K",
+        "AH0"
+      ]
+    },
+    "RBS": {
+      "phones": [
+        "AA1",
+        "R",
+        "B",
+        "IY1",
+        "EH1",
+        "S"
+      ]
+    },
+    "YAXLEY": {
+      "phones": [
+        "Y",
+        "AE1",
+        "K",
+        "S",
+        "L",
+        "IY0"
+      ]
+    },
+    "REMAR": {
+      "phones": [
+        "R",
+        "IH0",
+        "M",
+        "AA1",
+        "R"
+      ]
+    },
+    "ISSN": {
+      "phones": [
+        "F",
+        "AO1",
+        "R",
+        "T",
+        "IY0"
+      ]
+    },
+    "NINETY-SIX": {
+      "phones": [
+        "N",
+        "AY1",
+        "N",
+        "T",
+        "IY0",
+        "S",
+        "IH1",
+        "K",
+        "S"
+      ]
+    },
+    "KNAPDALE": {
+      "phones": [
+        "N",
+        "AE1",
+        "P",
+        "D",
+        "EY2",
+        "L"
+      ]
+    },
+    "CAR-OWNING": {
+      "phones": [
+        "K",
+        "AA1",
+        "R",
+        "OW1",
+        "N",
+        "IH0",
+        "NG"
+      ]
+    },
+    "SSP": {
+      "phones": [
+        "EH1",
+        "S",
+        "EH1",
+        "S",
+        "P",
+        "IY1"
+      ]
+    },
+    "LNG": {
+      "phones": [
+        "EH1",
+        "L",
+        "EH1",
+        "N",
+        "JH",
+        "IY1"
+      ]
+    },
+    "CALMAC'S": {
+      "phones": [
+        "K",
+        "AE1",
+        "L",
+        "M",
+        "AE0",
+        "K",
+        "S"
+      ]
+    },
+    "MACULA": {
+      "phones": [
+        "M",
+        "AE1",
+        "K",
+        "Y",
+        "UW0",
+        "L",
+        "AH0"
+      ]
+    },
+    "UTRICLE": {
+      "phones": [
+        "AH1",
+        "T",
+        "R",
+        "IH2",
+        "K",
+        "AH0",
+        "L"
+      ]
+    },
+    "UTRICULAR": {
+      "phones": [
+        "Y",
+        "UW0",
+        "T",
+        "R",
+        "IH1",
+        "K",
+        "Y",
+        "UW0",
+        "L",
+        "ER0"
+      ]
+    },
+    "VESTIBULOCOCHLEAR": {
+      "phones": [
+        "V",
+        "EH1",
+        "S",
+        "T",
+        "IH0",
+        "B",
+        "Y",
+        "UW2",
+        "L",
+        "AH0",
+        "K",
+        "AA1",
+        "K",
+        "L",
+        "IY0",
+        "ER0"
+      ]
+    },
+    "FACEBOOK-OWNED": {
+      "phones": [
+        "F",
+        "EY1",
+        "S",
+        "B",
+        "UH2",
+        "K",
+        "OW1",
+        "N",
+        "D"
+      ]
+    },
+    "INSTAGRAM": {
+      "phones": [
+        "OW1",
+        "N",
+        "D"
+      ]
+    },
+    "BULLINGDON": {
+      "phones": [
+        "B",
+        "UH1",
+        "L",
+        "IH0",
+        "NG",
+        "D",
+        "AH0",
+        "N"
+      ]
+    },
+    "SITH": {
+      "phones": [
+        "S",
+        "IH1",
+        "TH"
+      ]
+    },
+    "PAYPAL": {
+      "phones": [
+        "P",
+        "EY1",
+        "P",
+        "AE1",
+        "L"
+      ]
+    },
+    "CRYPTOCURRENCY": {
+      "phones": [
+        "K",
+        "R",
+        "IH2",
+        "P",
+        "T",
+        "OW0",
+        "K",
+        "ER1",
+        "AH0",
+        "N",
+        "S",
+        "IY0"
+      ]
+    },
+    "LANCIE": {
+      "phones": [
+        "L",
+        "AE1",
+        "NG",
+        "K",
+        "IY0"
+      ]
+    },
+    "KMC": {
+      "phones": [
+        "K",
+        "EY1",
+        "EH1",
+        "M",
+        "S",
+        "IY1"
+      ]
+    },
+    "CMC": {
+      "phones": [
+        "S",
+        "IY1",
+        "EH1",
+        "M",
+        "S",
+        "IY1"
+      ]
+    },
+    "PUROSREE": {
+      "phones": [
+        "P",
+        "Y",
+        "UH1",
+        "R",
+        "AH0",
+        "S",
+        "R",
+        "IY0"
+      ]
+    },
+    "BIBARDHAN": {
+      "phones": [
+        "B",
+        "IH0",
+        "B",
+        "AA1",
+        "R",
+        "D",
+        "AH0",
+        "N"
+      ]
+    },
+    "SOVAN": {
+      "phones": [
+        "S",
+        "OW1",
+        "V",
+        "AH0",
+        "N"
+      ]
+    },
+    "GABRIOLA": {
+      "phones": [
+        "G",
+        "EY1",
+        "B",
+        "R",
+        "IY0",
+        "OW1",
+        "L",
+        "AH0"
+      ]
+    },
+    "SRIWIJAYA": {
+      "phones": [
+        "S",
+        "R",
+        "IY1",
+        "W",
+        "IY0",
+        "Y",
+        "AA1",
+        "Y",
+        "AH0"
+      ]
+    },
+    "NEY'TIRI": {
+      "phones": [
+        "N",
+        "EY1",
+        "T",
+        "IH1",
+        "R",
+        "IY0"
+      ]
+    },
+    "RESURFACES": {
+      "phones": [
+        "R",
+        "IY0",
+        "S",
+        "ER1",
+        "F",
+        "AH0",
+        "S",
+        "IH0",
+        "Z"
+      ]
+    },
+    "CMO": {
+      "phones": [
+        "S",
+        "IY1",
+        "EH1",
+        "M",
+        "OW1"
+      ]
+    },
+    "ATIKU": {
+      "phones": [
+        "AH0",
+        "T",
+        "IY1",
+        "K",
+        "UW2"
+      ]
+    },
+    "UNHCR": {
+      "phones": [
+        "Y",
+        "UW1",
+        "EH1",
+        "N",
+        "EY1",
+        "CH",
+        "S",
+        "IY1",
+        "AA1",
+        "R"
+      ]
+    },
+    "LLULLAILLACO": {
+      "phones": [
+        "L",
+        "UW1",
+        "L",
+        "EY1",
+        "L",
+        "AH0",
+        "K",
+        "OW0"
+      ]
+    },
+    "CINEMASCOPE": {
+      "phones": [
+        "S",
+        "K",
+        "OW1",
+        "P"
+      ]
+    },
+    "PREMINGER": {
+      "phones": [
+        "P",
+        "R",
+        "IY0",
+        "M",
+        "IH0",
+        "NG",
+        "ER0"
+      ]
+    },
+    "RAAF": {
+      "phones": [
+        "R",
+        "AA0",
+        "F"
+      ]
+    },
+    "HMHS": {
+      "phones": [
+        "EY1",
+        "CH",
+        "EH1",
+        "M",
+        "EY1",
+        "CH",
+        "EH1",
+        "S"
+      ]
+    },
+    "BRITANNIC": {
+      "phones": [
+        "B",
+        "R",
+        "IH0",
+        "T",
+        "AE1",
+        "N",
+        "IH0",
+        "K"
+      ]
+    },
+    "EIGHTY-SIX": {
+      "phones": [
+        "EY1",
+        "T",
+        "IY0",
+        "S",
+        "IH1",
+        "K",
+        "S"
+      ]
+    },
+    "FT": {
+      "phones": [
+        "F",
+        "IY1",
+        "T"
+      ]
+    },
+    "PRE-HSE": {
+      "phones": [
+        "P",
+        "R",
+        "IY1",
+        "EY1",
+        "CH",
+        "EH1",
+        "S",
+        "IY1"
+      ]
+    },
+    "IERAN": {
+      "phones": [
+        "IY0",
+        "ER0",
+        "AA1",
+        "N"
+      ]
+    },
+    "HSBC": {
+      "phones": [
+        "EY1",
+        "CH",
+        "EH1",
+        "S",
+        "B",
+        "IY1",
+        "S",
+        "IY1"
+      ]
+    },
+    "DOESN": {
+      "phones": [
+        "D",
+        "IY1",
+        "OW1",
+        "IY1",
+        "EH1",
+        "S",
+        "EH1",
+        "N"
+      ]
+    },
+    "PCP": {
+      "phones": [
+        "P",
+        "IY1",
+        "S",
+        "IY1",
+        "P",
+        "IY1"
+      ]
+    },
+    "ROHINI": {
+      "phones": [
+        "W",
+        "AA1",
+        "Z"
+      ]
+    },
+    "HATTANGADI": {
+      "phones": [
+        "AA1",
+        "N",
+        "ER0",
+        "D"
+      ]
+    },
+    "THIRTY-SECOND": {
+      "phones": [
+        "TH",
+        "ER1",
+        "D",
+        "IY2",
+        "S",
+        "EH1",
+        "K",
+        "AH0",
+        "N",
+        "D"
+      ]
+    },
+    "SUREKHA": {
+      "phones": [
+        "AH0",
+        "N",
+        "D"
+      ]
+    },
+    "SIKRI": {
+      "phones": [
+        "HH",
+        "IH1",
+        "N",
+        "D",
+        "IY0"
+      ]
+    },
+    "LALITHA": {
+      "phones": [
+        "AH0",
+        "W",
+        "AO1",
+        "R",
+        "D",
+        "Z"
+      ]
+    },
+    "MAMMO": {
+      "phones": [
+        "W",
+        "AY1",
+        "L"
+      ]
+    },
+    "AMARAM": {
+      "phones": [
+        "AH0",
+        "N",
+        "D"
+      ]
+    },
+    "SHANTHAM": {
+      "phones": [
+        "IH0",
+        "JH",
+        "IH1",
+        "P",
+        "SH",
+        "AH0",
+        "N"
+      ]
+    },
+    "KASHEF": {
+      "phones": [
+        "AA1",
+        "N",
+        "ER0",
+        "D"
+      ]
+    },
+    "SIXTY-FIRST": {
+      "phones": [
+        "S",
+        "IH1",
+        "K",
+        "S",
+        "T",
+        "IY0",
+        "F",
+        "ER1",
+        "S",
+        "T"
+      ]
+    },
+    "NON-INDIAN": {
+      "phones": [
+        "N",
+        "AA1",
+        "N",
+        "IH1",
+        "N",
+        "D",
+        "IY0",
+        "AH0",
+        "N"
+      ]
+    },
+    "FORTY-SEVENTH": {
+      "phones": [
+        "F",
+        "AO1",
+        "R",
+        "T",
+        "IY0",
+        "S",
+        "EH1",
+        "V",
+        "AH0",
+        "N",
+        "TH"
+      ]
+    },
+    "SUDIPTA": {
+      "phones": [
+        "S",
+        "AH2",
+        "D",
+        "IH1",
+        "P",
+        "T",
+        "AH0"
+      ]
+    },
+    "CHAKRABORTY": {
+      "phones": [
+        "CH",
+        "AE1",
+        "K",
+        "R",
+        "AH0",
+        "B",
+        "AO1",
+        "R",
+        "T",
+        "IY0"
+      ]
+    },
+    "SOHINI": {
+      "phones": [
+        "S",
+        "OW1",
+        "IY1",
+        "N",
+        "IY0"
+      ]
+    },
+    "SENGUPTA": {
+      "phones": [
+        "S",
+        "EH1",
+        "NG",
+        "G",
+        "UH1",
+        "P",
+        "T",
+        "AH0"
+      ]
+    },
+    "BARIWALI": {
+      "phones": [
+        "B",
+        "EH1",
+        "R",
+        "IH0",
+        "W",
+        "AA1",
+        "L",
+        "IY0"
+      ]
+    },
+    "PAROMITAR": {
+      "phones": [
+        "P",
+        "AE1",
+        "R",
+        "AH0",
+        "M",
+        "IH0",
+        "T",
+        "AA1",
+        "R"
+      ]
+    },
+    "KONKONA": {
+      "phones": [
+        "K",
+        "AA1",
+        "NG",
+        "K",
+        "OW1",
+        "N",
+        "AH0"
+      ]
+    },
+    "SHARMILA": {
+      "phones": [
+        "SH",
+        "ER0",
+        "M",
+        "IH1",
+        "L",
+        "AH0"
+      ]
+    },
+    "TAGORE": {
+      "phones": [
+        "T",
+        "AH0",
+        "G",
+        "AO2",
+        "R"
+      ]
+    },
+    "KANGANA": {
+      "phones": [
+        "K",
+        "AE2",
+        "NG",
+        "G",
+        "AA1",
+        "N",
+        "AH0"
+      ]
+    },
+    "RANAUT": {
+      "phones": [
+        "R",
+        "AE1",
+        "N",
+        "AO2",
+        "T"
+      ]
+    },
+    "HONOURS": {
+      "phones": [
+        "AA1",
+        "N",
+        "ER0",
+        "Z"
+      ]
+    },
+    "ZAIRA": {
+      "phones": [
+        "Z",
+        "AY1",
+        "R",
+        "AH0"
+      ]
+    },
+    "WASIM": {
+      "phones": [
+        "W",
+        "AO1",
+        "S",
+        "IH0",
+        "M"
+      ]
+    },
+    "SIXTY-FOURTH": {
+      "phones": [
+        "S",
+        "IH1",
+        "K",
+        "S",
+        "T",
+        "IY0",
+        "F",
+        "AO1",
+        "R",
+        "TH"
+      ]
+    },
+    "DANGAL": {
+      "phones": [
+        "D",
+        "AE1",
+        "NG",
+        "G",
+        "AH0",
+        "L"
+      ]
+    },
+    "BROCKOVICH": {
+      "phones": [
+        "B",
+        "IY1",
+        "AA1",
+        "R",
+        "OW1",
+        "S",
+        "IY1",
+        "K",
+        "EY1",
+        "OW1",
+        "V",
+        "IY1",
+        "AY1",
+        "S",
+        "IY1",
+        "EY1",
+        "CH"
+      ]
+    },
+    "PERDITION": {
+      "phones": [
+        "P",
+        "IY1",
+        "IY1",
+        "AA1",
+        "R",
+        "D",
+        "IY1",
+        "AY1",
+        "T",
+        "IY1",
+        "AY1",
+        "OW1",
+        "EH1",
+        "N"
+      ]
+    },
+    "LEMONY": {
+      "phones": [
+        "EH1",
+        "L",
+        "IY1",
+        "EH1",
+        "M",
+        "OW1",
+        "EH1",
+        "N",
+        "W",
+        "AY1"
+      ]
+    },
+    "SNICKET": {
+      "phones": [
+        "EH1",
+        "S",
+        "EH1",
+        "N",
+        "AY1",
+        "S",
+        "IY1",
+        "K",
+        "EY1",
+        "IY1",
+        "T",
+        "IY1"
+      ]
+    },
+    "RE-RELEASED": {
+      "phones": [
+        "R",
+        "EY1",
+        "R",
+        "IY0",
+        "L",
+        "IY1",
+        "S",
+        "T"
+      ]
+    },
+    "VHS": {
+      "phones": [
+        "V",
+        "IY1",
+        "EY1",
+        "CH",
+        "EH1",
+        "S"
+      ]
+    },
+    "EIGHTY-NINE": {
+      "phones": [
+        "EY1",
+        "T",
+        "IY0",
+        "N",
+        "AY1",
+        "N"
+      ]
+    },
+    "CED": {
+      "phones": [
+        "AH0",
+        "N",
+        "D"
+      ]
+    },
+    "VIDEODISC": {
+      "phones": [
+        "DH",
+        "AH0"
+      ]
+    },
+    "INTERC": {
+      "phones": [
+        "AY1",
+        "EH1",
+        "N",
+        "T",
+        "IY1",
+        "IY1",
+        "AA1",
+        "R",
+        "S",
+        "IY1"
+      ]
+    },
+    "URSE": {
+      "phones": [
+        "Y",
+        "UW1",
+        "AA1",
+        "R",
+        "EH1",
+        "S",
+        "IY1"
+      ]
+    },
+    "TEXES": {
+      "phones": [
+        "T",
+        "IY1",
+        "IY1",
+        "EH1",
+        "K",
+        "S",
+        "IY1",
+        "EH1",
+        "S"
+      ]
+    },
+    "PARALYMPICS": {
+      "phones": [
+        "P",
+        "EH2",
+        "R",
+        "AH0",
+        "L",
+        "IH1",
+        "M",
+        "P",
+        "IH0",
+        "K",
+        "S"
+      ]
+    },
+    "TRANSSION": {
+      "phones": [
+        "T",
+        "IY1",
+        "AA1",
+        "R",
+        "AH0",
+        "EH1",
+        "N",
+        "EH1",
+        "S",
+        "EH1",
+        "S",
+        "AY1",
+        "OW1",
+        "EH1",
+        "N"
+      ]
+    },
+    "MINUTESKARIMLOO": {
+      "phones": [
+        "EH1",
+        "M",
+        "AY1",
+        "EH1",
+        "N",
+        "Y",
+        "UW1",
+        "T",
+        "IY1",
+        "IY1",
+        "EH1",
+        "S",
+        "K",
+        "EY1",
+        "AH0",
+        "AA1",
+        "R",
+        "AY1",
+        "EH1",
+        "M",
+        "EH1",
+        "L",
+        "OW1",
+        "OW1"
+      ]
+    },
+    "SHYAMALAN": {
+      "phones": [
+        "EH1",
+        "S",
+        "EY1",
+        "CH",
+        "W",
+        "AY1",
+        "AH0",
+        "EH1",
+        "M",
+        "AH0",
+        "EH1",
+        "L",
+        "AH0",
+        "EH1",
+        "N"
+      ]
+    },
+    "AIRBENDER": {
+      "phones": [
+        "AH0",
+        "AY1",
+        "AA1",
+        "R",
+        "B",
+        "IY1",
+        "IY1",
+        "EH1",
+        "N",
+        "D",
+        "IY1",
+        "IY1",
+        "AA1",
+        "R"
+      ]
+    },
+    "AZULA": {
+      "phones": [
+        "AH0",
+        "Z",
+        "IY1",
+        "Y",
+        "UW1",
+        "EH1",
+        "L",
+        "AH0"
+      ]
+    },
+    "BISHIL": {
+      "phones": [
+        "B",
+        "IY1",
+        "AY1",
+        "EH1",
+        "S",
+        "EY1",
+        "CH",
+        "AY1",
+        "EH1",
+        "L"
+      ]
+    },
+    "LL": {
+      "phones": [
+        "EH1",
+        "L",
+        "EH1",
+        "L"
+      ]
+    },
+    "N'T": {
+      "phones": [
+        "EH1",
+        "N",
+        "T",
+        "IY1"
+      ]
+    },
+    "EIGHTY-THREE": {
+      "phones": [
+        "EY1",
+        "T",
+        "IY0",
+        "TH",
+        "R",
+        "IY1"
+      ]
+    },
+    "SCALAWAGS": {
+      "phones": [
+        "EH1",
+        "S",
+        "S",
+        "IY1",
+        "AH0",
+        "EH1",
+        "L",
+        "AH0",
+        "D",
+        "AH1",
+        "B",
+        "AH0",
+        "L",
+        "Y",
+        "UW0",
+        "AH0",
+        "JH",
+        "IY1",
+        "EH1",
+        "S"
+      ]
+    },
+    "REDEEMERS": {
+      "phones": [
+        "AA1",
+        "R",
+        "IY1",
+        "D",
+        "IY1",
+        "IY1",
+        "IY1",
+        "EH1",
+        "M",
+        "IY1",
+        "AA1",
+        "R",
+        "EH1",
+        "S"
+      ]
+    },
+    "FIFTY-NINE": {
+      "phones": [
+        "F",
+        "IH1",
+        "F",
+        "T",
+        "IY0",
+        "N",
+        "AY1",
+        "N"
+      ]
+    },
+    "GT": {
+      "phones": [
+        "JH",
+        "IY1",
+        "T",
+        "IY1"
+      ]
+    },
+    "FASTBACKS": {
+      "phones": [
+        "F",
+        "AE1",
+        "S",
+        "T",
+        "B",
+        "AE2",
+        "K",
+        "S"
+      ]
+    },
+    "HP": {
+      "phones": [
+        "EY1",
+        "CH",
+        "P",
+        "IY1"
+      ]
+    },
+    "BROS": {
+      "phones": [
+        "B",
+        "R",
+        "OW1",
+        "Z"
+      ]
+    },
+    "BALCHOWSKY": {
+      "phones": [
+        "B",
+        "AE1",
+        "L",
+        "K",
+        "AW1",
+        "S",
+        "K",
+        "IY0"
+      ]
+    },
+    "GALAXIE": {
+      "phones": [
+        "G",
+        "AE1",
+        "L",
+        "AH0",
+        "K",
+        "S",
+        "IY0"
+      ]
+    },
+    "UNMODIFIED": {
+      "phones": [
+        "L",
+        "AA1",
+        "R",
+        "JH",
+        "L",
+        "IY0"
+      ]
+    },
+    "PDP": {
+      "phones": [
+        "P",
+        "IY1",
+        "D",
+        "IY1",
+        "P",
+        "IY1"
+      ]
+    },
+    "ABUBAKAR": {
+      "phones": [
+        "AH0",
+        "B",
+        "IY1",
+        "Y",
+        "UW1",
+        "B",
+        "IY1",
+        "AH0",
+        "K",
+        "EY1",
+        "AH0",
+        "AA1",
+        "R"
+      ]
+    },
+    "OLUSEGUN": {
+      "phones": [
+        "OW1",
+        "EH1",
+        "L",
+        "Y",
+        "UW1",
+        "EH1",
+        "S",
+        "IY1",
+        "JH",
+        "IY1",
+        "Y",
+        "UW1",
+        "EH1",
+        "N"
+      ]
+    },
+    "OBASANJO": {
+      "phones": [
+        "OW1",
+        "B",
+        "IY1",
+        "AH0",
+        "EH1",
+        "S",
+        "AH0",
+        "EH1",
+        "N",
+        "JH",
+        "EY1",
+        "OW1"
+      ]
+    },
+    "GCA": {
+      "phones": [
+        "JH",
+        "IY1",
+        "S",
+        "IY1",
+        "AH0"
+      ]
+    },
+    "DE-SAC": {
+      "phones": [
+        "D",
+        "IY1",
+        "S",
+        "AE1",
+        "K"
+      ]
+    },
+    "TANELI": {
+      "phones": [
+        "T",
+        "IY1",
+        "AH0",
+        "EH1",
+        "N",
+        "IY1",
+        "EH1",
+        "L",
+        "AY1"
+      ]
+    },
+    "INEN": {
+      "phones": [
+        "AY1",
+        "EH1",
+        "N",
+        "IY1",
+        "EH1",
+        "N"
+      ]
+    },
+    "MAICON": {
+      "phones": [
+        "EH1",
+        "M",
+        "AH0",
+        "AY1",
+        "S",
+        "IY1",
+        "OW1",
+        "EH1",
+        "N"
+      ]
+    },
+    "YANGKAI": {
+      "phones": [
+        "W",
+        "AY1",
+        "AH0",
+        "EH1",
+        "N",
+        "JH",
+        "IY1",
+        "K",
+        "EY1",
+        "AH0",
+        "AY1"
+      ]
+    },
+    "ITV": {
+      "phones": [
+        "AY1",
+        "T",
+        "IY1",
+        "V",
+        "IY1"
+      ]
+    },
+    "JALAN": {
+      "phones": [
+        "Y",
+        "AA1",
+        "L",
+        "AH0",
+        "N"
+      ]
+    },
+    "BAGAN": {
+      "phones": [
+        "B",
+        "EY1",
+        "G",
+        "AH0",
+        "N"
+      ]
+    },
+    "AJAM": {
+      "phones": [
+        "EY1",
+        "JH",
+        "AE2",
+        "M"
+      ]
+    },
+    "5G": {
+      "phones": [
+        "F",
+        "AY1",
+        "V",
+        "JH",
+        "IY1"
+      ]
+    },
+    "COLOROS": {
+      "phones": [
+        "K",
+        "AH1",
+        "L",
+        "ER0",
+        "OW1",
+        "EH1",
+        "S"
+      ]
+    },
+    "FOLAX": {
+      "phones": [
+        "F",
+        "OW1",
+        "L",
+        "AE0",
+        "K",
+        "S"
+      ]
+    },
+    "GIF": {
+      "phones": [
+        "G",
+        "IH1",
+        "F"
+      ]
+    },
+    "HAGAYOSHA": {
+      "phones": [
+        "HH",
+        "AA0",
+        "G",
+        "AA0",
+        "Y",
+        "OW1",
+        "SH",
+        "AH0"
+      ]
+    },
+    "INFINIX": {
+      "phones": [
+        "IH0",
+        "N",
+        "F",
+        "IH1",
+        "N",
+        "IH0",
+        "K",
+        "S"
+      ]
+    },
+    "JUMPA": {
+      "phones": [
+        "JH",
+        "UW1",
+        "M",
+        "P",
+        "AA0"
+      ]
+    },
+    "LABUBU": {
+      "phones": [
+        "L",
+        "AA1",
+        "B",
+        "UW0",
+        "B",
+        "UW0"
+      ]
+    },
+    "OPPO": {
+      "phones": [
+        "OW1",
+        "P",
+        "OW0"
+      ]
+    },
+    "PADANG": {
+      "phones": [
+        "P",
+        "AA0",
+        "D",
+        "AA1",
+        "NG"
+      ]
+    },
+    "PINANG": {
+      "phones": [
+        "P",
+        "IY0",
+        "N",
+        "AA1",
+        "NG"
+      ]
+    },
+    "PULAU": {
+      "phones": [
+        "P",
+        "UW1",
+        "L",
+        "AW0"
+      ]
+    },
+    "TECNO": {
+      "phones": [
+        "T",
+        "EH1",
+        "K",
+        "N",
+        "OW0"
+      ]
+    },
+    "TRANSEAU": {
+      "phones": [
+        "T",
+        "R",
+        "AE0",
+        "N",
+        "S",
+        "OW1"
+      ]
+    },
+    "XOS": {
+      "phones": [
+        "EH1",
+        "K",
+        "S",
+        "OW1",
+        "EH1",
+        "S"
+      ]
+    },
+    "ZIQI": {
+      "phones": [
+        "Z",
+        "IY1",
+        "CH",
+        "IY1"
+      ]
+    },
+    "GWAJIMA": {
+      "phones": [
+        "G",
+        "W",
+        "AH0",
+        "JH",
+        "IY1",
+        "M",
+        "AH0"
+      ]
+    },
+    "BAMOUN": {
+      "phones": [
+        "B",
+        "AE1",
+        "M",
+        "UW0",
+        "N"
+      ]
+    },
+    "FOUMBAN": {
+      "phones": [
+        "F",
+        "OW1",
+        "M",
+        "B",
+        "AE2",
+        "N"
+      ]
+    },
+    "YOWERI": {
+      "phones": [
+        "Y",
+        "AW1",
+        "ER0",
+        "IY0"
+      ]
+    },
+    "MUSEVENI": {
+      "phones": [
+        "M",
+        "Y",
+        "UW1",
+        "Z",
+        "IY0",
+        "V",
+        "EH1",
+        "N",
+        "IY0"
+      ]
+    },
+    "DAVIDO": {
+      "phones": [
+        "D",
+        "EY0",
+        "V",
+        "IH1",
+        "D",
+        "OW0"
+      ]
+    },
+    "JERASH": {
+      "phones": [
+        "JH",
+        "EH1",
+        "R",
+        "AH0",
+        "SH"
+      ]
+    },
+    "RELIQUIA": {
+      "phones": [
+        "R",
+        "IY0",
+        "L",
+        "IH1",
+        "K",
+        "Y",
+        "AH0"
+      ]
+    },
+    "DEMNA": {
+      "phones": [
+        "D",
+        "EH1",
+        "M",
+        "N",
+        "AH0"
+      ]
+    },
+    "WINDROW": {
+      "phones": [
+        "W",
+        "IH1",
+        "N",
+        "D",
+        "R",
+        "OW2"
+      ]
+    },
+    "WINDROWS": {
+      "phones": [
+        "W",
+        "IH1",
+        "N",
+        "D",
+        "R",
+        "OW2",
+        "Z"
+      ]
+    },
+    "WINDROWED": {
+      "phones": [
+        "W",
+        "IH1",
+        "N",
+        "D",
+        "R",
+        "OW2",
+        "D"
+      ]
+    },
+    "WINDROWING": {
+      "phones": [
+        "W",
+        "IH1",
+        "N",
+        "D",
+        "R",
+        "OW2",
+        "IH0",
+        "NG"
+      ]
+    },
+    "KAKAMEGA": {
+      "phones": [
+        "K",
+        "AA0",
+        "K",
+        "AA0",
+        "M",
+        "EH1",
+        "G",
+        "AH0"
+      ]
+    },
+    "BOBI": {
+      "phones": [
+        "B",
+        "AH1",
+        "B",
+        "IY0"
+      ]
+    },
+    "WILLINGTON": {
+      "phones": [
+        "W",
+        "IH0",
+        "L",
+        "IY1",
+        "NG",
+        "T",
+        "AH0",
+        "N"
+      ]
+    },
+    "SSENTAMU": {
+      "phones": [
+        "S",
+        "EH0",
+        "N",
+        "T",
+        "AA1",
+        "M",
+        "UW0"
+      ]
+    },
+    "NONUPLETS": {
+      "phones": [
+        "N",
+        "AA0",
+        "N",
+        "Y",
+        "UW1",
+        "P",
+        "L",
+        "AH0",
+        "T",
+        "S"
+      ]
+    },
+    "CHEROTICH": {
+      "phones": [
+        "CH",
+        "EH1",
+        "R",
+        "AH0",
+        "T",
+        "IH0",
+        "CH"
+      ]
+    },
+    "CHEROTICH'S": {
+      "phones": [
+        "CH",
+        "EH1",
+        "R",
+        "AH0",
+        "T",
+        "IH0",
+        "CH",
+        "IH0",
+        "S"
+      ]
+    },
+    "YAVI": {
+      "phones": [
+        "Y",
+        "AA1",
+        "V",
+        "IY0"
+      ]
+    },
+    "AVIANA": {
+      "phones": [
+        "EY1",
+        "V",
+        "IY0",
+        "AE1",
+        "N",
+        "AH0"
+      ]
+    },
+    "GUGAS": {
+      "phones": [
+        "G",
+        "UW1",
+        "G",
+        "AH0",
+        "S"
+      ]
+    },
+    "LEATHERWORKS": {
+      "phones": [
+        "L",
+        "EH1",
+        "TH",
+        "ER0",
+        "W",
+        "ER1",
+        "K",
+        "S"
+      ]
+    },
+    "WORDPRESS": {
+      "phones": [
+        "W",
+        "ER1",
+        "D",
+        "P",
+        "R",
+        "EH1",
+        "S"
+      ]
+    },
+    "TRUNC": {
+      "phones": [
+        "T",
+        "R",
+        "AH1",
+        "NG",
+        "K"
+      ]
+    },
+    "TRUNCDATE": {
+      "phones": [
+        "T",
+        "R",
+        "AH1",
+        "NG",
+        "K",
+        "D",
+        "EY1",
+        "T"
+      ]
+    },
+    "PRELOAD": {
+      "phones": [
+        "P",
+        "R",
+        "IY0",
+        "L",
+        "OW1",
+        "D"
+      ]
+    },
+    "PRELOADER": {
+      "phones": [
+        "P",
+        "R",
+        "IY0",
+        "L",
+        "OW1",
+        "D",
+        "ER0"
+      ]
+    },
+    "DIRA": {
+      "phones": [
+        "D",
+        "IH1",
+        "R",
+        "AH0"
+      ]
+    },
+    "Proteus": {
+      "phones": [
+        "P",
+        "R",
+        "OW1",
+        "U",
+        "T",
+        "IY0",
+        "AH0",
+        "S"
+      ]
+    },
+    "ARDUINO": {
+      "phones": [
+        "AA1",
+        "R",
+        "D",
+        "W",
+        "IY1",
+        "N",
+        "OW0"
+      ]
+    },
+    "CRAFTMANSHIP": {
+      "phones": [
+        "K",
+        "R",
+        "AE1",
+        "F",
+        "T",
+        "M",
+        "AH0",
+        "N",
+        "SH",
+        "IH2",
+        "P"
+      ]
+    },
+    "MATHCAD": {
+      "phones": [
+        "M",
+        "AE1",
+        "TH",
+        "K",
+        "AE2",
+        "D"
+      ]
+    },
+    "BALMORHEA": {
+      "phones": [
+        "B",
+        "AE0",
+        "L",
+        "M",
+        "AO1",
+        "IY1",
+        "AH0"
+      ]
+    },
+    "AMSMATH": {
+      "phones": [
+        "AE1",
+        "M",
+        "Z",
+        "M",
+        "AE2",
+        "TH"
+      ]
+    },
+    "ANATOLIJ": {
+      "phones": [
+        "AE2",
+        "N",
+        "AH0",
+        "T",
+        "OW1",
+        "L",
+        "IY0"
+      ]
+    },
+    "ASTEKAKEL": {
+      "phones": [
+        "AH0",
+        "S",
+        "T",
+        "EH1",
+        "K",
+        "AE1",
+        "K",
+        "AH0",
+        "L"
+      ]
+    },
+    "AXENS": {
+      "phones": [
+        "AE1",
+        "K",
+        "S",
+        "AH0",
+        "N",
+        "Z"
+      ]
+    },
+    "AXIOS": {
+      "phones": [
+        "AE1",
+        "K",
+        "S",
+        "IY0",
+        "AH0",
+        "S"
+      ]
+    },
+    "BANTIK": {
+      "phones": [
+        "B",
+        "AE1",
+        "N",
+        "T",
+        "IH0",
+        "K"
+      ]
+    },
+    "BEGINDOCUMENT": {
+      "phones": [
+        "B",
+        "IH0",
+        "G",
+        "IH1",
+        "N",
+        "D",
+        "AA1",
+        "K",
+        "Y",
+        "AH0",
+        "M",
+        "EH0",
+        "N",
+        "T"
+      ]
+    },
+    "BILDER": {
+      "phones": [
+        "B",
+        "AY1",
+        "L",
+        "D",
+        "ER0"
+      ]
+    },
+    "BLENDMODE": {
+      "phones": [
+        "B",
+        "L",
+        "EH1",
+        "N",
+        "D",
+        "M",
+        "OW1",
+        "D"
+      ]
+    },
+    "BODYPARTS": {
+      "phones": [
+        "B",
+        "AA1",
+        "D",
+        "IY0",
+        "P",
+        "AA2",
+        "R",
+        "T",
+        "S"
+      ]
+    },
+    "BREXIT": {
+      "phones": [
+        "B",
+        "R",
+        "EH1",
+        "K",
+        "S",
+        "IH0",
+        "T",
+        "S"
+      ]
+    },
+    "BULOCHKI": {
+      "phones": [
+        "B",
+        "Y",
+        "UW0",
+        "L",
+        "OW1",
+        "CH",
+        "K",
+        "IY0"
+      ]
+    },
+    "BUSCTL": {
+      "phones": [
+        "B",
+        "UH1",
+        "SH",
+        "T",
+        "AH0",
+        "L"
+      ]
+    },
+    "CARDSTORE": {
+      "phones": [
+        "K",
+        "AA1",
+        "R",
+        "D",
+        "S",
+        "T",
+        "AO2",
+        "R"
+      ]
+    },
+    "CHALSEN": {
+      "phones": [
+        "CH",
+        "AE1",
+        "L",
+        "S",
+        "AH0",
+        "N"
+      ]
+    },
+    "CHATGPT": {
+      "phones": [
+        "CH",
+        "AE1",
+        "T",
+        "JH",
+        "IY1",
+        "P",
+        "IY1",
+        "T",
+        "IY1"
+      ]
+    },
+    "CHECKANSWER": {
+      "phones": [
+        "CH",
+        "EH1",
+        "K",
+        "AE1",
+        "N",
+        "S",
+        "ER0"
+      ]
+    },
+    "COBBLEMON": {
+      "phones": [
+        "K",
+        "AA1",
+        "B",
+        "AH0",
+        "L",
+        "M",
+        "AH0",
+        "N"
+      ]
+    },
+    "COLLAGEABLE": {
+      "phones": [
+        "K",
+        "AH0",
+        "L",
+        "AA1",
+        "ZH",
+        "AH0",
+        "B",
+        "AH0",
+        "L"
+      ]
+    },
+    "COMBOBOX": {
+      "phones": [
+        "K",
+        "AH0",
+        "M",
+        "B",
+        "AO1",
+        "B",
+        "AA2",
+        "K",
+        "S"
+      ]
+    },
+    "CONSPECT": {
+      "phones": [
+        "K",
+        "AH0",
+        "N",
+        "S",
+        "P",
+        "EH2",
+        "K",
+        "T"
+      ]
+    },
+    "CONST": {
+      "phones": [
+        "K",
+        "AA2",
+        "N",
+        "S",
+        "T"
+      ]
+    },
+    "COUNTSIM": {
+      "phones": [
+        "K",
+        "AW1",
+        "N",
+        "T",
+        "S",
+        "IH1",
+        "M"
+      ]
+    },
+    "CREATESELECTOR": {
+      "phones": [
+        "K",
+        "R",
+        "IY0",
+        "EY1",
+        "T",
+        "S",
+        "AH0",
+        "L",
+        "EH1",
+        "K",
+        "T",
+        "ER0"
+      ]
+    },
+    "CRESTRON": {
+      "phones": [
+        "K",
+        "R",
+        "EH1",
+        "S",
+        "T",
+        "R",
+        "AH0",
+        "N"
+      ]
+    },
+    "CSHARP": {
+      "phones": [
+        "K",
+        "SH",
+        "AA1",
+        "R",
+        "P"
+      ]
+    },
+    "DEADPOOL": {
+      "phones": [
+        "D",
+        "EH1",
+        "D",
+        "P",
+        "UW2",
+        "L"
+      ]
+    },
+    "DEBAG": {
+      "phones": [
+        "D",
+        "IH0",
+        "B",
+        "AE2",
+        "G"
+      ]
+    },
+    "DIRECTX": {
+      "phones": [
+        "D",
+        "AH0",
+        "R",
+        "EH1",
+        "K",
+        "T",
+        "EH1",
+        "K",
+        "S"
+      ]
+    },
+    "DISCHORD": {
+      "phones": [
+        "D",
+        "IH1",
+        "S",
+        "K",
+        "AO0",
+        "R",
+        "D"
+      ]
+    },
+    "DOCUMENTCLASSARTICLE": {
+      "phones": [
+        "D",
+        "IY1",
+        "OW1",
+        "S",
+        "IY1",
+        "Y",
+        "UW1",
+        "EH1",
+        "M",
+        "IY1",
+        "EH1",
+        "N",
+        "T",
+        "IY1",
+        "S",
+        "IY1",
+        "EH1",
+        "L",
+        "EY1",
+        "EH1",
+        "S",
+        "EH1",
+        "S",
+        "EY1",
+        "AA1",
+        "R",
+        "T",
+        "IY1",
+        "AY1",
+        "S",
+        "IY1",
+        "EH1",
+        "L",
+        "IY1"
+      ]
+    },
+    "DOMOTICZ": {
+      "phones": [
+        "D",
+        "AH0",
+        "M",
+        "OW1",
+        "T",
+        "IH0",
+        "CH"
+      ]
+    },
+    "DOTA": {
+      "phones": [
+        "D",
+        "OW1",
+        "T",
+        "AH0"
+      ]
+    },
+    "EDUTECH": {
+      "phones": [
+        "EH2",
+        "JH",
+        "Y",
+        "UW0",
+        "T",
+        "EH2",
+        "K"
+      ]
+    },
+    "ELUVIUM": {
+      "phones": [
+        "IH0",
+        "L",
+        "UW1",
+        "V",
+        "IY0",
+        "AH0",
+        "M"
+      ]
+    },
+    "ENDDOCUMENT": {
+      "phones": [
+        "EH1",
+        "N",
+        "D",
+        "AA1",
+        "K",
+        "Y",
+        "AH0",
+        "M",
+        "EH0",
+        "N",
+        "T"
+      ]
+    },
+    "FAVICON": {
+      "phones": [
+        "F",
+        "EY1",
+        "V",
+        "IH0",
+        "K",
+        "AA2",
+        "N"
+      ]
+    },
+    "FEDORAPROJECT": {
+      "phones": [
+        "F",
+        "IH0",
+        "D",
+        "AO1",
+        "R",
+        "AH0",
+        "P",
+        "R",
+        "AA1",
+        "JH",
+        "EH0",
+        "K",
+        "T"
+      ]
+    },
+    "FFMPEG": {
+      "phones": [
+        "EH1",
+        "F",
+        "EH1",
+        "F",
+        "EH1",
+        "M",
+        "P",
+        "EH2",
+        "G"
+      ]
+    },
+    "FIRSTFIVECHARACTERS": {
+      "phones": [
+        "F",
+        "ER1",
+        "S",
+        "T",
+        "F",
+        "AY1",
+        "V",
+        "K",
+        "AE1",
+        "R",
+        "IH0",
+        "K",
+        "T",
+        "ER0",
+        "Z"
+      ]
+    },
+    "GETPRODUCT": {
+      "phones": [
+        "G",
+        "EH1",
+        "T",
+        "P",
+        "R",
+        "AA1",
+        "D",
+        "AH0",
+        "K",
+        "T"
+      ]
+    },
+    "GOSTECH": {
+      "phones": [
+        "G",
+        "AA1",
+        "S",
+        "T",
+        "EH2",
+        "K"
+      ]
+    },
+    "GRADIO": {
+      "phones": [
+        "G",
+        "R",
+        "EY1",
+        "D",
+        "IY0",
+        "OW0"
+      ]
+    },
+    "HATTA": {
+      "phones": [
+        "HH",
+        "AE1",
+        "T",
+        "AH0"
+      ]
+    },
+    "HEARTHSTONE": {
+      "phones": [
+        "HH",
+        "AA1",
+        "R",
+        "TH",
+        "S",
+        "T",
+        "OW2",
+        "N"
+      ]
+    },
+    "HMODULE": {
+      "phones": [
+        "EY1",
+        "CH",
+        "M",
+        "AA1",
+        "JH",
+        "UW0",
+        "L"
+      ]
+    },
+    "HORQIN": {
+      "phones": [
+        "HH",
+        "AO1",
+        "R",
+        "K",
+        "IH1",
+        "N"
+      ]
+    },
+    "IDEMIA": {
+      "phones": [
+        "AY0",
+        "D",
+        "IY1",
+        "M",
+        "IY0",
+        "AH0"
+      ]
+    },
+    "IMPLHOOKDX": {
+      "phones": [
+        "IH2",
+        "M",
+        "P",
+        "L",
+        "HH",
+        "UH1",
+        "K",
+        "D",
+        "IY1",
+        "EH1",
+        "K",
+        "S"
+      ]
+    },
+    "INDEXOF": {
+      "phones": [
+        "IH1",
+        "N",
+        "D",
+        "EH0",
+        "K",
+        "S",
+        "AH1",
+        "V"
+      ]
+    },
+    "INFINITIV": {
+      "phones": [
+        "IH2",
+        "N",
+        "F",
+        "IH1",
+        "N",
+        "IH0",
+        "T",
+        "IH0",
+        "V"
+      ]
+    },
+    "INIT": {
+      "phones": [
+        "IH2",
+        "N",
+        "IH1",
+        "T"
+      ]
+    },
+    "INVENTER": {
+      "phones": [
+        "IH2",
+        "N",
+        "V",
+        "EH1",
+        "N",
+        "T",
+        "ER0"
+      ]
+    },
+    "IPCONFIG": {
+      "phones": [
+        "AY2",
+        "P",
+        "IY2",
+        "K",
+        "AA2",
+        "N",
+        "F",
+        "IH1",
+        "G"
+      ]
+    },
+    "ITEMLISTBOX": {
+      "phones": [
+        "AY1",
+        "T",
+        "AH0",
+        "M",
+        "L",
+        "IH2",
+        "S",
+        "T",
+        "B",
+        "AA2",
+        "K",
+        "S"
+      ]
+    },
+    "JARRY": {
+      "phones": [
+        "JH",
+        "AE1",
+        "R",
+        "IY0"
+      ]
+    },
+    "JITSI": {
+      "phones": [
+        "JH",
+        "IH1",
+        "T",
+        "S",
+        "IY0"
+      ]
+    },
+    "JONAK": {
+      "phones": [
+        "JH",
+        "AA1",
+        "N",
+        "AH0",
+        "K"
+      ]
+    },
+    "JOTM": {
+      "phones": [
+        "JH",
+        "AA1",
+        "T",
+        "M"
+      ]
+    },
+    "KEYCODE": {
+      "phones": [
+        "K",
+        "IY1",
+        "K",
+        "OW1",
+        "D"
+      ]
+    },
+    "KEYGEN": {
+      "phones": [
+        "K",
+        "IY1",
+        "G",
+        "AH0",
+        "N"
+      ]
+    },
+    "KILMAKOV": {
+      "phones": [
+        "K",
+        "IH1",
+        "L",
+        "M",
+        "AH0",
+        "K",
+        "AA0",
+        "V"
+      ]
+    },
+    "LIBSAR": {
+      "phones": [
+        "L",
+        "IH1",
+        "B",
+        "S",
+        "ER0"
+      ]
+    },
+    "LIBUSB": {
+      "phones": [
+        "L",
+        "AY2",
+        "B",
+        "Y",
+        "UW1",
+        "EH1",
+        "S",
+        "B",
+        "IY1"
+      ]
+    },
+    "LOCALHOST": {
+      "phones": [
+        "L",
+        "OW0",
+        "K",
+        "AE1",
+        "L",
+        "HH",
+        "OW2",
+        "S",
+        "T"
+      ]
+    },
+    "LOWERCASE": {
+      "phones": [
+        "L",
+        "OW1",
+        "ER0",
+        "K",
+        "EY2",
+        "S"
+      ]
+    },
+    "LUTRON": {
+      "phones": [
+        "L",
+        "UW1",
+        "T",
+        "R",
+        "AA2",
+        "N"
+      ]
+    },
+    "MARKT": {
+      "phones": [
+        "M",
+        "AA1",
+        "R",
+        "K",
+        "T"
+      ]
+    },
+    "MATPLOTLIB": {
+      "phones": [
+        "M",
+        "AH0",
+        "T",
+        "P",
+        "L",
+        "AH0",
+        "T",
+        "L",
+        "IH1",
+        "B"
+      ]
+    },
+    "METRIKA": {
+      "phones": [
+        "M",
+        "EH1",
+        "T",
+        "R",
+        "IH0",
+        "K",
+        "AH0"
+      ]
+    },
+    "MINECRAFT": {
+      "phones": [
+        "M",
+        "AY1",
+        "N",
+        "K",
+        "R",
+        "AE2",
+        "F",
+        "T"
+      ]
+    },
+    "MORTIFEX": {
+      "phones": [
+        "M",
+        "AO1",
+        "R",
+        "T",
+        "IH0",
+        "F",
+        "EH0",
+        "K",
+        "S"
+      ]
+    },
+    "MYSTRING": {
+      "phones": [
+        "M",
+        "AY1",
+        "S",
+        "T",
+        "R",
+        "IH1",
+        "NG"
+      ]
+    },
+    "MYUSER": {
+      "phones": [
+        "M",
+        "Y",
+        "UW1",
+        "Z",
+        "ER0"
+      ]
+    },
+    "NATUS": {
+      "phones": [
+        "N",
+        "EY1",
+        "T",
+        "AH0",
+        "S"
+      ]
+    },
+    "NLINE": {
+      "phones": [
+        "EH1",
+        "N",
+        "L",
+        "AY2",
+        "N"
+      ]
+    },
+    "NSOLVE": {
+      "phones": [
+        "EH1",
+        "N",
+        "S",
+        "AA1",
+        "L",
+        "V"
+      ]
+    },
+    "ONBINDVIEWHOLDER": {
+      "phones": [
+        "AA1",
+        "N",
+        "B",
+        "AY1",
+        "N",
+        "D",
+        "V",
+        "Y",
+        "UW1",
+        "HH",
+        "OW1",
+        "L",
+        "D",
+        "ER0"
+      ]
+    },
+    "ONCLICK": {
+      "phones": [
+        "AA1",
+        "N",
+        "K",
+        "L",
+        "IH0",
+        "K"
+      ]
+    },
+    "ONKEYPRESS": {
+      "phones": [
+        "AA1",
+        "N",
+        "K",
+        "IY2",
+        "P",
+        "R",
+        "IH0",
+        "S"
+      ]
+    },
+    "ONLAUNCHERLOADINGCOMPLETE": {
+      "phones": [
+        "AA1",
+        "N",
+        "L",
+        "AO1",
+        "N",
+        "CH",
+        "ER0",
+        "L",
+        "OW1",
+        "D",
+        "IH0",
+        "NG",
+        "K",
+        "AH0",
+        "M",
+        "P",
+        "L",
+        "IY1",
+        "T"
+      ]
+    },
+    "OPENAI": {
+      "phones": [
+        "OW1",
+        "P",
+        "AH0",
+        "N",
+        "EY1",
+        "AY1"
+      ]
+    },
+    "OPENGL": {
+      "phones": [
+        "OW1",
+        "P",
+        "AH0",
+        "N",
+        "JH",
+        "IY1",
+        "EH1",
+        "L"
+      ]
+    },
+    "OPENHAB": {
+      "phones": [
+        "OW1",
+        "P",
+        "AH0",
+        "N",
+        "HH",
+        "AE1",
+        "B"
+      ]
+    },
+    "OPENLAYERS": {
+      "phones": [
+        "OW1",
+        "P",
+        "AH0",
+        "N",
+        "L",
+        "EY2",
+        "ER0",
+        "Z"
+      ]
+    },
+    "OPENSSH": {
+      "phones": [
+        "OW1",
+        "P",
+        "AH0",
+        "N",
+        "EH1",
+        "S",
+        "EH1",
+        "S",
+        "EY1",
+        "CH"
+      ]
+    },
+    "OPTIPLEX": {
+      "phones": [
+        "AA1",
+        "P",
+        "T",
+        "AH0",
+        "P",
+        "L",
+        "EH2",
+        "K",
+        "S"
+      ]
+    },
+    "PARTIZIP": {
+      "phones": [
+        "P",
+        "AA0",
+        "R",
+        "T",
+        "IY1",
+        "Z",
+        "IH1",
+        "P"
+      ]
+    },
+    "PIOULARD": {
+      "phones": [
+        "P",
+        "AY1",
+        "AH0",
+        "L",
+        "ER0",
+        "D"
+      ]
+    },
+    "PRATERITUM": {
+      "phones": [
+        "P",
+        "R",
+        "AE1",
+        "T",
+        "ER0",
+        "AY2",
+        "T",
+        "AH0",
+        "M"
+      ]
+    },
+    "PRELAUNCHER": {
+      "phones": [
+        "P",
+        "R",
+        "IY0",
+        "L",
+        "AO1",
+        "N",
+        "CH",
+        "ER0"
+      ]
+    },
+    "PREV": {
+      "phones": [
+        "P",
+        "R",
+        "AH0",
+        "V"
+      ]
+    },
+    "PROOFREADER": {
+      "phones": [
+        "P",
+        "R",
+        "UW1",
+        "F",
+        "R",
+        "IY2",
+        "D",
+        "ER0"
+      ]
+    },
+    "PROTEUS": {
+      "phones": [
+        "P",
+        "R",
+        "OW1",
+        "T",
+        "IY0",
+        "AH0",
+        "S"
+      ]
+    },
+    "PYGAME": {
+      "phones": [
+        "P",
+        "IH1",
+        "G",
+        "EY2",
+        "M"
+      ]
+    },
+    "QUERYKEY": {
+      "phones": [
+        "K",
+        "W",
+        "IY1",
+        "R",
+        "IY0",
+        "K",
+        "IY1"
+      ]
+    },
+    "QUERYSELECTOR": {
+      "phones": [
+        "K",
+        "W",
+        "IY1",
+        "R",
+        "IY0",
+        "S",
+        "AH0",
+        "L",
+        "EH1",
+        "K",
+        "T",
+        "ER0"
+      ]
+    },
+    "RANSAC": {
+      "phones": [
+        "R",
+        "AE1",
+        "N",
+        "S",
+        "AE2",
+        "K"
+      ]
+    },
+    "RECYCLEVIEW": {
+      "phones": [
+        "R",
+        "IY0",
+        "S",
+        "AY1",
+        "K",
+        "AH0",
+        "L",
+        "V",
+        "Y",
+        "UW1"
+      ]
+    },
+    "REFERER": {
+      "phones": [
+        "R",
+        "EH2",
+        "F",
+        "ER0",
+        "ER0"
+      ]
+    },
+    "RENDERER": {
+      "phones": [
+        "R",
+        "EH1",
+        "N",
+        "D",
+        "ER0",
+        "ER0"
+      ]
+    },
+    "RESELECT": {
+      "phones": [
+        "R",
+        "EH1",
+        "S",
+        "IH0",
+        "L",
+        "EH2",
+        "K",
+        "T"
+      ]
+    },
+    "REVIT": {
+      "phones": [
+        "R",
+        "EH1",
+        "V",
+        "AH0",
+        "T"
+      ]
+    },
+    "RIPEMD": {
+      "phones": [
+        "R",
+        "AY1",
+        "P",
+        "AH0",
+        "M",
+        "D"
+      ]
+    },
+    "RLIKE": {
+      "phones": [
+        "AA1",
+        "R",
+        "L",
+        "AY2",
+        "K"
+      ]
+    },
+    "ROSSTAT": {
+      "phones": [
+        "R",
+        "OW1",
+        "Z",
+        "S",
+        "T",
+        "AE2",
+        "T"
+      ]
+    },
+    "RUNTIME": {
+      "phones": [
+        "R",
+        "AH1",
+        "N",
+        "T",
+        "AY2",
+        "M"
+      ]
+    },
+    "RVISION": {
+      "phones": [
+        "R",
+        "V",
+        "IH2",
+        "ZH",
+        "AH0",
+        "N"
+      ]
+    },
+    "RVLAB": {
+      "phones": [
+        "R",
+        "V",
+        "L",
+        "AE0",
+        "B"
+      ]
+    },
+    "SCILAB": {
+      "phones": [
+        "S",
+        "IH0",
+        "L",
+        "AE2",
+        "B"
+      ]
+    },
+    "SDOORS": {
+      "phones": [
+        "EH1",
+        "S",
+        "D",
+        "AO1",
+        "R",
+        "Z"
+      ]
+    },
+    "SELECTEDITEM": {
+      "phones": [
+        "S",
+        "AH0",
+        "L",
+        "EH1",
+        "K",
+        "T",
+        "AH0",
+        "D",
+        "AY1",
+        "T",
+        "AH0",
+        "M"
+      ]
+    },
+    "SEMMARIS": {
+      "phones": [
+        "S",
+        "EH1",
+        "M",
+        "EH1",
+        "R",
+        "IH0",
+        "S"
+      ]
+    },
+    "SERGEEVICH": {
+      "phones": [
+        "S",
+        "ER1",
+        "JH",
+        "IY2",
+        "IH0",
+        "V",
+        "IH0",
+        "CH"
+      ]
+    },
+    "SERVIC": {
+      "phones": [
+        "S",
+        "ER1",
+        "V",
+        "IH0",
+        "K"
+      ]
+    },
+    "SIMPLYFLEX": {
+      "phones": [
+        "S",
+        "IH1",
+        "M",
+        "P",
+        "L",
+        "IY0",
+        "F",
+        "L",
+        "EH2",
+        "K",
+        "S"
+      ]
+    },
+    "SLASTENABAKERY": {
+      "phones": [
+        "S",
+        "L",
+        "AE1",
+        "S",
+        "T",
+        "AH0",
+        "N",
+        "AH0",
+        "B",
+        "EY1",
+        "K",
+        "ER0",
+        "IY0"
+      ]
+    },
+    "SOONLU": {
+      "phones": [
+        "S",
+        "UW1",
+        "N",
+        "L",
+        "UW0"
+      ]
+    },
+    "STEPER": {
+      "phones": [
+        "S",
+        "T",
+        "EH1",
+        "P",
+        "ER0"
+      ]
+    },
+    "STEPING": {
+      "phones": [
+        "S",
+        "T",
+        "EH1",
+        "P",
+        "IH0",
+        "NG"
+      ]
+    },
+    "STOCARD": {
+      "phones": [
+        "S",
+        "T",
+        "OW1",
+        "K",
+        "AA2",
+        "R",
+        "D"
+      ]
+    },
+    "SUBSTRING": {
+      "phones": [
+        "S",
+        "AH1",
+        "B",
+        "S",
+        "T",
+        "R",
+        "IH2",
+        "NG"
+      ]
+    },
+    "SUDO": {
+      "phones": [
+        "S",
+        "UW1",
+        "D",
+        "OW0"
+      ]
+    },
+    "THALES": {
+      "phones": [
+        "TH",
+        "EY1",
+        "L",
+        "Z"
+      ]
+    },
+    "TOOLKIT": {
+      "phones": [
+        "T",
+        "UW1",
+        "L",
+        "K",
+        "IH0",
+        "T"
+      ]
+    },
+    "TOUCHNOTE": {
+      "phones": [
+        "T",
+        "AH1",
+        "CH",
+        "N",
+        "OW2",
+        "T"
+      ]
+    },
+    "TROVO": {
+      "phones": [
+        "T",
+        "R",
+        "OW1",
+        "V",
+        "OW0"
+      ]
+    },
+    "TVOROGOM": {
+      "phones": [
+        "T",
+        "V",
+        "AO1",
+        "R",
+        "AH0",
+        "G",
+        "AH0",
+        "M"
+      ]
+    },
+    "UNITTESTS": {
+      "phones": [
+        "Y",
+        "UW1",
+        "N",
+        "IH0",
+        "T",
+        "EH1",
+        "S"
+      ]
+    },
+    "USEPACKAGEAMSMATH": {
+      "phones": [
+        "Y",
+        "UW1",
+        "S",
+        "P",
+        "AE0",
+        "K",
+        "IH0",
+        "JH",
+        "AH0",
+        "M",
+        "Z",
+        "M",
+        "AE2",
+        "TH"
+      ]
+    },
+    "VEC": {
+      "phones": [
+        "V",
+        "EH1",
+        "K"
+      ]
+    },
+    "VEOLIA": {
+      "phones": [
+        "V",
+        "EY0",
+        "OW1",
+        "L",
+        "IY0",
+        "AH0"
+      ]
+    },
+    "VINCERE": {
+      "phones": [
+        "V",
+        "IH0",
+        "N",
+        "S",
+        "IH1",
+        "R"
+      ]
+    },
+    "VMWARE": {
+      "phones": [
+        "V",
+        "M",
+        "W",
+        "EH2",
+        "R"
+      ]
+    },
+    "VOSK": {
+      "phones": [
+        "V",
+        "AA1",
+        "S",
+        "K"
+      ]
+    },
+    "VOVA": {
+      "phones": [
+        "V",
+        "OW1",
+        "V",
+        "AH0"
+      ]
+    },
+    "WOOCOMMERCE": {
+      "phones": [
+        "W",
+        "UW1",
+        "K",
+        "AA1",
+        "M",
+        "ER0",
+        "S"
+      ]
+    },
+    "WORKAROUND": {
+      "phones": [
+        "W",
+        "ER1",
+        "K",
+        "AH0",
+        "R",
+        "AW1",
+        "N",
+        "D"
+      ]
+    },
+    "XINI": {
+      "phones": [
+        "SH",
+        "IY1",
+        "N",
+        "IY0"
+      ]
+    },
+    "YOUTRACK": {
+      "phones": [
+        "Y",
+        "UW1",
+        "T",
+        "R",
+        "AE2",
+        "K"
+      ]
+    },
+    "ZABBIX": {
+      "phones": [
+        "Z",
+        "AE1",
+        "B",
+        "IH0",
+        "K",
+        "S"
+      ]
+    },
+    "INCITE": {
+      "phones": [
+        "IH0",
+        "N",
+        "S",
+        "AY1",
+        "T"
+      ]
+    },
+    "CISSÉ": {
+      "phones": [
+        "S",
+        "IH0",
+        "S",
+        "EY1"
+      ]
+    },
+    "UPPERCASE": {
+      "phones": [
+        "AH1",
+        "P",
+        "ER0",
+        "K",
+        "EY2",
+        "S"
+      ]
+    },
+    "RITCHIES": {
+      "phones": [
+        "R",
+        "IH1",
+        "CH",
+        "IY0",
+        "Z"
+      ]
+    },
+    "KAYDA": {
+      "phones": [
+        "K",
+        "EY1",
+        "D",
+        "AH0"
+      ]
+    },
+    "PITTY": {
+      "phones": [
+        "P",
+        "IH1",
+        "T",
+        "IY0"
+      ]
+    },
+    "GIANA": {
+      "phones": [
+        "JH",
+        "IY0",
+        "AA1",
+        "N",
+        "AH0"
+      ]
+    },
+    "GIFS": {
+      "phones": [
+        "G",
+        "IH1",
+        "F",
+        "S"
+      ]
+    },
+    "MODGE": {
+      "phones": [
+        "M",
+        "AA1",
+        "JH"
+      ]
+    },
+    "ANIMANIACS": {
+      "phones": [
+        "AE2",
+        "N",
+        "AH0",
+        "M",
+        "EY1",
+        "N",
+        "IY0",
+        "AE2",
+        "K",
+        "S"
+      ]
+    }
+  }
+}

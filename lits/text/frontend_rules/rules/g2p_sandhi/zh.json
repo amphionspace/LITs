@@ -1,0 +1,139 @@
+{
+  "format": "frontend_rules_v1",
+  "module": "g2p_sandhi",
+  "locale": "zh",
+  "metadata": {
+    "description": "Chinese tone sandhi rules applied after lexicon G2P lookup (not part of TN).",
+    "tn_merge_target": null,
+    "notes": "Runs per segmented word on numbered pinyin or Bopomofo syllables."
+  },
+  "resources": {
+    "char_sets": {
+      "sandhi_pause_punct": ",.!?;:",
+      "sandhi_pause_tokens_extra": ["_", "/", "|"],
+      "yi_punctuation_chars": "：，；。？！\"\"''':,;.?!()（）{}【】[]-~`、 ",
+      "yi_number_digits": "零一二三四五六七八九十",
+      "bopomofo_tone_marks": "˙ˊˇˋ",
+      "pinyin_tone_chars": "0123456"
+    },
+    "word_lists": {
+      "must_not_er_words": ["女儿", "老儿", "男儿", "少儿", "小儿"],
+      "bu_exceptions": ["不字"],
+      "bu_question_keep_tone_words": ["偏不", "才不", "谁说我不"],
+      "yi_exceptions": ["一是", "一是一", "一对一", "一加"],
+      "yi_ordinal_prefix": "第一",
+      "yi_date_prefixes": ["一月", "一日", "一号"]
+    },
+    "constants": {
+      "ellipsis_char": "…"
+    },
+    "tone_rules": {
+      "third_tone_sandhi": {
+        "description": "三三变调：连续两个三声，前一个改为二声",
+        "from_tone": "3",
+        "to_tone": "2",
+        "lookahead_tone": "3"
+      },
+      "triple_third_tone_bopomofo": {
+        "description": "三字全三声：前两字改为二声（Bopomofo ˇ→ˊ）",
+        "word_length": 3,
+        "tone_mark": "ˇ",
+        "result_mark": "ˊ"
+      },
+      "interjection_tones": [
+        {
+          "id": "a_interjection",
+          "description": "语气词「啊」随后续标点变调",
+          "char": "啊",
+          "rules": [
+            { "following_punct": ["?", "？"], "tone": "2", "example": "啊？ → á" },
+            { "following_punct": ["!", "！"], "tone": "4", "example": "啊！ → à" }
+          ]
+        },
+        {
+          "id": "en_interjection",
+          "description": "语气词「嗯」随后续标点变调",
+          "char": "嗯",
+          "default_tone": "4",
+          "rules": [
+            { "following_punct": ["?", "？"], "tone": "2", "example": "嗯？ → én" }
+          ]
+        },
+        {
+          "id": "o_interjection",
+          "description": "孤立语气词「哦！」读四声；句尾「…哦！」保持轻声",
+          "char": "哦",
+          "standalone_only": true,
+          "rules": [
+            { "following_punct": ["!", "！"], "tone": "4", "example": "哦！ → ò" }
+          ]
+        },
+        {
+          "id": "wa_interjection",
+          "description": "孤立语气词「哇！」/「哇，」读四声；句尾「…哇！」保持轻声",
+          "char": "哇",
+          "standalone_only": true,
+          "rules": [
+            { "following_punct": ["!", "！", ",", "，"], "tone": "4", "example": "哇！ → wà" }
+          ]
+        }
+      ],
+      "bu_sandhi": {
+        "description": "「不」在第四声前读第二声",
+        "char": "不",
+        "before_tone4_to_tone2": true,
+        "all_same_char_no_change": true,
+        "three_char_middle_neutral": {
+          "pattern": "X不Y",
+          "middle_tone": "neutral"
+        },
+        "question_neutral": {
+          "description": "疑问语尾「不」：词尾「不」后接问号时默认读轻声；bu_question_keep_tone_words 内短语除外",
+          "char": "不",
+          "following_punct": ["?", "？"],
+          "tone": "5",
+          "examples": ["好不？", "来不？", "可以不？", "明白不？", "偏不？（例外短语，保持原调）"]
+        }
+      },
+      "yi_sandhi": {
+        "description": "「一」变调：数字串、重叠式、序数、日期、四声前等",
+        "char": "一",
+        "reduplication_neutral": true,
+        "before_tone4_to_tone2": true,
+        "before_non_tone4_to_tone4": true,
+        "before_punct_keep_tone1": true
+      },
+      "er_sandhi": {
+        "description": "词尾「儿」儿化（轻声），例外词不变",
+        "char": "儿",
+        "neutral_tone": true
+      }
+    },
+    "merge_rules": {
+      "merge_bu": "Attach standalone 不 to the following word",
+      "merge_er": "Attach standalone 儿 to the preceding word",
+      "merge_yi": "Merge 一 into reduplication and number sequences"
+    }
+  },
+  "pipeline": {
+    "word_stages": [
+      { "id": "zh_sandhi_001", "op": "merge_yi" },
+      { "id": "zh_sandhi_002", "op": "merge_bu" },
+      { "id": "zh_sandhi_003", "op": "merge_er" }
+    ],
+    "syllable_stages": [
+      { "id": "zh_sandhi_010", "op": "triple_third_tone_bopomofo" },
+      { "id": "zh_sandhi_011", "op": "third_tone_sandhi_bopomofo" },
+      { "id": "zh_sandhi_012", "op": "bu_sandhi" },
+      { "id": "zh_sandhi_013", "op": "yi_sandhi" },
+      { "id": "zh_sandhi_014", "op": "er_sandhi" }
+    ],
+    "pinyin_token_stages": [
+      { "id": "zh_sandhi_020", "op": "third_tone_sandhi_pinyin_tokens" }
+    ],
+    "interjection_stages": [
+      { "id": "zh_sandhi_030", "op": "interjection_tone" },
+      { "id": "zh_sandhi_031", "op": "bu_question_neutral_tone" }
+    ]
+  }
+}

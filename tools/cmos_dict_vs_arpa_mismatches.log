@@ -1,0 +1,865 @@
+words: /chenmingjie/xingwen/multiling_up-to-date/tools/cmos_words.txt
+arpa:  /chenmingjie/xingwen/multiling_up-to-date/tools/cmos_words_arpa.txt
+total lines: 100
+lines with mismatches: 51
+
+line 1: word 'The'
+  dict: DH IY0
+  arpa: DH AH0
+line 1: word 'answer'
+  dict: AE1 N S AH0 R
+  arpa: AE1 N S ER0
+line 1: word 'hierarchy'
+  dict: HH AY1 AH0 R AA2 R K IY0
+  arpa: HH AY1 ER0 AA2 R K IY0
+
+line 2: word 'the'
+  dict: DH IY0
+  arpa: DH AH0
+line 2: word 'The'
+  dict: DH IY0
+  arpa: DH AH0
+line 2: word 'thirty-three'
+  dict: TH ER1 T IY2 TH R IY1
+  arpa: TH ER1 T IH0 TH R IY2
+line 2: word 'use'
+  dict: Y UW1 S
+  arpa: Y UW1 Z
+line 2: word 'the'
+  dict: DH IY0
+  arpa: DH AH0
+line 2: word 'the'
+  dict: DH IY0
+  arpa: DH AH0
+
+line 4: word 'The'
+  dict: DH IY0
+  arpa: DH AH0
+line 4: word 'the'
+  dict: DH IY0
+  arpa: DH AH0
+
+line 5: word 'The'
+  dict: DH IY0
+  arpa: DH AH0
+line 5: word 'Cameroon'
+  dict: K AE1 M AH0 R UW2 N
+  arpa: K AE1 M ER0 UW2 N
+line 5: word 'the'
+  dict: DH IY0
+  arpa: DH AH0
+line 5: word 'the'
+  dict: DH IY0
+  arpa: DH AH0
+line 5: word 'the'
+  dict: DH IY0
+  arpa: DH AH0
+
+line 6: word 'ninety-three'
+  dict: N AY1 N T IY0 TH R IY1
+  arpa: N AY1 N T IY0 TH R IY2
+line 6: word 'ninety-three'
+  dict: N AY1 N T IY0 TH R IY1
+  arpa: N AY1 N T IY0 TH R IY2
+line 6: word 'the'
+  dict: DH IY0
+  arpa: DH AH0
+
+line 8: word 'The'
+  dict: DH IY0
+  arpa: DH AH0
+
+line 9: word 'The'
+  dict: DH IY0
+  arpa: DH AH0
+line 9: word 'the'
+  dict: DH IY0
+  arpa: DH AH0
+line 9: word 'the'
+  dict: DH IY0
+  arpa: DH AH0
+line 9: word 'The'
+  dict: DH IY0
+  arpa: DH AH0
+
+line 10: word 'US'
+  dict: AH1 S
+  arpa: Y UW1 EH1 S
+
+line 11: word 'the'
+  dict: DH IY0
+  arpa: DH AH0
+line 11: word 'the'
+  dict: DH IY0
+  arpa: DH AH0
+
+line 12: word 'The'
+  dict: DH IY0
+  arpa: DH AH0
+line 12: word 'the'
+  dict: DH IY0
+  arpa: DH AH0
+
+line 13: word 'the'
+  dict: DH IY0
+  arpa: DH AH0
+line 13: word 'the'
+  dict: DH IY0
+  arpa: DH AH0
+line 13: word 'the'
+  dict: DH IY0
+  arpa: DH AH0
+
+line 14: word 'the'
+  dict: DH IY0
+  arpa: DH AH0
+
+line 15: word 'the'
+  dict: DH IY0
+  arpa: DH AH0
+line 15: word 'the'
+  dict: DH IY0
+  arpa: DH AH0
+
+line 16: word 'the'
+  dict: DH IY0
+  arpa: DH AH0
+line 16: word 'ATF'
+  dict: EY1 T IY1 EH1 F
+  arpa: AE1 T F
+
+line 17: word 'the'
+  dict: DH IY0
+  arpa: DH AH0
+line 17: word 'generating'
+  dict: JH EH1 N AH0 R EY2 T IH0 NG
+  arpa: JH EH1 N ER0 EY2 T IH0 NG
+
+line 18: word 'the'
+  dict: DH IY0
+  arpa: DH AH0
+line 18: word 'the'
+  dict: DH IY0
+  arpa: DH AH0
+line 18: word 'the'
+  dict: DH IY0
+  arpa: DH AH0
+line 18: word 'the'
+  dict: DH IY0
+  arpa: DH AH0
+
+line 19: word 'the'
+  dict: DH IY0
+  arpa: DH AH0
+line 19: word 'twenty-five'
+  dict: T W EH1 N T IY0 F AY1 V
+  arpa: T W EH1 N T IY0 F AY2 V
+line 19: word 'the'
+  dict: DH IY0
+  arpa: DH AH0
+
+line 21: word 'The'
+  dict: DH IY0
+  arpa: DH AH0
+line 21: word 'twenty-ninth'
+  dict: T W EH1 N T IY0 N AY1 N TH
+  arpa: T W EH1 N T IH0 N AY1 N TH
+line 21: word 'twenty-three'
+  dict: T W EH1 N T IY0 TH R IY1
+  arpa: T W EH1 N T IY0 TH R IY2
+
+line 22: word 'the'
+  dict: DH IY0
+  arpa: DH AH0
+line 22: word 'The'
+  dict: DH IY0
+  arpa: DH AH0
+
+line 23: word 'The'
+  dict: DH IY0
+  arpa: DH AH0
+line 23: word 'the'
+  dict: DH IY0
+  arpa: DH AH0
+
+line 24: word 'The'
+  dict: DH IY0
+  arpa: DH AH0
+line 24: word 'seventy-eight'
+  dict: S EH1 V AH0 N T IY0 EY1 T
+  arpa: S EH1 V AH0 N T IH0 EY1 T
+line 24: word 'The'
+  dict: DH IY0
+  arpa: DH AH0
+line 24: word 'The'
+  dict: DH IY0
+  arpa: DH AH0
+
+line 25: word 'the'
+  dict: DH IY0
+  arpa: DH AH0
+line 25: word 'Summer'
+  dict: S AH1 M ER0
+  arpa: ,
+line 25: word 'two'
+  dict: T UW1
+  arpa: S AH1 M ER0
+line 25: word 'thousand'
+  dict: TH AW1 Z AH0 N D
+  arpa: T UW1
+line 25: word 'twenty-six'
+  dict: T W EH1 N T IY0 S IH1 K S
+  arpa: TH AW1 Z AH0 N D
+line 25: word 'runway'
+  dict: R AH1 N W EY2
+  arpa: T W EH1 N T IY0
+line 25: word 'show'
+  dict: SH OW1
+  arpa: S IH1 K S
+line 25: word 'during'
+  dict: D UH1 R IH0 NG
+  arpa: R AH1 N W EY2
+line 25: word 'Milan'
+  dict: M AH0 L AA1 N
+  arpa: SH OW1
+line 25: word 'Fashion'
+  dict: F AE1 SH AH0 N
+  arpa: D UH1 R IH0 NG
+line 25: word 'Week'
+  dict: W IY1 K
+  arpa: M AH0 L AA1 N
+line 25: punct '.'
+  dict: .
+  arpa: F AE1 SH AH0 N
+line 25: word 'The'
+  dict: DH IY0
+  arpa: W IY1 K
+line 25: word 'show'
+  dict: SH OW1
+  arpa: .
+line 25: word 'was'
+  dict: W AA1 Z
+  arpa: DH AH0
+line 25: word 'presented'
+  dict: P R IY0 Z EH1 N T IH0 D
+  arpa: SH OW1
+line 25: word 'by'
+  dict: B AY1
+  arpa: W AA1 Z
+line 25: word 'Demna'
+  dict: D EH1 M N AH0
+  arpa: P R IY0 Z EH1 N T AH0 D
+line 25: punct '.'
+  dict: .
+  arpa: B AY1
+line 25: unused arpa units after token walk: D EH1 M N AH0 / .
+
+line 26: word 'The'
+  dict: DH IY0
+  arpa: DH AH0
+line 26: word 'the'
+  dict: DH IY0
+  arpa: DH AH0
+line 26: word 'lead'
+  dict: L IY1 D
+  arpa: L EH1 D
+
+line 28: word 'live'
+  dict: L IH1 V
+  arpa: L AY1 V
+
+line 31: word 'The'
+  dict: DH IY0
+  arpa: DH AH0
+
+line 33: word 'the'
+  dict: DH IY0
+  arpa: DH AH0
+line 33: word 'the'
+  dict: DH IY0
+  arpa: DH AH0
+
+line 34: word 'the'
+  dict: DH IY0
+  arpa: DH AH0
+line 34: word 'the'
+  dict: DH IY0
+  arpa: DH AH0
+line 34: word 'the'
+  dict: DH IY0
+  arpa: DH AH0
+
+line 38: word 'interested'
+  dict: IH1 N T AH0 R AH0 S T IH0 D
+  arpa: IH1 N T AH0 R AH0 S T AH0 D
+
+line 43: word 'AI'
+  dict: AY1
+  arpa: EY1 AY1
+
+line 44: word 'the'
+  dict: DH IY0
+  arpa: DH AH0
+
+line 46: word 'Folax'
+  dict: F OW1 L AE0 K S
+  arpa: F AO1 R AE0 K S
+line 46: word 'Infinix'
+  dict: IH0 N F IH1 N IH0 K S
+  arpa: IH2 N F IH1 N IH0 K S
+
+line 48: word 'twenty-seven'
+  dict: T W EH1 N T IY0 S EH1 V AH0 N
+  arpa: T W EH1 N T IH0 S EH1 V AH0 N
+line 48: word 'twenty-five'
+  dict: T W EH1 N T IY0 F AY1 V
+  arpa: T W EH1 N T IY0 F AY2 V
+
+line 55: missing arpa for punct '.': .
+
+line 57: word 'Folax'
+  dict: F OW1 L AE0 K S
+  arpa: F AO1 R AE0 K S
+line 57: word 'AI'
+  dict: AY1
+  arpa: EY1 AY1
+line 57: word 'Infinix'
+  dict: IH0 N F IH1 N IH0 K S
+  arpa: IH2 N F IH1 N IH0 K S
+
+line 58: word 'generate'
+  dict: JH EH1 N AH0 R EY2 T
+  arpa: JH EH1 N ER0 EY2 T
+
+line 60: word 'the'
+  dict: DH IY0
+  arpa: DH AH0
+line 60: word 'answer'
+  dict: AE1 N S AH0 R
+  arpa: AE1 N S ER0
+
+line 61: word 'answer'
+  dict: AE1 N S AH0 R
+  arpa: AE1 N S ER0
+
+line 63: word 'the'
+  dict: DH IY0
+  arpa: DH AH0
+
+line 64: word 'The'
+  dict: DH IY0
+  arpa: DH AH0
+line 64: word 'the'
+  dict: DH IY0
+  arpa: DH AH0
+line 64: word 'the'
+  dict: DH IY0
+  arpa: DH AH0
+line 64: word 'Ciss'
+  dict: S IY1 AY1 EH1 S EH1 S
+  arpa: S IH1 S
+line 64: word 'the'
+  dict: DH IY0
+  arpa: DH AH0
+
+line 73: word 'the'
+  dict: DH IY0
+  arpa: DH AH0
+
+line 74: word 'YouTube'
+  dict: Y UW1 T UW2 B
+  arpa: Y UW1
+line 74: word 'for'
+  dict: F AO1 R
+  arpa: T UW1 B
+line 74: word 'you'
+  dict: Y UW1
+  arpa: F AO1 R
+line 74: punct '.'
+  dict: .
+  arpa: Y UW1
+line 74: word 'You'
+  dict: Y UW1
+  arpa: .
+line 74: word 'need'
+  dict: N IY1 D
+  arpa: Y UW1
+line 74: word 'to'
+  dict: T UW0
+  arpa: N IY1 D
+line 74: word 'select'
+  dict: S AH0 L EH1 K T
+  arpa: T UW0
+line 74: word 'video'
+  dict: V IH1 D IY0 OW0
+  arpa: S AH0 L EH1 K T
+line 74: word 'to'
+  dict: T UW0
+  arpa: V IH1 D IY0 OW0
+line 74: word 'play'
+  dict: P L EY1
+  arpa: T UW0
+line 74: punct '.'
+  dict: .
+  arpa: P L EY1
+line 74: unused arpa units after token walk: .
+
+line 75: word 'valid'
+  dict: V AE1 L IH0 D
+  arpa: V AE1 L AH0 D
+
+line 81: word 'the'
+  dict: DH IY0
+  arpa: DH AH0
+line 81: word 'answer'
+  dict: AE1 N S AH0 R
+  arpa: AE1 N S ER0
+
+line 86: word 'the'
+  dict: DH IY0
+  arpa: DH AH0
+line 86: word 'the'
+  dict: DH IY0
+  arpa: DH AH0
+line 86: word 'citation'
+  dict: S AY0 T EY1 SH AH0 N
+  arpa: (
+line 86: punct ':'
+  dict: :
+  arpa: S AY0 T EY1 SH AH0 N
+line 86: word 'two'
+  dict: T UW1
+  arpa: :
+line 86: punct '.'
+  dict: .
+  arpa: T UW1
+line 86: word 'The'
+  dict: DH IY0
+  arpa: )
+line 86: word 'left'
+  dict: L EH1 F T
+  arpa: .
+line 86: word 'foot'
+  dict: F UH1 T
+  arpa: DH AH0
+line 86: word 'is'
+  dict: IH1 Z
+  arpa: L EH1 F T
+line 86: word 'usually'
+  dict: Y UW1 ZH AH0 W AH0 L IY0
+  arpa: F UH1 T
+line 86: word 'the'
+  dict: DH IY0
+  arpa: IH1 Z
+line 86: word 'larger'
+  dict: L AA1 R JH ER0
+  arpa: Y UW1 ZH AH0 W AH0 L IY0
+line 86: word 'one'
+  dict: W AH1 N
+  arpa: DH AH0
+line 86: word 'citation'
+  dict: S AY0 T EY1 SH AH0 N
+  arpa: L AA1 R JH ER0
+line 86: punct ':'
+  dict: :
+  arpa: W AH1 N
+line 86: word 'one'
+  dict: W AH1 N
+  arpa: (
+line 86: word 'three'
+  dict: TH R IY1
+  arpa: W AH1 N
+line 86: punct '.'
+  dict: .
+  arpa: )
+line 86: word 'The'
+  dict: DH IY0
+  arpa: (
+line 86: word 'mean'
+  dict: M IY1 N
+  arpa: S AY0 T EY1 SH AH0 N
+line 86: word 'foot'
+  dict: F UH1 T
+  arpa: :
+line 86: word 'height'
+  dict: HH AY1 T
+  arpa: TH R IY1
+line 86: word 'and'
+  dict: AH0 N D
+  arpa: )
+line 86: word 'mean'
+  dict: M IY1 N
+  arpa: .
+line 86: word 'foot'
+  dict: F UH1 T
+  arpa: DH AH0
+line 86: word 'length'
+  dict: L EH1 NG K TH
+  arpa: M IY1 N
+line 86: word 'were'
+  dict: W ER1
+  arpa: F UH1 T
+line 86: word 'significantly'
+  dict: S IH0 G N IH1 F IH0 K AH0 N T L IY0
+  arpa: HH AY1 T
+line 86: word 'higher'
+  dict: HH AY1 ER0
+  arpa: AH0 N D
+line 86: word 'on'
+  dict: AA1 N
+  arpa: M IY1 N
+line 86: word 'the'
+  dict: DH IY0
+  arpa: F UH1 T
+line 86: word 'left'
+  dict: L EH1 F T
+  arpa: L EH1 NG K TH
+line 86: word 'side'
+  dict: S AY1 D
+  arpa: W ER1
+line 86: word 'in'
+  dict: IH0 N
+  arpa: S IH0 G N IH1 F IH0 K AH0 N T L IY0
+line 86: word 'right'
+  dict: R AY1 T
+  arpa: HH AY1 ER0
+line 86: word 'footed'
+  dict: F UH1 T IH0 D
+  arpa: AA1 N
+line 86: word 'males'
+  dict: M EY1 L Z
+  arpa: DH AH0
+line 86: word 'citation'
+  dict: S AY0 T EY1 SH AH0 N
+  arpa: L EH1 F T
+line 86: punct ':'
+  dict: :
+  arpa: S AY1 D
+line 86: word 'four'
+  dict: F AO1 R
+  arpa: IH0 N
+line 86: punct '.'
+  dict: .
+  arpa: R AY1 T
+line 86: unused arpa units after token walk: F UH1 T IH0 D / M EY1 L Z / ( / S AY0 T EY1 SH AH0 N / : / F AO1 R / ) / .
+
+line 87: word "Cherotich's"
+  dict: CH EH1 R AH0 T IH0 CH IH0 S
+  arpa: CH EH1 R AH0 T IH0 CH IH0 Z
+line 87: word 'record'
+  dict: R AH0 K AO1 R D
+  arpa: R EH1 K ER0 D
+line 87: word 'record'
+  dict: R AH0 K AO1 R D
+  arpa: R EH1 K ER0 D
+line 87: word 'fifty-one'
+  dict: F IH1 F T IY0 W AH1 N
+  arpa: F IH1 F T IY0 W AO2 N
+line 87: word 'fifty-nine'
+  dict: F IH1 F T IY0 N AY1 N
+  arpa: F IH1 F T IY0 N AY2 N
+line 87: word 'the'
+  dict: DH IY0
+  arpa: DH AH0
+line 87: word 'citation'
+  dict: S AY0 T EY1 SH AH0 N
+  arpa: (
+line 87: punct ':'
+  dict: :
+  arpa: S AY0 T EY1 SH AH0 N
+line 87: word 'one'
+  dict: W AH1 N
+  arpa: :
+line 87: word 'citation'
+  dict: S AY0 T EY1 SH AH0 N
+  arpa: W AH1 N
+line 87: punct ':'
+  dict: :
+  arpa: )
+line 87: word 'three'
+  dict: TH R IY1
+  arpa: (
+line 87: punct '.'
+  dict: .
+  arpa: S AY0 T EY1 SH AH0 N
+line 87: word 'This'
+  dict: DH IH1 S
+  arpa: :
+line 87: word 'performance'
+  dict: P ER0 F AO1 R M AH0 N S
+  arpa: TH R IY1
+line 87: word 'earned'
+  dict: ER1 N D
+  arpa: )
+line 87: word 'her'
+  dict: HH ER1
+  arpa: .
+line 87: word 'the'
+  dict: DH IY0
+  arpa: DH IH1 S
+line 87: word 'gold'
+  dict: G OW1 L D
+  arpa: P ER0 F AO1 R M AH0 N S
+line 87: word 'medal'
+  dict: M EH1 D AH0 L
+  arpa: ER1 N D
+line 87: word 'citation'
+  dict: S AY0 T EY1 SH AH0 N
+  arpa: HH ER1
+line 87: punct ':'
+  dict: :
+  arpa: DH AH0
+line 87: word 'six'
+  dict: S IH1 K S
+  arpa: G OW1 L D
+line 87: punct '.'
+  dict: .
+  arpa: M EH1 D AH0 L
+line 87: word 'She'
+  dict: SH IY1
+  arpa: (
+line 87: word 'finished'
+  dict: F IH1 N IH0 SH T
+  arpa: S AY0 T EY1 SH AH0 N
+line 87: word 'almost'
+  dict: AO1 L M OW2 S T
+  arpa: :
+line 87: word 'five'
+  dict: F AY1 V
+  arpa: S IH1 K S
+line 87: word 'seconds'
+  dict: S EH1 K AH0 N D Z
+  arpa: )
+line 87: word 'ahead'
+  dict: AH0 HH EH1 D
+  arpa: .
+line 87: word 'of'
+  dict: AH1 V
+  arpa: SH IY1
+line 87: word 'Winfred'
+  dict: W IH1 N F R IH0 D
+  arpa: F IH1 N IH0 SH T
+line 87: word 'Yavi'
+  dict: Y AA1 V IY0
+  arpa: AO1 L M OW2 S T
+line 87: word 'citation'
+  dict: S AY0 T EY1 SH AH0 N
+  arpa: F AY1 V
+line 87: punct ':'
+  dict: :
+  arpa: S EH1 K AH0 N D Z
+line 87: word 'two'
+  dict: T UW1
+  arpa: AH0 HH EH1 D
+line 87: word 'citation'
+  dict: S AY0 T EY1 SH AH0 N
+  arpa: AH1 V
+line 87: punct ':'
+  dict: :
+  arpa: W IH1 N F R IH0 D
+line 87: word 'five'
+  dict: F AY1 V
+  arpa: Y AA1 V IY0
+line 87: punct '.'
+  dict: .
+  arpa: (
+line 87: unused arpa units after token walk: S AY0 T EY1 SH AH0 N / : / T UW1 / ) / ( / S AY0 T EY1 SH AH0 N / : / F AY1 V / ) / .
+
+line 89: word 'the'
+  dict: DH IY0
+  arpa: DH AH0
+line 89: word 'interested'
+  dict: IH1 N T AH0 R AH0 S T IH0 D
+  arpa: IH1 N T AH0 R AH0 S T AH0 D
+line 89: word 'the'
+  dict: DH IY0
+  arpa: DH AH0
+line 89: word 'the'
+  dict: DH IY0
+  arpa: DH AH0
+line 89: word 'the'
+  dict: DH IY0
+  arpa: DH AH0
+line 89: word 'The'
+  dict: DH IY0
+  arpa: DH AH0
+line 89: word 'the'
+  dict: DH IY0
+  arpa: DH AH0
+
+line 90: word 'into'
+  dict: IH1 N T UW0
+  arpa: IH0 N T UW1
+
+line 91: word 'Folax'
+  dict: F OW1 L AE0 K S
+  arpa: F AO1 R AE0 K S
+line 91: word 'Infinix'
+  dict: IH0 N F IH1 N IH0 K S
+  arpa: IH2 N F IH1 N IH0 K S
+
+line 93: word 'the'
+  dict: DH IY0
+  arpa: DH AH0
+line 93: word 'the'
+  dict: DH IY0
+  arpa: DH AH0
+line 93: word 'The'
+  dict: DH IY0
+  arpa: DH AH0
+line 93: word 'incite'
+  dict: AY1 EH1 N S IY1 AY1 T IY1 IY1
+  arpa: IH0 N S AY1 T
+line 93: word 'citation'
+  dict: S AY0 T EY1 SH AH0 N
+  arpa: (
+line 93: punct ':'
+  dict: :
+  arpa: S AY0 T EY1 SH AH0 N
+line 93: word 'one'
+  dict: W AH1 N
+  arpa: :
+line 93: punct '.'
+  dict: .
+  arpa: W AH1 N
+line 93: word 'The'
+  dict: DH IY0
+  arpa: )
+line 93: word 'death'
+  dict: D EH1 TH
+  arpa: .
+line 93: word 'of'
+  dict: AH1 V
+  arpa: DH AH0
+line 93: word 'a'
+  dict: AH0
+  arpa: D EH1 TH
+line 93: word 'leader'
+  dict: L IY1 D ER0
+  arpa: AH1 V
+line 93: word 'like'
+  dict: L AY1 K
+  arpa: AH0
+line 93: word 'Osama'
+  dict: OW0 S AA1 M AH0
+  arpa: L IY1 D ER0
+line 93: word 'bin'
+  dict: B IH1 N
+  arpa: L AY1 K
+line 93: word 'Laden'
+  dict: L EY1 D AH0 N
+  arpa: OW0 S AA1 M AH0
+line 93: punct ','
+  dict: ,
+  arpa: B IH1 N
+line 93: word 'for'
+  dict: F AO1 R
+  arpa: L EY1 D AH0 N
+line 93: word 'example'
+  dict: IH0 G Z AE1 M P AH0 L
+  arpa: ,
+line 93: punct ','
+  dict: ,
+  arpa: F AO1 R
+line 93: word 'had'
+  dict: HH AE1 D
+  arpa: IH0 G Z AE1 M P AH0 L
+line 93: word 'a'
+  dict: AH0
+  arpa: ,
+line 93: word 'significant'
+  dict: S AH0 G N IH1 F IH0 K AH0 N T
+  arpa: HH AE1 D
+line 93: word 'impact'
+  dict: IH1 M P AE0 K T
+  arpa: AH0
+line 93: word 'on'
+  dict: AA1 N
+  arpa: S AH0 G N IH1 F IH0 K AH0 N T
+line 93: word 'the'
+  dict: DH IY0
+  arpa: IH1 M P AE0 K T
+line 93: word 'war'
+  dict: W AO1 R
+  arpa: AA1 N
+line 93: word 'on'
+  dict: AA1 N
+  arpa: DH AH0
+line 93: word 'terror'
+  dict: T EH1 R ER0
+  arpa: W AO1 R
+line 93: word 'citation'
+  dict: S AY0 T EY1 SH AH0 N
+  arpa: AA1 N
+line 93: punct ':'
+  dict: :
+  arpa: T EH1 R ER0
+line 93: word 'four'
+  dict: F AO1 R
+  arpa: (
+line 93: punct '.'
+  dict: .
+  arpa: S AY0 T EY1 SH AH0 N
+line 93: word 'The'
+  dict: DH IY0
+  arpa: :
+line 93: word 'US'
+  dict: AH1 S
+  arpa: F AO1 R
+line 93: word 'military'
+  dict: M IH1 L AH0 T EH2 R IY0
+  arpa: )
+line 93: word 'has'
+  dict: HH AE1 Z
+  arpa: .
+line 93: word 'also'
+  dict: AO1 L S OW0
+  arpa: DH AH0
+line 93: word 'reported'
+  dict: R IY2 P AO1 R T IH0 D
+  arpa: Y UW1 EH1 S
+line 93: word 'killing'
+  dict: K IH1 L IH0 NG
+  arpa: M IH1 L AH0 T EH2 R IY0
+line 93: word 'senior'
+  dict: S IY1 N Y ER0
+  arpa: HH AE1 Z
+line 93: word 'ISIS'
+  dict: AY1 S AH0 S
+  arpa: AO1 L S OW0
+line 93: word 'leaders'
+  dict: L IY1 D ER0 Z
+  arpa: R IY2 P AO1 R T AH0 D
+line 93: word 'citation'
+  dict: S AY0 T EY1 SH AH0 N
+  arpa: K IH1 L IH0 NG
+line 93: punct ':'
+  dict: :
+  arpa: S IY1 N Y ER0
+line 93: word 'one'
+  dict: W AH1 N
+  arpa: AY1 S AH0 S
+line 93: word 'citation'
+  dict: S AY0 T EY1 SH AH0 N
+  arpa: L IY1 D ER0 Z
+line 93: punct ':'
+  dict: :
+  arpa: (
+line 93: word 'three'
+  dict: TH R IY1
+  arpa: S AY0 T EY1 SH AH0 N
+line 93: punct '.'
+  dict: .
+  arpa: :
+line 93: unused arpa units after token walk: W AH1 N / ) / ( / S AY0 T EY1 SH AH0 N / : / TH R IY1 / ) / .
+
+line 98: word 'AM'
+  dict: AE1 M
+  arpa: EY1 EH1 M
+
+line 99: word 'the'
+  dict: DH IY0
+  arpa: DH AH0
+line 99: word 'the'
+  dict: DH IY0
+  arpa: DH AH0

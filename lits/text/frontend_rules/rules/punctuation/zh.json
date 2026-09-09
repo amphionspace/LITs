@@ -1,0 +1,89 @@
+{
+  "format": "frontend_rules_v1",
+  "module": "punctuation",
+  "locale": "zh",
+  "metadata": {
+    "description": "Chinese punctuation normalization for pinyin/Bopomofo and hanzi lexicon paths.",
+    "tn_merge_target": "zh"
+  },
+  "resources": {
+    "char_maps": {
+      "zh_punct_to_half": {
+        "，": ",",
+        "。": ".",
+        "！": "!",
+        "？": "?",
+        "、": ",",
+        "；": ";",
+        "：": ":",
+        "“": "\"",
+        "”": "\"",
+        "‘": "'",
+        "’": "'",
+        "「": "\"",
+        "」": "\"",
+        "『": "'",
+        "』": "'",
+        "（": "(",
+        "）": ")",
+        "【": "[",
+        "】": "]",
+        "《": "<",
+        "》": ">",
+        "—": "-",
+        "–": "-",
+        "‐": "-",
+        "·": ".",
+        "﹐": ",",
+        "﹒": ".",
+        "﹖": "?",
+        "﹗": "!",
+        "．": ".",
+        "~": "!",
+        "～": "!",
+        "∼": "!"
+      }
+    },
+    "char_sets": {
+      "acceptable_trailing_punct": ",.…!?;:،؟।。！？；：",
+      "structural_single_quote_chars": "''\u2018\u2019",
+      "structural_double_quote_chars": "\"\u201c\u201d「」\u300a\u300b\u3010\u3011",
+      "jp_single_quote_chars": "\u300e\u300f",
+      "halfwidth_punct_chars": ",.!?;:\"()[]<>-",
+      "structural_punct_chars": "()[]<>\"'",
+      "ellipsis_aliases": ["...", "⋯", "···", "・・・"],
+      "chinese_cleaner_strip_chars": "\u201c\u201d\u300a\u300b\u3010\u3011",
+      "sandhi_pause_punct": ",.!?;:"
+    },
+    "constants": {
+      "ellipsis_char": "…"
+    }
+  },
+  "pipeline": {
+    "stages": [
+      {
+        "id": "zh_001",
+        "op": "normalize_ellipsis",
+        "params": { "aliases": "ellipsis_aliases", "target": "ellipsis_char" }
+      },
+      {
+        "id": "zh_002",
+        "op": "nfkc_normalize"
+      },
+      {
+        "id": "zh_003",
+        "op": "normalize_ellipsis",
+        "params": { "aliases": "ellipsis_aliases", "target": "ellipsis_char" }
+      },
+      {
+        "id": "zh_004",
+        "op": "translate_chars",
+        "params": { "char_map": "zh_punct_to_half" }
+      },
+      {
+        "id": "zh_005",
+        "op": "strip_structural_quotes"
+      }
+    ]
+  }
+}

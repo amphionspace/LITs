@@ -1,0 +1,8 @@
+defaults:
+  - model_checkpoint.yaml
+  - model_summary.yaml
+  - rich_progress_bar.yaml
+  - freeze_prior_encoder.yaml
+  - lr_override.yaml
+  - lr_downshift.yaml
+  - _self_

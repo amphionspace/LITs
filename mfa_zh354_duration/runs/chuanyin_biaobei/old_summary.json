@@ -1,0 +1,15 @@
+{
+  "data_txt": "/data1/xiaoqihezuo/hanxingwen/LITs/process_data/CN9000_hanzi_filelist.txt",
+  "wav_dir": "/data1/xiaoqihezuo/Dataset/zh/female/CN9000/wav",
+  "limit": 10000,
+  "utterances": 9000,
+  "matched_utterances": 0,
+  "token_assignments": 0,
+  "tokens_with_stats": 0,
+  "initials_with_stats": 0,
+  "rhyme_tone_with_stats": 0,
+  "mel_hop": 384,
+  "sample_rate": 24000,
+  "mfa_dict": "/home/hanxingwen/Documents/MFA/pretrained_models/dictionary/mandarin_china_mfa.dict",
+  "mfa_acoustic": "/home/hanxingwen/Documents/MFA/pretrained_models/acoustic/mandarin_mfa.zip"
+}

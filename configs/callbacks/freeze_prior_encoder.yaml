@@ -1,0 +1,8 @@
+freeze_encoder:
+  _target_: lits.callbacks.freeze_encoder.FreezeEncoderCallback
+  enabled: false
+  monitor: sub_loss/val_prior_loss
+  # prior and duration plateau together; freeze all non-decoder params
+  patience: 10
+  min_steps: 0
+  min_delta: 0.0

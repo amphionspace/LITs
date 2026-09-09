@@ -1,0 +1,92 @@
+/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2138.wav|1|Использование / до / н / . / э / . / облегчает / построение / линейной / хронологии / событий / .
+/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2131.wav|1|Использование / сокращений / н / . / э / . / и / до / н / . / э / . / позволяет / четко / структурировать / историческое / повествование / .
+/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_1983.wav|1|Корректное / употребление / и / т / . / д / . / способствует / ясности / и / логичности / письменного / изложения / .
+/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp-020516_RUSLAN.wav|1|Как / отчество / младшего / сына / А / . / С / . / Пушкина / ? / Была / ли / А / . / П / . / Керн / любовницей / Есенина / ?
+/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2110.wav|1|До / н / . / э / . / является / необходимым / элементом / при / построении / исторической / временной / шкалы / .
+/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_1997.wav|1|В / аналитических / материалах / и / т / . / д / . / позволяет / сосредоточиться / на / ключевых / аспектах / .
+/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2137.wav|1|Для / автоматической / озвучки / н / . / э / . / важно / стабильное / и / единообразное / употребление / .
+/data1/xiaoqihezuo/Dataset/ru/Anna/mono24_norm_trimmed_db/anna-009188_RUSLAN.wav|0|Я / предложила / гостю / рюмочку / ликера / . / М / . / вежливо / отодвинул / ее / кончиками / пальцев / Я / не / пью / .
+/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_1970.wav|1|В / описании / вакансии / указаны / требования / к / опыту / , / образованию / , / навыкам / и / т / . / д / .
+/data1/xiaoqihezuo/Dataset/ru/Anna/mono24_norm_trimmed_db/anna-020516_RUSLAN.wav|0|Как / отчество / младшего / сына / А / . / С / . / Пушкина / ? / Была / ли / А / . / П / . / Керн / любовницей / Есенина / ?
+/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2124.wav|1|Многие / археологические / памятники / датируются / несколькими / веками / до / н / . / э / .
+/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2008.wav|1|И / т / . / п / . / применяется / тогда / , / когда / остальные / элементы / списка / легко / восстанавливаются / читателем / .
+/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2143.wav|1|Четкое / различие / между / н / . / э / . / и / до / н / . / э / . / снижает / риск / хронологических / ошибок / .
+/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2102.wav|1|До / н / . / э / . / применяется / для / указания / исторических / периодов / и / дат / , / относящихся / ко / времени / , / предшествующему / началу / современной / эры / .
+/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_1967.wav|1|В / программу / обучения / вошли / лекции / , / практические / занятия / , / самостоятельная / работа / и / т / . / д / . / в / зависимости / от / формата / курса / .
+/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2051.wav|1|Т / . / е / . / используется / в / письменной / речи / для / пояснения / , / уточнения / или / переформулирования / ранее / сказанной / информации / более / точными / словами / .
+/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2048.wav|1|Для / учебных / и / тестовых / корпусов / и / т / . / п / . / важно / соблюдать / стабильность / формулировок / .
+/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2056.wav|1|Т / . / е / . / позволяет / структурировать / текст / и / последовательно / раскрывать / смысл / сложных / понятий / .
+/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2013.wav|1|В / проекте / использовались / современные / инструменты / анализа / данных / , / визуализации / информации / и / т / . / п / .
+/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2057.wav|1|Т / . / е / . / является / нормативным / сокращением / и / допускается / в / формальной / письменной / коммуникации / .
+/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_1999.wav|1|В / справочной / литературе / и / т / . / д / . / применяется / для / компактного / представления / информации / .
+/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2059.wav|1|Т / . / е / . / помогает / читателю / или / слушателю / быстрее / усвоить / смысл / сообщения / .
+/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2142.wav|1|В / аналитических / текстах / н / . / э / . / помогает / точно / соотнести / события / разных / эпох / .
+/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2041.wav|1|Использование / и / т / . / п / . / требует / единообразия / на / протяжении / всего / текста / .
+/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_1985.wav|1|Чрезмерное / использование / и / т / . / д / . / может / негативно / сказаться / на / информативности / текста / .
+/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2129.wav|1|Хронологическая / последовательность / событий / выстраивается / от / периода / до / н / . / э / .
+/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2147.wav|1|В / текстах / для / синтеза / речи / н / . / э / . / и / до / н / . / э / . / должны / звучать / однозначно / .
+/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_1960.wav|1|И / т / . / д / . / считается / допустимой / формой / сокращения / в / нормативных / и / методических / документах / .
+/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2046.wav|1|В / аналитических / материалах / и / т / . / п / . / позволяет / сосредоточиться / на / ключевых / аспектах / .
+/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_1987.wav|1|При / редактировании / текста / важно / проверять / уместность / применения / и / т / . / д / .
+/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2014.wav|1|В / документе / перечислены / возможные / риски / , / связанные / с / финансированием / , / сроками / , / организацией / и / т / . / п / .
+/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2122.wav|1|Расцвет / античной / греческой / культуры / пришелся / на / пятый / век / до / н / . / э / .
+/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2035.wav|1|При / редактировании / важно / проверять / уместность / применения / и / т / . / п / .
+/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2114.wav|1|Археологические / находки / позволяют / датировать / поселения / третьим / тысячелетием / до / н / . / э / . / основываясь / на / материальных / свидетельствах / .
+/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp-018457_RUSLAN.wav|1|Человека / звали / Давид / Яковлевич / Ривкин / . / Инициалы / Д / . / Я / . / Р / . / Сначала / он / так / и / подписывался / ДЯР / .
+/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2024.wav|1|В / статье / приводятся / примеры / успешных / проектов / , / инициатив / , / программ / и / т / . / п / .
+/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2128.wav|1|Ряд / научных / открытий / античности / относится / ко / времени / до / н / . / э / .
+/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2053.wav|1|Т / . / е / . / чаще / всего / применяется / в / научных / , / учебных / и / официальных / текстах / , / где / требуется / логическая / точность / формулировок / .
+/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2130.wav|1|Исторические / источники / часто / группируются / по / признаку / н / . / э / .
+/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_1994.wav|1|В / нормативных / документах / и / т / . / д / . / помогает / обобщать / повторяющиеся / элементы / .
+/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2028.wav|1|В / исследовании / описываются / социальные / группы / , / сообщества / , / организации / и / т / . / п / .
+/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2047.wav|1|Стандарты / письменной / речи / допускают / и / т / . / п / . / при / четкой / логической / структуре / предложения / .
+/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2104.wav|1|До / н / . / э / . / часто / используется / при / описании / античной / истории / , / археологических / находок / и / ранних / цивилизаций / .
+/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2044.wav|1|В / справочных / текстах / и / т / . / п / . / применяется / для / группировки / однотипных / понятий / .
+/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_1995.wav|1|Стилистическая / нейтральность / делает / и / т / . / д / . / универсальным / инструментом / письменной / коммуникации / .
+/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2004.wav|1|И / т / . / п / . / является / нормативным / сокращением / и / активно / используется / в / научных / , / учебных / и / деловых / текстах / .
+/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2026.wav|1|В / ходе / работы / используются / таблицы / , / графики / , / схемы / и / т / . / п / .
+/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2030.wav|1|В / тексте / упоминаются / различные / формы / взаимодействия / , / такие / как / консультации / , / переговоры / , / соглашения / и / т / . / п / .
+/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2050.wav|1|Уместное / применение / и / т / . / п / . / повышает / качество / письменной / и / аудиальной / коммуникации / .
+/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2133.wav|1|Корректная / датировка / с / указанием / н / . / э / . / повышает / точность / научного / изложения / .
+/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_1982.wav|1|В / официальной / документации / и / т / . / д / . / применяется / строго / в / соответствии / с / правилами / делового / письма / .
+/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2136.wav|1|В / исторических / обзорах / н / . / э / . / помогает / отделить / античный / период / от / средневекового / .
+/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_1951.wav|1|И / т / . / д / . / используется / в / письменной / речи / для / обозначения / продолжения / перечисления / однородных / предметов / , / явлений / или / действий / без / их / полного / указания / .
+/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_1993.wav|1|Уместное / применение / и / т / . / д / . / повышает / читаемость / сложных / текстов / .
+/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2020.wav|1|В / договоре / обозначены / обязанности / сторон / , / касающиеся / качества / услуг / , / сроков / исполнения / и / т / . / п / .
+/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2029.wav|1|В / процессе / оценки / учитываются / показатели / эффективности / , / устойчивости / , / надежности / и / т / . / п / .
+/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2000.wav|1|Грамотное / использование / и / т / . / д / . / отражает / высокий / уровень / владения / письменной / речью / .
+/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2038.wav|1|Осознанное / применение / и / т / . / п / . / облегчает / понимание / текста / при / аудиовоспроизведении / .
+/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2018.wav|1|В / описании / программного / обеспечения / указаны / функции / хранения / данных / , / обработки / запросов / , / формирования / отчетов / и / т / . / п / .
+/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2134.wav|1|В / учебных / материалах / до / н / . / э / . / используется / для / обозначения / древних / эпох / .
+/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_1990.wav|1|В / методических / рекомендациях / и / т / . / д / . / позволяет / избежать / перегруженных / списков / .
+/data1/xiaoqihezuo/Dataset/ru/Anna/mono24_norm_trimmed_db/anna-001257_RUSLAN.wav|0|Александрову / Г / . / П / .
+/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_1956.wav|1|И / т / . / д / . / требует / корректного / употребления / и / не / должна / заменять / смысловое / обобщение / там / , / где / оно / необходимо / .
+/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2123.wav|1|Формирование / Римской / империи / относится / к / первым / векам / н / . / э / .
+/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_1989.wav|1|Использование / и / т / . / д / . / требует / внимательного / отношения / к / структуре / предложения / .
+/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2148.wav|1|Корректное / применение / до / н / . / э / . / отражает / высокий / уровень / исторической / грамотности / .
+/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2107.wav|1|Н / . / э / . / применяется / в / сочетании / с / конкретным / годом / или / веком / для / точного / указания / времени / события / .
+/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_1966.wav|1|В / ходе / исследования / анализировались / тексты / разных / жанров / , / включая / научные / статьи / , / инструкции / , / отчеты / и / т / . / д / .
+/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2009.wav|1|И / т / . / п / . / помогает / структурировать / текст / и / подчеркнуть / типовой / характер / перечисляемых / объектов / .
+/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2036.wav|1|Чрезмерное / использование / и / т / . / п / . / может / снизить / точность / изложения / информации / .
+/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_1981.wav|1|Использование / и / т / . / д / . / делает / текст / более / компактным / , / но / требует / от / читателя / достаточного / уровня / контекстного / понимания / .
+/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2034.wav|1|В / учебных / материалах / и / т / . / п / . / помогает / избежать / перегруженных / списков / терминов / .
+/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_1961.wav|1|В / отчете / были / перечислены / основные / задачи / проекта / , / такие / как / анализ / данных / , / разработка / модели / , / тестирование / и / т / . / д / . / что / позволило / избежать / излишней / детализации / .
+/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_1969.wav|1|При / подготовке / проекта / учитывались / климатические / условия / , / инфраструктура / , / логистика / и / т / . / д / .
+/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2049.wav|1|В / текстах / для / автоматической / озвучки / и / т / . / п / . / предпочтительны / простые / и / однозначные / конструкции / .
+/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2111.wav|1|Историки / считают / , / что / первые / письменные / источники / появились / задолго / до / начала / н / . / э / . / в / период / формирования / ранних / государств / .
+/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2145.wav|1|При / подготовке / исторических / данных / до / н / . / э / . / требует / особого / внимания / к / формулировкам / .
+/data1/xiaoqihezuo/Dataset/ru/Anna/mono24_norm_trimmed_db/anna-020518_RUSLAN.wav|0|И / наконец / , / совсем / уже / дикий / вопрос / Говорят / , / В / . / И / . / Ленин / умел / плавать / задом / . / Правда / ли / это / ?
+/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_1968.wav|1|В / договоре / перечислены / обязательства / сторон / , / касающиеся / сроков / , / качества / , / ответственности / и / т / . / д / .
+/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_1959.wav|1|И / т / . / д / . / используется / после / перечисления / процессов / , / функций / или / характеристик / , / если / они / легко / угадываются / из / контекста / .
+/data1/xiaoqihezuo/Dataset/ru/Anna/mono24_norm_trimmed_db/anna-018457_RUSLAN.wav|0|Человека / звали / Давид / Яковлевич / Ривкин / . / Инициалы / Д / . / Я / . / Р / . / Сначала / он / так / и / подписывался / ДЯР / .
+/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_1991.wav|1|Понимание / функций / и / т / . / д / . / является / важной / частью / языковой / компетенции / .
+/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2019.wav|1|В / ходе / обсуждения / затрагивались / вопросы / экологии / , / образования / , / социальной / политики / и / т / . / п / .
+/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2033.wav|1|Корректное / употребление / и / т / . / п / . / повышает / связность / и / структурированность / текста / .
+/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2040.wav|1|В / методических / рекомендациях / и / т / . / п / . / способствует / логичному / обобщению / материала / .
+/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_1974.wav|1|В / процессе / работы / используются / таблицы / , / графики / , / диаграммы / и / т / . / д / .
+/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2121.wav|1|Возникновение / первых / городских / поселений / относится / к / четвертому / тысячелетию / до / н / . / э / .
+/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_1988.wav|1|Стандарты / письменной / речи / допускают / и / т / . / д / . / при / сохранении / логической / завершенности / высказывания / .
+/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2141.wav|1|Для / тестовых / корпусов / до / н / . / э / . / полезно / при / проверке / обработки / дат / .
+/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp-020518_RUSLAN.wav|1|И / наконец / , / совсем / уже / дикий / вопрос / Говорят / , / В / . / И / . / Ленин / умел / плавать / задом / . / Правда / ли / это / ?
+/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2016.wav|1|В / инструкции / описаны / действия / по / настройке / оборудования / , / проверке / параметров / , / тестированию / и / т / . / п / .
+/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_1955.wav|1|И / т / . / д / . / не / рекомендуется / использовать / в / художественной / речи / , / где / предпочтительнее / развернутое / и / образное / описание / .

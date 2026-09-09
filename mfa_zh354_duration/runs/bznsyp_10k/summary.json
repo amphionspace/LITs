@@ -1,0 +1,15 @@
+{
+  "data_txt": "/chenmingjie/xingwen/dataset/Dataset/zh/BZNSYP/zh_data.txt",
+  "wav_dir": "/chenmingjie/xingwen/dataset/Dataset/zh/BZNSYP/wav_24k",
+  "limit": 10000,
+  "utterances": 10000,
+  "matched_utterances": 9950,
+  "token_assignments": 239657,
+  "tokens_with_stats": 223,
+  "initials_with_stats": 21,
+  "rhyme_tone_with_stats": 202,
+  "mel_hop": 384,
+  "sample_rate": 24000,
+  "mfa_dict": "/chenmingjie/xingwen/tools/MFA/pretrained_models/dictionary/mandarin_china_mfa.dict",
+  "mfa_acoustic": "/chenmingjie/xingwen/tools/MFA/pretrained_models/acoustic/mandarin_mfa.zip"
+}

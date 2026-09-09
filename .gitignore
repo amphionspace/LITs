@@ -1,0 +1,59 @@
+__pycache__/
+logs/
+infer_output/
+check_utils/
+evaluation/
+.jieba_cache/
+
+.cursor/
+infer_mel/
+lits/utils/monotonic_align/build/
+mfa_zh354_duration/
+spectral_badcase_eval/
+
+# Acoustic checkpoints remain external. The bundled 24 kHz Vocos generator
+# is the only tracked checkpoint and is stored through Git LFS.
+model_checkpoints/
+*.ckpt
+!vocos/generator.ckpt
+*.pt
+*.pth
+
+###
+data_for_test/
+run_eval.sh
+text2id_debug.sh
+debug_frontend/
+evaluation_tools/
+long_utterances.txt
+e2e_infer/
+
+# main: ignore e2e_test
+e2e_test/
+# e2e inference runtime (TN binaries copied after build; separate from e2e_test/)
+e2e_infer/bin/
+docs/
+afnas_pupuvocoder_mix22050_24k_100band/
+preflight_filelist.py
+mock_test*/
+# and profiling results
+profile_output/
+profile_cpu_inference*
+monitor_decoder_kv_cache.py
+*.log
+text*debug.sh
+verify_always_context_onnx.py
+
+# June 22 update: use vocos instead of hifigan / pupuvocoder
+hifigan/
+afnas_pupuvocoder_*/
+tools/
+infer_hifigan*
+
+
+# make sure to ignore all transsion's data
+transsion*
+!temp_cmu_g2p/transsion_frontend.py
+
+# ignore distillation runs (keep meanflow_distill source tracked)
+meanflow_distill/runs/

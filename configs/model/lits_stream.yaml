@@ -1,0 +1,62 @@
+defaults:
+  - _self_
+  - encoder: default.yaml
+  - decoder: stream.yaml
+  - cfm: stream.yaml
+  - optimizer: adam.yaml
+
+_target_: lits.models.lits.LITS
+# n_vocab: 178
+n_vocab: 120 # 247
+# Rhyme-body-tone paradigm; see configs/model/lits.yaml for the full notes.
+# Enable with: model.n_vocab=173, model.n_tones=0, data cleaners
+# [pinyin_direct_mixed_rhyme_body_tone_cleaners] (pinyin filelists) or
+# [en_zh_dict_mixed_rhyme_body_tone_cleaners] (hanzi).
+n_tones: 0
+n_spks: ${data.n_spks}
+spk_emb_dim: 64
+n_feats: ${data.n_feats}
+data_statistics: ${data.data_statistics}
+out_size: null # Must be divisible by 4
+prior_loss: true
+prior_encoder_lr: null
+duration_predictor_lr: null
+use_precomputed_durations: ${data.load_durations}
+# Mask abnormal English ARPAbet duration targets out of the duration predictor loss
+# so the duration predictor does not learn from unreliable MAS targets.
+arpa_duration_stats_path: ${paths.root_dir}/lits/text/char_symbols/ljspeech_mfa_arpa_phone_duration_stats.csv
+arpa_duration_upper_stats_path: ${paths.root_dir}/lits/text/char_symbols/king_shahenda_mfa_arpa_phone_duration_stats_cleaned.csv
+arpa_duration_lower_column: p01_ms
+arpa_duration_upper_p95_column: p95_ms
+arpa_duration_upper_p99_column: p99_ms
+arpa_duration_upper_p99_scale: 2.0
+arpa_duration_upper_p95_margin_ms: 200.0
+arpa_duration_upper_min_ms: 240.0
+arpa_duration_sample_rate: ${data.sample_rate}
+arpa_duration_hop_length: ${data.hop_length}
+arpa_duration_cleaners: ${data.cleaners}
+# null = all speakers; set e.g. [0, 3] to apply ARPA duration bounds only to those speaker ids.
+arpa_duration_spk_ids: null
+zh_duration_stats_path: ${paths.root_dir}/mfa_zh354_duration/runs/chuanyin_biaobei/zh354_duration_stats.tsv
+zh_duration_upper_stats_path: ${paths.root_dir}/mfa_zh354_duration/runs/chuanyin_biaobei/zh354_duration_stats_cleaned.tsv
+zh_duration_lower_column: p01
+zh_duration_upper_p95_column: p95
+zh_duration_upper_p99_column: p99
+zh_duration_upper_p99_scale: 1.5
+zh_duration_upper_p95_margin_frames: 6.0
+zh_duration_upper_min_frames: 8.0
+zh_duration_min_count: 20
+zh_duration_cleaners: ${data.cleaners}
+# Constrained MAS: enforce per-token duration floors inside the alignment DP
+# itself, so the repaired alignment feeds duration targets AND mu_y/prior/decoder
+# consistently. Tokens without configured floors are unaffected.
+# false = classic MAS + outlier masking (previous behaviour).
+duration_constrained_mas: true
+# Floor applied in MAS: max(duration_floor_min_frames, duration_floor_scale * stats_floor).
+# Scale 1.0 = floor at measured p01; see configs/model/lits.yaml for rationale.
+duration_floor_scale: 1.0
+duration_floor_min_frames: 2
+# English keeps 0.5 (LJSpeech stats vs actual speakers); see configs/model/lits.yaml.
+arpa_duration_floor_scale: 0.5
+aux_loss_decay_start_step: -1
+aux_loss_decay_end_step: -1

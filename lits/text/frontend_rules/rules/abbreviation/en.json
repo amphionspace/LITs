@@ -1,0 +1,24 @@
+{
+  "format": "frontend_rules_v1",
+  "module": "abbreviation",
+  "locale": "en",
+  "metadata": {
+    "description": "Collapse letter-dot abbreviations before English G2P tokenization.",
+    "tn_merge_target": "en",
+    "notes": "U.S. → US (one word token); only sentence-final periods remain as punct."
+  },
+  "resources": {
+    "pattern_defs": {
+      "letter_dot_abbrev": "\\b(?:[A-Z][a-z]?\\.)+(?:[A-Z][a-z]?)?\\."
+    }
+  },
+  "pipeline": {
+    "stages": [
+      {
+        "id": "en_abbrev_001",
+        "op": "collapse_letter_dot_abbrevs",
+        "params": { "pattern": "letter_dot_abbrev" }
+      }
+    ]
+  }
+}

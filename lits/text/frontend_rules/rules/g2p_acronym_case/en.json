@@ -1,0 +1,27 @@
+{
+  "format": "frontend_rules_v1",
+  "module": "g2p_acronym_case",
+  "locale": "en",
+  "metadata": {
+    "description": "Case-sensitive acronym readings: all-lowercase as word, all-uppercase letter-by-letter.",
+    "tn_merge_target": null,
+    "notes": "Use mode word|spell for backend-neutral rules. Optional cmudict.pick overrides variant index when CMUdict variant order differs."
+  },
+  "entries": {
+    "US": {
+      "description": "us → AH1 S; US → Y UW2 EH1 S",
+      "lower": { "mode": "word", "cmudict": { "pick": 0 } },
+      "upper": { "mode": "spell", "cmudict": { "pick": 1 } }
+    },
+    "AI": {
+      "description": "ai → AY1; AI → EY1 AY1",
+      "lower": { "mode": "word", "cmudict": { "pick": 0 } },
+      "upper": { "mode": "spell", "cmudict": { "pick": 1 } }
+    },
+    "AM": {
+      "description": "am → AE1 M; AM → EY1 EH1 M",
+      "lower": { "mode": "word", "cmudict": { "pick": 0 } },
+      "upper": { "mode": "spell", "cmudict": { "pick": 1 } }
+    }
+  }
+}

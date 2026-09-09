@@ -1,0 +1,50 @@
+# IntMeanFlow distillation config
+# Paths are relative to the repo root unless absolute.
+
+teacher_ckpt: ""
+train_manifest: ""
+val_manifest: ""
+
+cleaner: pinyin_direct_mixed_rhyme_body_tone_cleaners
+default_spk: 0
+
+student_steps: 2
+teacher_steps: 16
+# Optional non-uniform student/inference grid (comma-separated, N+1 values).
+# Examples:
+#   student_t_grid: "0,0.5,1.0"          # N=2 uniform
+#   student_t_grid: "0,0.65,1.0"         # N=2, denser near data end
+#   student_t_grid: "0,0.60,0.82,1.0"    # N=3, balanced tail refinement
+student_t_grid: "0,0.65,1.0"
+temperature: 0.667
+
+cuda_visible_devices: "0"
+batch_size: 32  # total effective batch size (per-GPU = batch_size / num_gpus)
+max_steps: 20000
+lr: 1.0e-5
+
+save_every: 100
+val_every: 100
+val_batches: 50
+log_every: 100
+
+precision: amp
+
+# Streaming alignment for causal_kv inference (bidirectional_mu pipeline):
+mu_streaming: false
+# Ignored when kv_cache_distill=true (teacher targets use chunked KV cache).
+teacher_decoder_streaming: true
+decoder_streaming: true
+kv_cache_distill: true
+distill_chunk_size: 100
+decoder_left_frames: 20
+pre_lookahead_len: 3
+
+# Optional: fixed run name suffix (CLI arg overrides this).
+output_suffix: enzh_intmeanflow_2step
+
+# Optional: explicit output directory (overrides output_suffix).
+# output_dir: meanflow_distill/runs/my_run
+
+# Optional: resume from a student checkpoint.
+resume:

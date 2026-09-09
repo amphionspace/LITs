@@ -1,0 +1,1 @@
+/path/to/train.wav|0|你好，welcome to the Chinese-English TTS pipeline.

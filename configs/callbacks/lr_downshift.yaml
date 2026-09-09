@@ -1,0 +1,31 @@
+# Soft alternative to hard encoder freezing: when the monitored val metric has
+# not improved on its best for `patience` validation epochs, multiply the lr of
+# the target param groups by `factor` (at most `max_downshifts` times; the
+# baseline resets to the current value after each downshift).
+#
+# NOTE for resumed runs where you already downshifted manually via lr_override:
+# disable these (callbacks.encoder_lr_downshift.enabled=false ...) or they will
+# stack another x0.1 on top after `patience` stagnant epochs.
+encoder_lr_downshift:
+  _target_: lits.callbacks.lr_downshift.LRDownshiftOnPlateau
+  enabled: true
+  monitor: sub_loss/val_prior_loss
+  groups: [prior_encoder]
+  factor: 0.1
+  patience: 5
+  min_delta: 0.0
+  max_downshifts: 2
+  # On trigger, first roll model + optimizer back to the best-val-prior ckpt
+  # (saved by best_prior_checkpoint), then downshift: continue from the best
+  # weights instead of the degraded post-plateau ones.
+  rewind_to_best: true
+
+duration_lr_downshift:
+  _target_: lits.callbacks.lr_downshift.LRDownshiftOnPlateau
+  enabled: true
+  monitor: sub_loss/val_dur_loss
+  groups: [duration_predictor]
+  factor: 0.1
+  patience: 5
+  min_delta: 0.0
+  max_downshifts: 2

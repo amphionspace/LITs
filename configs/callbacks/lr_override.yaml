@@ -1,0 +1,11 @@
+# Override per-param-group learning rates at train start (survives checkpoint
+# resume, which otherwise restores the old lr from the optimizer state).
+# Group names: prior_encoder, duration_predictor, spk_emb, decoder.
+lr_override:
+  _target_: lits.callbacks.lr_override.ParamGroupLROverride
+  enabled: false
+  overrides: {}
+  # Example (encoder downshift after val prior loss turns):
+  #   enabled: true
+  #   overrides:
+  #     prior_encoder: 1.0e-5

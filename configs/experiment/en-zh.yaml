@@ -1,0 +1,13 @@
+# @package _global_
+defaults:
+  - override /data: en-zh_24k
+  - override /model: lits
+  - override /trainer: gpu
+
+run_name: en-zh
+model:
+  n_vocab: 173
+  n_tones: 0
+  mas_n_tones: 5
+  tone_floor_frames: 1
+  tone_ceiling_frames: 3

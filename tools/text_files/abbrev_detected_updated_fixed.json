@@ -1,0 +1,358 @@
+[
+  {
+    "original_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2138.wav|1|Использование / до / н / . / э / . / облегчает / построение / линейной / хронологии / событий / .",
+    "updated_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2138.wav|1|Использование / до / нашей / эры / облегчает / построение / линейной / хронологии / событий / ."
+  },
+  {
+    "original_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2131.wav|1|Использование / сокращений / н / . / э / . / и / до / н / . / э / . / позволяет / четко / структурировать / историческое / повествование / .",
+    "updated_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2131.wav|1|Использование / сокращений / нашей / эры / и / до / нашей / эры / позволяет / четко / структурировать / историческое / повествование / ."
+  },
+  {
+    "original_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_1983.wav|1|Корректное / употребление / и / т / . / д / . / способствует / ясности / и / логичности / письменного / изложения / .",
+    "updated_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_1983.wav|1|Корректное / употребление / и / так / далее / способствует / ясности / и / логичности / письменного / изложения / ."
+  },
+  {
+    "original_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp-020516_RUSLAN.wav|1|Как / отчество / младшего / сына / А / . / С / . / Пушкина / ? / Была / ли / А / . / П / . / Керн / любовницей / Есенина / ?",
+    "updated_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp-020516_RUSLAN.wav|1|Как / отчество / младшего / сына / а / эс / Пушкина / ? / Была / ли / Анна / Петровна / Керн / любовницей / Есенина / ?"
+  },
+  {
+    "original_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2110.wav|1|До / н / . / э / . / является / необходимым / элементом / при / построении / исторической / временной / шкалы / .",
+    "updated_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2110.wav|1|До / нашей / эры / является / необходимым / элементом / при / построении / исторической / временной / шкалы / ."
+  },
+  {
+    "original_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_1997.wav|1|В / аналитических / материалах / и / т / . / д / . / позволяет / сосредоточиться / на / ключевых / аспектах / .",
+    "updated_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_1997.wav|1|В / аналитических / материалах / и / так / далее / позволяет / сосредоточиться / на / ключевых / аспектах / ."
+  },
+  {
+    "original_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2137.wav|1|Для / автоматической / озвучки / н / . / э / . / важно / стабильное / и / единообразное / употребление / .",
+    "updated_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2137.wav|1|Для / автоматической / озвучки / нашей / эры / важно / стабильное / и / единообразное / употребление / ."
+  },
+  {
+    "original_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_1970.wav|1|В / описании / вакансии / указаны / требования / к / опыту / , / образованию / , / навыкам / и / т / . / д / .",
+    "updated_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_1970.wav|1|В / описании / вакансии / указаны / требования / к / опыту / , / образованию / , / навыкам / и / так / далее"
+  },
+  {
+    "original_line": "/data1/xiaoqihezuo/Dataset/ru/Anna/mono24_norm_trimmed_db/anna-020516_RUSLAN.wav|0|Как / отчество / младшего / сына / А / . / С / . / Пушкина / ? / Была / ли / А / . / П / . / Керн / любовницей / Есенина / ?",
+    "updated_line": "/data1/xiaoqihezuo/Dataset/ru/Anna/mono24_norm_trimmed_db/anna-020516_RUSLAN.wav|0|Как / отчество / младшего / сына / а / эс / Пушкина / ? / Была / ли / Анна / Петровна / Керн / любовницей / Есенина / ?"
+  },
+  {
+    "original_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2124.wav|1|Многие / археологические / памятники / датируются / несколькими / веками / до / н / . / э / .",
+    "updated_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2124.wav|1|Многие / археологические / памятники / датируются / несколькими / веками / до / нашей / эры"
+  },
+  {
+    "original_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2008.wav|1|И / т / . / п / . / применяется / тогда / , / когда / остальные / элементы / списка / легко / восстанавливаются / читателем / .",
+    "updated_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2008.wav|1|И / тому / подобное / применяется / тогда / , / когда / остальные / элементы / списка / легко / восстанавливаются / читателем / ."
+  },
+  {
+    "original_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2143.wav|1|Четкое / различие / между / н / . / э / . / и / до / н / . / э / . / снижает / риск / хронологических / ошибок / .",
+    "updated_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2143.wav|1|Четкое / различие / между / нашей / эры / и / до / нашей / эры / снижает / риск / хронологических / ошибок / ."
+  },
+  {
+    "original_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2102.wav|1|До / н / . / э / . / применяется / для / указания / исторических / периодов / и / дат / , / относящихся / ко / времени / , / предшествующему / началу / современной / эры / .",
+    "updated_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2102.wav|1|До / нашей / эры / применяется / для / указания / исторических / периодов / и / дат / , / относящихся / ко / времени / , / предшествующему / началу / современной / эры / ."
+  },
+  {
+    "original_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_1967.wav|1|В / программу / обучения / вошли / лекции / , / практические / занятия / , / самостоятельная / работа / и / т / . / д / . / в / зависимости / от / формата / курса / .",
+    "updated_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_1967.wav|1|В / программу / обучения / вошли / лекции / , / практические / занятия / , / самостоятельная / работа / и / так / далее / в / зависимости / от / формата / курса / ."
+  },
+  {
+    "original_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2051.wav|1|Т / . / е / . / используется / в / письменной / речи / для / пояснения / , / уточнения / или / переформулирования / ранее / сказанной / информации / более / точными / словами / .",
+    "updated_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2051.wav|1|То / есть / используется / в / письменной / речи / для / пояснения / , / уточнения / или / переформулирования / ранее / сказанной / информации / более / точными / словами / ."
+  },
+  {
+    "original_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2048.wav|1|Для / учебных / и / тестовых / корпусов / и / т / . / п / . / важно / соблюдать / стабильность / формулировок / .",
+    "updated_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2048.wav|1|Для / учебных / и / тестовых / корпусов / и / тому / подобное / важно / соблюдать / стабильность / формулировок / ."
+  },
+  {
+    "original_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2056.wav|1|Т / . / е / . / позволяет / структурировать / текст / и / последовательно / раскрывать / смысл / сложных / понятий / .",
+    "updated_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2056.wav|1|То / есть / позволяет / структурировать / текст / и / последовательно / раскрывать / смысл / сложных / понятий / ."
+  },
+  {
+    "original_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2013.wav|1|В / проекте / использовались / современные / инструменты / анализа / данных / , / визуализации / информации / и / т / . / п / .",
+    "updated_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2013.wav|1|В / проекте / использовались / современные / инструменты / анализа / данных / , / визуализации / информации / и / тому / подобное / ."
+  },
+  {
+    "original_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2057.wav|1|Т / . / е / . / является / нормативным / сокращением / и / допускается / в / формальной / письменной / коммуникации / .",
+    "updated_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2057.wav|1|То / есть / является / нормативным / сокращением / и / допускается / в / формальной / письменной / коммуникации / ."
+  },
+  {
+    "original_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_1999.wav|1|В / справочной / литературе / и / т / . / д / . / применяется / для / компактного / представления / информации / .",
+    "updated_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_1999.wav|1|В / справочной / литературе / и / так / далее / применяется / для / компактного / представления / информации / ."
+  },
+  {
+    "original_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2059.wav|1|Т / . / е / . / помогает / читателю / или / слушателю / быстрее / усвоить / смысл / сообщения / .",
+    "updated_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2059.wav|1|То / есть / помогает / читателю / или / слушателю / быстрее / усвоить / смысл / сообщения / ."
+  },
+  {
+    "original_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2142.wav|1|В / аналитических / текстах / н / . / э / . / помогает / точно / соотнести / события / разных / эпох / .",
+    "updated_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2142.wav|1|В / аналитических / текстах / нашей / эры / помогает / точно / соотнести / события / разных / эпох / ."
+  },
+  {
+    "original_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2041.wav|1|Использование / и / т / . / п / . / требует / единообразия / на / протяжении / всего / текста / .",
+    "updated_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2041.wav|1|Использование / и / тому / подобное / требует / единообразия / на / протяжении / всего / текста / ."
+  },
+  {
+    "original_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_1985.wav|1|Чрезмерное / использование / и / т / . / д / . / может / негативно / сказаться / на / информативности / текста / .",
+    "updated_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_1985.wav|1|Чрезмерное / использование / и / так / далее / может / негативно / сказаться / на / информативности / текста / ."
+  },
+  {
+    "original_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2129.wav|1|Хронологическая / последовательность / событий / выстраивается / от / периода / до / н / . / э / .",
+    "updated_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2129.wav|1|Хронологическая / последовательность / событий / выстраивается / от / периода / до / нашей / эры / ."
+  },
+  {
+    "original_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2147.wav|1|В / текстах / для / синтеза / речи / н / . / э / . / и / до / н / . / э / . / должны / звучать / однозначно / .",
+    "updated_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2147.wav|1|В / текстах / для / синтеза / речи / нашей / эры / и / до / нашей / эры / должны / звучать / однозначно / ."
+  },
+  {
+    "original_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_1960.wav|1|И / т / . / д / . / считается / допустимой / формой / сокращения / в / нормативных / и / методических / документах / .",
+    "updated_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_1960.wav|1|И / так / далее / считается / допустимой / формой / сокращения / в / нормативных / и / методических / документах / ."
+  },
+  {
+    "original_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2046.wav|1|В / аналитических / материалах / и / т / . / п / . / позволяет / сосредоточиться / на / ключевых / аспектах / .",
+    "updated_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2046.wav|1|В / аналитических / материалах / и / тому / подобное / позволяет / сосредоточиться / на / ключевых / аспектах / ."
+  },
+  {
+    "original_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_1987.wav|1|При / редактировании / текста / важно / проверять / уместность / применения / и / т / . / д / .",
+    "updated_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_1987.wav|1|При / редактировании / текста / важно / проверять / уместность / применения / и / так / далее"
+  },
+  {
+    "original_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2014.wav|1|В / документе / перечислены / возможные / риски / , / связанные / с / финансированием / , / сроками / , / организацией / и / т / . / п / .",
+    "updated_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2014.wav|1|В / документе / перечислены / возможные / риски / , / связанные / с / финансированием / , / сроками / , / организацией / и / тому / подобное"
+  },
+  {
+    "original_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2122.wav|1|Расцвет / античной / греческой / культуры / пришелся / на / пятый / век / до / н / . / э / .",
+    "updated_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2122.wav|1|Расцвет / античной / греческой / культуры / пришелся / на / пятый / век / до / нашей / эры"
+  },
+  {
+    "original_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2035.wav|1|При / редактировании / важно / проверять / уместность / применения / и / т / . / п / .",
+    "updated_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2035.wav|1|При / редактировании / важно / проверять / уместность / применения / и / тому / подобное"
+  },
+  {
+    "original_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2114.wav|1|Археологические / находки / позволяют / датировать / поселения / третьим / тысячелетием / до / н / . / э / . / основываясь / на / материальных / свидетельствах / .",
+    "updated_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2114.wav|1|Археологические / находки / позволяют / датировать / поселения / третьим / тысячелетием / до / нашей / эры / основываясь / на / материальных / свидетельствах / ."
+  },
+  {
+    "original_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2024.wav|1|В / статье / приводятся / примеры / успешных / проектов / , / инициатив / , / программ / и / т / . / п / .",
+    "updated_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2024.wav|1|В / статье / приводятся / примеры / успешных / проектов / , / инициатив / , / программ / и / тому / подобное"
+  },
+  {
+    "original_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2128.wav|1|Ряд / научных / открытий / античности / относится / ко / времени / до / н / . / э / .",
+    "updated_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2128.wav|1|Ряд / научных / открытий / античности / относится / ко / времени / до / нашей / эры / ."
+  },
+  {
+    "original_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2053.wav|1|Т / . / е / . / чаще / всего / применяется / в / научных / , / учебных / и / официальных / текстах / , / где / требуется / логическая / точность / формулировок / .",
+    "updated_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2053.wav|1|То / есть / чаще / всего / применяется / в / научных / , / учебных / и / официальных / текстах / , / где / требуется / логическая / точность / формулировок / ."
+  },
+  {
+    "original_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2130.wav|1|Исторические / источники / часто / группируются / по / признаку / н / . / э / .",
+    "updated_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2130.wav|1|Исторические / источники / часто / группируются / по / признаку / нашей / эры / ."
+  },
+  {
+    "original_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_1994.wav|1|В / нормативных / документах / и / т / . / д / . / помогает / обобщать / повторяющиеся / элементы / .",
+    "updated_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_1994.wav|1|В / нормативных / документах / и / так / далее / помогает / обобщать / повторяющиеся / элементы / ."
+  },
+  {
+    "original_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2028.wav|1|В / исследовании / описываются / социальные / группы / , / сообщества / , / организации / и / т / . / п / .",
+    "updated_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2028.wav|1|В / исследовании / описываются / социальные / группы / , / сообщества / , / организации / и / тому / подобное / ."
+  },
+  {
+    "original_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2047.wav|1|Стандарты / письменной / речи / допускают / и / т / . / п / . / при / четкой / логической / структуре / предложения / .",
+    "updated_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2047.wav|1|Стандарты / письменной / речи / допускают / и / тому / подобное / при / четкой / логической / структуре / предложения / ."
+  },
+  {
+    "original_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2104.wav|1|До / н / . / э / . / часто / используется / при / описании / античной / истории / , / археологических / находок / и / ранних / цивилизаций / .",
+    "updated_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2104.wav|1|До / нашей / эры / часто / используется / при / описании / античной / истории / , / археологических / находок / и / ранних / цивилизаций / ."
+  },
+  {
+    "original_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2044.wav|1|В / справочных / текстах / и / т / . / п / . / применяется / для / группировки / однотипных / понятий / .",
+    "updated_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2044.wav|1|В / справочных / текстах / и / тому / подобное / применяется / для / группировки / однотипных / понятий / ."
+  },
+  {
+    "original_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_1995.wav|1|Стилистическая / нейтральность / делает / и / т / . / д / . / универсальным / инструментом / письменной / коммуникации / .",
+    "updated_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_1995.wav|1|Стилистическая / нейтральность / делает / и / так / далее / универсальным / инструментом / письменной / коммуникации / ."
+  },
+  {
+    "original_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2004.wav|1|И / т / . / п / . / является / нормативным / сокращением / и / активно / используется / в / научных / , / учебных / и / деловых / текстах / .",
+    "updated_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2004.wav|1|И / тому / подобное / является / нормативным / сокращением / и / активно / используется / в / научных / , / учебных / и / деловых / текстах / ."
+  },
+  {
+    "original_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2026.wav|1|В / ходе / работы / используются / таблицы / , / графики / , / схемы / и / т / . / п / .",
+    "updated_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2026.wav|1|В / ходе / работы / используются / таблицы / , / графики / , / схемы / и / тому / подобное / ."
+  },
+  {
+    "original_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2030.wav|1|В / тексте / упоминаются / различные / формы / взаимодействия / , / такие / как / консультации / , / переговоры / , / соглашения / и / т / . / п / .",
+    "updated_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2030.wav|1|В / тексте / упоминаются / различные / формы / взаимодействия / , / такие / как / консультации / , / переговоры / , / соглашения / и / тому / подобное / ."
+  },
+  {
+    "original_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2050.wav|1|Уместное / применение / и / т / . / п / . / повышает / качество / письменной / и / аудиальной / коммуникации / .",
+    "updated_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2050.wav|1|Уместное / применение / и / тому / подобное / повышает / качество / письменной / и / аудиальной / коммуникации / ."
+  },
+  {
+    "original_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2133.wav|1|Корректная / датировка / с / указанием / н / . / э / . / повышает / точность / научного / изложения / .",
+    "updated_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2133.wav|1|Корректная / датировка / с / указанием / нашей / эры / повышает / точность / научного / изложения / ."
+  },
+  {
+    "original_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_1982.wav|1|В / официальной / документации / и / т / . / д / . / применяется / строго / в / соответствии / с / правилами / делового / письма / .",
+    "updated_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_1982.wav|1|В / официальной / документации / и / так / далее / применяется / строго / в / соответствии / с / правилами / делового / письма / ."
+  },
+  {
+    "original_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2136.wav|1|В / исторических / обзорах / н / . / э / . / помогает / отделить / античный / период / от / средневекового / .",
+    "updated_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2136.wav|1|В / исторических / обзорах / нашей / эры / помогает / отделить / античный / период / от / средневекового / ."
+  },
+  {
+    "original_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_1951.wav|1|И / т / . / д / . / используется / в / письменной / речи / для / обозначения / продолжения / перечисления / однородных / предметов / , / явлений / или / действий / без / их / полного / указания / .",
+    "updated_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_1951.wav|1|И / так / далее / используется / в / письменной / речи / для / обозначения / продолжения / перечисления / однородных / предметов / , / явлений / или / действий / без / их / полного / указания / ."
+  },
+  {
+    "original_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_1993.wav|1|Уместное / применение / и / т / . / д / . / повышает / читаемость / сложных / текстов / .",
+    "updated_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_1993.wav|1|Уместное / применение / и / так / далее / повышает / читаемость / сложных / текстов / ."
+  },
+  {
+    "original_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2020.wav|1|В / договоре / обозначены / обязанности / сторон / , / касающиеся / качества / услуг / , / сроков / исполнения / и / т / . / п / .",
+    "updated_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2020.wav|1|В / договоре / обозначены / обязанности / сторон / , / касающиеся / качества / услуг / , / сроков / исполнения / и / тому / подобное / ."
+  },
+  {
+    "original_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2029.wav|1|В / процессе / оценки / учитываются / показатели / эффективности / , / устойчивости / , / надежности / и / т / . / п / .",
+    "updated_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2029.wav|1|В / процессе / оценки / учитываются / показатели / эффективности / , / устойчивости / , / надежности / и / тому / подобное / ."
+  },
+  {
+    "original_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2000.wav|1|Грамотное / использование / и / т / . / д / . / отражает / высокий / уровень / владения / письменной / речью / .",
+    "updated_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2000.wav|1|Грамотное / использование / и / так / далее / отражает / высокий / уровень / владения / письменной / речью / ."
+  },
+  {
+    "original_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2038.wav|1|Осознанное / применение / и / т / . / п / . / облегчает / понимание / текста / при / аудиовоспроизведении / .",
+    "updated_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2038.wav|1|Осознанное / применение / и / тому / подобное / облегчает / понимание / текста / при / аудиовоспроизведении / ."
+  },
+  {
+    "original_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2018.wav|1|В / описании / программного / обеспечения / указаны / функции / хранения / данных / , / обработки / запросов / , / формирования / отчетов / и / т / . / п / .",
+    "updated_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2018.wav|1|В / описании / программного / обеспечения / указаны / функции / хранения / данных / , / обработки / запросов / , / формирования / отчетов / и / тому / подобное / ."
+  },
+  {
+    "original_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2134.wav|1|В / учебных / материалах / до / н / . / э / . / используется / для / обозначения / древних / эпох / .",
+    "updated_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2134.wav|1|В / учебных / материалах / до / нашей / эры / используется / для / обозначения / древних / эпох / ."
+  },
+  {
+    "original_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_1990.wav|1|В / методических / рекомендациях / и / т / . / д / . / позволяет / избежать / перегруженных / списков / .",
+    "updated_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_1990.wav|1|В / методических / рекомендациях / и / так / далее / позволяет / избежать / перегруженных / списков / ."
+  },
+  {
+    "original_line": "/data1/xiaoqihezuo/Dataset/ru/Anna/mono24_norm_trimmed_db/anna-001257_RUSLAN.wav|0|Александрову / Г / . / П / .",
+    "updated_line": "/data1/xiaoqihezuo/Dataset/ru/Anna/mono24_norm_trimmed_db/anna-001257_RUSLAN.wav|0|Александрову / гэ / пэ / ."
+  },
+  {
+    "original_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_1956.wav|1|И / т / . / д / . / требует / корректного / употребления / и / не / должна / заменять / смысловое / обобщение / там / , / где / оно / необходимо / .",
+    "updated_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_1956.wav|1|И / так / далее / требует / корректного / употребления / и / не / должна / заменять / смысловое / обобщение / там / , / где / оно / необходимо / ."
+  },
+  {
+    "original_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2123.wav|1|Формирование / Римской / империи / относится / к / первым / векам / н / . / э / .",
+    "updated_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2123.wav|1|Формирование / Римской / империи / относится / к / первым / векам / нашей / эры / ."
+  },
+  {
+    "original_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_1989.wav|1|Использование / и / т / . / д / . / требует / внимательного / отношения / к / структуре / предложения / .",
+    "updated_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_1989.wav|1|Использование / и / так / далее / требует / внимательного / отношения / к / структуре / предложения / ."
+  },
+  {
+    "original_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2148.wav|1|Корректное / применение / до / н / . / э / . / отражает / высокий / уровень / исторической / грамотности / .",
+    "updated_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2148.wav|1|Корректное / применение / до / нашей / эры / отражает / высокий / уровень / исторической / грамотности / ."
+  },
+  {
+    "original_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2107.wav|1|Н / . / э / . / применяется / в / сочетании / с / конкретным / годом / или / веком / для / точного / указания / времени / события / .",
+    "updated_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2107.wav|1|Нашей / эры / применяется / в / сочетании / с / конкретным / годом / или / веком / для / точного / указания / времени / события / ."
+  },
+  {
+    "original_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_1966.wav|1|В / ходе / исследования / анализировались / тексты / разных / жанров / , / включая / научные / статьи / , / инструкции / , / отчеты / и / т / . / д / .",
+    "updated_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_1966.wav|1|В / ходе / исследования / анализировались / тексты / разных / жанров / , / включая / научные / статьи / , / инструкции / , / отчеты / и / так / далее / ."
+  },
+  {
+    "original_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2009.wav|1|И / т / . / п / . / помогает / структурировать / текст / и / подчеркнуть / типовой / характер / перечисляемых / объектов / .",
+    "updated_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2009.wav|1|И / тому / подобное / помогает / структурировать / текст / и / подчеркнуть / типовой / характер / перечисляемых / объектов / ."
+  },
+  {
+    "original_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2036.wav|1|Чрезмерное / использование / и / т / . / п / . / может / снизить / точность / изложения / информации / .",
+    "updated_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2036.wav|1|Чрезмерное / использование / и / тому / подобное / может / снизить / точность / изложения / информации / ."
+  },
+  {
+    "original_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_1981.wav|1|Использование / и / т / . / д / . / делает / текст / более / компактным / , / но / требует / от / читателя / достаточного / уровня / контекстного / понимания / .",
+    "updated_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_1981.wav|1|Использование / и / так / далее / делает / текст / более / компактным / , / но / требует / от / читателя / достаточного / уровня / контекстного / понимания / ."
+  },
+  {
+    "original_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2034.wav|1|В / учебных / материалах / и / т / . / п / . / помогает / избежать / перегруженных / списков / терминов / .",
+    "updated_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2034.wav|1|В / учебных / материалах / и / тому / подобное / помогает / избежать / перегруженных / списков / терминов / ."
+  },
+  {
+    "original_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_1961.wav|1|В / отчете / были / перечислены / основные / задачи / проекта / , / такие / как / анализ / данных / , / разработка / модели / , / тестирование / и / т / . / д / . / что / позволило / избежать / излишней / детализации / .",
+    "updated_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_1961.wav|1|В / отчете / были / перечислены / основные / задачи / проекта / , / такие / как / анализ / данных / , / разработка / модели / , / тестирование / и / так / далее / что / позволило / избежать / излишней / детализации / ."
+  },
+  {
+    "original_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_1969.wav|1|При / подготовке / проекта / учитывались / климатические / условия / , / инфраструктура / , / логистика / и / т / . / д / .",
+    "updated_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_1969.wav|1|При / подготовке / проекта / учитывались / климатические / условия / , / инфраструктура / , / логистика / и / так / далее / ."
+  },
+  {
+    "original_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2049.wav|1|В / текстах / для / автоматической / озвучки / и / т / . / п / . / предпочтительны / простые / и / однозначные / конструкции / .",
+    "updated_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2049.wav|1|В / текстах / для / автоматической / озвучки / и / тому / подобное / предпочтительны / простые / и / однозначные / конструкции / ."
+  },
+  {
+    "original_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2111.wav|1|Историки / считают / , / что / первые / письменные / источники / появились / задолго / до / начала / н / . / э / . / в / период / формирования / ранних / государств / .",
+    "updated_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2111.wav|1|Историки / считают / , / что / первые / письменные / источники / появились / задолго / до / начала / нашей / эры / в / период / формирования / ранних / государств / ."
+  },
+  {
+    "original_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2145.wav|1|При / подготовке / исторических / данных / до / н / . / э / . / требует / особого / внимания / к / формулировкам / .",
+    "updated_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2145.wav|1|При / подготовке / исторических / данных / до / нашей / эры / требует / особого / внимания / к / формулировкам / ."
+  },
+  {
+    "original_line": "/data1/xiaoqihezuo/Dataset/ru/Anna/mono24_norm_trimmed_db/anna-020518_RUSLAN.wav|0|И / наконец / , / совсем / уже / дикий / вопрос / Говорят / , / В / . / И / . / Ленин / умел / плавать / задом / . / Правда / ли / это / ?",
+    "updated_line": "/data1/xiaoqihezuo/Dataset/ru/Anna/mono24_norm_trimmed_db/anna-020518_RUSLAN.wav|0|И / наконец / , / совсем / уже / дикий / вопрос / Говорят / , / Владимир / Ильич / Ленин / умел / плавать / задом / . / Правда / ли / это / ?"
+  },
+  {
+    "original_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_1968.wav|1|В / договоре / перечислены / обязательства / сторон / , / касающиеся / сроков / , / качества / , / ответственности / и / т / . / д / .",
+    "updated_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_1968.wav|1|В / договоре / перечислены / обязательства / сторон / , / касающиеся / сроков / , / качества / , / ответственности / и / так / далее / ."
+  },
+  {
+    "original_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_1959.wav|1|И / т / . / д / . / используется / после / перечисления / процессов / , / функций / или / характеристик / , / если / они / легко / угадываются / из / контекста / .",
+    "updated_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_1959.wav|1|И / так / далее / используется / после / перечисления / процессов / , / функций / или / характеристик / , / если / они / легко / угадываются / из / контекста / ."
+  },
+  {
+    "original_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_1991.wav|1|Понимание / функций / и / т / . / д / . / является / важной / частью / языковой / компетенции / .",
+    "updated_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_1991.wav|1|Понимание / функций / и / так / далее / является / важной / частью / языковой / компетенции / ."
+  },
+  {
+    "original_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2019.wav|1|В / ходе / обсуждения / затрагивались / вопросы / экологии / , / образования / , / социальной / политики / и / т / . / п / .",
+    "updated_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2019.wav|1|В / ходе / обсуждения / затрагивались / вопросы / экологии / , / образования / , / социальной / политики / и / тому / подобное / ."
+  },
+  {
+    "original_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2033.wav|1|Корректное / употребление / и / т / . / п / . / повышает / связность / и / структурированность / текста / .",
+    "updated_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2033.wav|1|Корректное / употребление / и / тому / подобное / повышает / связность / и / структурированность / текста / ."
+  },
+  {
+    "original_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2040.wav|1|В / методических / рекомендациях / и / т / . / п / . / способствует / логичному / обобщению / материала / .",
+    "updated_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2040.wav|1|В / методических / рекомендациях / и / тому / подобное / способствует / логичному / обобщению / материала / ."
+  },
+  {
+    "original_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_1974.wav|1|В / процессе / работы / используются / таблицы / , / графики / , / диаграммы / и / т / . / д / .",
+    "updated_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_1974.wav|1|В / процессе / работы / используются / таблицы / , / графики / , / диаграммы / и / так / далее / ."
+  },
+  {
+    "original_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2121.wav|1|Возникновение / первых / городских / поселений / относится / к / четвертому / тысячелетию / до / н / . / э / .",
+    "updated_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2121.wav|1|Возникновение / первых / городских / поселений / относится / к / четвертому / тысячелетию / до / нашей / эры / ."
+  },
+  {
+    "original_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_1988.wav|1|Стандарты / письменной / речи / допускают / и / т / . / д / . / при / сохранении / логической / завершенности / высказывания / .",
+    "updated_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_1988.wav|1|Стандарты / письменной / речи / допускают / и / так / далее / при / сохранении / логической / завершенности / высказывания / ."
+  },
+  {
+    "original_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2141.wav|1|Для / тестовых / корпусов / до / н / . / э / . / полезно / при / проверке / обработки / дат / .",
+    "updated_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2141.wav|1|Для / тестовых / корпусов / до / нашей / эры / полезно / при / проверке / обработки / дат / ."
+  },
+  {
+    "original_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp-020518_RUSLAN.wav|1|И / наконец / , / совсем / уже / дикий / вопрос / Говорят / , / В / . / И / . / Ленин / умел / плавать / задом / . / Правда / ли / это / ?",
+    "updated_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp-020518_RUSLAN.wav|1|И / наконец / , / совсем / уже / дикий / вопрос / Говорят / , / Владимир / Ильич / Ленин / умел / плавать / задом / . / Правда / ли / это / ?"
+  },
+  {
+    "original_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2016.wav|1|В / инструкции / описаны / действия / по / настройке / оборудования / , / проверке / параметров / , / тестированию / и / т / . / п / .",
+    "updated_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_2016.wav|1|В / инструкции / описаны / действия / по / настройке / оборудования / , / проверке / параметров / , / тестированию / и / тому / подобное / ."
+  },
+  {
+    "original_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_1955.wav|1|И / т / . / д / . / не / рекомендуется / использовать / в / художественной / речи / , / где / предпочтительнее / развернутое / и / образное / описание / .",
+    "updated_line": "/data1/xiaoqihezuo/Dataset/ru/Dmitry/mono24_norm_trimmed_db/filipp_1955.wav|1|И / так / далее / не / рекомендуется / использовать / в / художественной / речи / , / где / предпочтительнее / развернутое / и / образное / описание / ."
+  }
+]

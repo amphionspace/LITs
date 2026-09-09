@@ -1,0 +1,102 @@
+{
+  "format": "frontend_rules_v1",
+  "module": "g2p_homograph",
+  "locale": "en",
+  "metadata": {
+    "description": "Lightweight CMUdict variant selection using closed-class words and morphology.",
+    "tn_merge_target": null,
+    "notes": "Open-class content words (organisms, music, naturally) are not listed; use suffix and grammar-class cues instead."
+  },
+  "resources": {
+    "word_lists": {
+      "closed_determiners": [
+        "the", "a", "an", "our", "their", "its", "my", "your", "his", "her",
+        "some", "any", "this", "that", "these", "those", "every", "each", "no"
+      ],
+      "closed_pronouns": [
+        "i", "we", "they", "you", "he", "she", "it", "who", "whom", "which"
+      ],
+      "closed_auxiliaries": [
+        "will", "can", "could", "would", "should", "may", "might", "must", "shall",
+        "do", "does", "did", "have", "has", "had",
+        "am", "is", "are", "was", "were", "be", "been", "being"
+      ],
+      "closed_prepositions": [
+        "in", "on", "at", "with", "without", "by", "for", "from", "to",
+        "into", "onto", "upon", "over", "under", "through", "during",
+        "before", "after", "between", "among", "around", "about", "off",
+        "out", "up", "down", "near", "behind", "beyond", "within", "throughout",
+        "inside", "outside", "across", "along", "beneath", "beside", "toward", "towards"
+      ]
+    }
+  },
+  "homographs": {
+    "TO": {
+      "description": "Weak form T AH0 instead of stressed T UW1.",
+      "rules": [
+        {
+          "id": "to_default_weak",
+          "pick": 2,
+          "comment": "always weak T AH0",
+          "when": {}
+        }
+      ]
+    },
+    "LIVE": {
+      "description": "Verb L IH1 V vs adjective L AY1 V.",
+      "rules": [
+        {
+          "id": "live_after_determiner",
+          "pick": 0,
+          "comment": "the live show → L AY1 V",
+          "when": { "prev_in": "closed_determiners" }
+        },
+        {
+          "id": "live_after_pronoun",
+          "pick": 1,
+          "comment": "we live → L IH1 V",
+          "when": { "prev_in": "closed_pronouns" }
+        },
+        {
+          "id": "live_after_auxiliary",
+          "pick": 1,
+          "comment": "will live / can live → L IH1 V",
+          "when": { "prev_in": "closed_auxiliaries" }
+        },
+        {
+          "id": "live_after_neg_aux",
+          "pick": 1,
+          "comment": "don't live → L IH1 V",
+          "when": { "prev_suffix": "n't" }
+        },
+        {
+          "id": "live_before_ly_adverb",
+          "pick": 1,
+          "comment": "live naturally / live happily → L IH1 V",
+          "when": { "next_suffix": "ly" }
+        },
+        {
+          "id": "live_before_preposition",
+          "pick": 1,
+          "comment": "fish live in water → L IH1 V",
+          "when": { "next_in": "closed_prepositions" }
+        },
+        {
+          "id": "live_subject_at_clause_end",
+          "pick": 1,
+          "comment": "organisms live. / where organisms live → L IH1 V",
+          "when": {
+            "prev_not_in": "closed_determiners",
+            "next_is_punct_or_end": true
+          }
+        },
+        {
+          "id": "live_default_adj",
+          "pick": 0,
+          "comment": "live music / live broadcast → L AY1 V",
+          "when": {}
+        }
+      ]
+    }
+  }
+}

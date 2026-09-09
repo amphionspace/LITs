@@ -1,0 +1,91 @@
+defaults:
+  - _self_
+  - encoder: default.yaml
+  - decoder: default.yaml
+  - cfm: default.yaml
+  - optimizer: adam.yaml
+
+_target_: lits.models.lits.LITS
+# n_vocab: 178
+n_vocab: 133 # 247
+# Rhyme-body-tone paradigm (zh-en-rhyme-body-tone): inline tone marks in the
+# sequence; encoder n_tones=0 but mas_n_tones=5 for 2D MAS lookup.
+# Default en-zh / en-zh-dict cleaners use this paradigm:
+#   model.n_vocab: 173        # zh-en-rhyme-body-tone inventory
+#   model.n_tones: 0
+#   model.mas_n_tones: 5
+#   model.tone_floor_frames: 1
+#   model.tone_ceiling_frames: 3
+# and in the data config:
+#   cleaners: [en_zh_dict_mixed_rhyme_body_tone_cleaners]
+# Filelists stay unchanged (tone backfill happens at tokenization time).
+# Pinyin "ng" (嗯 ng4) maps to the dedicated syllabic-nasal token ㄫ instead of
+# polluting the ㄣ rhyme; the legacy 354 inventory is frozen and unaffected.
+# Requires training from scratch: the zh symbol inventory changes.
+n_tones: 0
+# MAS-only tone table width when encoder n_tones=0 (rhyme-body-tone paradigm).
+mas_n_tones: 0
+# Inline Bopomofo tone marks (ˉˊˇˋ˙): MAS + inference duration bounds (frames).
+# 0 = disabled. Only applies when inline tone marks appear in the token sequence.
+tone_floor_frames: 1
+tone_ceiling_frames: 3
+n_spks: ${data.n_spks}
+spk_emb_dim: 64
+n_feats: ${data.n_feats}
+data_statistics: ${data.data_statistics}
+out_size: null # Must be divisible by 4
+prior_loss: true
+# Prior path (mu_x / mu_y): separate lr from decoder; null = same as optimizer.lr
+prior_encoder_lr: null
+# Duration predictor (encoder.proj_w): null = same as optimizer.lr
+duration_predictor_lr: null
+use_precomputed_durations: ${data.load_durations}
+# Mask abnormal English ARPAbet duration targets out of the duration predictor loss
+# so the duration predictor does not learn from unreliable MAS targets.
+arpa_duration_stats_path: ${paths.root_dir}/lits/text/char_symbols/ljspeech_mfa_arpa_phone_duration_stats.csv
+arpa_duration_upper_stats_path: ${paths.root_dir}/lits/text/char_symbols/king_shahenda_mfa_arpa_phone_duration_stats_cleaned.csv
+arpa_duration_lower_column: p01_ms
+arpa_duration_upper_p95_column: p95_ms
+arpa_duration_upper_p99_column: p99_ms
+arpa_duration_upper_p99_scale: 2.0
+arpa_duration_upper_p95_margin_ms: 200.0
+arpa_duration_upper_min_ms: 240.0
+arpa_duration_sample_rate: ${data.sample_rate}
+arpa_duration_hop_length: ${data.hop_length}
+arpa_duration_cleaners: ${data.cleaners}
+# null = all speakers; set e.g. [0, 3] to apply ARPA duration bounds only to those speaker ids.
+arpa_duration_spk_ids: null
+# Mask abnormal Chinese 354-token duration targets (per-token p01 floor, loose p99 ceiling).
+zh_duration_stats_path: ${paths.root_dir}/mfa_zh354_duration/runs/chuanyin_biaobei/zh354_duration_stats.tsv
+zh_duration_upper_stats_path: ${paths.root_dir}/mfa_zh354_duration/runs/chuanyin_biaobei/zh354_duration_stats_cleaned.tsv
+zh_duration_lower_column: p01
+zh_duration_upper_p95_column: p95
+zh_duration_upper_p99_column: p99
+zh_duration_upper_p99_scale: 1.5
+zh_duration_upper_p95_margin_frames: 6.0
+zh_duration_upper_min_frames: 8.0
+zh_duration_min_count: 20
+zh_duration_cleaners: ${data.cleaners}
+# Constrained MAS: enforce per-token duration floors inside the alignment DP
+# itself, so the repaired alignment feeds duration targets AND mu_y/prior/decoder
+# consistently. Tokens without configured floors are unaffected.
+# false = classic MAS + outlier masking (previous behaviour).
+duration_constrained_mas: true
+# Floor applied in MAS: max(duration_floor_min_frames, duration_floor_scale * stats_floor).
+# Scale 1.0 = floor at measured p01 (binds only the bottom 1% of natural
+# realizations). The earlier 0.5 hedge existed because the zh stats were
+# untrustworthy (uo/-ong/erhua mapping bugs undercounted durations); with the
+# fixed stats pipeline the hedge only nullifies the floors it was meant to
+# protect (我: p01 3.1 -> 0.5x = 1.55 -> clamped to min 2, same as before).
+# Back off to ~0.7 if floor_binding_token_ratio stays high or
+# infeasible_sample_ratio is visibly nonzero.
+duration_floor_scale: 1.0
+duration_floor_min_frames: 2
+# English keeps the validated 0.5: its p01 comes from LJSpeech, not the actual
+# training speakers, so "bottom 1%" is not guaranteed there (null = follow
+# duration_floor_scale).
+arpa_duration_floor_scale: 0.5
+# Optional step-based dur/prior weight decay (fallback if callback disabled).
+# Default -1: use callbacks.aux_loss_schedule (val plateau) instead.
+aux_loss_decay_start_step: -1
+aux_loss_decay_end_step: -1

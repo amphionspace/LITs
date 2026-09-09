@@ -1,0 +1,11 @@
+channels: [256, 256]
+dropout: 0.05
+attention_head_dim: 64
+n_blocks: 1
+num_mid_blocks: 2
+num_heads: 2
+act_fn: snakebeta
+static_chunk_size: 50 # 2025.11.03 xingwen added this
+num_decoding_left_chunks: -1
+decoder_left_frames: 20  # frame-level left context for ODE decoder; overrides num_decoding_left_chunks when >= 0
+mu_encoder_left_chunks: -1  # mu encoder (ConformerEncoder inside CFM) sees full sentence; ODE decoder keeps left=2

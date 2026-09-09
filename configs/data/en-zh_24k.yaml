@@ -1,0 +1,25 @@
+_target_: lits.data.text_mel_datamodule.TextMelDataModule
+name: en-zh-24k
+train_filelist_path: ${oc.env:TRAIN_FILELIST}
+valid_filelist_path: ${oc.env:VALID_FILELIST}
+batch_size: 32
+num_workers: 8
+pin_memory: true
+cleaners: [en_zh_dict_mixed_rhyme_body_tone_cleaners]
+add_blank: false
+prepend_sil: true
+n_spks: ${oc.env:N_SPKS,1}
+n_fft: 2048
+n_feats: 100
+sample_rate: 24000
+hop_length: 384
+win_length: 1536
+f_min: 0
+f_max: 12000
+data_statistics:
+  mel_mean: ${oc.env:MEL_MEAN,0.0}
+  mel_std: ${oc.env:MEL_STD,1.0}
+seed: 1234
+load_durations: false
+sanity_check_samples: 5
+text_normalization: true

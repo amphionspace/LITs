@@ -235,7 +235,7 @@ verify_tn_preflight() {
 
   repo_root="$(verify_e2e_tn_repo_root)"
   bin_dir="${TN_BIN_DIR:-$repo_root/e2e_infer/bin}"
-  data_root="${TN_DATA_ROOT:-$repo_root/Transsion_Multilingual_Text_Normalization_for_TTS/data}"
+  data_root="${TN_DATA_ROOT:-$repo_root/frontend/data}"
   bin="$bin_dir/tts_cli"
   [[ -x "$bin" ]] \
     || verify_e2e_tn_die "Missing TextNormalizer CLI: $bin (run: bash install_e2e_tn.sh)"

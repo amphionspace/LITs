@@ -5,7 +5,7 @@ teacher_ckpt: ""
 train_manifest: ""
 val_manifest: ""
 
-cleaner: pinyin_direct_mixed_rhyme_body_tone_cleaners
+cleaner: en_zh_dict_mixed_rhyme_body_tone_cleaners
 default_spk: 0
 
 student_steps: 2

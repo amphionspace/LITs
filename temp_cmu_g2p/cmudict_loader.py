@@ -6,7 +6,11 @@ import re
 from pathlib import Path
 
 _PKG_ROOT = Path(__file__).resolve().parent
-DEFAULT_CMUDICT_PATH = _PKG_ROOT / "data" / "cmudict-0.7b"
+_REPO_ROOT = _PKG_ROOT.parent
+DEFAULT_CMUDICT_PATH = (
+    _REPO_ROOT / "frontend" / "data" / "en-zh-g2p" / "resources"
+    / "cmudict-en-zh-merged.txt"
+)
 
 
 def _normalize_word_key(word: str) -> str:

@@ -32,12 +32,11 @@ Not included:
 - generated audio, diagnostic output, or benchmark artifacts
 - pipeline code and resources for languages outside Chinese and English
 
-The retained `Transsion_Multilingual_Text_Normalization_for_TTS` git submodule is an external multilingual project. This repository invokes only its `zh`, `en`, and `en-zh-g2p` profiles; cloning that submodule may still download profiles outside this repository's language scope.
+The `frontend/` directory vendors the Chinese-English subset of the text normalizer. It includes only the `zh`, `en`, and `en-zh-g2p` profiles and requires no Git submodule checkout.
 
 ## Setup
 
 ```bash
-git submodule update --init Transsion_Multilingual_Text_Normalization_for_TTS
 python -m venv .venv
 source .venv/bin/activate
 pip install -r lits_requirements.txt
@@ -125,4 +124,4 @@ pytest -q tests/test_runtime_text2id.py tests/test_infer_chunking.py \
   tests/test_single_pass_frontend.py tests/test_tone_embedding.py tests/test_lr_downshift.py
 ```
 
-`tests/test_cpp_frontend.py` additionally requires the initialized TN submodule and a built `e2e_infer/bin/tts_cli`. Full synthesis requires an external LITs checkpoint; the Vocos checkpoint is bundled through Git LFS.
+`tests/test_cpp_frontend.py` additionally requires a built `e2e_infer/bin/tts_cli`. Full synthesis requires an external LITs checkpoint; the Vocos checkpoint is bundled through Git LFS.

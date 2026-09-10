@@ -22,4 +22,4 @@ data_statistics:
 seed: 1234
 load_durations: false
 sanity_check_samples: 5
-text_normalization: true
+text_normalization: false

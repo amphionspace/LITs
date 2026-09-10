@@ -2,15 +2,15 @@
 
 ## 1. 简介
 
-训练时，程序会读取音频和对应文本的token（可以是raw text，可以是phoneme。考虑到模型较小、汉语和英语发音和字符之间对应关系不规律，我们这里简单地使用phoneme），学习它们之间的对应关系。
+训练时，程序会读取音频和对应文本。默认流程先把文本转换成发音符号（phoneme），再把发音符号映射成数字编号（token ID），让模型学习发音与音频之间的对应关系。训练清单可以保存完成文字规范化后的普通文本，也可以保存提前转换好的 phoneme。
 
 模型整体流程如下：
 
 ```text
 输入中文、英文或中英混合文字
-  -> 文字规范化(text normalization)，例如把数字转换为便于朗读的形式。# 这个功能来自一个外部仓库
-  -> G2P (grapheme to phoneme)，查词典得到phoneme序列
-  -> 根据我们定义的词表，把phoneme序列变成数字编号(token ids)
+  -> 使用仓库内置的 frontend/ 做文字规范化（TN），例如把数字转换为便于朗读的形式
+  -> G2P（grapheme to phoneme），查词典得到 phoneme 序列
+  -> 根据模型词表，把 phoneme 序列变成数字编号（token IDs）
   （以上为前端）
   -> 声学模型处理序列，生成mel spectrogram
   -> Vocos 把频谱转换成 wav 音频
@@ -26,7 +26,6 @@
 
 ## 2. 环境准备
 
-（这部分纯codex生成，实际操作也建议直接把这个小节丢给codex）
 
 ### 2.1 硬件建议
 
@@ -52,15 +51,15 @@ cd /path/to/LITs
 source .venv/bin/activate
 ```
 
-### 2.3 初始化文字前端子模块
+### 2.3 内置文字前端
 
-本项目使用一个 Git 子模块处理中文、英文、数字、货币和发音转换：
+项目已经把中文、英文和中英 G2P 所需的 C++ 源码、规则和词典放在 `frontend/` 中，不再使用 Git submodule。克隆主仓库后无需另外下载前端仓库。
 
-```bash
-git submodule update --init Transsion_Multilingual_Text_Normalization_for_TTS
-```
+内置目录只保留三个运行配置：
 
-虽然这个外部子模块本身含有其他语种，本项目只使用其中的中文、英文和中英发音配置。
+- `frontend/data/zh`：中文文字规范化；
+- `frontend/data/en`：英文文字规范化；
+- `frontend/data/en-zh-g2p`：中英混合 G2P。
 
 ### 2.4 安装 ICU 并编译文字前端
 
@@ -91,15 +90,14 @@ bash verify_e2e_tn.sh en-zh-dict
 
 ## 3. 准备训练数据
 
-（主要需要设置configs/data里面的yaml文件，具体可以问codex）
 
 ### 3.1 音频要求
 
 默认训练配置使用：
 
 - WAV 音频；
-- 采样率 24000 Hz
-- 100 维声音特征
+- 采样率 24000 Hz；
+- 100 维声音特征；
 - 每条音频配一段中文、英文或中英混合文字。
 
 尽量保证：
@@ -171,7 +169,9 @@ data/filelists/templates/valid.txt
 cleaners: [en_zh_dict_mixed_rhyme_body_tone_cleaners]
 ```
 
-因此，**如果清单里是已经完成数字、货币、缩写等文字规范化的普通纯文本，不必先手工转换 G2P**。训练读取每条样本时会自动执行：
+配置中的 `text_normalization: false` 是指无需调用该仓库内部的python代码规则，与`frontend`里的C++ TN无关。训练之前，应确保训练数据已经做过TN，没有尚未展开的替数字、日期、货币和单位等。
+
+训练读取每条样本时，会自动执行：
 
 ```text
 纯文本
@@ -196,12 +196,13 @@ cleaners: [en_zh_dict_mixed_rhyme_body_tone_cleaners]
 
 #### 3.3.1 当前使用哪些词典
 
-默认词典来自旧分支保留下来的中英 G2P 前端：
+默认训练和生产推理共用内置 C++ 前端的词典：
 
-- 中文主词典：`lits/text/sources/chinese_lexicon.txt`；
-- 中文读音覆盖：`lits/text/sources/user_dict.txt`；
-- 英文主词典：`temp_cmu_g2p/data/cmudict-0.7b`；
-- 英文生词补充词典：`temp_cmu_g2p/data/supplement_lexicon.json`。
+- 中文主词典：`frontend/data/en-zh-g2p/resources/chinese_lexicon.txt`；
+- 中文读音覆盖：`frontend/data/en-zh-g2p/resources/user_dict.txt`；
+- 英文主词典（已合并补充词条）：`frontend/data/en-zh-g2p/resources/cmudict-en-zh-merged.txt`。
+
+Python cleaner 默认也读取这些文件，因此训练和 C++ 推理对同一个词使用相同的默认读音。`temp_cmu_g2p/data/supplement_lexicon.json` 仍可作为 Python 侧额外的英文生词覆盖。
 
 中文词典每行格式为 `词<TAB>带声调数字的拼音`：
 
@@ -232,7 +233,9 @@ export LITS_CMUDICT=/data/dicts/cmudict-0.7b
 export LITS_EN_SUPPLEMENT=/data/dicts/en_supplement.json
 ```
 
-随后在同一个终端执行训练即可。未设置的路径继续使用仓库内置词典。
+随后在同一个终端执行训练即可。未设置的路径继续使用 `frontend/data/en-zh-g2p/resources/` 中的内置词典。
+
+这些 `LITS_*` 环境变量和脚本参数只改变 Python cleaner 与离线清单转换。生产推理使用 C++ 前端，读取 `frontend/data/en-zh-g2p/resources/`。如果训练时采用外部词典，正式推理前也要把相同词条合并到该目录的 C++ 资源中并重新运行 `bash install_e2e_tn.sh`；否则训练和推理可能得到不同读音。
 
 注意：这些词典在每个训练进程首次使用时加载并缓存。因此应当先设置环境变量，再启动训练；训练已经开始后再修改环境变量不会自动刷新词典。
 
@@ -246,7 +249,18 @@ python lits/text/sources/validate_chinese_lexicon.py \
 
 #### 3.3.3 推荐先生成一份可检查的 phoneme 清单
 
-即使最终选择训练时自动 G2P，也建议先离线转换一份清单，用于人工抽查读音：
+即使最终选择训练时自动 G2P，也建议先离线转换一份清单，用于人工抽查读音。包含数字、日期、货币、单位或复杂缩写时，使用 `--run-tn` 先调用内置 C++ TN，再执行 Python G2P：
+
+```bash
+python scripts/prepare_g2p_filelist.py \
+  /data/en-zh/train.raw.txt \
+  /data/en-zh/train.phoneme.txt \
+  --run-tn
+```
+
+该模式要求先运行 `bash install_e2e_tn.sh`。纯英文行使用 `frontend/data/en`，含中文或中英混合的行使用 `frontend/data/zh` 做 TN；随后统一执行中英 G2P。
+
+如果输入清单已经完成 TN，可以不加 `--run-tn`。需要指定外部词典时执行：
 
 ```bash
 python scripts/prepare_g2p_filelist.py \
@@ -430,7 +444,6 @@ Hello, nice to meet you.
 
 ```bash
 CKPT=/models/lits-en-zh.ckpt \
-VOCOS_CHECKPOINT=/models/vocos-generator.ckpt \
 SPK_ID=0 \
 bash infer_e2e.sh en-zh-dict /data/input.txt demo
 ```
@@ -438,7 +451,7 @@ bash infer_e2e.sh en-zh-dict /data/input.txt demo
 参数说明：
 
 - `CKPT`：LITs 模型路径；
-- `VOCOS_CHECKPOINT`：Vocos 模型路径；
+- `VOCOS_CHECKPOINT`：可选；用于覆盖内置的 `vocos/generator.ckpt`；
 - `SPK_ID`：使用哪个说话人的声音；
 - `en-zh-dict`：处理普通中文、英文和中英混合文本，推荐新手使用；
 - `/data/input.txt`：输入文本；
@@ -476,19 +489,7 @@ infer_output/demo/
 
 ### 6.3 `en-zh-dict` 和 `en-zh` 的区别
 
-新手请直接使用：
-
-```text
-en-zh-dict
-```
-
-它接受正常文字，例如：
-
-```text
-今天温度是 25 摄氏度。
-Hello world.
-```
-
+`en-zh-dict`接受正常文字（需要做完text normalization）并查G2P词典。例如：Hello world; 今天温度是二十五摄氏度。
 `en-zh` 主要用于已经提前转换成拼音或发音符号的输入，不适合普通文本。
 
 ### 6.4 指定输出目录
@@ -496,7 +497,6 @@ Hello world.
 ```bash
 OUTPUT_DIR=/data/output/run1 \
 CKPT=/models/lits-en-zh.ckpt \
-VOCOS_CHECKPOINT=/models/vocos-generator.ckpt \
 SPK_ID=0 \
 bash infer_e2e.sh en-zh-dict /data/input.txt run1
 ```
@@ -508,32 +508,31 @@ bash infer_e2e.sh en-zh-dict /data/input.txt run1
 ```bash
 FP16=0 \
 CKPT=/models/lits-en-zh.ckpt \
-VOCOS_CHECKPOINT=/models/vocos-generator.ckpt \
 SPK_ID=0 \
 bash infer_e2e.sh en-zh-dict /data/input.txt cpu-demo
 ```
 
 ## 7. 时长控制：句首静音、最短时长和最长时长
+## 7.0 MAS (Monotonic Alignment Search)
+- 行为：（接近Match/Grad TTS）
+  - Text encoder给出每个token的隐表示 mu_x 和时长预测 logw。
+  - MAS根据文本的mu_x和mel之间的似然$$\log p(y_j \mid \mu_{x_i})$$，搜索一条单调对齐路径attn，它决定了每一帧mel属于哪个token。
+  例如，一句话转换后有四个发音单位，录音被切成 20 帧，程序可能得到这样的结果：
 
-在介绍具体设置前，先解释本节所说的“给发音分配时长”是什么意思。
+  ```text
+  发音单位：  A       B          C       D
+  音频帧数：  3 帧    6 帧       4 帧    7 帧
+  时间长度：  48 ms   96 ms      64 ms   112 ms
+  ```
 
-一段录音在模型内部会被切成许多很短的时间片，也就是“帧”。与此同时，输入文字会被转换成一串发音单位。例如“你好”不会只被看成两个汉字，而会被转换成声母、韵母、声调等模型能够识别的单位。
+  这些帧必须按顺序分配，而且通常要覆盖整段有效录音。如果某个发音得到的帧太少，它可能听起来像被吞掉；得到的帧太多，它可能被拉得很长。录音开头如果有静音而又没有专门的静音单位，这些静音帧还可能被错误地分给第一个真正的发音。
 
-训练时，程序只知道整句话的文字和整段录音，并不知道录音中的第几毫秒对应“你”的声母、第几毫秒对应“好”的韵母。因此，程序需要按照发音顺序，把所有音频帧分别交给这些发音单位。这个过程就是本节所说的“分配发音”，更准确地说，是“为每个发音单位分配一段音频和持续时长”。
+  - attn对下游的影响：
+    - 为每个token算出总帧数，成为duration predictor需学习的duration target
+    - 生成prior：每个 token 的 mu_x 按它被 MAS 分到的帧数重复若干次，拼成mu_y。mu_y看起来像一个粗糙、模糊的频谱，它是diffusion decoder的条件。
+  - 因此，MAS的错误可能导致：1. Duration predictor学习目标target不可信；2. decoder在错误的mu_y条件上训练。
 
-例如，一句话转换后有四个发音单位，录音被切成 20 帧，程序可能得到这样的结果：
-
-```text
-发音单位：  A       B          C       D
-音频帧数：  3 帧    6 帧       4 帧    7 帧
-时间长度：  48 ms   96 ms      64 ms   112 ms
-```
-
-这些帧必须按顺序分配，而且通常要覆盖整段有效录音。如果某个发音得到的帧太少，它可能听起来像被吞掉；得到的帧太多，它可能被拉得很长。录音开头如果有静音而又没有专门的静音单位，这些静音帧还可能被错误地分给第一个真正的发音。
-
-模型训练完成后，会学习根据文字预测类似的时长。推理时没有参考录音，模型会先预测每个发音应该持续多少帧，再根据这些时长生成声音。因此，训练阶段的分配是否合理，会直接影响最终语音的节奏、停顿和清晰度。
-
-语音模型不仅要读对字，还要决定每个发音持续多久。本项目旧分支设计了专门的时长控制，主要解决三类问题：
+我们的时长控制主要解决三类问题：
 
 - 录音开头的静音被错误分给第一个发音；
 - 某些元音或中文韵母太短，听起来像被吞掉；
@@ -550,7 +549,7 @@ bash infer_e2e.sh en-zh-dict /data/input.txt cpu-demo
 错误：  [   你持续很久   ][好]
 ```
 
-旧分支的做法是在每句话最前面自动加入一个特殊 token：
+为避免这种错误导致时长分配不准，我们在每句话最前面自动加入一个特殊 token：
 
 ```text
 <sil> 你 好
@@ -567,7 +566,7 @@ bash infer_e2e.sh en-zh-dict /data/input.txt cpu-demo
 
 中英符号表中已经保留 `<sil>`。旧设计还会让 `<sil>` 不受普通发音的最长时长限制，因此它能够按实际录音吸收句首静音。
 
-当前 `clean-main` 已经接通句首 `<sil>`：训练配置默认启用 `prepend_sil: true`，训练与推理都会在每条完整句子开头添加一次，tone ID 为 0，并与 blank token 分开处理。
+当前 `main` 已经接通句首 `<sil>`：训练配置默认启用 `prepend_sil: true`，训练与推理都会在每条完整句子开头添加一次，tone ID 为 0，并与 blank token 分开处理。
 
 旧 checkpoint 如果训练时没有使用 `<sil>`，推理时应设置 `PREPEND_SIL=0`。训练和推理必须保持一致，不能一边开启、一边关闭。
 
@@ -626,7 +625,7 @@ mfa_zh354_duration/runs/chuanyin_biaobei/zh354_duration_stats_cleaned.tsv
 
 如果整句话太短，无法同时满足所有最短时长，底层实现会按比例缩小下限；如果所有最长时长加起来仍不足以覆盖整段音频，也会放宽上限，避免训练直接失败。
 
-**当前 `clean-main` 保留了 `maximum_path_constrained` 的上下限底层实现和对应测试，但 `lits/models/lits.py` 的训练主流程目前仍调用普通 `maximum_path`。** 所以配置文件中虽然有上下限参数，完整的“训练对齐时强制上下限”目前并未接通。后续恢复时，需要把中文、英文统计值转换为每个 token 的上下限，再传给 `maximum_path_constrained`。
+**当前 `main` 已经接通完整的受约束 MAS。** `lits/models/lits.py` 会读取中文和英文时长统计，为每个适用 token 生成最短和最长帧数，并在 `duration_constrained_mas: true` 时调用 `maximum_path_constrained`。如果一句话太短或太长而无法同时满足所有限制，底层实现会缩放约束并记录统计值，避免训练直接失败。
 
 ### 7.4 当前可直接使用的推理时长修补
 
@@ -635,7 +634,6 @@ mfa_zh354_duration/runs/chuanyin_biaobei/zh354_duration_stats_cleaned.tsv
 ```bash
 INFER_DURATION_PATCHES=1 \
 CKPT=/models/lits-en-zh.ckpt \
-VOCOS_CHECKPOINT=/models/vocos-generator.ckpt \
 SPK_ID=0 \
 bash infer_e2e.sh en-zh-dict /data/input.txt duration-demo
 ```
@@ -654,31 +652,9 @@ bash infer_e2e.sh en-zh-dict /data/input.txt duration-demo
 lits/utils/infer_duration_floor.py
 ```
 
-英文 `JH`、`CH` 也预留了最短时长控制，但默认下限为 0，表示当前没有启用。
+NOTE: 这些规则只修改模型预测出的时长，不会重新训练模型。**不建议**依赖推理时修补，而是应该在训练时从根源处理问题。
 
-这些规则只修改模型预测出的时长，不会重新训练模型。如果问题来自训练时错误的文字—音频对齐，推理修补只能减轻现象，不能完全替代带 `<sil>` 和上下限约束的重新训练。
 
-student 模型同样可以开启：
-
-```bash
-INFER_DURATION_PATCHES=1 \
-STUDENT_CKPT=/models/student.pt \
-VOCOS_CHECKPOINT=/models/vocos-generator.ckpt \
-SPK_ID=0 \
-bash meanflow_distill/infer_distilled.sh \
-  en-zh-dict /data/input.txt distilled-duration-demo
-```
-
-### 7.5 新手应该如何选择
-
-建议按以下顺序操作：
-
-1. 第一次训练先检查原始音频，尽量减少过长的句首静音。
-2. 先使用默认配置训练一个小规模模型，确认数据和说话人编号正确。
-3. 推理时发现少量吞音或停顿过长，可以尝试 `INFER_DURATION_PATCHES=1`。
-4. 如果大量句子的第一个发音被拉长，应优先恢复并使用句首 `<sil>` 训练方案，而不是不断增大推理修补值。
-5. 恢复完整上下限训练后，应重新训练模型；不要默认旧 checkpoint 与新 token、对齐方式兼容。
-6. 修改任何帧数前，先把帧换算成毫秒并试听一批固定句子，避免修复一个问题的同时制造新的节奏问题。
 
 ## 8. 可选：训练更快的 student 模型
 
@@ -689,6 +665,8 @@ bash meanflow_distill/infer_distilled.sh \
 - 已训练好的普通 LITs 模型；
 - 单独准备的训练清单和验证清单；
 - 可用的 GPU。
+
+当前 `meanflow_distill/configs/en-zh.yaml` 使用与普通训练相同的 `en_zh_dict_mixed_rhyme_body_tone_cleaners`，因此清单最后一列可以是完成 TN 后的普通中英文文本。如果改用提前生成的 phoneme 清单，应把配置中的 `cleaner` 改成 `zh_en_phoneme_passthrough_cleaners`。
 
 启动命令：
 
@@ -720,7 +698,6 @@ student 模型使用下面的入口：
 
 ```bash
 STUDENT_CKPT=/models/student.pt \
-VOCOS_CHECKPOINT=/models/vocos-generator.ckpt \
 SPK_ID=0 \
 bash meanflow_distill/infer_distilled.sh \
   en-zh-dict /data/input.txt distilled-demo
@@ -737,7 +714,6 @@ meanflow_distill/infer_output/distilled-demo/
 ```bash
 STREAMING_MODE=non_streaming \
 STUDENT_CKPT=/models/student.pt \
-VOCOS_CHECKPOINT=/models/vocos-generator.ckpt \
 SPK_ID=0 \
 bash meanflow_distill/infer_distilled.sh \
   en-zh-dict /data/input.txt distilled-offline
@@ -773,7 +749,6 @@ bash training.sh trainer.devices='[0]'
 处理方法：
 
 ```bash
-git submodule update --init Transsion_Multilingual_Text_Normalization_for_TTS
 export ICU_ROOT=/path/to/icu
 bash install_e2e_tn.sh
 ```
@@ -825,7 +800,7 @@ bash training.sh trainer.devices='[0]' data.batch_size=4
 
 - [ ] 已启用 Python 环境；
 - [ ] 已安装 `lits_requirements.txt`；
-- [ ] TN 子模块已经初始化；
+- [ ] `frontend/` 中的中英文字前端文件完整；
 - [ ] `e2e_infer/bin/tts_cli` 已编译；
 - [ ] 所有音频都是 24000 Hz；
 - [ ] 训练清单和验证清单格式正确；

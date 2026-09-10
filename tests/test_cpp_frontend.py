@@ -26,7 +26,7 @@ class TtsCliEngineConfigTests(unittest.TestCase):
 class TtsCliEngineRuntimeTests(unittest.TestCase):
     def _engine(self) -> TtsCliEngine | None:
         bin_dir = REPO_ROOT / "e2e_infer" / "bin"
-        data_root = REPO_ROOT / "Transsion_Multilingual_Text_Normalization_for_TTS" / "data"
+        data_root = REPO_ROOT / "frontend" / "data"
         if not (bin_dir / "tts_cli").is_file():
             return None
         return TtsCliEngine(bin_dir, data_root=data_root)

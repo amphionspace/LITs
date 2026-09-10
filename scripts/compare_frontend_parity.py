@@ -194,7 +194,7 @@ def parse_args() -> argparse.Namespace:
     p.add_argument(
         "--tn_data_root",
         type=Path,
-        default=REPO_ROOT / "Transsion_Multilingual_Text_Normalization_for_TTS" / "data",
+        default=REPO_ROOT / "frontend" / "data",
     )
     p.add_argument(
         "--show_mismatches",

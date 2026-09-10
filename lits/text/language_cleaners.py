@@ -92,7 +92,7 @@ def _replace_vertical_line_punct(text: str) -> str:
 def normalize_clause_break_punct(text: str) -> str:
     """Insert clause punctuation at line breaks and bare spaces.
 
-    Rules live in ``Transsion_Multilingual_Text_Normalization_for_TTS/rules_v2/en.full.json``
+    Rules live in ``frontend/rules_v2/en.full.json``
     under ``frontend``.
     """
     from lits.text.frontend_rules.ops.punctuation import normalize_clause_break_punct as _op
@@ -558,7 +558,7 @@ def _load_chinese_lexicon():
     lexicon_file = Path(
         os.environ.get(
             "LITS_ZH_LEXICON",
-            REPO_ROOT / "lits" / "text" / "sources" / "chinese_lexicon.txt",
+            REPO_ROOT / "frontend" / "data" / "en-zh-g2p" / "resources" / "chinese_lexicon.txt",
         )
     )
     with open(lexicon_file, "r", encoding="utf-8") as f:
@@ -573,7 +573,7 @@ def _load_chinese_lexicon():
     user_dict_file = Path(
         os.environ.get(
             "LITS_ZH_USER_DICT",
-            REPO_ROOT / "lits" / "text" / "sources" / "user_dict.txt",
+            REPO_ROOT / "frontend" / "data" / "en-zh-g2p" / "resources" / "user_dict.txt",
         )
     )
     if user_dict_file.exists():

@@ -24,7 +24,7 @@ from lits.runtime.text2id import EncodedPhonemes, Text2Id, write_jsonl  # noqa: 
 
 DEFAULT_TN_BIN_DIR = REPO_ROOT / "e2e_infer" / "bin"
 DEFAULT_TN_DATA_ROOT = (
-    REPO_ROOT / "Transsion_Multilingual_Text_Normalization_for_TTS" / "data"
+    REPO_ROOT / "frontend" / "data"
 )
 
 SUPPORTED_MODEL_LANGS = (

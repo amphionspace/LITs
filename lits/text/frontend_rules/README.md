@@ -1,6 +1,6 @@
 # Frontend Rules（文本前端规则层）
 
-本目录保留 LITs 的模型侧标点辅助、英文查词规则，以及中文变调的 Python **参考/回退实现**。生产运行时的 TN 与中文变调已经统一到 `Transsion_Multilingual_Text_Normalization_for_TTS`：原始文本使用 `data/<locale>`，词典查音后的拼音使用 `data/zh_g2p`。当统一动态库/CLI 未安装时，Python 变调规则才作为兼容回退。
+本目录保留 LITs 的模型侧标点辅助、英文查词规则，以及中文变调的 Python **参考/回退实现**。生产运行时的 TN 与中文变调已经统一到 `frontend/`：原始文本使用 `data/<locale>`，词典查音后的拼音使用 `data/zh_g2p`。当统一动态库/CLI 未安装时，Python 变调规则才作为兼容回退。
 
 ## 架构
 
@@ -30,7 +30,7 @@ Bopomofo / ARPAbet token 序列
 | 模块 | 路径 | 是否可与 TN 合并 | 说明 |
 |------|------|------------------|------|
 | 标点规则 | `rules/punctuation/*.json` | **已部分合并** | TN 主规则已吸收通用/locale 清理；本目录仍服务模型侧 tokenizer 与兼容入口 |
-| 变调规则 | `rules/g2p_sandhi/zh.json` | **已由统一引擎接管** | 主路径为 submodule 的 `rules_v2/zh_g2p_sandhi.json`；本文件是 Python 参考/回退 |
+| 变调规则 | `rules/g2p_sandhi/zh.json` | **已由统一引擎接管** | 主路径为 `frontend/rules_v2/zh_g2p_sandhi.json`；本文件是 Python 参考/回退 |
 | 英文多读音 | `rules/g2p_homograph/en.json` | **否** | CMUdict variant 轻量消歧（前后词） |
 | 英文大小写缩略词 | `rules/g2p_acronym_case/en.json` | **否** | 小写按单词读、大写按逐字母读（查词典时） |
 
@@ -263,7 +263,7 @@ engine.apply_third_tone_sandhi_to_pinyin_tokens(tokens)
 
 ## 修改规则
 
-1. 生产 TN/变调规则以 submodule 的 `rules_v2/<locale>.full.json` 与 `rules_v2/zh_g2p_sandhi.json` 为准。
+1. 生产 TN/变调规则以 `frontend/rules_v2/<locale>.full.json` 与 `frontend/rules_v2/zh_g2p_sandhi.json` 为准。
 2. `rules/punctuation/<locale>.json` 只在 LITs 模型侧仍需的辅助步骤中维护。
 3. `rules/g2p_sandhi/zh.json` 应与 C++ 规则保持交叉验证，用作无运行库环境的回退。
 4. 修改 Python 回退规则后需重启进程（规则有 `lru_cache`）。

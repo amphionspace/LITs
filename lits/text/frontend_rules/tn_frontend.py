@@ -1,7 +1,6 @@
-"""Model-compatible bookend stages around the unified Transsion normalizer.
+"""Model-compatible bookend stages around the vendored normalizer.
 
-Rule documents live in the TN submodule as ``rules_v2/<locale>.full.json`` →
-``frontend`` (JSON only). Python execution stays in the main repo.
+Rule documents live in ``frontend/rules_v2/<locale>.full.json``.
 """
 
 from __future__ import annotations
@@ -17,7 +16,7 @@ from .ops.punctuation import apply_punctuation_op
 
 _REPO_ROOT = Path(__file__).resolve().parents[3]
 _DEFAULT_RULES_V2_DIR = (
-    _REPO_ROOT / "Transsion_Multilingual_Text_Normalization_for_TTS" / "rules_v2"
+    _REPO_ROOT / "frontend" / "rules_v2"
 )
 _FALLBACK_LANG = "en"
 

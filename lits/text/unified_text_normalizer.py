@@ -1,4 +1,4 @@
-"""Runtime adapter for the unified Transsion ``TextNormalizer``.
+"""Runtime adapter for the vendored Chinese-English ``TextNormalizer``.
 
 Production deployments should provide ``libtts_normalizer`` and use its stable C
 API.  Developer checkouts can use the unified ``tts_cli`` built by
@@ -19,7 +19,7 @@ from lits.text.cpp_process_wrapper import CPPProcessWrapper
 
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
-TN_ROOT = REPO_ROOT / "Transsion_Multilingual_Text_Normalization_for_TTS"
+TN_ROOT = REPO_ROOT / "frontend"
 
 
 class TextNormalizerUnavailable(RuntimeError):

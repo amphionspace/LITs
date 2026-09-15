@@ -1,0 +1,29 @@
+{
+  "status": "passed",
+  "mode": "backbone_init",
+  "active_speakers": [
+    0,
+    1
+  ],
+  "initialization_verified": true,
+  "frontend_loader_equivalence_samples": 19,
+  "rank_batches": 340,
+  "distributed_partition_unique": true,
+  "all_acoustic_groups_update_at_first_step": true,
+  "updated_tensors": {
+    "speaker": 1,
+    "prior_encoder": 113,
+    "duration": 10,
+    "flow": 180,
+    "frame_encoder": 124
+  },
+  "speaker_row_update_norms": [
+    0.00024210172705352306,
+    0.0002422099933028221
+  ],
+  "loss": 3.327993869781494,
+  "peak_allocated_gib": 22.01915740966797,
+  "seconds": 6.2083793909987435,
+  "benchmark_weights_discarded": true,
+  "source_checkpoint": "/119010446/tts-assets/training_runs/hifitts_premium_stage1_lr3e-4_20260911/eval/step_00021000/checkpoint.ckpt"
+}

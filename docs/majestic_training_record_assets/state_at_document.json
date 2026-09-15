@@ -1,0 +1,30 @@
+{
+  "status": "training",
+  "global_step": 154260,
+  "epoch": 453,
+  "updated_at_unix": 1789436859.570018,
+  "metrics": {
+    "sub_loss/train_dur_loss": 0.13278810679912567,
+    "sub_loss/train_dur_loss_step": 0.13278810679912567,
+    "sub_loss/train_prior_loss": 0.9554065465927124,
+    "sub_loss/train_prior_loss_step": 0.9554065465927124,
+    "sub_loss/train_diff_loss": 0.167069673538208,
+    "sub_loss/train_diff_loss_step": 0.167069673538208,
+    "train/dur_loss_weight": 1.0,
+    "train/prior_loss_weight": 1.0,
+    "loss/train": 1.255264401435852,
+    "loss/train_step": 1.255264401435852,
+    "sub_loss/train_dur_loss_epoch": 0.14294248819351196,
+    "sub_loss/train_prior_loss_epoch": 0.9575400948524475,
+    "sub_loss/train_diff_loss_epoch": 0.15520501136779785,
+    "loss/train_epoch": 1.2556877136230469,
+    "sub_loss/val_dur_loss": 0.2153950035572052,
+    "sub_loss/val_dur_loss_epoch": 0.2153950035572052,
+    "sub_loss/val_prior_loss": 0.9661388993263245,
+    "sub_loss/val_prior_loss_epoch": 0.9661388993263245,
+    "sub_loss/val_diff_loss": 0.1714206337928772,
+    "sub_loss/val_diff_loss_epoch": 0.1714206337928772,
+    "loss/val": 1.3529547452926636,
+    "loss/val_epoch": 1.3529547452926636
+  }
+}

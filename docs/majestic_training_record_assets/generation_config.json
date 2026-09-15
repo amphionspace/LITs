@@ -1,0 +1,118 @@
+{
+  "dataset_root": "/ai_sds_wuzz/DATA_TTS/MajesticVoice_200h_20260913",
+  "targets_train_hours": {
+    "zh": 50,
+    "en": 25,
+    "mixed": 25
+  },
+  "targets_heldout_hours_per_language": {
+    "val": 0.16666666666666666,
+    "test": 0.16666666666666666
+  },
+  "text_policy": "Intact foundation TRAIN and Emilia2 real-speech transcripts plus user-approved existing GPT-4o/manual-reviewed DOTA scripts; no new LLM generation or concatenation; all exclusions retained.",
+  "tts_endpoints": [
+    "http://127.0.0.1:8200",
+    "http://127.0.0.1:8201",
+    "http://127.0.0.1:8202",
+    "http://127.0.0.1:8203"
+  ],
+  "tts_model": "/119010446/tts-assets/VoxCPM2",
+  "dnsmos_provider": "cuda",
+  "dnsmos_device_id": 1,
+  "quality_metrics_gpus": [
+    3,
+    0
+  ],
+  "dnsmos_runtime_path": "/119010446/tts-assets/runtime/onnxruntime_gpu_1_23_2",
+  "quality_reference_audio_by_language": {
+    "en": "/ai_sds_wuzz/DATA_TTS/MajesticVoice_200h_20260913/candidates/wavs_24k/72003.wav"
+  },
+  "synthesis_references": {
+    "en": {
+      "reference_audio": "/ai_sds_wuzz/DATA_TTS/MajesticVoice_200h_20260913/candidates/wavs_24k/72003.wav",
+      "prompt_text": "Archie sends his love, and will, with me, be very glad to welcome you to your old home, should you care to visit it.",
+      "source_candidate_id": 72003
+    }
+  },
+  "reference_audio": "/ai_sds_wuzz/DATA_TTS/MajesticVoice_200h_20260913/reference/ts004_cn_000001.wav",
+  "prompt_text": "我觉得很难，肯定得制定计划的。我想说的是，尽管现实生活中我们会有很多的责任，但其实我们也可以寻找到一些小的机会来追寻梦想嘛。",
+  "seed": 20260913,
+  "max_candidates_per_text": 4,
+  "candidates_per_round": 2,
+  "max_audio_seconds": 20,
+  "min_audio_seconds": 3,
+  "thresholds": {
+    "max_cer": 0.02,
+    "max_english_wer": 0.02,
+    "max_mixed_english_wer": 0.0,
+    "max_mixed_chinese_cer": 0.02,
+    "allow_exact_tonal_pinyin": true,
+    "max_raw_cer_for_tonal_exception": 0.05,
+    "min_wavlm_similarity": 0.7,
+    "min_camp_similarity": 0.68,
+    "min_dnsmos_ovrl": 3.3,
+    "min_dnsmos_sig": 3.5,
+    "min_dnsmos_bak": 3.8,
+    "max_clip_fraction": 0.0005,
+    "min_active_fraction": 0.55,
+    "max_leading_silence": 0.4,
+    "max_trailing_silence": 0.6,
+    "max_internal_silence": 0.8
+  },
+  "training": {
+    "mode": "backbone_init",
+    "source_checkpoint": "/119010446/tts-assets/training_runs/hifitts_premium_stage1_lr3e-4_20260911/eval/step_00021000/checkpoint.ckpt",
+    "run_dir": "/119010446/tts-assets/training_runs/ljs_majestic_100h_backbone21k_20260914",
+    "max_steps": null,
+    "speaker_id": 1,
+    "peak_lr": 0.0003,
+    "final_lr": 2e-05,
+    "warmup_steps": 1000,
+    "diagnostic_steps": [
+      2000,
+      5000,
+      10000,
+      20000,
+      50000
+    ],
+    "auto_start_only_after_audit_passes": true,
+    "updated_at_unix": 1789366295.3733828,
+    "include_ljspeech": true,
+    "ljs_data_dir": "/119010446/tts-assets/data_24k/ljs_majestic",
+    "sampling": "natural_unique_utterances",
+    "source_sha256": "1bbf20d7b741c11c52db74901a5bfd7655b6e4e38ffe610bcf1418454c7da86b",
+    "source_global_step": 21000,
+    "budget_unit": "epochs",
+    "max_epochs": 500,
+    "lr_schedule": "warmup_stable_linear_decay",
+    "decay_fraction": 0.2
+  },
+  "text_source_mode": "foundation_emilia2_and_reviewed_dota",
+  "llm_text_generation_enabled": false,
+  "active_languages": [
+    "zh",
+    "en",
+    "mixed"
+  ],
+  "synthesis_language_slots": [
+    "zh",
+    "zh",
+    "zh",
+    "mixed",
+    "mixed",
+    "mixed",
+    "en",
+    "en"
+  ],
+  "max_candidates_per_text_by_language": {
+    "zh": 4,
+    "en": 4,
+    "mixed": 8
+  },
+  "max_candidates_per_text_by_split": {
+    "test": {
+      "en": 4
+    }
+  },
+  "allow_external_reviewed_llm_text": true
+}

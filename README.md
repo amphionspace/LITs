@@ -63,6 +63,12 @@ For the default multi-speaker Chinese-English configuration, use `wav|speaker_id
 
 ## Acoustic-model training
 
+The current recipe jointly trains LJSpeech (speaker 0) and MajesticVoice 100 hours (speaker 1) from a 21k acoustic backbone with reset speaker embeddings and fresh Adam, preserving the LR recipe; see [双 speaker 联合训练](training/majestic_scratch/README.md).
+
+See [LITs Stage 1 训练实录](docs/stage1_training_zh.md) for the completed 200,000-step foundation run: data preparation, sampling, model, losses, optimizer, evaluation, and the 197k checkpoint used for adaptation.
+
+See [LITs 模型架构与训练 loss](docs/training_loss_zh.md) for the detailed architecture, duration/prior/flow matching objectives, and historical 48,000-step adaptation recipe.
+
 Set the external manifests and speaker count, then launch Hydra training:
 
 ```bash

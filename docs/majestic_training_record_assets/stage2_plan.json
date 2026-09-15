@@ -1,0 +1,149 @@
+{
+  "mode": "backbone_init",
+  "recipe": "ljs_majestic_100h_joint_online_mas_backbone_init",
+  "training_config": {
+    "mode": "backbone_init",
+    "source_checkpoint": "/119010446/tts-assets/training_runs/hifitts_premium_stage1_lr3e-4_20260911/eval/step_00021000/checkpoint.ckpt",
+    "run_dir": "/119010446/tts-assets/training_runs/ljs_majestic_100h_backbone21k_20260914",
+    "max_steps": null,
+    "speaker_id": 1,
+    "peak_lr": 0.0003,
+    "final_lr": 2e-05,
+    "warmup_steps": 1000,
+    "diagnostic_steps": [
+      2000,
+      5000,
+      10000,
+      20000,
+      50000
+    ],
+    "auto_start_only_after_audit_passes": true,
+    "updated_at_unix": 1789366295.3733828,
+    "include_ljspeech": true,
+    "ljs_data_dir": "/119010446/tts-assets/data_24k/ljs_majestic",
+    "sampling": "natural_unique_utterances",
+    "source_sha256": "1bbf20d7b741c11c52db74901a5bfd7655b6e4e38ffe610bcf1418454c7da86b",
+    "source_global_step": 21000,
+    "budget_unit": "epochs",
+    "max_epochs": 500,
+    "lr_schedule": "warmup_stable_linear_decay",
+    "decay_fraction": 0.2
+  },
+  "source_checkpoint": "/119010446/tts-assets/training_runs/hifitts_premium_stage1_lr3e-4_20260911/eval/step_00021000/checkpoint.ckpt",
+  "source_global_step": 21000,
+  "source_sha256": "1bbf20d7b741c11c52db74901a5bfd7655b6e4e38ffe610bcf1418454c7da86b",
+  "initialization_sha256": "1ee4744264e35b457688a3192b9b627e192e7094fd71d481e16a92748cfb9889",
+  "ckpt_path": null,
+  "init_ckpt_path": "/119010446/tts-assets/training_runs/ljs_majestic_100h_backbone21k_20260914/initialization.ckpt",
+  "initialization": "backbone weights only; seeded random speaker rows; fresh Adam and scheduler",
+  "initial_parameter_sha256": "403300109729d528e2ce9505b911cd37779d0ca52aff9a6eb9638f1feea47080",
+  "active_speaker_ids": [
+    0,
+    1
+  ],
+  "speakers": {
+    "0": "LJSpeech",
+    "1": "MajesticVoice"
+  },
+  "n_spks": 2,
+  "data_dir": "/119010446/tts-assets/training_runs/ljs_majestic_100h_backbone21k_20260914/data",
+  "data_source": "/ai_sds_wuzz/DATA_TTS/MajesticVoice_200h_20260913",
+  "data_statistics": {
+    "mel_mean": -5.604226112365723,
+    "mel_std": 3.216111660003662
+  },
+  "manifest_hashes": {
+    "sampling_plan.json": "8590ac285b41952cb08682d5213e80530cbec1c4652c3970f198a6ad8153636a",
+    "train.txt": "0704e4a7c783481fbfe61d15e9350ab0d6d745ee7ed8705390beddf6eb733b4e",
+    "ljs_source_audit.json": "fcb16f23dcc9f07a29e537ab0ea8084f1661bc8c3adee6244fd635180606c3dd",
+    "backbone_transfer_audit.json": "7c8a11edf7f012d54644bb08a9ded15f1b35eebace84b9fbe89939f717180414",
+    "model_config.json": "f11e86cbc23f62862d063517966fd161b520baf13a62b79087435ce6827914e7",
+    "joint_split_audit.json": "3a6a88fb02e08b902078f1e6ecd2e25b15be83b0b16a1252c4bd433ce272e844",
+    "eval_protocol.json": "2b6bc49efe9adb76153b8c4abcc547d63e4e7f8b1f007d7baf4aa698ef7ab708",
+    "test.jsonl": "e03365c0661e67fed2cf9f229bd2d30c4e9a9c55f3d04291c951df9869c0c1d0",
+    "eval_manifest.jsonl": "957efd16aba7e038b283e981b62e37ecbafafe46af5cef7e4112c54e2e3931d3",
+    "mel_statistics_units.jsonl": "4bc265ef53f81d5771b73dd057cb903240aaf7a94bf587c0e1606a9aefdbeb5c",
+    "val.txt": "8dc6c13e4a23293bac1c3d8abc75a18a6dab93e62040f6a15280881238ad7029",
+    "train.jsonl": "ebe427a62279827d16048c6b32096858054dc2f7335cb89443af0681483de7f6",
+    "text_preflight.jsonl": "8ec96753c049d96c89d3efa3ac81c6bd7b6e29fd2d2376cb078020c9c500ba66",
+    "mel_statistics.json": "54e0a22ebb0bf1bfdb16100c100e618137c37937de468479600b95821b76afd9",
+    "test.txt": "b89ad8f3b08a058a01416aed0ad3ee295fe2fc2799e98cde07f6526cb756d4e5",
+    "val.jsonl": "188c0d5f27978dcd8d3f88cecb607245f2b24a511d3ff3127af077b6ca9c76cb",
+    "training_summary.json": "9091c1fd9b2f7374ec772fb3ed89b3f03dbe2e5107c4788be385d15fcb2b70ea"
+  },
+  "unique_audio_hours": {
+    "majestic": {
+      "zh": 50.000399999999885,
+      "en": 25.000222222222064,
+      "mixed": 25.000888888888888
+    },
+    "ljs": {
+      "train": 21.04746983796303,
+      "val": 0.41038587962962986,
+      "test": 0.0
+    }
+  },
+  "sampling": "natural_unique_utterances",
+  "train_rows_per_speaker": {
+    "0": 11550,
+    "1": 53732
+  },
+  "sampling_plan": {
+    "policy": "natural_unique_utterances",
+    "train_rows": 65282,
+    "speaker_rows": {
+      "0": 11550,
+      "1": 53732
+    },
+    "speaker_row_shares": {
+      "0": 0.17692472657087713,
+      "1": 0.8230752734291229
+    },
+    "speaker_audio_hours": {
+      "0": 21.04746983796303,
+      "1": 100.00151111111221
+    },
+    "optimizer_steps_per_epoch": 340,
+    "approximate_epochs_at_step_cap": 500.0,
+    "note": "Row shares apply before the incomplete global tail batch is dropped; batches are length-bucketed, not fixed speaker quotas."
+  },
+  "evaluation_samples": 650,
+  "train_rows": 65282,
+  "validation_rows": 632,
+  "test_rows": 608,
+  "batch_size_per_gpu": 48,
+  "devices": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "effective_batch": 192,
+  "precision": "bf16-mixed",
+  "max_steps": 170000,
+  "max_epochs": 500,
+  "budget_unit": "epochs",
+  "peak_lr": 0.0003,
+  "final_lr": 2e-05,
+  "warmup_steps": 1000,
+  "lr_schedule": "warmup_stable_linear_decay",
+  "decay_fraction": 0.2,
+  "loss_weights": {
+    "duration": 1,
+    "prior": 1,
+    "flow": 1
+  },
+  "seed": 20260913,
+  "validation_every_steps": 1000,
+  "checkpoint_every_steps": 1000,
+  "evaluation_interval_steps": 5000,
+  "diagnostic_steps": [
+    2000,
+    5000,
+    10000,
+    20000,
+    50000,
+    170000
+  ],
+  "stopping_policy": "resolved epoch/step cap; review generated CER/WER and listening for earlier stopping; no loss-only automatic stop"
+}

@@ -1,0 +1,84 @@
+{
+  "captured_at_utc": "2026-09-15T01:47:41+00:00",
+  "evidence": {
+    "stage1_launch": {
+      "source": "/119010446/tts-assets/training_runs/hifitts_premium_stage1_lr3e-4_20260911/launch.json",
+      "sha256": "35211c43239114dcf8b6bc4a4fe346355ff139d1882bb5291169a665cb6f5435"
+    },
+    "stage1_startup": {
+      "source": "/119010446/tts-assets/training_runs/hifitts_premium_stage1_lr3e-4_20260911/startup_verification.json",
+      "sha256": "d2a4f84b5728b6a7b5088bbbd3d2b0463b76b16461ddb3a3e3f96e9f8874377d"
+    },
+    "stage1_final_state": {
+      "source": "/119010446/tts-assets/training_runs/hifitts_premium_stage1_lr3e-4_20260911/training_state.json",
+      "sha256": "a5454388cd03bf59dbf0ce066124bb6f8fc167bf4533c8c367b9bb1c51326b6a"
+    },
+    "stage2_plan": {
+      "source": "/119010446/tts-assets/training_runs/ljs_majestic_100h_backbone21k_20260914/plan.json",
+      "sha256": "bf3b760067cec6971548c44bafe5896117e146d14cc6b7ead340abfc6752b6ca"
+    },
+    "stage2_launch": {
+      "source": "/119010446/tts-assets/training_runs/ljs_majestic_100h_backbone21k_20260914/launch.json",
+      "sha256": "2321a6405091b82c2eb273219d5a07348ac55932ce572ebd5d816d99c53ecfad"
+    },
+    "stage2_model": {
+      "source": "/119010446/tts-assets/training_runs/ljs_majestic_100h_backbone21k_20260914/data/model_config.json",
+      "sha256": "f11e86cbc23f62862d063517966fd161b520baf13a62b79087435ce6827914e7"
+    },
+    "dataset_audit": {
+      "source": "/119010446/tts-assets/training_runs/ljs_majestic_100h_backbone21k_20260914/dataset_audit.json",
+      "sha256": "4728b3891ec8df8466d4f59fd131869229a412e6ff27e0fc41a78b7902624130"
+    },
+    "preflight": {
+      "source": "/119010446/tts-assets/training_runs/ljs_majestic_100h_backbone21k_20260914/preflight.json",
+      "sha256": "58cb73bc70b8e24a86386099989ad1249af30a682b94c8751948f908edfbc0fc"
+    },
+    "initialization": {
+      "source": "/119010446/tts-assets/training_runs/ljs_majestic_100h_backbone21k_20260914/initialization_verification.json",
+      "sha256": "76122163747e45a8780ef723b1f42c47ce880bad781143d2e76565f0647deac2"
+    },
+    "startup": {
+      "source": "/119010446/tts-assets/training_runs/ljs_majestic_100h_backbone21k_20260914/startup_verification.json",
+      "sha256": "b43b671a08199ba7a05eea4d37fc1c491241057274ccb8cadd726ee8865233ad"
+    },
+    "sampling": {
+      "source": "/119010446/tts-assets/training_runs/ljs_majestic_100h_backbone21k_20260914/data/sampling_plan.json",
+      "sha256": "8590ac285b41952cb08682d5213e80530cbec1c4652c3970f198a6ad8153636a"
+    },
+    "eval_protocol": {
+      "source": "/119010446/tts-assets/training_runs/ljs_majestic_100h_backbone21k_20260914/data/eval_protocol.json",
+      "sha256": "2b6bc49efe9adb76153b8c4abcc547d63e4e7f8b1f007d7baf4aa698ef7ab708"
+    },
+    "state_at_document": {
+      "source": "/119010446/tts-assets/training_runs/ljs_majestic_100h_backbone21k_20260914/training_state.json",
+      "sha256": "c3556854465f960407700e6b6de11826c307ac4cd1611753276859d4bcf00ff4"
+    },
+    "latest_eval_at_document": {
+      "source": "/119010446/tts-assets/training_runs/ljs_majestic_100h_backbone21k_20260914/eval/latest_eval.json",
+      "sha256": "7a65308a2c953a55f09b48f5d7e9bd438376a52cb00f3c3fd2b2dcc06117f9f0"
+    },
+    "generation_config": {
+      "source": "/ai_sds_wuzz/DATA_TTS/MajesticVoice_200h_20260913/config.json",
+      "sha256": "8fe5c64c85df68a96687d7f06ce9925ea8cfa4443782e8c55d3dfdcbc604fcc3"
+    }
+  },
+  "manifest_hash_checks": {
+    "sampling_plan.json": true,
+    "train.txt": true,
+    "ljs_source_audit.json": true,
+    "backbone_transfer_audit.json": true,
+    "model_config.json": true,
+    "joint_split_audit.json": true,
+    "eval_protocol.json": true,
+    "test.jsonl": true,
+    "eval_manifest.jsonl": true,
+    "mel_statistics_units.jsonl": true,
+    "val.txt": true,
+    "train.jsonl": true,
+    "text_preflight.jsonl": true,
+    "mel_statistics.json": true,
+    "test.txt": true,
+    "val.jsonl": true,
+    "training_summary.json": true
+  }
+}

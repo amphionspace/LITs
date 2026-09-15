@@ -57,3 +57,15 @@ transsion*
 
 # ignore distillation runs (keep meanflow_distill source tracked)
 meanflow_distill/runs/
+
+# Notebook autosaves are local editor state.
+.ipynb_checkpoints/
+
+# Keep the training records and their compact evidence snapshots in Git.
+!docs/
+docs/*
+!docs/frontend_runtime_contract.md
+!docs/stage1_training_zh.md
+!docs/training_loss_zh.md
+!docs/majestic_training_record_zh.md
+!docs/majestic_training_record_assets/

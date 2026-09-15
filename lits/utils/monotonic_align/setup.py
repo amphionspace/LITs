@@ -7,6 +7,8 @@ from Cython.Build import cythonize
 setup(
     name="monotonic_align",
     ext_modules=cythonize(
-        [Extension("core", ["core.pyx"], include_dirs=[numpy.get_include()])],
+        [Extension("core", ["core.pyx"], include_dirs=[numpy.get_include()],
+                   extra_compile_args=["-O3", "-fopenmp"],
+                   extra_link_args=["-fopenmp"])],
     ),
 )

@@ -271,6 +271,9 @@ class BaseLits(LightningModule, ABC):
         Restore epoch information from checkpoint for scheduler compatibility.
         """
         self.ckpt_loaded_epoch = checkpoint["epoch"]  # pylint: disable=attribute-defined-outside-init
+        if getattr(self.decoder, 'objective', None) == 'imf':
+            from lits.utils.imf_checkpoint import validate_imf_time_scale
+            validate_imf_time_scale(self, checkpoint)
 
     def _log_flow_diagnostics(self, split, batch_size):
         stats = getattr(self.decoder, 'last_loss_stats', {})

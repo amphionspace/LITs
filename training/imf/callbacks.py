@@ -10,6 +10,7 @@ class IMFAudit(ScratchAudit):
         super().on_fit_start(trainer, pl_module)
         assert pl_module.decoder.objective == 'imf'
         assert list(pl_module.decoder.sampling_time_grid) == [0.0, 0.5, 1.0]
+        assert pl_module.decoder.estimator.interval_time_scale == self.plan['interval_time_scale']
         assert trainer.accumulate_grad_batches == self.plan['accumulate_grad_batches']
         self.last_completed_step = 0
 

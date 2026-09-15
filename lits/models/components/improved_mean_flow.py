@@ -31,11 +31,14 @@ class IMFCausalEstimator(CausalConditionalDecoder):
     All existing FM state-dict names remain unchanged.
     """
 
-    def __init__(self, *args, **kwargs):
+    def __init__(self, *args, interval_time_scale=1.0, **kwargs):
         # Upstream has no network dropout. A deterministic estimator also makes
         # the detached JVP and gradient-enabled forward evaluate the same field.
         kwargs['dropout'] = 0.0
         super().__init__(*args, **kwargs)
+        self.interval_time_scale = float(interval_time_scale)
+        if not math.isfinite(self.interval_time_scale) or self.interval_time_scale <= 0:
+            raise ValueError('interval_time_scale must be finite and positive')
         self.interval_projector = TimestepEmbedding(self.in_channels, self.time_embed_dim)
         nn.init.zeros_(self.interval_projector.linear_2.weight)
         nn.init.zeros_(self.interval_projector.linear_2.bias)
@@ -45,7 +48,7 @@ class IMFCausalEstimator(CausalConditionalDecoder):
 
     def interval_embedding(self, start, end):
         return (self.time_mlp(self.time_embeddings(start))
-                + self.interval_projector(self.time_embeddings(end - start)))
+                + self.interval_projector(self.time_embeddings(end - start, scale=self.interval_time_scale)))
 
     def forward(self, x, mask, mu, t, spks=None, cond=None, streaming=False, r=None):
         # This is the existing LITs interval-estimator calling convention:
@@ -165,6 +168,9 @@ class IMF_Causal(CFM_Causal):
             static_chunk_size=original.static_chunk_size,
             num_decoding_left_chunks=original.num_decoding_left_chunks,
             decoder_left_frames=original.decoder_left_frames,
+            # Old checkpoints predate this field and used the FM scale for h.
+            # New recipes explicitly select normalized interval time (scale 1).
+            interval_time_scale=cfm_params.get('interval_time_scale', 1000.0),
         )
         # Preserve even the initial random FM trunk; warm-start loading later
         # also initializes the auxiliary tail from the loaded FM tail.

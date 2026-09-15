@@ -45,6 +45,16 @@ with zero final projection is added to it. Upstream's image backbone instead
 uses in-context tokens and omits explicit absolute-time conditioning. Keeping
 the existing embedding allows exact copying of FM tensors and preserves the
 old network's diagonal output at initialization (after the time/sign mapping).
+The new interval branch embeds normalized `h` with `interval_time_scale=1`,
+matching upstream's time scale. It must not inherit the pretrained absolute-time
+embedding's factor of 1000: that amplifies the interval JVP and can hide a growing
+unweighted u error behind the nearly constant adaptively weighted objective.
+The absolute-time embedding retains its pretrained scale.
+
+The scale is stored in checkpoint hyperparameters and applies to training,
+whole-utterance sampling, and streaming. Checkpoints predating the field load
+with their original scale 1000. Loading/resuming learned iMF weights into a
+different interval scale is rejected; initialize a corrected run from FM weights.
 
 The objective follows upstream's `t=1` noise, `t=0` data convention. LITs'
 external sampler/cache interface remains `s=0` noise, `s=1` Mel, with `s=1-t`
@@ -96,8 +106,8 @@ python -m lits.train experiment=en-zh-imf-stage2 \
 ```
 
 To actually train after choosing a budget and measuring capacity, remove
-`--cfg job`, set `trainer.devices`, and select `data.batch_size`. The preset's
-batch of 8 is provisional; JVP has additional compute/memory cost. This feature
+`--cfg job`, set `trainer.devices`, and select `data.batch_size`. The preset uses
+batch 48 per GPU; JVP capacity is checked before the operational launch. This feature
 does **not** automatically launch, stop, or resume any existing run. The old
 `training/majestic_scratch/run.py` remains the FM recipe; use the explicit Hydra
 iMF preset for this path.

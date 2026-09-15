@@ -13,7 +13,7 @@ class TrainingState(Callback):
             return
         metrics = {}
         for key, value in trainer.callback_metrics.items():
-            if 'loss' in key and hasattr(value, 'numel') and value.numel() == 1:
+            if ('loss' in key or key.startswith('imf/')) and hasattr(value, 'numel') and value.numel() == 1:
                 number = float(value.detach().cpu())
                 if not math.isfinite(number):
                     raise RuntimeError(f'Nonfinite training metric: {key}={number}')

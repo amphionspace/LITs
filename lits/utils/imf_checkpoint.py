@@ -5,6 +5,23 @@ import math
 from lits.models.components.improved_mean_flow import IMF_Causal
 
 
+def validate_imf_time_scale(model, checkpoint):
+    """Do not silently reinterpret a learned interval branch on load/resume."""
+    if not isinstance(model.decoder, IMF_Causal):
+        return
+    if not any(name.startswith('decoder.estimator.interval_projector.')
+               for name in checkpoint['state_dict']):
+        return
+    source_cfm = checkpoint.get('hyper_parameters', {}).get('cfm', {})
+    source_scale = float(source_cfm.get('interval_time_scale', 1000.0))
+    target_scale = model.decoder.estimator.interval_time_scale
+    if source_scale != target_scale:
+        raise ValueError(
+            f'iMF interval_time_scale mismatch: checkpoint={source_scale}, model={target_scale}. '
+            'Use the checkpoint scale to resume, or initialize the corrected recipe from FM weights.'
+        )
+
+
 def checkpoint_statistics(checkpoint):
     stats = {name: float(checkpoint['state_dict'][name]) for name in ('mel_mean', 'mel_std')}
     if not all(math.isfinite(v) for v in stats.values()) or stats['mel_std'] <= 0:
@@ -15,6 +32,7 @@ def checkpoint_statistics(checkpoint):
 def load_imf_initial_weights(model, checkpoint, reset_speaker_embeddings=False):
     if not isinstance(model.decoder, IMF_Causal):
         raise TypeError('FM -> iMF loading requires model/cfm=imf')
+    validate_imf_time_scale(model, checkpoint)
     state = dict(checkpoint['state_dict'])
     prefix = 'decoder.estimator.'
     estimator_state = {k[len(prefix):]: v for k, v in state.items() if k.startswith(prefix)}

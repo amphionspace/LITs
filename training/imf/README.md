@@ -140,31 +140,9 @@ two-step CER/WER, timbre, Chinese fluency, and runtime remain the quality checks
 
 ## Validation
 
-Run the self-contained CPU regression suite from the repository root:
+The temporary regression suite and real-data smoke script were run during implementation and removed after validation as requested. The original verification sources are available at commit `e86b4a5`; they are not required by training or inference.
 
-```bash
-OMP_NUM_THREADS=2 python -m pytest -q tests/test_improved_mean_flow.py tests/test_flow_padding.py
-```
-
-The tests cover analytic loss/gradient agreement, predicted-v JVP directions,
-padding invariance, diagonal sampling, strict FM migration, iMF checkpoint
-reload, the two-step interval solver, streaming caches, and FP32/BF16 backward.
-
-A bounded real-data check is available without any optimizer update:
-
-```bash
-python -m training.imf.smoke \
-  --checkpoint /path/to/stage1_21000.ckpt \
-  --data-dir "$STAGE2_DATA" --device cuda:0 \
-  --output /path/to/imf_smoke.json
-```
-
-It selects short validation examples from both speakers, verifies all migrated
-backbone tensors, runs full duration/prior/iMF backward, checks gradient groups,
-then validates checkpoint reload and exactly two synthesis calls. It clears
-nonpersistent position and streaming caches before comparing fresh-utterance
-outputs; the existing encoders' caches can otherwise retain mixed-precision
-values from earlier forwards. The temporary checkpoint is removed automatically.
+Checks covered analytic loss/gradient agreement, predicted-v JVP directions, padding, strict FM migration, checkpoint reload, uniform two-step inference, streaming caches, and FP32/BF16 backward. The real-data check made no optimizer updates and cleared nonpersistent encoder caches before comparing checkpoint reload outputs.
 
 The implementation check on September 15 passed with the real Stage 1 21k
 checkpoint and the frozen Stage 2 data: all seven gradient groups were finite

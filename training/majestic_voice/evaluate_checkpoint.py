@@ -55,8 +55,9 @@ def synthesize(args):
                 lengths = torch.tensor([ids.shape[-1]], dtype=torch.long, device='cuda')
                 speaker = torch.tensor([source['speaker']], dtype=torch.long, device='cuda')
                 with torch.inference_mode():
-                    # Keep the current model's streaming decoder geometry and use 10 ODE steps.
-                    result = model.synthesise(ids, lengths, 10, temperature=1.0, spks=speaker, x_tones=tones)
+                    # FM keeps 10 steps; iMF checkpoints carry their sampling budget.
+                    steps = getattr(model.decoder, 'default_n_timesteps', 10)
+                    result = model.synthesise(ids, lengths, steps, temperature=1.0, spks=speaker, x_tones=tones)
                     mel = result['mel']
                     assert torch.isfinite(mel).all(), 'Nonfinite predicted Mel'
                     assert 1 <= mel.shape[-1] <= 7500, 'Predicted duration outside 0..120 seconds'
@@ -65,7 +66,8 @@ def synthesize(args):
                 target = args.output / 'wavs' / (source['id'] + '.wav')
                 target.parent.mkdir(parents=True, exist_ok=True)
                 sf.write(target, np.clip(audio, -1, 1), 24000, subtype='PCM_16')
-                row.update(audio=str(target), duration=len(audio) / 24000,
+                row.update(audio=str(target), duration=len(audio) / 24000, flow_steps=steps,
+                           flow_objective=getattr(model.decoder, 'objective', 'cfm'),
                            synthesis_seconds=time.monotonic() - started)
             except Exception as exc:
                 row['synthesis_error'] = f'{type(exc).__name__}: {exc}'

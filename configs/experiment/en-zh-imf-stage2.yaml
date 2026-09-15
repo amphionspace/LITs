@@ -1,0 +1,41 @@
+# @package _global_
+defaults:
+  - en-zh
+  - override /model/cfm: imf
+
+run_name: en-zh-imf-stage2
+init_ckpt_path: ???  # Explicit FM or iMF checkpoint; this preset is a warm start.
+init_reset_speaker_embeddings: true
+init_use_checkpoint_statistics: true
+test: false
+
+data:
+  _target_: training.majestic_scratch.data.ScratchDataModule
+  data_dir: ${oc.env:STAGE2_DATA}
+  n_spks: 2
+  batch_size: 8  # JVP capacity must be measured before selecting a production batch.
+  num_workers: 4
+  load_durations: false
+
+model:
+  prior_loss: true
+  duration_constrained_mas: true
+  prior_encoder_lr: null
+  duration_predictor_lr: null
+  aux_loss_decay_start_step: -1
+  aux_loss_decay_end_step: -1
+
+trainer:
+  precision: bf16-mixed
+  use_distributed_sampler: false
+  max_steps: ???  # Choose a budget after capacity/gradient checks.
+
+callbacks:
+  freeze_encoder:
+    enabled: false
+  lr_override:
+    enabled: false
+  encoder_lr_downshift:
+    enabled: false
+  duration_lr_downshift:
+    enabled: false

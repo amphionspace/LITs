@@ -1,0 +1,22 @@
+# Two independent single-GPU servers use this config, each seeing CUDA device 0.
+# Leave room for ASR/similarity quality workers on the same physical GPUs.
+async_chunk: false
+dtype: bfloat16
+stages:
+  - stage_id: 0
+    max_num_seqs: 8
+    gpu_memory_utilization: 0.55
+    enforce_eager: true
+    trust_remote_code: true
+    enable_prefix_caching: false
+    async_scheduling: true
+    max_num_batched_tokens: 4096
+    max_model_len: 4096
+    devices: "0"
+    default_sampling_params:
+      temperature: 0.0
+      top_p: 1.0
+      top_k: -1
+      max_tokens: 2000
+      seed: 20260910
+      repetition_penalty: 1.0

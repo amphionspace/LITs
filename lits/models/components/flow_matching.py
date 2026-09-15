@@ -146,7 +146,9 @@ class CFM(BASECFM):
         y = (1 - (1 - self.sigma_min) * t_rand) * z + t_rand * x1
         u = x1 - (1 - self.sigma_min) * z
         pred = self.estimator(y, mask, mu, t_rand.squeeze(), spks, cond)
-        loss = F.mse_loss(pred, u, reduction="sum") / (torch.sum(mask) * u.shape[1])
+        # The decoder zeros padded predictions, but u still contains Gaussian
+        # noise there. Exclude padding before summing, not only in the divisor.
+        loss = (F.mse_loss(pred, u, reduction="none") * mask).sum() / (torch.sum(mask) * u.shape[1])
         return loss, y
 
 class CFM_Causal(BASECFM):
@@ -504,7 +506,9 @@ class CFM_Causal(BASECFM):
         y = (1 - (1 - self.sigma_min) * t) * z + t * x1
         u = x1 - (1 - self.sigma_min) * z
 
-        loss = F.mse_loss(self.estimator(y, mask, mu, t.squeeze(), spks, cond, streaming=streaming), u, reduction="sum") / (
+        pred = self.estimator(y, mask, mu, t.squeeze(), spks, cond, streaming=streaming)
+        # Match the valid-frame denominator with a valid-frame numerator.
+        loss = (F.mse_loss(pred, u, reduction="none") * mask).sum() / (
             torch.sum(mask) * u.shape[1]
         )
         return loss, y

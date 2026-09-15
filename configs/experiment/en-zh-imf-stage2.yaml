@@ -10,7 +10,7 @@ init_use_checkpoint_statistics: true
 test: false
 
 data:
-  _target_: training.majestic_scratch.data.ScratchDataModule
+  _target_: training.imf.data.IMFDataModule
   data_dir: ${oc.env:STAGE2_DATA}
   n_spks: 2
   batch_size: 8  # JVP capacity must be measured before selecting a production batch.

@@ -150,3 +150,55 @@ and nonzero, fresh-cache checkpoint reload produced identical Mel, and sampling
 used exactly two u calls with zero v-tail calls. There were **zero optimizer
 updates**. This verifies the software path, not trained iMF audio quality or a
 production batch-size/throughput claim.
+
+## Matched 500-epoch run
+
+The operational entry point below is opt-in. It does not run merely because the
+branch is checked out. Run it from the main checkout after the preceding FM
+training and its final evaluation have released that checkout.
+
+```bash
+export PYTHONPATH=/119010446/LITs
+python training/imf/run.py prepare \
+  --after-run /119010446/tts-assets/training_runs/ljs_majestic_100h_backbone21k_20260914 \
+  --run-dir /119010446/tts-assets/training_runs/ljs_majestic_100h_imf_from21k_500ep_20260915
+python training/imf/run.py supervise \
+  --run-dir /119010446/tts-assets/training_runs/ljs_majestic_100h_imf_from21k_500ep_20260915
+```
+
+Preparation is CPU-only. It verifies and copies the exact FM data manifests,
+freezes the committed source, and migrates the FM **starting** checkpoint into
+iMF. This contains the 21k backbone and the same seeded speaker rows used at FM
+step zero; it does not load the final 170k FM model or its optimizer. Every
+existing starting tensor is checked for equality, including speaker rows. The
+new interval branch and auxiliary head follow the initialization above. Later
+loading of this prepared iMF checkpoint keeps those speaker rows unchanged.
+
+The matched budget is 500 epochs / 170,000 optimizer updates, effective batch
+192, Adam peak LR 3e-4, 1,000-update warmup, a stable phase through 80% of the
+budget, then linear decay to 2e-5. All acoustic groups update from the first
+step. The existing duration/prior objectives remain enabled alongside the
+official adaptively weighted iMF objective; their scalar losses are not directly
+comparable with the FM loss.
+
+The supervisor requires successful FM completion, all queued evaluations
+including a complete 650-sample final report, exited FM/evaluation processes,
+and free GPUs. It then tries per-GPU microbatches 24/16/8/4 on the longest real
+examples with full backward, an Adam update, and validation. Only an OOM or
+insufficient memory headroom permits trying a smaller batch. Other failures
+stop the handoff. Gradient accumulation 2/3/6/12 maintains effective batch 192.
+Validation uses a batch no larger than the selected training microbatch.
+
+A two-update four-GPU preflight checks distributed training and validation
+before the fresh production model is loaded. Probe weights are discarded.
+Initialization, manifests, and source hashes are checked; preflight reports and
+logs stay with the run. Formal training saves/validates every 1,000 optimizer
+updates, evaluates at 1k (smoke), 2k, every 5k and the final step, using the frozen
+650-text protocol and checkpoint-selected two-step synthesis. Accumulated
+microbatches cannot duplicate exact-step checkpoint writes.
+
+`supervisor_status.json`, `preflight.json`, `launch.json`, `training_state.json`
+and `eval/latest_eval.json` report progress. Before launch, set `enabled` to
+`false` in the run's `control.json` to prevent handoff. A failed preflight or
+training job is recorded and never automatically restarted from scratch.
+Existing run directories are never overwritten by preparation.

@@ -18,6 +18,7 @@ import time
 from dataclasses import asdict, dataclass
 from pathlib import Path
 from typing import Iterable, List, Sequence, Tuple
+from contextlib import nullcontext
 
 import torch
 import torch.distributed as dist
@@ -48,6 +49,7 @@ def add_lits_root(lits_root: Path) -> None:
 
 
 def masked_mse(pred: torch.Tensor, target: torch.Tensor, mask: torch.Tensor) -> torch.Tensor:
+    pred, target, mask = pred.float(), target.float(), mask.float()
     while mask.dim() < pred.dim():
         mask = mask.unsqueeze(1)
     mask = mask.to(dtype=pred.dtype, device=pred.device)
@@ -99,6 +101,28 @@ class TextPromptDataset(Dataset):
         add_blank: bool,
         max_text_len: int,
     ):
+        if manifest.suffix == ".jsonl":
+            self.rows = []
+            for line_no, line in enumerate(manifest.read_text().splitlines(), 1):
+                if not line.strip():
+                    continue
+                row = json.loads(line)
+                ids, tones = row["ids"], row["tones"]
+                if not ids or len(ids) != len(tones):
+                    raise ValueError(f"Invalid token/tone lengths at {manifest}:{line_no}")
+                if max_text_len > 0 and len(ids) > max_text_len:
+                    raise ValueError(f"Text exceeds max_text_len at {manifest}:{line_no}; truncation is forbidden")
+                if not all(0 <= x < 173 for x in ids) or not all(0 <= x < 6 for x in tones):
+                    raise ValueError(f"Invalid Stage 2 token/tone IDs at {manifest}:{line_no}")
+                if row["speaker"] not in (0, 1):
+                    raise ValueError(f"Invalid Stage 2 speaker at {manifest}:{line_no}")
+                self.rows.append(dict(spk=row["speaker"], text=row["text"],
+                    cleaned=row.get("phonemes", row["text"]),
+                    tokens=torch.tensor(ids, dtype=torch.long),
+                    tones=torch.tensor(tones, dtype=torch.long)))
+            if not self.rows:
+                raise ValueError(f"Empty manifest: {manifest}")
+            return
         from lits.text import text_to_sequence
         from lits.utils.utils import intersperse
 
@@ -116,8 +140,8 @@ class TextPromptDataset(Dataset):
                 token_ids = intersperse(token_ids, 0)
             if not token_ids:
                 raise ValueError(f"empty token sequence at {manifest}:{line_no}: {text!r}")
-            if len(token_ids) > max_text_len:
-                token_ids = token_ids[:max_text_len]
+            if max_text_len > 0 and len(token_ids) > max_text_len:
+                raise ValueError(f"Text exceeds max_text_len at {manifest}:{line_no}; truncation is forbidden")
             self.rows.append(
                 {
                     "spk": spk,
@@ -140,10 +164,14 @@ def collate_prompts(batch: Sequence[dict]) -> dict:
     lengths = torch.tensor([len(item["tokens"]) for item in batch], dtype=torch.long)
     max_len = int(lengths.max().item())
     tokens = torch.zeros(len(batch), max_len, dtype=torch.long)
+    tones = torch.zeros_like(tokens)
     for i, item in enumerate(batch):
         tokens[i, : len(item["tokens"])] = item["tokens"]
+        if "tones" in item:
+            tones[i, :len(item["tones"])] = item["tones"]
     return {
         "x": tokens,
+        "x_tones": tones,
         "x_lengths": lengths,
         "spks": torch.tensor([item["spk"] for item in batch], dtype=torch.long),
         "text": [item["text"] for item in batch],
@@ -177,12 +205,13 @@ def set_trainable_decoder(student: torch.nn.Module, train_encoder_in_decoder: bo
     return [param for param in student.parameters() if param.requires_grad]
 
 
-def prepare_decoder_condition(model, x, x_lengths, spks, streaming: bool):
-    hidden = model.get_hidden_mel(x=x, x_lengths=x_lengths, spks=spks)
-    mu_y = hidden["mu_y"]
-    y_mask = hidden["y_mask"]
-    spk_emb = hidden["spks"]
-    mu_dec = model.decoder.encoder(mu_y, y_mask, streaming=streaming)
+def prepare_decoder_condition(model, x, x_lengths, spks, streaming: bool, x_tones=None):
+    hidden = model.get_hidden_mel(x=x, x_lengths=x_lengths, spks=spks, x_tones=x_tones)
+    # get_hidden_mel uses inference_mode; make normal tensors for student autograd.
+    mu_y = hidden["mu_y"].clone()
+    y_mask = hidden["y_mask"].clone()
+    spk_emb = hidden["spks"].clone() if hidden["spks"] is not None else None
+    mu_dec = model.decoder.encode_mu(mu_y, y_mask, finalize=True, streaming=streaming)
     return mu_dec, y_mask, spk_emb
 
 
@@ -290,15 +319,19 @@ def distill_loss(
     x = batch["x"].to(device)
     x_lengths = batch["x_lengths"].to(device)
     spks = batch["spks"].to(device)
+    x_tones = batch.get("x_tones")
+    if x_tones is not None:
+        x_tones = x_tones.to(device)
 
     with torch.no_grad():
         mu_teacher, y_mask, spk_emb = prepare_decoder_condition(
-            teacher, x, x_lengths, spks, streaming=args.mu_streaming
+            teacher, x, x_lengths, spks, streaming=args.mu_streaming, x_tones=x_tones
         )
         mu_teacher = mu_teacher.detach().clone()
         y_mask = y_mask.detach().clone()
         spk_emb = spk_emb.detach().clone() if spk_emb is not None else None
-        z = torch.randn_like(mu_teacher) * args.temperature
+        # Keep the 16-step ODE state in FP32 even with BF16 network evaluation.
+        z = torch.randn_like(mu_teacher, dtype=torch.float32) * args.temperature
         if args.kv_cache_distill and args.decoder_streaming:
             t_states, _ = teacher_trajectory_kv_cache(
                 teacher=teacher,
@@ -443,7 +476,9 @@ def save_student_checkpoint(student, output_dir: Path, args, step: int, metrics:
         student.decoder.estimator = ddp_estimator.module
     payload = {
         "state_dict": student.state_dict(),
+        "hyper_parameters": dict(student.hparams),
         "metadata": asdict(metadata),
+        "distill_args": jsonable_args(args),
         "metrics": metrics,
     }
     if optimizer is not None:
@@ -452,7 +487,9 @@ def save_student_checkpoint(student, output_dir: Path, args, step: int, metrics:
         payload["scaler_state_dict"] = scaler.state_dict()
     if was_ddp:
         student.decoder.estimator = ddp_estimator
-    torch.save(payload, ckpt_path)
+    temporary = ckpt_path.with_suffix(".tmp")
+    torch.save(payload, temporary)
+    temporary.replace(ckpt_path)
     return ckpt_path
 
 
@@ -521,7 +558,8 @@ def build_arg_parser() -> argparse.ArgumentParser:
     parser.add_argument("--grad-clip", type=float, default=1.0)
     parser.add_argument("--seed", type=int, default=1234)
     parser.add_argument("--device", default="cuda")
-    parser.add_argument("--precision", choices=["fp32", "amp"], default="amp")
+    parser.add_argument("--precision", choices=["fp32", "amp", "bf16"], default="amp")
+    parser.add_argument("--audit-startup", action="store_true")
     add_streaming_args(parser)
     parser.add_argument(
         "--kv-cache-distill",
@@ -675,8 +713,8 @@ def main() -> None:
                 print(f"validation set: {len(val_dataset)} prompts, "
                       f"eval every {args.val_every} steps ({args.val_batches} batches)", flush=True)
 
-        teacher = LITS.load_from_checkpoint(args.teacher_ckpt, map_location=device).to(device).eval()
-        student = LITS.load_from_checkpoint(args.teacher_ckpt, map_location=device).to(device).train()
+        teacher = LITS.load_from_checkpoint(args.teacher_ckpt, map_location=device, weights_only=False).to(device).eval()
+        student = LITS.load_from_checkpoint(args.teacher_ckpt, map_location=device, weights_only=False).to(device).eval()
         student.decoder.estimator = IntervalConditionedEstimator(student.decoder.estimator).to(device)
         if args.kv_cache_distill and args.decoder_streaming:
             configure_decoder_streaming_context(
@@ -692,6 +730,9 @@ def main() -> None:
             )
         freeze_all(teacher)
         trainable = set_trainable_decoder(student, train_encoder_in_decoder=args.train_decoder_encoder)
+        student.decoder.estimator.train()
+        from stage2_support import StartupAudit
+        startup_audit = StartupAudit(student, teacher, args.output_dir, rank) if args.audit_startup else None
 
         start_step = 0
         optimizer_state = None
@@ -783,13 +824,17 @@ def main() -> None:
                 sampler.set_epoch((step - 1) // max(1, len(loader)))
             batch = next(batches)
             optimizer.zero_grad(set_to_none=True)
-            with torch.cuda.amp.autocast(enabled=(args.precision == "amp" and device.type == "cuda")):
+            with precision_context(args.precision, device):
                 loss, metrics = distill_loss(student, teacher, batch, args, device)
+            if not torch.isfinite(loss):
+                raise FloatingPointError(f"Nonfinite loss at step {step}")
             scaler.scale(loss).backward()
             scaler.unscale_(optimizer)
-            grad_norm = torch.nn.utils.clip_grad_norm_(trainable, args.grad_clip)
+            grad_norm = torch.nn.utils.clip_grad_norm_(trainable, args.grad_clip, error_if_nonfinite=True)
             scaler.step(optimizer)
             scaler.update()
+            if startup_audit is not None and step in (1, 100):
+                startup_audit.check(student, teacher, step)
 
             metrics["grad_norm"] = float(grad_norm.detach().cpu())
             metrics = reduce_metrics(metrics, device, world_size)
@@ -815,6 +860,11 @@ def main() -> None:
                 )
                 log_file.write(log_line + "\n")
                 log_file.flush()
+                state = dict(status="training", global_step=step, metrics=metrics,
+                             updated_at=time.time(), learning_rate=optimizer.param_groups[0]["lr"])
+                state_path = args.output_dir / "training_state.json"
+                state_path.with_suffix(".tmp").write_text(json.dumps(state, indent=2))
+                state_path.with_suffix(".tmp").replace(state_path)
 
             if step % args.save_every == 0:
                 if rank == 0:
@@ -831,19 +881,25 @@ def main() -> None:
                 val_metrics_accum = {}
                 val_count = 0
                 val_iter = iter(val_loader)
+                rng_cpu = torch.get_rng_state()
+                rng_cuda = torch.cuda.get_rng_state(device) if device.type == "cuda" else None
+                torch.manual_seed(args.seed + 100000 + rank)
                 for _ in range(args.val_batches):
                     try:
                         val_batch = next(val_iter)
                     except StopIteration:
                         break
-                    with torch.no_grad(), torch.cuda.amp.autocast(
-                        enabled=(args.precision == "amp" and device.type == "cuda")
-                    ):
+                    with torch.no_grad(), precision_context(args.precision, device):
                         _, vm = distill_loss(student, teacher, val_batch, args, device)
+                    count = len(val_batch["spks"])
                     for k, v in vm.items():
-                        val_metrics_accum[k] = val_metrics_accum.get(k, 0.0) + v
-                    val_count += 1
-                student.train()
+                        val_metrics_accum[k] = val_metrics_accum.get(k, 0.0) + v * count
+                    val_count += count
+                torch.set_rng_state(rng_cpu)
+                if rng_cuda is not None:
+                    torch.cuda.set_rng_state(rng_cuda, device)
+                student.eval()
+                student.decoder.estimator.train()
                 if val_count > 0:
                     val_metrics_avg = {k: v / val_count for k, v in val_metrics_accum.items()}
                     val_metrics_avg = reduce_metrics(val_metrics_avg, device, world_size)
@@ -859,6 +915,8 @@ def main() -> None:
                         tqdm.write(val_line)
                         log_file.write(val_line + "\n")
                         log_file.flush()
+                        with (args.output_dir / "validation.jsonl").open("a") as stream:
+                            stream.write(json.dumps(dict(global_step=step, metrics=val_metrics_avg)) + "\n")
                 if distributed:
                     dist.barrier()
 
@@ -871,8 +929,16 @@ def main() -> None:
             log_file.write(done_msg + "\n")
             log_file.close()
             print(done_msg, flush=True)
+            (args.output_dir / "training_state.json").write_text(json.dumps(
+                dict(status="complete", global_step=end_step, metrics=last_metrics, updated_at=time.time()), indent=2))
     finally:
         cleanup_distributed(distributed)
+
+
+def precision_context(precision, device):
+    if device.type != "cuda" or precision == "fp32":
+        return nullcontext()
+    return torch.autocast("cuda", dtype=torch.bfloat16 if precision == "bf16" else torch.float16)
 
 
 if __name__ == "__main__":

@@ -31,10 +31,14 @@ def synthesize(args):
     from vocos.vocoder import load_vocos_vocoder
     torch.set_num_threads(4)
     torch.set_float32_matmul_precision('highest')
-    model = LITS.load_from_checkpoint(str(args.checkpoint), map_location='cpu', weights_only=False)
+    if args.distilled:
+        from meanflow_distill.stage2_support import load_student
+        model = load_student(args.checkpoint)
+    else:
+        model = LITS.load_from_checkpoint(str(args.checkpoint), map_location='cpu', weights_only=False)
     assert model.n_spks == 2 and model.n_feats == 100 and model.n_vocab == 173
     model = model.to('cuda').eval()
-    vocoder, cfg = load_vocos_vocoder(str(REPO / 'vocos/generator.ckpt'), torch.device('cuda'), REPO)
+    vocoder, cfg = load_vocos_vocoder(str(args.vocoder_checkpoint), torch.device('cuda'), REPO)
     assert cfg.sampling_rate == 24000 and cfg.num_mels == 100 and cfg.hop_size == 384
     sources = records(DATA / 'eval_manifest.jsonl')
     if args.per_group_limit:
@@ -56,8 +60,8 @@ def synthesize(args):
                 speaker = torch.tensor([source['speaker']], dtype=torch.long, device='cuda')
                 with torch.inference_mode():
                     # FM keeps 10 steps; iMF checkpoints carry their sampling budget.
-                    steps = getattr(model.decoder, 'default_n_timesteps', 10)
-                    result = model.synthesise(ids, lengths, steps, temperature=1.0, spks=speaker, x_tones=tones)
+                    steps = args.n_timesteps or getattr(model.decoder, 'default_n_timesteps', 10)
+                    result = model.synthesise(ids, lengths, steps, temperature=args.temperature, spks=speaker, x_tones=tones)
                     mel = result['mel']
                     assert torch.isfinite(mel).all(), 'Nonfinite predicted Mel'
                     assert 1 <= mel.shape[-1] <= 7500, 'Predicted duration outside 0..120 seconds'
@@ -176,6 +180,12 @@ if __name__ == '__main__':
     parser.add_argument('--output', type=Path, required=True)
     parser.add_argument('--limit', type=int, default=0)
     parser.add_argument('--per-group-limit', type=int, default=0)
+    parser.add_argument('--distilled', action='store_true')
+    parser.add_argument('--n-timesteps', type=int)
+    parser.add_argument('--temperature', type=float, default=1.0)
+    parser.add_argument('--data-dir', type=Path, default=DATA)
+    parser.add_argument('--vocoder-checkpoint', type=Path, default=REPO / 'vocos/generator.ckpt')
     args = parser.parse_args()
+    DATA = args.data_dir
     args.output.mkdir(parents=True, exist_ok=True)
     {'synthesize': synthesize, 'asr': asr, 'metrics': metrics, 'summarize': summarize}[args.stage](args)

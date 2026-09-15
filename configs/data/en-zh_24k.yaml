@@ -8,7 +8,7 @@ pin_memory: true
 cleaners: [en_zh_dict_mixed_rhyme_body_tone_cleaners]
 add_blank: false
 prepend_sil: true
-n_spks: ${oc.env:N_SPKS,1}
+n_spks: ${oc.decode:${oc.env:N_SPKS,1}}
 n_fft: 2048
 n_feats: 100
 sample_rate: 24000
@@ -17,8 +17,8 @@ win_length: 1536
 f_min: 0
 f_max: 12000
 data_statistics:
-  mel_mean: ${oc.env:MEL_MEAN,0.0}
-  mel_std: ${oc.env:MEL_STD,1.0}
+  mel_mean: ${oc.decode:${oc.env:MEL_MEAN,0.0}}
+  mel_std: ${oc.decode:${oc.env:MEL_STD,1.0}}
 seed: 1234
 load_durations: false
 sanity_check_samples: 5

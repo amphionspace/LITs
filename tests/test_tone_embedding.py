@@ -33,6 +33,7 @@ def test_rhyme_body_tone_sequence_backfills_tones(passthrough_cleaner):
     assert tones is not None
     assert len(ids) == len(tones)
     expected = [
+        ("<sil>", 0),
         ("ㄋ", 0), ("ㄧ", 3), ("ˇ", 0), ("ㄏ", 0), ("ㄠ", 3), ("ˇ", 0),
         ("_", 0), (".", 0),
     ]

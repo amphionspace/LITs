@@ -12,9 +12,9 @@ def maximum_path(value, mask):
     value = value * mask
     device = value.device
     dtype = value.dtype
-    value = value.data.cpu().numpy().astype(np.float32)
+    value = value.detach().float().cpu().numpy()
     path = np.zeros_like(value).astype(np.int32)
-    mask = mask.data.cpu().numpy()
+    mask = mask.detach().float().cpu().numpy()
 
     t_x_max = mask.sum(1)[:, 0].astype(np.int32)
     t_y_max = mask.sum(2)[:, 0].astype(np.int32)
@@ -113,15 +113,15 @@ def maximum_path_constrained(value, mask, floors, ceilings=None):
     value = value * mask
     device = value.device
     dtype = value.dtype
-    value = value.data.cpu().numpy().astype(np.float32)
+    value = value.detach().float().cpu().numpy()
     path = np.zeros_like(value).astype(np.int32)
-    mask = mask.data.cpu().numpy()
+    mask = mask.detach().float().cpu().numpy()
 
     t_x_max = mask.sum(1)[:, 0].astype(np.int32)
     t_y_max = mask.sum(2)[:, 0].astype(np.int32)
 
     floors_np = np.ascontiguousarray(
-        np.rint(floors.detach().cpu().numpy()).astype(np.int32)
+        np.rint(floors.detach().float().cpu().numpy()).astype(np.int32)
     )
     if floors_np.shape[1] < value.shape[1]:
         floors_np = np.pad(floors_np, ((0, 0), (0, value.shape[1] - floors_np.shape[1])))
@@ -130,7 +130,7 @@ def maximum_path_constrained(value, mask, floors, ceilings=None):
         ceilings_np = np.zeros_like(floors_np, dtype=np.int32)
     else:
         ceilings_np = np.ascontiguousarray(
-            np.rint(ceilings.detach().cpu().numpy()).astype(np.int32)
+            np.rint(ceilings.detach().float().cpu().numpy()).astype(np.int32)
         )
         if ceilings_np.shape[1] < value.shape[1]:
             ceilings_np = np.pad(

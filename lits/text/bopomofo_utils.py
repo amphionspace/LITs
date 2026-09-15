@@ -59,6 +59,24 @@ def collect_rhyme_bodies(pinyin_2_bpmf: dict[str, str] | None = None) -> list[st
     return sorted(bodies)
 
 
+def split_rhyme_tone_token(token: str) -> tuple[str, int]:
+    """Split a duration-stat key into its symbol and MAS tone index."""
+    if len(token) > 1 and token[-1] in TONE_MARK_TO_ID:
+        return token[:-1], TONE_MARK_TO_ID[token[-1]]
+    return token, 0
+
+
+def zh354_duration_tokens() -> list[str]:
+    """Keys shared by the legacy duration statistics and current tone tables.
+
+    Initials have no tone; rhyme statistics retain merged body+tone keys even
+    when the model represents the body and tone as separate sequence tokens.
+    """
+    return sorted(BOPOMOFO_INITIALS) + [
+        body + tone for body in collect_rhyme_bodies() for tone in BOPOMOFO_TONES
+    ]
+
+
 def bpmf_syllable_to_tokens(
     bpmf: str,
     tone_mark: str,

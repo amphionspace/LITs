@@ -46,9 +46,7 @@ def intersperse(lst: List[Any], item: Any) -> List[Any]:
     return [item if i % 2 == 0 else lst[i // 2] for i in range(len(lst) * 2 + 1)]
 
 def save_figure_to_numpy(fig) -> np.ndarray:
-    arr = np.frombuffer(fig.canvas.tostring_rgb(), dtype=np.uint8)
-    arr = arr.reshape(fig.canvas.get_width_height()[::-1] + (3,))
-    return arr
+    return np.asarray(fig.canvas.buffer_rgba(), dtype=np.uint8)[..., :3].copy()
 
 def plot_tensor(tensor: np.ndarray) -> np.ndarray:
     plt.style.use("default")

@@ -136,7 +136,7 @@ def prepare_run(run, previous):
         fm_initialization_sha256=old['initialization_sha256'],
         initialization='exact FM starting tensors including seeded speaker rows; new interval/v head; fresh Adam',
         source_snapshot=source, sampling_time_grid=[0.0, 0.5, 1.0],
-        loss_weights=dict(duration=1, prior=1, flow=1), capacity_candidates=[24, 16, 8, 4],
+        loss_weights=dict(duration=1, prior=1, flow=1), capacity_candidates=[48, 24, 16, 8, 4],
         batch_size_per_gpu=None, accumulate_grad_batches=None,
         evaluation_interval_steps=5000, validation_every_steps=1000,
     )

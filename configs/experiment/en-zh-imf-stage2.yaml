@@ -13,7 +13,7 @@ data:
   _target_: training.imf.data.IMFDataModule
   data_dir: ${oc.env:STAGE2_DATA}
   n_spks: 2
-  batch_size: 8  # JVP capacity must be measured before selecting a production batch.
+  batch_size: 48  # Four GPUs give effective batch 192 without accumulation; preflight checks capacity.
   num_workers: 4
   load_durations: false
 

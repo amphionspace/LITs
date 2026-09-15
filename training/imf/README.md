@@ -183,10 +183,11 @@ comparable with the FM loss.
 
 The supervisor requires successful FM completion, all queued evaluations
 including a complete 650-sample final report, exited FM/evaluation processes,
-and free GPUs. It then tries per-GPU microbatches 24/16/8/4 on the longest real
+and free GPUs. It first tests per-GPU batch 48 without gradient accumulation on the longest real
 examples with full backward, an Adam update, and validation. Only an OOM or
 insufficient memory headroom permits trying a smaller batch. Other failures
-stop the handoff. Gradient accumulation 2/3/6/12 maintains effective batch 192.
+stop the handoff. If capacity is insufficient, batches 24/16/8/4 with gradient
+accumulation 2/3/6/12 maintain effective batch 192.
 Validation uses a batch no larger than the selected training microbatch.
 
 A two-update four-GPU preflight checks distributed training and validation

@@ -9,7 +9,7 @@ import subprocess
 import sys
 import time
 
-REPO = Path('/119010446/LITs')
+REPO = Path(__file__).resolve().parents[2]
 DATA = Path('/119010446/tts-assets/data_24k/foundation')
 
 def main(args):

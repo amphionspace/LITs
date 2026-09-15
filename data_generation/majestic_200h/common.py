@@ -9,7 +9,7 @@ import unicodedata
 
 ROOT=Path(os.environ.get('MAJESTIC_200H_ROOT','/ai_sds_wuzz/DATA_TTS/MajesticVoice_200h_20260913'))
 ASSETS=Path('/119010446/tts-assets')
-REPO=Path('/119010446/LITs')
+REPO=Path(__file__).resolve().parents[2]
 CODE=Path(__file__).resolve().parent
 LANGS=('zh','en','mixed')
 DOMAINS=('日常生活','家庭相处','朋友交流','工作协作','学习方法','校园生活','阅读写作','科技产品',

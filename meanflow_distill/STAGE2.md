@@ -61,6 +61,39 @@ The preflight compares training and inference trajectories for single chunks,
 multiple chunks and an odd-length tail, and checks exact waveform save/load
 round trips. Nonstreaming checkpoints and their results remain separate.
 
+### Parallel evaluation of streaming training
+
+Set `parallel_streaming: true` in the run plan to remove the serial chunk loop
+from training. `parallel_streaming.py` evaluates each decoder layer across the
+utterance, preserving the exact visibility of the cached implementation. Its
+attention mask intersects the network's static chunk boundary, the actual
+processing chunk boundary at each resolution, and the frame-level left window.
+Padding follows the cached decoder: convolution masks apply, but attention
+does not introduce an additional padding mask.
+
+At every transposed-convolution boundary, the already-emitted last sample of
+the previous chunk excludes the next chunk's first input. A differentiable
+boundary overwrite reproduces that behavior; a plain whole-utterance forward
+would leak future context there. The supported kernel/stride/padding and chunk
+alignment are checked explicitly. Deployment continues to use the existing KV
+cache path; weights, time grid, loss, chunk size and context limits are unchanged.
+
+Differential checks cover the teacher and trained student, short and merged-tail
+chunks, masked frames, complete 16-step/2-step objectives and gradients. FP32
+matches to numerical precision. BF16 has normal kernel-rounding differences;
+dropout remains enabled during training, with a different random-mask ordering
+under parallel execution. Longest-prompt capacity and two-rank resume audits are
+required before the supervisor accepts `performance_preflight.json`.
+
+To resume, the plan supplies `resume_checkpoint` and `resume_global_step`.
+The supervisor verifies saved optimizer state and computes the remaining budget,
+so resuming 1k with `max_steps: 10000` performs 9k additional updates. The trainer
+checks immutable distillation settings, restores the distributed sampler's
+epoch/batch position, and records optimizer counters in `resume_state.json`.
+Legacy checkpoints do not store per-rank RNG states, so this is not a bitwise
+continuation of their random noise/dropout sequence. TensorBoard purges events
+after the restored step; completed evaluations are retained and not rerun.
+
 ## Budget
 
 - Learning rate: `2e-5`, AdamW, no weight decay; clip gradient norm at 1.

@@ -25,16 +25,22 @@ def successful_summary(path):
 
 
 def training_command(run, plan, preflight=False):
+    resume = plan.get('preflight_resume_checkpoint' if preflight else 'resume_checkpoint')
+    start = int(plan.get('resume_global_step', 0)) if resume and not preflight else 0
+    remaining = plan['max_steps'] - start
+    if remaining <= 0:
+        raise ValueError('Resume checkpoint has already reached the planned training budget')
+    preflight_name = 'preflight_ddp_parallel' if plan.get('parallel_streaming') else 'preflight_ddp'
     command = [sys.executable, "-m", "torch.distributed.run", "--standalone",
             "--nproc_per_node", str(plan["world_size"]),
             str(REPO / "meanflow_distill/train_intmeanflow_distill.py"),
             "--lits-root", str(REPO), "--teacher-ckpt", plan["teacher"],
             "--manifest", str(run / "data/train.jsonl"),
             "--val-manifest", str(run / "data/val.jsonl"),
-            "--output-dir", str(run / "preflight_ddp" if preflight else run),
+            "--output-dir", str(run / preflight_name if preflight else run),
             "--batch-size", str(plan["batch_per_gpu"]), "--max-text-len", "0",
             "--teacher-steps", "16", "--student-steps", "2", "--student-t-grid", "0,0.5,1",
-            "--max-steps", "2" if preflight else str(plan["max_steps"]),
+            "--max-steps", "2" if preflight else str(remaining),
             "--lr", str(plan["lr"]), "--precision", plan["precision"],
             "--temperature", str(plan["temperature"]), "--seed", str(plan["seed"]),
             "--num-workers", "2", "--dist-backend", "nccl", "--audit-startup",
@@ -47,6 +53,10 @@ def training_command(run, plan, preflight=False):
                     "--distill-chunk-size", "100", "--decoder-left-frames", "20", "--pre-lookahead-len", "3"]
     else:
         command += ["--no-kv-cache-distill", "--no-teacher-decoder-streaming", "--no-decoder-streaming"]
+    if plan.get('parallel_streaming'):
+        command += ['--parallel-streaming']
+    if resume:
+        command += ['--resume', str(resume)]
     return command
 
 
@@ -124,10 +134,14 @@ def main():
     if args.preflight_ddp:
         result = subprocess.run(command, cwd=REPO)
         if result.returncode == 0:
-            write(run / "preflight_ddp_passed.json", dict(status="passed", command=command))
+            name = 'preflight_ddp_parallel_passed.json' if plan.get('parallel_streaming') else 'preflight_ddp_passed.json'
+            write(run / name, dict(status="passed", command=command))
         return result.returncode
     assert json.loads((run / "preflight/preflight.json").read_text())["status"] == "passed"
-    assert json.loads((run / "preflight_ddp_passed.json").read_text())["status"] == "passed"
+    name = 'preflight_ddp_parallel_passed.json' if plan.get('parallel_streaming') else 'preflight_ddp_passed.json'
+    assert json.loads((run / name).read_text())["status"] == "passed"
+    if plan.get('parallel_streaming'):
+        assert json.loads((run / 'performance_preflight.json').read_text())['status'] == 'passed'
     current_commit = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=REPO, text=True).strip()
     assert current_commit == plan["source_commit"], "Code revision changed after preparation"
     for name, expected in plan["source_file_sha256"].items():
@@ -139,14 +153,22 @@ def main():
     import fcntl
     lock = (run / "supervisor.lock").open("w")
     fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
-    if (run / "training_state.json").exists():
+    if (run / "training_state.json").exists() and not plan.get('resume_checkpoint'):
         raise RuntimeError("Run already has training state; use an explicit resume procedure")
+    if plan.get('resume_checkpoint'):
+        import torch
+        saved = torch.load(plan['resume_checkpoint'], map_location='cpu', weights_only=False)
+        assert saved['metadata']['global_step'] == plan['resume_global_step']
+        assert saved.get('optimizer_state_dict'), 'Resume requires the saved optimizer'
+        del saved
     with (run / "console.log").open("ab") as log:
         training = subprocess.Popen(command, cwd=REPO, stdout=log, stderr=subprocess.STDOUT)
     write(run / "launch.json", dict(status="running", training_pid=training.pid,
           supervisor_pid=os.getpid(), hostname=socket.gethostname(), command=command, started_at=time.time()))
     evaluator = None
-    attempted = set()
+    attempted = {step for step in plan['eval_steps']
+                 if (run / 'eval' / f'step_{step:07d}' / 'status.json').exists()
+                 and json.loads((run / 'eval' / f'step_{step:07d}' / 'status.json').read_text()).get('status') == 'complete'}
     while True:
         if evaluator is not None and evaluator.poll() is not None:
             evaluator = None

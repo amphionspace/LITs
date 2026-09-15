@@ -316,6 +316,15 @@ def distill_loss(
     args,
     device: torch.device,
 ) -> Tuple[torch.Tensor, dict]:
+    teacher_cached = teacher_trajectory_kv_cache
+    student_cached = student_trajectory_kv_cache
+    interval_cached = euler_step_kv_cache
+    if getattr(args, 'parallel_streaming', False):
+        from meanflow_distill.parallel_streaming import (
+            teacher_trajectory as teacher_cached,
+            student_trajectory as student_cached,
+            euler_step as interval_cached,
+        )
     x = batch["x"].to(device)
     x_lengths = batch["x_lengths"].to(device)
     spks = batch["spks"].to(device)
@@ -333,7 +342,7 @@ def distill_loss(
         # Keep the 16-step ODE state in FP32 even with BF16 network evaluation.
         z = torch.randn_like(mu_teacher, dtype=torch.float32) * args.temperature
         if args.kv_cache_distill and args.decoder_streaming:
-            t_states, _ = teacher_trajectory_kv_cache(
+            t_states, _ = teacher_cached(
                 teacher=teacher,
                 mu=mu_teacher,
                 mask=y_mask,
@@ -366,7 +375,7 @@ def distill_loss(
         )
     mu_student = mu_teacher.detach()
     if args.kv_cache_distill and args.decoder_streaming:
-        s_states, _ = student_trajectory_kv_cache(
+        s_states, _ = student_cached(
             student=student,
             mu=mu_student,
             mask=y_mask,
@@ -401,7 +410,7 @@ def distill_loss(
         x_at = t_bounds[i].detach()
         target_v = (t_bounds[i + 1] - t_bounds[i]).detach() / dt_i
         if args.kv_cache_distill and args.decoder_streaming:
-            x_next = euler_step_kv_cache(
+            x_next = interval_cached(
                 student_decoder,
                 x_at,
                 mu_student,
@@ -560,6 +569,8 @@ def build_arg_parser() -> argparse.ArgumentParser:
     parser.add_argument("--device", default="cuda")
     parser.add_argument("--precision", choices=["fp32", "amp", "bf16"], default="amp")
     parser.add_argument("--audit-startup", action="store_true")
+    parser.add_argument("--parallel-streaming", action="store_true",
+                        help="Evaluate exact cached chunk visibility in parallel across frames")
     add_streaming_args(parser)
     parser.add_argument(
         "--kv-cache-distill",
@@ -613,6 +624,8 @@ def jsonable_args(args) -> dict:
 def main() -> None:
     args = build_arg_parser().parse_args()
     resolve_streaming_flags(args)
+    if args.parallel_streaming and not (args.kv_cache_distill and args.decoder_streaming):
+        raise ValueError('--parallel-streaming requires streaming KV-cache distillation')
     warn_streaming_config(args)
     if args.kv_cache_distill and not args.decoder_streaming:
         raise ValueError("--kv-cache-distill requires --decoder-streaming")
@@ -739,12 +752,22 @@ def main() -> None:
         scaler_state = None
         if args.resume is not None:
             resume_data = torch.load(args.resume, map_location=device, weights_only=False)
+            previous = resume_data.get('distill_args', {})
+            for key in ('teacher_steps', 'student_steps', 'student_t_grid', 'temperature',
+                        'mu_streaming', 'teacher_decoder_streaming', 'decoder_streaming',
+                        'kv_cache_distill', 'distill_chunk_size', 'decoder_left_frames',
+                        'pre_lookahead_len'):
+                if key in previous and previous[key] != getattr(args, key):
+                    raise ValueError(f'Resume changes training semantics: {key}')
             # Checkpoints are saved after temporarily unwrapping DDP, so load weights
             # before wrapping to avoid decoder.estimator.module.* key mismatches.
             student.load_state_dict(resume_data["state_dict"])
             optimizer_state = resume_data.get("optimizer_state_dict")
             scaler_state = resume_data.get("scaler_state_dict")
             start_step = resume_data.get("metadata", {}).get("global_step", 0)
+            if startup_audit is not None:
+                startup_audit.initial = {name: value.detach().cpu().clone()
+                    for name, value in student.decoder.estimator.named_parameters()}
             if rank == 0:
                 print(f"[resume] loaded checkpoint from step {start_step}: {args.resume}", flush=True)
 
@@ -769,8 +792,19 @@ def main() -> None:
             optimizer.load_state_dict(optimizer_state)
         if scaler_state is not None:
             scaler.load_state_dict(scaler_state)
+        if args.resume is not None and rank == 0:
+            optimizer_steps = [int(state['step'].item()) for state in optimizer.state.values()
+                               if 'step' in state]
+            (args.output_dir / 'resume_state.json').write_text(json.dumps(dict(
+                checkpoint=str(args.resume), global_step=start_step,
+                optimizer_step_min=min(optimizer_steps, default=None),
+                optimizer_step_max=max(optimizer_steps, default=None),
+                learning_rate=optimizer.param_groups[0]['lr'],
+                sampler_epoch=start_step // len(loader), next_batch=start_step % len(loader),
+                parallel_streaming=args.parallel_streaming), indent=2))
 
-        writer = SummaryWriter(str(args.output_dir / "tensorboard")) if rank == 0 else None
+        writer = SummaryWriter(str(args.output_dir / "tensorboard"),
+                               purge_step=start_step + 1 if args.resume else None) if rank == 0 else None
 
         metadata = {
             "method": "intmeanflow",
@@ -808,6 +842,12 @@ def main() -> None:
 
         last_metrics = {}
         end_step = start_step + args.max_steps
+        if start_step:
+            if sampler is not None:
+                sampler.set_epoch(start_step // len(loader))
+            # Resume at the next batch in the saved distributed epoch.
+            for _ in range(start_step % len(loader)):
+                next(batches)
 
         log_file = None
         if rank == 0:
@@ -842,7 +882,7 @@ def main() -> None:
             grad_norm = torch.nn.utils.clip_grad_norm_(trainable, args.grad_clip, error_if_nonfinite=True)
             scaler.step(optimizer)
             scaler.update()
-            if startup_audit is not None and step in (1, 100):
+            if startup_audit is not None and step in (start_step + 1, start_step + 100):
                 startup_audit.check(student, teacher, step)
 
             metrics["grad_norm"] = float(grad_norm.detach().cpu())

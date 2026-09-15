@@ -46,6 +46,7 @@ def training_command(run, plan, preflight=False):
 
 
 def evaluate(run, step):
+    from training.common.runtime import PYTHONS
     plan = json.loads((run / "plan.json").read_text())
     out = run / "eval" / f"step_{step:07d}"
     out.mkdir(parents=True, exist_ok=True)
@@ -59,6 +60,7 @@ def evaluate(run, step):
     if step == 1000:
         base += ["--per-group-limit", "8"]
     for stage in ["synthesize", "asr", "metrics", "summarize"]:
+        base[0] = str(PYTHONS[stage])
         with (out / f"{stage}.log").open("ab") as log:
             result = subprocess.run(base + ["--stage", stage], cwd=REPO,
                                     stdout=log, stderr=subprocess.STDOUT)
@@ -84,6 +86,7 @@ def evaluate(run, step):
                 "--n-timesteps", str(nfe)]
             write(baseline / "status.json", dict(status="running", n_timesteps=nfe))
             for stage in ["synthesize", "asr", "metrics", "summarize"]:
+                baseline_args[0] = str(PYTHONS[stage])
                 with (baseline / f"{stage}.log").open("ab") as log:
                     result = subprocess.run(baseline_args + ["--stage", stage], cwd=REPO,
                                             stdout=log, stderr=subprocess.STDOUT)

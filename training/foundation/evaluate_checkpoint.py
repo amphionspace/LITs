@@ -2,7 +2,7 @@
 import argparse
 import json
 from pathlib import Path
-from training.majestic_voice import evaluate_checkpoint as common
+from training.common import evaluate_checkpoint as common
 
 common.DATA=Path('/119010446/tts-assets/data_24k/foundation')
 

@@ -377,6 +377,6 @@ MAS 的 prior MSE 更小，但可懂度更差；其高斯匹配分数不能替�
 - [flow 路径、速度目标、mask 与随机模式](../lits/models/components/flow_matching.py)：`CFM_Causal.compute_loss`。
 - [总 loss、权重与验证日志](../lits/models/base.py)：`training_step`、`validation_step`。
 - [模型配置](../configs/model/lits.yaml)与 [sigma 配置](../configs/model/cfm/default.yaml)。
-- [本轮计划生成](../data_generation/majestic_200h/prepare_training.py)、[训练启动器](../training/stage2/run.py)、[embedding/联合阶段调度](../training/majestic_finetune/callbacks.py)。
+- [本轮计划生成](../data_generation/majestic_200h/prepare_training.py)、[训练启动器](../training/stage2/run.py)、历史 embedding/联合阶段调度（代码见清理前提交 `9414aa7`）。
 - [当前后台配置](/ai_sds_wuzz/DATA_TTS/MajesticVoice_200h_20260913/config.json)及[训练交接说明](/ai_sds_wuzz/DATA_TTS/MajesticVoice_200h_20260913/TRAINING_PLAN.md)。
 - [旧一轮数值来源](/119010446/tts-assets/training_runs/majestic_only_joint_from197k_20260913/validation.jsonl)。

@@ -2,7 +2,7 @@
 import argparse
 import os
 from pathlib import Path
-from training.majestic_voice import evaluate_checkpoint as common
+from training.common import evaluate_checkpoint as common
 
 common.DATA=Path(os.environ['STAGE2_DATA'])
 

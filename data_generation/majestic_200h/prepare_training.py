@@ -2,11 +2,7 @@
 import argparse
 import hashlib
 import json
-import math
-import shutil
-import sys
 import time
-from collections import Counter
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 from common import ROOT,ASSETS,REPO,atomic_json,config,connection,goals,totals
@@ -80,56 +76,11 @@ def audit():
 
 
 def prepare():
-    if config()['training'].get('mode') in ('scratch','backbone_init'):
-        from training.majestic_scratch.prepare import prepare as prepare_scratch
-        return prepare_scratch()
-    content,result=audit()
-    if content is None:print(json.dumps(result));return 2
-    import torch
-    cfg=config();training=cfg['training'];run=Path(training['run_dir']);source=Path(training['source_checkpoint'])
-    if (run/'plan.json').exists():return 0
-    assert not run.exists(),'Partial training preparation exists; inspect before retry'
-    ckpt=torch.load(source,map_location='cpu',weights_only=False)
-    expected='f3cfa4a9eaa7c0036ce78bb3b5857a55ebcccf4b40943062c1191e7d28b31a35'
-    assert digest(source)==expected and ckpt['global_step']==197000
-    h=ckpt['hyper_parameters'];assert h['n_vocab']==173 and h['n_feats']==100 and h['n_spks']==2
-    state={k:v.clone() for k,v in ckpt['state_dict'].items()};assert all(torch.isfinite(v).all() for v in state.values())
-    assert state['spk_emb.weight'].shape==(2,64);state['spk_emb.weight'][1].copy_(state['spk_emb.weight'][0])
-    stage=run.with_name('.'+run.name+'.preparing');stage.mkdir(exist_ok=False);data=stage/'data';data.mkdir()
-    splits,units=content
-    def write_jsonl(path,rows):path.write_text(''.join(json.dumps(r,ensure_ascii=False)+'\n' for r in rows))
-    for split,rows in splits.items():
-        write_jsonl(data/f'{split}.jsonl',rows)
-        (data/f'{split}.txt').write_text(''.join(f'{r["audio"]}|1|{r["text"]}\n' for r in rows))
-    write_jsonl(data/'text_preflight.jsonl',[dict(text=r['text'],tokens=r['ids'],tones=r['tones'],phonemes=r['phonemes']) for rs in splits.values() for r in rs])
-    write_jsonl(data/'mel_statistics_units.jsonl',units)
-    original=ASSETS/'data_24k/ljs_majestic'
-    evaluation=[r for r in map(json.loads,(original/'eval_manifest.jsonl').read_text().splitlines()) if r['speaker']==1]
-    assert not {tuple(r['text_key']) for r in splits['train']} & {tuple(r['token_ids']) for r in evaluation}
-    write_jsonl(data/'eval_manifest.jsonl',evaluation)
-    protocol=json.loads((original/'eval_protocol.json').read_text());protocol.update(samples=len(evaluation),groups=dict(Counter(r['group'] for r in evaluation)),manifest_sha256=digest(data/'eval_manifest.jsonl'))
-    atomic_json(data/'eval_protocol.json',protocol)
-    stats=dict(mel_mean=float(state['mel_mean']),mel_std=float(state['mel_std']))
-    atomic_json(data/'mel_statistics.json',dict(**stats,manifest_sha256=digest(data/'train.txt'),sample_rate=24000,n_feats=100,
-        normalization_policy='preserve stage-one scale',normalization_source_checkpoint=str(source),mas_text_length_check='passed'))
-    atomic_json(data/'training_summary.json',dict(train_rows=len(splits['train']),validation_rows=len(splits['val']),test_rows=len(splits['test']),
-        language_counts=dict(Counter(r['language'] for r in splits['train'])),source_dataset_audit=str(ROOT/'reports/final_dataset_audit.json')))
-    init={k:ckpt[k] for k in ['pytorch-lightning_version','hyper_parameters']};init.update(state_dict=state,global_step=0,epoch=0)
-    torch.save(init,stage/'initialization.ckpt')
-    plan=dict(stage=2,recipe=f'majestic_{sum(cfg["targets_train_hours"].values()):g}h_embedding_warmup_then_joint',active_speaker_ids=[1],
-        source_checkpoint=str(source),source_global_step=197000,source_sha256=expected,
-        initialization_sha256=digest(stage/'initialization.ckpt'),initialization='weights only; fresh Adam',
-        speakers={'0':'reserved, unused','1':'MajesticVoice'},speaker_embedding_initialization='row 1 copied from source row 0',
-        data_dir=str(run/'data'),data_source=str(ROOT),manifest_hashes={p.name:digest(p) for p in data.iterdir()},
-        train_rows=len(splits['train']),validation_rows=len(splits['val']),test_rows=len(splits['test']),
-        train_rows_per_speaker={'1':len(splits['train'])},data_statistics=stats,unique_audio_hours=result['selected_train_hours'],
-        batch_size_per_gpu=48,devices=[0,1,2,3],effective_batch=192,precision='bf16-mixed',max_steps=training['max_steps'],
-        learning_rates=dict(decoder=training['other_joint_lr'],spk_emb=training['embedding_joint_lr'],prior_encoder=training['other_joint_lr'],duration_predictor=training['other_joint_lr']),
-        schedule_callback='training.majestic_finetune.callbacks.MajesticSchedule',
-        schedule=dict(warmup_steps=50,encoder_update_start_step=training['embedding_only_steps'],encoder_warmup_steps=200,final_lr_ratio=.2,embedding_adaptation_lr=training['embedding_adaptation_lr']),
-        validation_every_steps=250,checkpoint_every_steps=250,evaluation_interval_steps=1000,evaluation_groups=protocol['groups'],seed=cfg['seed'])
-    atomic_json(stage/'plan.json',plan);shutil.copyfile(ROOT/'reports/final_dataset_audit.json',stage/'dataset_audit.json');stage.rename(run)
-    print(json.dumps(dict(status='prepared',run_dir=str(run),train_rows=plan['train_rows'])));return 0
+    mode = config()['training'].get('mode')
+    if mode not in ('scratch', 'backbone_init'):
+        raise ValueError(f'Unsupported retired training mode: {mode!r}')
+    from training.majestic_scratch.prepare import prepare as prepare_joint
+    return prepare_joint()
 
 
 if __name__=='__main__':

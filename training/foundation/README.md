@@ -40,11 +40,11 @@ HiFiTTS 保留官方划分；Premium 按原录制 ID 哈希划分，避免同一
 
 ## 第二阶段策略
 
-2026-09-13 用户明确指定并授权第二阶段训练：LJSpeech 为 speaker 0，大气女声为 speaker 1。当前采用 LJSpeech 原录音与已验收的 MajesticVoice 中英文，两个说话人按样本数 1:1 配平。从第一阶段 step 197000 迁移权重，两个 speaker embedding 均以已训练的 ID 0 初始化，保留第一阶段 Mel 归一化；先适配音色，再用低学习率联合微调。具体数据、6,000 步首轮预算、分组学习率、预检和评估见 [第二阶段方案](../stage2/README.md)。
+当前 Stage 2 从 21k 声学权重初始化，重置 speaker embedding，在 LJSpeech 原录音和 100h MajesticVoice 上联合训练，见 [当前第二阶段入口](../stage2/README.md)。先前 197k 分阶段适配属于历史实验；记录保留，旧启动代码已移除。
 
 ## 校验
 
-`tests/test_foundation_data.py` 检查四卡分桶无跨 rank 的意外重复、步数一致、epoch 洗牌与来源配平。GPU 容量测试覆盖真实音频、重采样、Mel、文本/声调、MAS、前向、反向与优化器更新；正式四卡试跑另核实 loss 有限和训练进度增长。
+清理前的临时分桶测试已检查四卡分桶无跨 rank 的意外重复、步数一致、epoch 洗牌与来源配平。GPU 容量测试覆盖真实音频、重采样、Mel、文本/声调、MAS、前向、反向与优化器更新；正式四卡试跑另核实 loss 有限和训练进度增长。
 
 ## 本次运行
 

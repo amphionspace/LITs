@@ -63,7 +63,9 @@ For the default multi-speaker Chinese-English configuration, use `wav|speaker_id
 
 ## Acoustic-model training
 
-The current recipe jointly trains LJSpeech (speaker 0) and MajesticVoice 100 hours (speaker 1) from a 21k acoustic backbone with reset speaker embeddings and fresh Adam, preserving the LR recipe; see [双 speaker 联合训练](training/majestic_scratch/README.md).
+Maintained training paths are `training/foundation/`, `training/stage2/`, and its current joint implementation `training/majestic_scratch/`. Shared evaluation/status code lives in `training/common/`. See [source cleanup scope](training/README.md).
+
+The current recipe jointly trains LJSpeech (speaker 0) and MajesticVoice 100 hours (speaker 1) from a 21k acoustic backbone with reset speaker embeddings and fresh Adam, preserving the LR recipe; see [Stage 2 入口](training/stage2/README.md).
 
 See [LITs Stage 1 训练实录](docs/stage1_training_zh.md) for the completed 200,000-step foundation run: data preparation, sampling, model, losses, optimizer, evaluation, and the 197k checkpoint used for adaptation.
 

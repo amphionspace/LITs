@@ -30,7 +30,7 @@ def command_for(run,plan):
         f'+callbacks.scratch_schedule.warmup_steps={plan["warmup_steps"]}',f'+callbacks.scratch_schedule.total_steps={plan["max_steps"]}',
         f'+callbacks.scratch_schedule.peak_lr={plan["peak_lr"]}',f'+callbacks.scratch_schedule.final_lr={plan["final_lr"]}',
         '+callbacks.scratch_audit._target_=training.majestic_scratch.callbacks.ScratchAudit',f'+callbacks.scratch_audit.run_dir={run}',
-        '+callbacks.training_state._target_=training.majestic_voice.callbacks.TrainingState',
+        '+callbacks.training_state._target_=training.common.callbacks.TrainingState',
         'callbacks.rich_progress_bar=null','trainer.enable_progress_bar=false','test=false',f'hydra.run.dir={run}']
     if plan['mode']=='backbone_init':
         command=[f'init_ckpt_path={run}/initialization.ckpt' if arg=='init_ckpt_path=null' else arg for arg in command]

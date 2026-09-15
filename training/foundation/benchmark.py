@@ -18,8 +18,8 @@ def main():
     torch.manual_seed(20260911)
     stats = json.loads((OUT/'mel_statistics.json').read_text())
     os.environ.update(TRAIN_FILELIST=str(OUT/'dataset.sqlite'), VALID_FILELIST=str(OUT/'dataset.sqlite'),
-                      N_SPKS='2', MEL_MEAN=str(stats['mel_mean']), MEL_STD=str(stats['mel_std']), PROJECT_ROOT='/119010446/LITs')
-    with initialize_config_dir(config_dir='/119010446/LITs/configs', version_base='1.3'):
+                      N_SPKS='2', MEL_MEAN=str(stats['mel_mean']), MEL_STD=str(stats['mel_std']), PROJECT_ROOT=str(Path(__file__).resolve().parents[2]))
+    with initialize_config_dir(config_dir=str(Path(__file__).resolve().parents[2]/'configs'), version_base='1.3'):
         cfg = compose(config_name='train', overrides=['experiment=en-zh','model.optimizer.lr=0.0001'])
     dataset = IndexedAudio(OUT/'dataset.sqlite','train',stats)
     longest = np.argsort(dataset.lengths)[-1000:]

@@ -83,7 +83,7 @@ def main():
         childenv=dict(env,PYTHONPATH=str(CODE)+':'+str(REPO))
         # Audit rechecks every quota, winner and audio header before any model work.
         commands=[[python,str(CODE/'prepare_training.py')],
-                  [python,str(REPO/'training/majestic_finetune/preflight.py'),'--run-dir',str(run)],
+                  [python,str(REPO/'training/stage2/preflight.py'),'--run-dir',str(run)],
                   [python,str(REPO/'training/stage2/run.py'),'--run-dir',str(run)]]
         for label,command in zip(['prepare','preflight','training'],commands):
             job=json.loads((ROOT/'job.json').read_text());job.update(status=label,training_run_dir=str(run));atomic_json(ROOT/'job.json',job)

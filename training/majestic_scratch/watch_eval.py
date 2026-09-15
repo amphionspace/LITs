@@ -9,7 +9,7 @@ import sys
 import time
 
 from training.majestic_scratch.config import REPO
-from training.majestic_voice.watch_eval import PYTHONS
+from training.common.runtime import PYTHONS
 from training.stage2.prepare import digest
 
 

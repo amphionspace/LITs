@@ -44,7 +44,7 @@ def main(args):
              f'+callbacks.warmup.peak_lr={args.peak_lr}',
              f'+callbacks.warmup.final_lr={args.final_lr}',
              '+callbacks.warmup.warmup_steps=1000','+callbacks.warmup.total_steps=200000',
-             '+callbacks.training_state._target_=training.majestic_voice.callbacks.TrainingState',
+             '+callbacks.training_state._target_=training.common.callbacks.TrainingState',
              'callbacks.rich_progress_bar=null','trainer.enable_progress_bar=false',
              'test=false',f'hydra.run.dir={run}']
     # Preserve code/config to make the run reproducible after later edits.

@@ -38,6 +38,10 @@ def synthesize(args):
         model = LITS.load_from_checkpoint(str(args.checkpoint), map_location='cpu', weights_only=False)
     assert model.n_spks == 2 and model.n_feats == 100 and model.n_vocab == 173
     model = model.to('cuda').eval()
+    streaming = args.streaming or getattr(model, 'distill_streaming', False)
+    if streaming:
+        from meanflow_distill.kv_cache_distill import configure_decoder_streaming_context
+        configure_decoder_streaming_context(model, decoder_left_frames=20, static_chunk_size=100)
     vocoder, cfg = load_vocos_vocoder(str(args.vocoder_checkpoint), torch.device('cuda'), REPO)
     assert cfg.sampling_rate == 24000 and cfg.num_mels == 100 and cfg.hop_size == 384
     sources = records(DATA / 'eval_manifest.jsonl')
@@ -61,16 +65,24 @@ def synthesize(args):
                 with torch.inference_mode():
                     # FM keeps 10 steps; iMF checkpoints carry their sampling budget.
                     steps = args.n_timesteps or getattr(model.decoder, 'default_n_timesteps', 10)
-                    result = model.synthesise(ids, lengths, steps, temperature=args.temperature, spks=speaker, x_tones=tones)
-                    mel = result['mel']
-                    assert torch.isfinite(mel).all(), 'Nonfinite predicted Mel'
-                    assert 1 <= mel.shape[-1] <= 7500, 'Predicted duration outside 0..120 seconds'
-                    audio = vocoder(mel)[..., :int(result['mel_lengths'][0]) * 384].squeeze().cpu().numpy()
+                    if streaming:
+                        from meanflow_distill.streaming_eval import synthesize_streaming
+                        grid = getattr(model, 'distill_t_grid', [i / steps for i in range(steps + 1)])
+                        result = synthesize_streaming(model, vocoder, ids, lengths, speaker,
+                            tones, grid, temperature=args.temperature)
+                        audio = result['audio'].cpu().numpy()
+                    else:
+                        result = model.synthesise(ids, lengths, steps, temperature=args.temperature, spks=speaker, x_tones=tones)
+                        mel = result['mel']
+                        assert torch.isfinite(mel).all(), 'Nonfinite predicted Mel'
+                        assert 1 <= mel.shape[-1] <= 7500, 'Predicted duration outside 0..120 seconds'
+                        audio = vocoder(mel)[..., :int(result['mel_lengths'][0]) * 384].squeeze().cpu().numpy()
                 assert audio.ndim == 1 and len(audio) and np.isfinite(audio).all(), 'Invalid waveform'
                 target = args.output / 'wavs' / (source['id'] + '.wav')
                 target.parent.mkdir(parents=True, exist_ok=True)
                 sf.write(target, np.clip(audio, -1, 1), 24000, subtype='PCM_16')
                 row.update(audio=str(target), duration=len(audio) / 24000, flow_steps=steps,
+                           streaming=streaming, vocoder_mode='chunked' if streaming else 'full',
                            flow_objective=getattr(model.decoder, 'objective', 'cfm'),
                            synthesis_seconds=time.monotonic() - started)
             except Exception as exc:
@@ -181,6 +193,7 @@ if __name__ == '__main__':
     parser.add_argument('--limit', type=int, default=0)
     parser.add_argument('--per-group-limit', type=int, default=0)
     parser.add_argument('--distilled', action='store_true')
+    parser.add_argument('--streaming', action='store_true')
     parser.add_argument('--n-timesteps', type=int)
     parser.add_argument('--temperature', type=float, default=1.0)
     parser.add_argument('--data-dir', type=Path, default=DATA)

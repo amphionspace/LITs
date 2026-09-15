@@ -29,6 +29,11 @@ def main():
     teacher = LITS.load_from_checkpoint(args.teacher_ckpt, map_location="cpu", weights_only=False).to(device).eval()
     student = copy.deepcopy(teacher)
     student.decoder.estimator = IntervalConditionedEstimator(student.decoder.estimator).to(device)
+    if args.decoder_streaming:
+        from meanflow_distill.kv_cache_distill import configure_decoder_streaming_context
+        for model in (teacher, student):
+            configure_decoder_streaming_context(model, decoder_left_frames=args.decoder_left_frames,
+                                                static_chunk_size=args.distill_chunk_size)
     freeze_all(teacher)
     params = set_trainable_decoder(student, False)
     audit = StartupAudit(student, teacher, args.output_dir, 0)
@@ -68,6 +73,20 @@ def main():
         direct = teacher.decoder(hidden["mu_y"], hidden["y_mask"], args.teacher_steps,
                                  True, args.temperature, hidden["spks"], z=z, streaming=False)
         torch.testing.assert_close(states[-1], direct, atol=1e-5, rtol=1e-5)
+        if args.decoder_streaming:
+            from meanflow_distill.streaming_eval import decoder_chunks
+            from meanflow_distill.kv_cache_distill import trajectory_kv_cache
+            for model, grid in ((teacher, [i / args.teacher_steps for i in range(args.teacher_steps + 1)]),
+                                (student, args.student_t_grid)):
+                for frames in (76, 200, 317):
+                    condition = torch.randn(1, mu.shape[1], frames, device=device)
+                    valid = torch.ones(1, 1, frames, device=device)
+                    noise = torch.randn(1, model.n_feats, frames, device=device)
+                    state, _ = trajectory_kv_cache(model, condition, valid, speaker, noise, grid,
+                        chunk_size=args.distill_chunk_size, pre_lookahead_len=args.pre_lookahead_len)
+                    production = torch.cat(list(decoder_chunks(model, condition, valid, speaker,
+                        noise, grid, args.distill_chunk_size)), dim=-1)
+                    torch.testing.assert_close(state[-1], production, atol=1e-5, rtol=1e-5)
     torch.cuda.reset_peak_memory_stats()
     student.decoder.estimator.train()
     batch = collate_prompts([longest] * args.batch_size)
@@ -84,12 +103,26 @@ def main():
     student.eval()
     restored = load_student(path, device)
     with torch.inference_mode():
-        torch.manual_seed(124)
-        before = student.synthesise(x, lengths, 2, spks=spks, x_tones=tones)["mel"]
-        torch.manual_seed(124)
-        after = restored.synthesise(x, lengths, 2, spks=spks, x_tones=tones)["mel"]
+        if args.decoder_streaming:
+            from vocos.vocoder import load_vocos_vocoder
+            vocoder, _ = load_vocos_vocoder('/119010446/LITs/vocos/generator.ckpt', device,
+                                           Path(__file__).resolve().parents[1])
+            from meanflow_distill.streaming_eval import synthesize_streaming
+            torch.manual_seed(124)
+            before = synthesize_streaming(student, vocoder, x, lengths, spks, tones,
+                                          args.student_t_grid, args.temperature)['audio']
+            torch.manual_seed(124)
+            after = synthesize_streaming(restored, vocoder, x, lengths, spks, tones,
+                                         args.student_t_grid, args.temperature)['audio']
+        else:
+            torch.manual_seed(124)
+            before = student.synthesise(x, lengths, 2, spks=spks, x_tones=tones)["mel"]
+            torch.manual_seed(124)
+            after = restored.synthesise(x, lengths, 2, spks=spks, x_tones=tones)["mel"]
     torch.testing.assert_close(before, after, atol=0, rtol=0)
     report = dict(status="passed", time_embedding_exact=True, teacher_matches_production=True,
+                  streaming=args.decoder_streaming,
+                  streaming_trajectory_matches_chunk_outer=bool(args.decoder_streaming),
                   batched_duration_matches_individual=True,
                   checkpoint_roundtrip_exact=True, batch_size=args.batch_size,
                   longest_tokens=len(longest["tokens"]), peak_memory_gib=peak,

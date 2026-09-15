@@ -748,7 +748,13 @@ def main() -> None:
             if rank == 0:
                 print(f"[resume] loaded checkpoint from step {start_step}: {args.resume}", flush=True)
 
-        if distributed:
+        manual_gradient_sync = distributed and args.kv_cache_distill and args.decoder_streaming
+        if manual_gradient_sync:
+            # Streaming calls forward_streaming directly, bypassing DDP.forward.
+            # Broadcast initialization, then explicitly average complete gradients.
+            for value in student.decoder.estimator.state_dict().values():
+                dist.broadcast(value, src=0)
+        elif distributed:
             student.decoder.estimator = DistributedDataParallel(
                 student.decoder.estimator,
                 device_ids=[local_rank] if device.type == "cuda" else None,
@@ -830,6 +836,9 @@ def main() -> None:
                 raise FloatingPointError(f"Nonfinite loss at step {step}")
             scaler.scale(loss).backward()
             scaler.unscale_(optimizer)
+            if manual_gradient_sync:
+                from stage2_support import average_gradients
+                average_gradients(trainable, world_size)
             grad_norm = torch.nn.utils.clip_grad_norm_(trainable, args.grad_clip, error_if_nonfinite=True)
             scaler.step(optimizer)
             scaler.update()

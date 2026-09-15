@@ -25,7 +25,7 @@ def successful_summary(path):
 
 
 def training_command(run, plan, preflight=False):
-    return [sys.executable, "-m", "torch.distributed.run", "--standalone",
+    command = [sys.executable, "-m", "torch.distributed.run", "--standalone",
             "--nproc_per_node", str(plan["world_size"]),
             str(REPO / "meanflow_distill/train_intmeanflow_distill.py"),
             "--lits-root", str(REPO), "--teacher-ckpt", plan["teacher"],
@@ -41,8 +41,13 @@ def training_command(run, plan, preflight=False):
             "--save-every", "2" if preflight else "1000",
             "--val-every", "2" if preflight else "1000",
             "--val-batches", "2" if preflight else "10000", "--log-every", "10",
-            "--no-kv-cache-distill", "--no-mu-streaming",
-            "--no-teacher-decoder-streaming", "--no-decoder-streaming"]
+            "--no-mu-streaming"]
+    if plan.get("streaming"):
+        command += ["--kv-cache-distill", "--teacher-decoder-streaming", "--decoder-streaming",
+                    "--distill-chunk-size", "100", "--decoder-left-frames", "20", "--pre-lookahead-len", "3"]
+    else:
+        command += ["--no-kv-cache-distill", "--no-teacher-decoder-streaming", "--no-decoder-streaming"]
+    return command
 
 
 def evaluate(run, step):
@@ -84,6 +89,8 @@ def evaluate(run, step):
                 "--data-dir", str(Path(plan["eval_manifest"]).parent),
                 "--vocoder-checkpoint", plan["vocoder"], "--temperature", str(plan["temperature"]),
                 "--n-timesteps", str(nfe)]
+            if plan.get("streaming"):
+                baseline_args += ["--streaming"]
             write(baseline / "status.json", dict(status="running", n_timesteps=nfe))
             for stage in ["synthesize", "asr", "metrics", "summarize"]:
                 baseline_args[0] = str(PYTHONS[stage])

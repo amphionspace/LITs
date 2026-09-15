@@ -34,7 +34,32 @@ Teacher Euler sampling uses 16 steps; the student uses `[0, 0.5, 1]`. The loss
 is `endpoint_MSE + 0.5 * trajectory_MSE + mean_velocity_MSE`, masked over valid
 Mel frames. ODE states and loss reductions are FP32; network computation uses
 BF16. The initial run uses whole-utterance decoding. Streaming KV-cache
-distillation remains available in the generic trainer but is not enabled here.
+distillation can be selected with `streaming: true` in the run plan.
+
+## Streaming experiment
+
+The streaming run uses the same data, initialization, loss, `[0, 0.5, 1]` time
+grid and training budget. It follows the older recipe's 100-frame chunks and
+20-frame decoder left context, with a full-utterance bidirectional condition
+encoder. This is streaming acoustic decoding after full-text conditioning.
+The legacy pre-lookahead setting is 3; with full condition precomputation,
+the emitted decoder chunks still contain 100 new frames, with the remainder
+merged into the last chunk.
+
+Both teacher and student train through `forward_streaming`, carrying attention
+and convolution caches. These direct method calls bypass DDP.forward, so the
+streaming trainer broadcasts initialization and explicitly averages all
+gradients across ranks before clipping and Adam. Audits check identical
+student parameter hashes across ranks at updates 1 and 100.
+
+Streaming evaluation uses chunk-outer, ODE-step-inner decoding with a separate
+cache per solver step, then chunked Vocos with 8 Mel frames of context and a
+Hann waveform crossfade, matching `inference_stream.py`. Checkpoint loading
+restores the streaming geometry from `distill_args`; `--distilled` selects
+streaming synthesis automatically. Teacher baselines pass `--streaming`.
+The preflight compares training and inference trajectories for single chunks,
+multiple chunks and an odd-length tail, and checks exact waveform save/load
+round trips. Nonstreaming checkpoints and their results remain separate.
 
 ## Budget
 

@@ -55,6 +55,8 @@ def resolve_streaming_flags(args) -> None:
 
 
 def warn_streaming_config(args) -> None:
+    if getattr(args, 'teacher_matched_streaming', False):
+        return
     if args.mu_streaming and not getattr(args, "streaming", False):
         warnings.warn(
             "mu_streaming=true: mu encoder uses causal chunks during distillation, "
@@ -78,6 +80,9 @@ def warn_streaming_config(args) -> None:
 
 
 def streaming_config_summary(args) -> str:
+    if getattr(args, 'teacher_matched_streaming', False):
+        return ('teacher_matched_streaming=true: one shared random mode per forward, '
+                'p(streaming)=0.5; original mu/decoder chunk masks; no inference caches in training')
     kv = getattr(args, "kv_cache_distill", True)
     teacher_mode = "kv_cache" if kv and args.decoder_streaming else (
         f"full_seq(streaming={args.teacher_decoder_streaming})"

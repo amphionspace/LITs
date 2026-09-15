@@ -205,14 +205,29 @@ def set_trainable_decoder(student: torch.nn.Module, train_encoder_in_decoder: bo
     return [param for param in student.parameters() if param.requires_grad]
 
 
-def prepare_decoder_condition(model, x, x_lengths, spks, streaming: bool, x_tones=None):
+def prepare_decoder_condition(model, x, x_lengths, spks, streaming: bool, x_tones=None,
+                              teacher_training_mask: bool = False):
     hidden = model.get_hidden_mel(x=x, x_lengths=x_lengths, spks=spks, x_tones=x_tones)
     # get_hidden_mel uses inference_mode; make normal tensors for student autograd.
     mu_y = hidden["mu_y"].clone()
     y_mask = hidden["y_mask"].clone()
     spk_emb = hidden["spks"].clone() if hidden["spks"] is not None else None
-    mu_dec = model.decoder.encode_mu(mu_y, y_mask, finalize=True, streaming=streaming)
+    if teacher_training_mask:
+        # CFM_Causal.compute_loss applies this stateless full-sequence forward.
+        # encode_mu(streaming=True) instead maintains inference caches across calls.
+        mu_dec = model.decoder.encoder(mu_y, y_mask, streaming=streaming)
+    else:
+        mu_dec = model.decoder.encode_mu(mu_y, y_mask, finalize=True, streaming=streaming)
     return mu_dec, y_mask, spk_emb
+
+
+def verify_teacher_streaming_geometry(model, args):
+    """Keep the original teacher's two masks and context limits unchanged."""
+    estimator = getattr(model.decoder.estimator, 'base', model.decoder.estimator)
+    assert estimator.static_chunk_size == args.distill_chunk_size == 50
+    assert model.decoder.encoder.static_chunk_size == 50
+    assert estimator.decoder_left_frames == args.decoder_left_frames == 20
+    assert model.decoder.encoder_num_decoding_left_chunks == -1
 
 
 def default_student_t_grid(student_steps: int) -> List[float]:
@@ -316,6 +331,15 @@ def distill_loss(
     args,
     device: torch.device,
 ) -> Tuple[torch.Tensor, dict]:
+    matched = getattr(args, 'teacher_matched_streaming', False)
+    if matched:
+        # Exactly one shared mode per loss call, like CFM_Causal.compute_loss.
+        mode = random.random() < 0.5
+        mu_streaming = teacher_streaming = student_streaming = mode
+    else:
+        mu_streaming = args.mu_streaming
+        teacher_streaming = args.teacher_decoder_streaming
+        student_streaming = args.decoder_streaming
     teacher_cached = teacher_trajectory_kv_cache
     student_cached = student_trajectory_kv_cache
     interval_cached = euler_step_kv_cache
@@ -334,7 +358,8 @@ def distill_loss(
 
     with torch.no_grad():
         mu_teacher, y_mask, spk_emb = prepare_decoder_condition(
-            teacher, x, x_lengths, spks, streaming=args.mu_streaming, x_tones=x_tones
+            teacher, x, x_lengths, spks, streaming=mu_streaming, x_tones=x_tones,
+            teacher_training_mask=matched,
         )
         mu_teacher = mu_teacher.detach().clone()
         y_mask = y_mask.detach().clone()
@@ -360,7 +385,7 @@ def distill_loss(
                 spks=spk_emb,
                 z=z,
                 teacher_steps=args.teacher_steps,
-                streaming=args.teacher_decoder_streaming,
+                streaming=teacher_streaming,
             )
         t_states = t_states.detach().clone()
         t_bounds = teacher_boundaries_at_grid(
@@ -393,7 +418,7 @@ def distill_loss(
             spks=spk_emb,
             z=z.detach(),
             student_t_grid=args.student_t_grid,
-            streaming=args.decoder_streaming,
+            streaming=student_streaming,
         )
 
     endpoint = masked_mse(s_states[-1], t_bounds[-1], y_mask)
@@ -427,7 +452,7 @@ def distill_loss(
             t_i = torch.full((x.shape[0],), t_val, device=device, dtype=mu_student.dtype)
             pred_v = student.decoder.estimator(
                 x_at, y_mask, mu_student, t_i, spk_emb, None,
-                streaming=args.decoder_streaming, r=r_i,
+                streaming=student_streaming, r=r_i,
             )
         mean_flow_terms.append(masked_mse(pred_v, target_v, y_mask))
     mean_flow = torch.stack(mean_flow_terms).mean()
@@ -445,6 +470,8 @@ def distill_loss(
         "loss_mean_flow": float(mean_flow.detach().cpu()),
         "mel_frames": int(y_mask.sum().detach().cpu().item()),
     }
+    if matched:
+        metrics_dict['streaming_batch_fraction'] = float(mode)
 
     return total, metrics_dict
 
@@ -571,6 +598,9 @@ def build_arg_parser() -> argparse.ArgumentParser:
     parser.add_argument("--audit-startup", action="store_true")
     parser.add_argument("--parallel-streaming", action="store_true",
                         help="Evaluate exact cached chunk visibility in parallel across frames")
+    parser.add_argument("--teacher-matched-streaming", action="store_true",
+                        help="Share the teacher's 50%% streaming / 50%% nonstreaming training masks "
+                             "between the condition encoder, teacher and student; requires no KV-cache distillation")
     add_streaming_args(parser)
     parser.add_argument(
         "--kv-cache-distill",
@@ -624,6 +654,11 @@ def jsonable_args(args) -> dict:
 def main() -> None:
     args = build_arg_parser().parse_args()
     resolve_streaming_flags(args)
+    if args.teacher_matched_streaming:
+        if args.kv_cache_distill or args.parallel_streaming:
+            raise ValueError('Teacher-matched training uses original full-sequence mask forwards')
+        if not (args.mu_streaming and args.teacher_decoder_streaming and args.decoder_streaming):
+            raise ValueError('Teacher-matched training requires all three streaming branches enabled')
     if args.parallel_streaming and not (args.kv_cache_distill and args.decoder_streaming):
         raise ValueError('--parallel-streaming requires streaming KV-cache distillation')
     warn_streaming_config(args)
@@ -729,6 +764,9 @@ def main() -> None:
         teacher = LITS.load_from_checkpoint(args.teacher_ckpt, map_location=device, weights_only=False).to(device).eval()
         student = LITS.load_from_checkpoint(args.teacher_ckpt, map_location=device, weights_only=False).to(device).eval()
         student.decoder.estimator = IntervalConditionedEstimator(student.decoder.estimator).to(device)
+        if args.teacher_matched_streaming:
+            for model in (teacher, student):
+                verify_teacher_streaming_geometry(model, args)
         if args.kv_cache_distill and args.decoder_streaming:
             configure_decoder_streaming_context(
                 teacher,
@@ -756,7 +794,7 @@ def main() -> None:
             for key in ('teacher_steps', 'student_steps', 'student_t_grid', 'temperature',
                         'mu_streaming', 'teacher_decoder_streaming', 'decoder_streaming',
                         'kv_cache_distill', 'distill_chunk_size', 'decoder_left_frames',
-                        'pre_lookahead_len'):
+                        'pre_lookahead_len', 'teacher_matched_streaming'):
                 if key in previous and previous[key] != getattr(args, key):
                     raise ValueError(f'Resume changes training semantics: {key}')
             # Checkpoints are saved after temporarily unwrapping DDP, so load weights
@@ -771,10 +809,11 @@ def main() -> None:
             if rank == 0:
                 print(f"[resume] loaded checkpoint from step {start_step}: {args.resume}", flush=True)
 
-        manual_gradient_sync = distributed and args.kv_cache_distill and args.decoder_streaming
+        manual_gradient_sync = distributed and (
+            args.teacher_matched_streaming or (args.kv_cache_distill and args.decoder_streaming))
         if manual_gradient_sync:
-            # Streaming calls forward_streaming directly, bypassing DDP.forward.
-            # Broadcast initialization, then explicitly average complete gradients.
+            # Average once after all rollout/auxiliary forwards. The cached route
+            # bypasses DDP.forward; the mixed route uses the same audited reducer.
             for value in student.decoder.estimator.state_dict().values():
                 dist.broadcast(value, src=0)
         elif distributed:
@@ -816,6 +855,10 @@ def main() -> None:
             "val_dataset_size": len(val_dataset) if val_loader is not None else 0,
             "student_steps": args.student_steps,
             "teacher_steps": args.teacher_steps,
+            "teacher_matched_streaming": args.teacher_matched_streaming,
+            "streaming_probability": 0.5 if args.teacher_matched_streaming else None,
+            "mu_static_chunk_size": teacher.decoder.encoder.static_chunk_size,
+            "mu_encoder_left_chunks": teacher.decoder.encoder_num_decoding_left_chunks,
             "student_t_grid": args.student_t_grid,
             "mu_streaming": args.mu_streaming,
             "teacher_decoder_streaming": args.teacher_decoder_streaming,
@@ -931,8 +974,10 @@ def main() -> None:
                 val_count = 0
                 val_iter = iter(val_loader)
                 rng_cpu = torch.get_rng_state()
+                rng_python = random.getstate()
                 rng_cuda = torch.cuda.get_rng_state(device) if device.type == "cuda" else None
                 torch.manual_seed(args.seed + 100000 + rank)
+                random.seed(args.seed + 100000 + rank)
                 for _ in range(args.val_batches):
                     try:
                         val_batch = next(val_iter)
@@ -945,6 +990,7 @@ def main() -> None:
                         val_metrics_accum[k] = val_metrics_accum.get(k, 0.0) + v * count
                     val_count += count
                 torch.set_rng_state(rng_cpu)
+                random.setstate(rng_python)
                 if rng_cuda is not None:
                     torch.cuda.set_rng_state(rng_cuda, device)
                 student.eval()

@@ -27,11 +27,12 @@ def decoder_chunks(model, mu, mask, speaker, z, grid, chunk_size=100):
 
 @torch.inference_mode()
 def synthesize_streaming(model, vocoder, ids, lengths, speaker, tones, grid,
-                         temperature=1., chunk_size=100, mel_cache_len=8):
+                         temperature=1., chunk_size=100, mel_cache_len=8,
+                         mu_streaming=False):
     hidden = model.get_hidden_mel(ids, lengths, speaker, x_tones=tones)
     frames = int(hidden['y_max_length'])
     assert 1 <= frames <= 7500, 'Predicted duration outside 0..120 seconds'
-    mu = model.decoder.encoder(hidden['mu_y'], hidden['y_mask'], streaming=False)
+    mu = model.decoder.encoder(hidden['mu_y'], hidden['y_mask'], streaming=mu_streaming)
     mu, mask = mu[..., :frames], hidden['y_mask'][..., :frames]
     z = torch.randn(1, model.n_feats, frames, device=ids.device) * temperature
     mel_parts, wave_parts = [], []

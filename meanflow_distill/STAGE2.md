@@ -94,6 +94,40 @@ Legacy checkpoints do not store per-rank RNG states, so this is not a bitwise
 continuation of their random noise/dropout sequence. TensorBoard purges events
 after the restored step; completed evaluations are retained and not rerun.
 
+## Matching the original teacher training masks
+
+The `teacher_matched_streaming` experiment uses the original
+`CFM_Causal.compute_loss` mode policy: one random choice per loss forward,
+with streaming probability 0.5. The same choice controls the frozen condition
+encoder, all 16 teacher ODE steps, both student rollout steps, and both student
+auxiliary interval predictions. Text encoding and duration expansion remain
+full-sentence. The condition encoder uses its original 50-frame chunk mask
+with unlimited left attention; the velocity estimator uses its original
+50-position chunk masks and 20-position left windows at each network scale.
+
+Training calls the original full-sequence mask forwards. It does not use
+`forward_streaming` caches or `parallel_streaming.py`, whose chunk-boundary
+behavior implements the deployment cache path. Condition encoding uses the
+stateless `decoder.encoder` forward, matching the teacher training loss and
+preventing inference-cache state from carrying across utterances. The teacher
+is frozen in eval mode; the student estimator trains with dropout. The loss
+remains trajectory distillation, not the teacher's original audio-supervised
+flow-matching objective.
+
+The run initializes a fresh student and optimizer from FM170k, retains the
+16-to-2-step schedule and 10k-update budget, and logs
+`streaming_batch_fraction` (the average of the per-rank binary choices).
+Validation fixes and restores both Python and PyTorch random states.
+`verify_teacher_streaming.py` compares actual condition/decoder attention masks
+against calls to the original teacher loss in both modes, verifies the shared
+choice, finite gradients, exact FP32 conditions and cross-utterance isolation.
+
+Speech evaluation selects the streaming branch: masked 50-frame condition
+encoding, 50-frame cached acoustic decoding, and the unchanged 8-frame Vocos
+overlap. The evaluator reads geometry from student checkpoint arguments;
+teacher baselines receive the same geometry explicitly. Each evaluation writes
+`streaming_geometry.json`, so a run cannot silently be evaluated at 100 frames.
+
 ## Budget
 
 - Learning rate: `2e-5`, AdamW, no weight decay; clip gradient norm at 1.

@@ -46,13 +46,22 @@ def training_command(run, plan, preflight=False):
             "--num-workers", "2", "--dist-backend", "nccl", "--audit-startup",
             "--save-every", "2" if preflight else "1000",
             "--val-every", "2" if preflight else "1000",
-            "--val-batches", "2" if preflight else "10000", "--log-every", "10",
-            "--no-mu-streaming"]
-    if plan.get("streaming"):
-        command += ["--kv-cache-distill", "--teacher-decoder-streaming", "--decoder-streaming",
-                    "--distill-chunk-size", "100", "--decoder-left-frames", "20", "--pre-lookahead-len", "3"]
+            "--val-batches", "2" if preflight else "10000", "--log-every", "10"]
+    if plan.get('teacher_matched_streaming'):
+        geometry = plan['streaming_geometry']
+        command += ['--teacher-matched-streaming', '--mu-streaming', '--no-kv-cache-distill',
+                    '--teacher-decoder-streaming', '--decoder-streaming',
+                    '--distill-chunk-size', str(geometry['chunk_size']),
+                    '--decoder-left-frames', str(geometry['decoder_left_frames']),
+                    '--pre-lookahead-len', str(geometry['pre_lookahead_len'])]
+    elif plan.get("streaming"):
+        geometry = plan["streaming_geometry"]
+        command += ["--no-mu-streaming", "--kv-cache-distill", "--teacher-decoder-streaming", "--decoder-streaming",
+                    "--distill-chunk-size", str(geometry["chunk_size"]),
+                    "--decoder-left-frames", str(geometry["decoder_left_frames"]),
+                    "--pre-lookahead-len", str(geometry["pre_lookahead_len"])]
     else:
-        command += ["--no-kv-cache-distill", "--no-teacher-decoder-streaming", "--no-decoder-streaming"]
+        command += ["--no-mu-streaming", "--no-kv-cache-distill", "--no-teacher-decoder-streaming", "--no-decoder-streaming"]
     if plan.get('parallel_streaming'):
         command += ['--parallel-streaming']
     if resume:
@@ -100,7 +109,12 @@ def evaluate(run, step):
                 "--vocoder-checkpoint", plan["vocoder"], "--temperature", str(plan["temperature"]),
                 "--n-timesteps", str(nfe)]
             if plan.get("streaming"):
-                baseline_args += ["--streaming"]
+                geometry = plan["streaming_geometry"]
+                baseline_args += ["--streaming", "--streaming-chunk-size", str(geometry["chunk_size"]),
+                    "--decoder-left-frames", str(geometry["decoder_left_frames"]),
+                    "--mel-cache-len", str(geometry["mel_cache_len"])]
+                if plan.get('teacher_matched_streaming'):
+                    baseline_args += ['--mu-streaming']
             write(baseline / "status.json", dict(status="running", n_timesteps=nfe))
             for stage in ["synthesize", "asr", "metrics", "summarize"]:
                 baseline_args[0] = str(PYTHONS[stage])
@@ -142,6 +156,8 @@ def main():
     assert json.loads((run / name).read_text())["status"] == "passed"
     if plan.get('parallel_streaming'):
         assert json.loads((run / 'performance_preflight.json').read_text())['status'] == 'passed'
+    if plan.get('teacher_matched_streaming'):
+        assert json.loads((run / 'teacher_mask_preflight.json').read_text())['status'] == 'passed'
     current_commit = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=REPO, text=True).strip()
     assert current_commit == plan["source_commit"], "Code revision changed after preparation"
     for name, expected in plan["source_file_sha256"].items():

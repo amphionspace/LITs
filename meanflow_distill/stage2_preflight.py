@@ -1,6 +1,7 @@
 """Check actual Stage 2 weights, longest prompts, gradients and checkpoint reload."""
 import copy
 import json
+import random
 from pathlib import Path
 
 import torch
@@ -10,6 +11,7 @@ from meanflow_distill.train_intmeanflow_distill import (
     set_trainable_decoder, freeze_all, precision_context, teacher_trajectory,
     save_student_checkpoint, build_arg_parser, resolve_streaming_flags,
     parse_student_t_grid,
+    verify_teacher_streaming_geometry,
 )
 from meanflow_distill.interval_estimator import IntervalConditionedEstimator
 from meanflow_distill.stage2_support import StartupAudit, load_student
@@ -23,12 +25,16 @@ def main():
     args.output_dir.mkdir(parents=True, exist_ok=True)
     torch.set_num_threads(4)
     torch.manual_seed(args.seed)
+    random.seed(args.seed)
     device = torch.device("cuda")
     dataset = TextPromptDataset(args.manifest, args.cleaner, 1, False, 0)
     longest = max(dataset.rows, key=lambda row: len(row["tokens"]))
     teacher = LITS.load_from_checkpoint(args.teacher_ckpt, map_location="cpu", weights_only=False).to(device).eval()
     student = copy.deepcopy(teacher)
     student.decoder.estimator = IntervalConditionedEstimator(student.decoder.estimator).to(device)
+    if args.teacher_matched_streaming:
+        for model in (teacher, student):
+            verify_teacher_streaming_geometry(model, args)
     if args.decoder_streaming:
         from meanflow_distill.kv_cache_distill import configure_decoder_streaming_context
         for model in (teacher, student):
@@ -110,10 +116,14 @@ def main():
             from meanflow_distill.streaming_eval import synthesize_streaming
             torch.manual_seed(124)
             before = synthesize_streaming(student, vocoder, x, lengths, spks, tones,
-                                          args.student_t_grid, args.temperature)['audio']
+                                          args.student_t_grid, args.temperature,
+                                          chunk_size=args.distill_chunk_size,
+                                          mu_streaming=args.mu_streaming)['audio']
             torch.manual_seed(124)
             after = synthesize_streaming(restored, vocoder, x, lengths, spks, tones,
-                                         args.student_t_grid, args.temperature)['audio']
+                                         args.student_t_grid, args.temperature,
+                                         chunk_size=args.distill_chunk_size,
+                                         mu_streaming=args.mu_streaming)['audio']
         else:
             torch.manual_seed(124)
             before = student.synthesise(x, lengths, 2, spks=spks, x_tones=tones)["mel"]
@@ -122,6 +132,9 @@ def main():
     torch.testing.assert_close(before, after, atol=0, rtol=0)
     report = dict(status="passed", time_embedding_exact=True, teacher_matches_production=True,
                   streaming=args.decoder_streaming,
+                  chunk_size=args.distill_chunk_size, decoder_left_frames=args.decoder_left_frames,
+                  teacher_matched_streaming=args.teacher_matched_streaming,
+                  mu_streaming=args.mu_streaming,
                   streaming_trajectory_matches_chunk_outer=bool(args.decoder_streaming),
                   batched_duration_matches_individual=True,
                   checkpoint_roundtrip_exact=True, batch_size=args.batch_size,

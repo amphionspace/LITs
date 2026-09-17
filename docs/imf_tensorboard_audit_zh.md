@@ -18,7 +18,7 @@
 | `grad_norm` | 497 | 497 条 = 496 个参数张量 + 1 个总范数；不是 497 种性能指标。 |
 | `epoch` | 1 | 训练 epoch 计数。 |
 
-一共 1,664,549 个记录值，95 条标量在本次快照内完全不变。逐条统计见 [指标清单 CSV](imf_training_record_assets/tensorboard_audit_20260916/all_tag_inventory.csv)。生成评测的 CER/WER、相似度、DNSMOS **没有被当前 watcher 写入 TensorBoard**，只保存在 `eval/`；这比缺少更多训练标量更影响判断效果。
+一共 1,664,549 个记录值，95 条标量在本次快照内完全不变。生成评测的 CER/WER、相似度、DNSMOS **没有被当前 watcher 写入 TensorBoard**，只保存在 `eval/`；这比缺少更多训练标量更影响判断效果。
 
 ## 2. 确认的显示与解释问题
 
@@ -73,7 +73,7 @@ u MSE 是 `u + (t-r)·JVP` 对速度目标的复合残差，v MSE 是另一个�
 
 Prior loss 包含常数 `0.5·log(2π)≈0.91894`。验证约 0.969 并不是“误差接近 1”；扣除常数再乘 2，归一化 Mel 平方误差约 0.101。后期验证 prior 基本平台，训练仍缓慢下降，泛化差距略扩大，但幅度很小。
 
-![训练与验证损失曲线](imf_training_record_assets/tensorboard_audit_20260916/loss_curves.png)
+![训练与验证损失曲线](images/imf_losses.png)
 
 ## 4. 梯度、学习率与 MAS 有没有硬故障
 
@@ -85,7 +85,7 @@ Prior loss 包含常数 `0.5·log(2π)≈0.91894`。验证约 0.969 并不是“
 - 120k–136k IMF 验证 floor binding 约 37.4%、ceiling binding 约 6.3%；FM 约 34.8%/7.1%。约束仍在明显影响 MAS，值得观察，但没有通用阈值证明这些占比异常。分母只含设有对应界限的 token，不是全部音素。
 - 独立 135k duration 诊断中，真实语音 token 的预测时长标准差 / 自身 MAS 标准差约 **0.65–0.67**，与 20k 的 0.67–0.69 接近，仍有时长变化被压平的现象；FM 135k 约 0.63–0.67，属于两者共有的限制。MAS 不是人工真实时长，不能由此直接判定韵律错误或模型排名。
 
-![优化与对齐诊断](imf_training_record_assets/tensorboard_audit_20260916/optimization_alignment.png)
+![优化与对齐诊断](images/imf_optimization_alignment.png)
 
 ## 5. loss 与生成质量没有一一对应
 
@@ -105,7 +105,7 @@ Prior loss 包含常数 `0.5·log(2π)≈0.91894`。验证约 0.969 并不是“
 
 在共同完成的 28 对 checkpoint 中，FM 的目标 DNSMOS 有 27 个更高。后期实际生成音质未随 v loss 的缓慢下降而持续改善，这个脱节比加权 loss 接近常数更值得重视。
 
-![实际生成评测曲线](imf_training_record_assets/tensorboard_audit_20260916/quality_curves.png)
+![实际生成评测曲线](images/imf_generation_quality.png)
 
 ## 6. 建议的阅读顺序与下一步
 
@@ -116,13 +116,5 @@ Prior loss 包含常数 `0.5·log(2π)≈0.91894`。验证约 0.969 并不是“
 5. 暂时隐藏验证 `*_step`、大部分单参数梯度、重复 LR 别名与恒零 mask 项即可显著减少阅读负担；原始记录仍保留用于定位故障。
 
 ## 7. 可复核证据
-
-- [全部 IMF/FM 标量统计](imf_training_record_assets/tensorboard_audit_20260916/all_tag_inventory.csv)
-- [关键原始曲线 CSV](imf_training_record_assets/tensorboard_audit_20260916/core_series.csv)
-- [分窗口统计](imf_training_record_assets/tensorboard_audit_20260916/window_statistics.csv)
-- [分组梯度](imf_training_record_assets/tensorboard_audit_20260916/gradient_groups.csv)
-- [生成评测汇总与原文件路径](imf_training_record_assets/tensorboard_audit_20260916/generation_quality.csv)
-- [审计摘要](imf_training_record_assets/tensorboard_audit_20260916/audit_summary.json)
-- [event 提取脚本](imf_training_record_assets/tensorboard_audit_20260916/extract_events.py)、[分析脚本](imf_training_record_assets/tensorboard_audit_20260916/analyze.py)
 
 代码依据：运行快照 `source/lits/models/base.py`（日志坐标、梯度、统计口径），`source/lits/models/components/improved_mean_flow.py`（目标与随机采样），`source/lits/models/lits.py`（prior/MAS/mask），`source/training/majestic_scratch/schedule.py`（LR），`source/training/majestic_scratch/watch_eval.py`（评测输出）。完整冻结的数值提取位于 `/119010446/tts-assets/diagnostics/imf_tensorboard_20260916/`。

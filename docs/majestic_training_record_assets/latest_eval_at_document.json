@@ -1,9 +1,0 @@
-{
-  "global_step": 150000,
-  "source_checkpoint": "/119010446/tts-assets/training_runs/ljs_majestic_100h_backbone21k_20260914/evaluation_checkpoints/step_00150000.ckpt",
-  "sha256": "a33cd3f77bc49ceacabb371885c7165852fd481718a45cdaa896754b428563ba",
-  "started_at_unix": 1789435064.1346207,
-  "scope": "full_650",
-  "status": "complete",
-  "summary": "/119010446/tts-assets/training_runs/ljs_majestic_100h_backbone21k_20260914/eval/step_00150000/summary.json"
-}

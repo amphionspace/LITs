@@ -107,7 +107,7 @@ Vocos 不在训练模型的参数组或 checkpoint `state_dict` 中。评测快�
 
 前端词表 173，speaker embedding 64 维。`n_tones=0` 表示没有单独 tone embedding，**不表示删除了声调**：声调仍在音素序列中，MAS 的 `mas_n_tones=5`。使用带音素时长上下界的在线 MAS，`use_precomputed_durations=false`；duration 监督来自当前模型的 MAS，不是逐句人工或 MFA 对齐真值。
 
-数据依据：[训练统计](/119010446/tts-assets/training_runs/ljs_majestic_100h_imf_h1_b48_from21k_500ep_20260915/data/training_summary.json)、[采样配置](/119010446/tts-assets/training_runs/ljs_majestic_100h_imf_h1_b48_from21k_500ep_20260915/data/sampling_plan.json)、[划分审计](/119010446/tts-assets/training_runs/ljs_majestic_100h_imf_h1_b48_from21k_500ep_20260915/data/joint_split_audit.json)、[上游生成配置](majestic_training_record_assets/generation_config.json)。
+数据依据：[训练统计](/119010446/tts-assets/training_runs/ljs_majestic_100h_imf_h1_b48_from21k_500ep_20260915/data/training_summary.json)、[采样配置](/119010446/tts-assets/training_runs/ljs_majestic_100h_imf_h1_b48_from21k_500ep_20260915/data/sampling_plan.json)、[划分审计](/119010446/tts-assets/training_runs/ljs_majestic_100h_imf_h1_b48_from21k_500ep_20260915/data/joint_split_audit.json)；上游生成配置见 [FM 训练记录](majestic_training_record_zh.md#6-当前-100h-目标音色数据如何生成)。
 
 ## 4. 实际训练配置与续训
 

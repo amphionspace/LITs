@@ -61,14 +61,13 @@ meanflow_distill/runs/
 # Notebook autosaves are local editor state.
 .ipynb_checkpoints/
 
-# Keep the training records and their compact evidence snapshots in Git.
+# Keep training documentation and its referenced figures in Git.
 !docs/
 docs/*
 !docs/frontend_runtime_contract.md
 !docs/stage1_training_zh.md
 !docs/training_loss_zh.md
 !docs/majestic_training_record_zh.md
-!docs/majestic_training_record_assets/
 !docs/imf_training_record_zh.md
 !docs/fm_imf_final_comparison_zh.md
 !docs/imf_initial_experiments_zh.md
@@ -76,5 +75,6 @@ docs/*
 !docs/imf_tensorboard_audit_zh.md
 !docs/streaming_comparison_20260916_zh.md
 !docs/imf_differentiable_duration_zh.md
-!docs/imf_training_record_assets/
-!docs/streaming_comparison_20260916_assets/
+!docs/images/
+docs/images/*
+!docs/images/*.png

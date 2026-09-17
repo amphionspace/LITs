@@ -4,7 +4,6 @@
 
 > 记录日期：2026-09-15。本文记录直接配对训练的 iMF 实验及本次暂停，包含实际配置、已确认的实现问题、修复后的曲线、学习率对照和恢复边界。所有 step 均为本轮优化器更新次数，不包含 Foundation 的 21k。两次正确 scale 的实验均未跑完原定 170k 预算。
 
-
 **状态更新（2026-09-15 10:49 UTC）：按用户要求恢复 `imf_h1_b48/version_0` 的 3e-4 基线，从 24,000 步完整 checkpoint 直接续训；5e-4 对照仍暂停。下文暂停分析保留为历史记录，恢复核验见第 12 节。**
 
 ## 1. 结论与运行状态
@@ -159,7 +158,7 @@ LITs 原 FM 的绝对时间正弦嵌入默认乘 1000，新加的区间 h=t-r �
 
 暂停前最后一次完整验证在 **23k**，u MSE 为 1.25631，v 为 0.10316，u/v 数值比约 12.2。u 已较早期下降，不能写成持续单调发散；但复合残差仍明显高于瞬时速度残差，也没有达到可确认充分收敛的依据。原始验证曲线有波动，单个训练 batch 或一个 checkpoint 不应单独定性。3e-4 的 24k checkpoint 已保存，但 24k 验证未完成；暂停状态 JSON 中携带的上述 val 指标来自 23k，不能按状态文件的 global_step 将它们误标为 24k。
 
-![iMF 验证曲线：相同步数对照与基线完整趋势](imf_training_record_assets/validation_curves.png)
+![iMF 验证曲线：相同步数对照与基线完整趋势](images/imf_initial_validation.png)
 
 左上/右上/左下分别为两种 LR 在共同步数范围的 u、v、JVP；右下保留 3e-4 到 23k 的完整验证 u 曲线，并标出 5e-4 的实际短程记录。纵轴不是相互统一的误差尺度，JVP RMS 也不是梯度范数。
 
@@ -231,7 +230,7 @@ LITs 原 FM 的绝对时间正弦嵌入默认乘 1000，新加的区间 h=t-r �
 | 目标混读 | 0.000% / 7.292% | 0.722 / 0.637 | 3.347 |
 | LJS 英文 | 0.629% / 1.449% | 0.584 / 0.776 | 2.882 |
 
-两次实验所有已完成 checkpoint 的精确生成分数都导出在附录 CSV；1k smoke 保留实际 samples=8，不能当作 650 条完整评测。
+两次实验所有已完成 checkpoint 的精确生成分数见对应运行目录的评测记录；1k smoke 保留实际 samples=8，不能当作 650 条完整评测。
 
 ## 9. 已知事实、尚未确认的原因与本次决策
 
@@ -267,17 +266,12 @@ TensorBoard 原标签 `imf_h1_b48/version_0` 与 `imf_h1_lr5e4_b48/version_0` �
 
 ## 11. 证据、原始数值与实现入口
 
-- [验证 loss 全量 CSV](imf_training_record_assets/validation_metrics.csv)：截至暂停，3e-4 每 1k 至 23k、5e-4 每 1k 至 5k。
-- [已完成生成评测 CSV](imf_training_record_assets/evaluation_metrics.csv)：包括 CER/WER、WavLM/CAMP、DNSMOS 三项与 failures。
-- [已完成 duration 评测 CSV](imf_training_record_assets/duration_metrics.csv)：分 speaker/语言，raw/inference 两种口径。
-- [证据索引与文件哈希](imf_training_record_assets/evidence_index.json)：运行配置、暂停记录、初始化核验与评测完成状态；目录内另存暂停时状态快照。
 - [早期 scale 问题原报告](/119010446/tts-assets/diagnostics/imf_health_20260915/report.md)、[scale 修复兼容性结果](/119010446/tts-assets/diagnostics/imf_scale1_fix_20260915/compatibility.json)。
 - [LR 初始化逐 tensor 对照](/119010446/tts-assets/diagnostics/imf_lr5e4_switch_20260915/initialization_comparison.json)。
 - [实际 iMF 实现快照](/119010446/tts-assets/training_runs/ljs_majestic_100h_imf_h1_lr5e4_b48_from21k_500ep_20260915/source/lits/models/components/improved_mean_flow.py)、[实际配置](/119010446/tts-assets/training_runs/ljs_majestic_100h_imf_h1_lr5e4_b48_from21k_500ep_20260915/.hydra/config.yaml)、[计划](/119010446/tts-assets/training_runs/ljs_majestic_100h_imf_h1_lr5e4_b48_from21k_500ep_20260915/plan.json)、[启动参数](/119010446/tts-assets/training_runs/ljs_majestic_100h_imf_h1_lr5e4_b48_from21k_500ep_20260915/launch.json)。
 - [上游训练算法，固定 bf60cd7](https://github.com/Lyy-iiis/imeanflow/blob/bf60cd7cb653f6628e59d48034b333c5eba445e2/imf.py)、[上游归一化时间嵌入](https://github.com/Lyy-iiis/imeanflow/blob/bf60cd7cb653f6628e59d48034b333c5eba445e2/models/embedder.py)。训练移植自官方 JAX main；官方 torch 分支主要提供推理。本地实现差异见对应 `source/training/imf/README.md`。
 
 表格与图按保存的原始 JSON/JSONL 生成，未重新训练或重新生成音频。本文结论截止本次暂停，不预言后续训练结果。
-
 
 ## 12. 2026-09-15：3e-4 基线直接续训
 

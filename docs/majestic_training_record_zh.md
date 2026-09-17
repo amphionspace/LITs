@@ -365,7 +365,7 @@ CER/WER 为 micro 编辑错误率，越低越好；中文 WER 无有效定义，
 | 170,000 | 目标混读 | 0.80% / 8.33% | 0.734 / 0.673 | 3.394 | 3.631 | 4.159 |
 | 170,000 | LJS 英文 | 0.41% / 1.11% | 0.674 / 0.839 | 3.196 | 3.538 | 3.938 |
 
-精确数值及每行原始 `summary.json` 路径见 [抽样生成评测 CSV](majestic_training_record_assets/sampled_evaluation_metrics.csv)。原 [checkpoint_metrics.csv](majestic_training_record_assets/checkpoint_metrics.csv) 保留初次文档采集时的全部已完成节点及四组结果，1k 单独标为 smoke；它不是补录至 170k 的全量导出。
+各 checkpoint 的完整分组结果保存在运行目录 `eval/step_*/summary.json`；1k 为 smoke 评测。
 
 ### 12.2 Duration：与当前模型 MAS 时长的关系
 
@@ -396,7 +396,7 @@ CER/WER 为 micro 编辑错误率，越低越好；中文 WER 无有效定义，
 | 170,000 | 目标混读 | 0.661 | 0.682 | 0.738 | 0.925 | 1.205 |
 | 170,000 | LJS 英文 | 0.646 | 0.654 | 0.701 | 0.933 | 1.283 |
 
-[抽样 duration CSV](majestic_training_record_assets/sampled_duration_metrics.csv) 同时保存 raw 和实际 inference 两种口径、句均值归一化后的 Std 比、样本/token 数与原始 `duration_summary.json` 路径。表中没有混用这两种口径，也没有将目标英文与 LJS 英文合并。
+原始 `duration_summary.json` 包含 raw 和 inference 两种口径，以及句均值归一化统计。表中没有混用这两种口径，也没有将目标英文与 LJS 英文合并。
 
 ### 12.3 结果解释与尚未解决的问题
 
@@ -419,7 +419,7 @@ CER/WER 为 micro 编辑错误率，越低越好；中文 WER 无有效定义，
 - ASR/数据流水线：`/119010446/tts-assets/.venv-voxcpm2/bin/python`。
 - 质量评分：`/119010446/UltraEval-Audio/envs/metrics/bin/python`，DNSMOS 的 CUDA ONNX 路径见生成配置。
 
-写作时训练环境包版本：PyTorch 2.7.1+cu128、Lightning 2.5.2、NumPy 1.26.4、Hydra 1.3.2、OmegaConf 2.3.0、SoundFile 0.13.1、soxr 0.5.0.post1、TensorBoard 2.20.0。此为当前环境读取值，不冒充历史启动时锁文件；[版本记录](majestic_training_record_assets/training_environment_versions.json)。
+写作时训练环境包版本：PyTorch 2.7.1+cu128、Lightning 2.5.2、NumPy 1.26.4、Hydra 1.3.2、OmegaConf 2.3.0、SoundFile 0.13.1、soxr 0.5.0.post1、TensorBoard 2.20.0。此为当前环境读取值，不冒充历史启动时锁文件。
 
 可复现资产以各运行 `source/`、`.hydra/config.yaml`、冻结数据及完整 `launch.json.command` 为准；当前仓库后续可能变化。将所有数据重新导入或换版本不能保证同 seed 完全复现。当前文档没有新启动训练或修改训练配方。
 
@@ -447,4 +447,4 @@ TensorBoard 端口 32001，目前只展示 foundation_lr3e-4 和 majestic_100h_2
 - [生成项目交接说明](/ai_sds_wuzz/DATA_TTS/MajesticVoice_200h_20260913/TRAINING_PLAN.md)、[参考与评测协议](/119010446/tts-assets/training_runs/ljs_majestic_100h_backbone21k_20260914/data/eval_protocol.json)。
 - [Stage 1 launch](/119010446/tts-assets/training_runs/hifitts_premium_stage1_lr3e-4_20260911/launch.json)、[Stage 1 源码快照](/119010446/tts-assets/training_runs/hifitts_premium_stage1_lr3e-4_20260911/source)、[Stage 1 详细记录](stage1_training_zh.md)。
 - [当前模型/loss 路径](/119010446/tts-assets/training_runs/ljs_majestic_100h_backbone21k_20260914/source/lits/models/lits.py)、[Flow](/119010446/tts-assets/training_runs/ljs_majestic_100h_backbone21k_20260914/source/lits/models/components/flow_matching.py)、[采样器](/119010446/tts-assets/training_runs/ljs_majestic_100h_backbone21k_20260914/source/training/majestic_scratch/data.py)、[WSD](/119010446/tts-assets/training_runs/ljs_majestic_100h_backbone21k_20260914/source/training/majestic_scratch/schedule.py)。
-- [文档证据快照与哈希核验](majestic_training_record_assets/evidence_index.json)。其中全部 17 个 manifest 哈希在写作时重新计算并与 plan 一致；动态状态文件是采集时刻快照。
+写作时已重新计算全部 17 个 manifest 哈希并与 plan 核对一致；动态状态数值对应当时的采集时刻。

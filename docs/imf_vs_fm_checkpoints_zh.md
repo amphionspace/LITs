@@ -15,7 +15,7 @@
 
 ## 多 checkpoint 主表
 
-**每格顺序均为 FM / IMF。** 全部 23 点及分组数据见 [CSV](imf_training_record_assets/fm_comparison_20260916/all_checkpoints.csv)。
+**每格顺序均为 FM / IMF。** 下图展示全部 23 个配对 checkpoint 的分组趋势。
 
 | 训练 step | 英文 WER% ↓ | 中文 CER% ↓ | 混读 CER% ↓ | 目标音色 WavLM ↑ | 目标音质 DNSMOS ↑ |
 |---:|---:|---:|---:|---:|---:|
@@ -34,7 +34,7 @@ IMF 在 2k 的目标英文 WER 从 FM 的 3.380% 降至 1.449%，中文 CER 从 
 
 目标 450 条的 DNSMOS OVRL：IMF − FM 的差值范围为 -0.0776 至 +0.0032；22/23 个点较低，唯一例外是 5k（IMF 高 0.0032）。110k 为 3.3044 对 3.3500，差 −0.0456。IMF 后期音质未呈现随训练步数持续追平的趋势。
 
-![全部配对 checkpoint 的四组性能曲线](imf_training_record_assets/fm_comparison_20260916/checkpoint_curves.png)
+![全部配对 checkpoint 的四组性能曲线](images/fm_imf_checkpoint_comparison.png)
 
 ## 110k 分语言与音色
 
@@ -80,14 +80,10 @@ IMF 在 2k 的目标英文 WER 从 FM 的 3.380% 降至 1.449%，中文 CER 从 
 
 IMF 使用 2 次采样更新，FM 使用 10 次，采样更新次数减少 80%。**这不等于端到端快 5 倍**：声学网络路径、duration/prior、Vocos、I/O 与共享 GPU 负载都会影响时间。历史 `synthesis_seconds` 包括 waveform 写盘且测量环境未隔离，本报告不把它当受控延迟 benchmark。尚无 FM 同 checkpoint 2 步对照，因此这里证明的是现有 IMF-2 与 FM-10 配方的差异，不把收益全部归因于训练目标。
 
-632 条 duration 诊断已导出 [CSV](imf_training_record_assets/fm_comparison_20260916/duration_diagnostics.csv)。其中相关性/MAE 都是相对于各模型自身产生的 MAS，对齐目标也会改变，不能当作共同真实时长标签上的准确率来排名。
+本次分析包含 632 条 duration 诊断记录。其中相关性/MAE 都是相对于各模型自身产生的 MAS，对齐目标也会改变，不能当作共同真实时长标签上的准确率来排名。
 
 ## 可追溯数据
 
-- [完整配对指标](imf_training_record_assets/fm_comparison_20260916/all_checkpoints.csv)
-- [checkpoint 与评测文件哈希、协议](imf_training_record_assets/fm_comparison_20260916/provenance.json)
-- [110k 配对区间](imf_training_record_assets/fm_comparison_20260916/latest_paired_bootstrap.csv)
-- [本报告生成脚本](imf_training_record_assets/fm_comparison_20260916/build_report.py)
 - [IMF 训练与恢复记录](imf_training_record_zh.md)、[FM 训练记录](majestic_training_record_zh.md)
 
 原始结果位于两实验各自的 `eval/step_XXXXXXXX/summary.json` 与 `details.jsonl`。本报告复核各组 micro 错误率和音色/音质均值与逐句数据一致。

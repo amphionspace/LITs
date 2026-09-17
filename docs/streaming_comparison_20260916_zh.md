@@ -193,7 +193,7 @@ S100在自身1k完整checkpoint处切换为更快的并行streaming训练实现�
 
 三组的启动检查包含：时间嵌入初始化、teacher与生产路径对齐、batch duration与单条一致、最长336-token/batch16反向、有限梯度、checkpoint保存/重载以及双卡启动。正式1/100次更新核验teacher和冻结条件不变、可训练模块确实更新；S100恢复后又在1001/1100进行核验。S50额外保存原teacher两个分支mask和条件输出核对记录。这里引用已有检查证据，没有在本次文档更新中重跑训练预检。
 
-三个实验的完整启动参数已从各自 `launch.json` 原样导出至 [历史启动命令](streaming_comparison_20260916_assets/recorded_launch_commands.txt)。全部计划、最终metadata、数据统计、恢复后的启动命令与最终状态见 [训练证据快照](streaming_comparison_20260916_assets/training_evidence.json)。其中完整commit与文件指纹原始索引仍保留在各运行目录 `plan.json`。
+三个实验的完整启动参数保存在各自运行目录的 `launch.json`；完整 commit、文件指纹与计划见 `plan.json`。本文保留配置及结果摘要。
 
 checkpoint命名为 `checkpoints/student_step_0001000.pt` 等，每1k保存一次。文件含student完整state、teacher架构超参数、区间网格、蒸馏参数、optimizer/scaler状态和指标；加载应使用对应工作树的 `meanflow_distill.stage2_support.load_student`，不能直接当普通FM Lightning checkpoint处理。生成评测通过该工作树的 `training/common/evaluate_checkpoint.py --distilled`，显式指定冻结评测数据与Vocos。
 
@@ -207,7 +207,6 @@ checkpoint命名为 `checkpoints/student_step_0001000.pt` 等，每1k保存一�
 - 5k/10k 每组650条：目标英文200、中文200、混读50，另有LJS英文200。下方主表音色/音质为目标450条按样本加权平均，不含LJS。WER/CER使用micro口径。
 - 1k 每组32条（每语言/说话人组8条），仅作早期小样本比较；其均分不可与650条完整评测直接解释为训练趋势。1k与完整评测的部分样本随机种子也会因索引变化而不同。
 - 本次读取已有评测，没有重新生成音频、修改训练或运行主观听测；DNSMOS是客观估计，不能证明无偶发杂音。已有耗时记录不是受控延迟测试，不据此报告速度比。
-
 
 评测使用同一份冻结的四组清单（SHA-256：`957efd16aba7e038b283e981b62e37ecbafafe46af5cef7e4112c54e2e3931d3`），speaker0对应LJS，speaker1对应目标三组。每条种子为 `20260910 + 当前评测索引`，temperature=1；输出24kHz PCM16。三组5k/10k的文本、token、tone、speaker和顺序已逐项一致性核验；各自streaming设置按实际生成记录确认。
 
@@ -287,4 +286,4 @@ checkpoint命名为 `checkpoints/student_step_0001000.pt` 等，每1k保存一�
 - Streaming 100帧：`/119010446/tts-assets/training_runs/majestic100h_meanflow_streaming_t16_s2_20260915`；对应 `eval/step_0001000`、`eval/step_0005000`、`eval/step_0010000`。
 - Streaming 50帧 teacher-matched：`/119010446/tts-assets/training_runs/majestic100h_meanflow_teacher_matched_t16_s2_20260915`；对应 `eval/step_0001000`、`eval/step_0005000`、`eval/step_0010000`。
 
-[全部分组CSV](streaming_comparison_20260916_assets/metrics.csv) · [原始汇总快照与核验结果](streaming_comparison_20260916_assets/comparison.json)
+完整分组结果见上述各运行目录的 `eval/step_*/summary.json`。

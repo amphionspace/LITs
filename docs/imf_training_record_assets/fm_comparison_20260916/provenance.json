@@ -1,0 +1,429 @@
+{
+  "max_step": 110000,
+  "steps": [
+    2000,
+    5000,
+    10000,
+    15000,
+    20000,
+    25000,
+    30000,
+    35000,
+    40000,
+    45000,
+    50000,
+    55000,
+    60000,
+    65000,
+    70000,
+    75000,
+    80000,
+    85000,
+    90000,
+    95000,
+    100000,
+    105000,
+    110000
+  ],
+  "protocol": {
+    "samples": 650,
+    "groups": {
+      "ljs_en": 200,
+      "majestic_en": 200,
+      "majestic_zh": 200,
+      "majestic_mixed": 50
+    },
+    "manifest_sha256": "957efd16aba7e038b283e981b62e37ecbafafe46af5cef7e4112c54e2e3931d3",
+    "speaker_references": {
+      "0": "/ai_sds_wuzz/DATA_TTS/LJSpeech/LJSpeech_24k/wavs/LJ002-0321.wav",
+      "1": "/ai_sds_wuzz/DATA_TTS/MajesticVoice_200h_20260913/reference/ts004_cn_000001.wav"
+    },
+    "protocol": "Fixed-text evaluation with learned speaker IDs; similarity uses fixed voice references, not Seed-TTS zero-shot prompt voices.",
+    "group_speaker_references": {
+      "ljs_en": "/ai_sds_wuzz/DATA_TTS/LJSpeech/LJSpeech_24k/wavs/LJ002-0321.wav",
+      "majestic_en": "/ai_sds_wuzz/DATA_TTS/MajesticVoice_200h_20260913/candidates/wavs_24k/72003.wav",
+      "majestic_zh": "/ai_sds_wuzz/DATA_TTS/MajesticVoice_200h_20260913/reference/ts004_cn_000001.wav",
+      "majestic_mixed": "/ai_sds_wuzz/DATA_TTS/MajesticVoice_200h_20260913/reference/ts004_cn_000001.wav"
+    },
+    "group_reference_sha256": {
+      "ljs_en": "e7ae99902fcb063e77745599a137dd1959e298754e2f511df0ff2c2121c2a52c",
+      "majestic_en": "cd2abc1aaeef97e9365bbd57b4c631fdf2f0f863389c7ede5ff5edea164af13d",
+      "majestic_zh": "ba9a27c9569452da6f5fa28056a08259f3844ae9007cd0646b8837d5ed7aec26",
+      "majestic_mixed": "ba9a27c9569452da6f5fa28056a08259f3844ae9007cd0646b8837d5ed7aec26"
+    },
+    "active_speaker_ids": [
+      0,
+      1
+    ]
+  },
+  "files": [
+    {
+      "step": 2000,
+      "model": "FM",
+      "summary": "/119010446/tts-assets/training_runs/ljs_majestic_100h_backbone21k_20260914/eval/step_00002000/summary.json",
+      "summary_sha256": "0a554c5ef389c80ab0979d1ddbd9786dd22e83a189620a710be36def119e073d",
+      "details_sha256": "6cd5c0361637589e1e759576b78d3814046d7897ea6b8e728cc26922d5038a71",
+      "checkpoint_sha256": "21b3bafc7b92d112b30ecbff001c45a93da8c2700d5795bb210209098f83d36e"
+    },
+    {
+      "step": 2000,
+      "model": "IMF",
+      "summary": "/119010446/tts-assets/training_runs/ljs_majestic_100h_imf_h1_b48_from21k_500ep_20260915/eval/step_00002000/summary.json",
+      "summary_sha256": "bba06f86d21340500a9e2ca7831bab9904398331a5c775914a1ae5ae9406034f",
+      "details_sha256": "1b45b25c9f381b850f5e9389e02d0af7f7a9f4c4a81c0de7e63533cbacb40dec",
+      "checkpoint_sha256": "9f642ec7235017e97870066bf3e67ed81be473b7f356de31826aaff5371986f5"
+    },
+    {
+      "step": 5000,
+      "model": "FM",
+      "summary": "/119010446/tts-assets/training_runs/ljs_majestic_100h_backbone21k_20260914/eval/step_00005000/summary.json",
+      "summary_sha256": "e352e44816d590abe662d448d40ad108635b2cf82624582e93560b5b72e91490",
+      "details_sha256": "527bf8451343f180d92729dbca89b971fb87b069dde6c9a7c3eaf9dd1aef34db",
+      "checkpoint_sha256": "13b0ee22457d43e85cebde36c7c8d7561204f940c9bbea17f9e0fb300768fd46"
+    },
+    {
+      "step": 5000,
+      "model": "IMF",
+      "summary": "/119010446/tts-assets/training_runs/ljs_majestic_100h_imf_h1_b48_from21k_500ep_20260915/eval/step_00005000/summary.json",
+      "summary_sha256": "09696fe6aa64405127d59b1b1f2e5ea5d2297b0a9ea90c46c92a14c88669923d",
+      "details_sha256": "9564a543a649f5d042b07d0f6c5b67d1dfc195328d4364a4e0ba501eb3aea2cd",
+      "checkpoint_sha256": "18b8c4bc34a77bc83f41d8cd0ce634c91fb369b53963415add430374fbd8fd5c"
+    },
+    {
+      "step": 10000,
+      "model": "FM",
+      "summary": "/119010446/tts-assets/training_runs/ljs_majestic_100h_backbone21k_20260914/eval/step_00010000/summary.json",
+      "summary_sha256": "d66cfd7c2ec5e3b0ab79e8dbf34328062c500fc98472f7e8025e428eaf462a35",
+      "details_sha256": "02b16cd0ea05557124d9b9f4b04e2ea66b4e9472bc731c37cced4a8cbeea7888",
+      "checkpoint_sha256": "280d3213345bd174b4130da747d8f8d0b2353cc3d0ede785ce7c396320741fe3"
+    },
+    {
+      "step": 10000,
+      "model": "IMF",
+      "summary": "/119010446/tts-assets/training_runs/ljs_majestic_100h_imf_h1_b48_from21k_500ep_20260915/eval/step_00010000/summary.json",
+      "summary_sha256": "552e472f64d4e60d96f0772d1e97cbb1ba1512422813d8dc0d7e11acd7960024",
+      "details_sha256": "15d5b27bbca09e8ea746e0fcf680f2ac2f0fc2d08cdf1869b23e9868a0f0ebc9",
+      "checkpoint_sha256": "ec8830a22bcb9ecae7fb360ec1958ca501e90d6d875f2f9249e30e12ee52ac27"
+    },
+    {
+      "step": 15000,
+      "model": "FM",
+      "summary": "/119010446/tts-assets/training_runs/ljs_majestic_100h_backbone21k_20260914/eval/step_00015000/summary.json",
+      "summary_sha256": "d811f7bce7231904f47bb4d61e636a7baf4508d8fc79fb5218830358ad99085c",
+      "details_sha256": "db6966dfd640fadaa9668e9d20f57eb2ab922c62e4dc31c7798abf77fc63a340",
+      "checkpoint_sha256": "946feee18745d5cb862a2b29f3546c9a410e091f1145b9a52cd87cb27613a278"
+    },
+    {
+      "step": 15000,
+      "model": "IMF",
+      "summary": "/119010446/tts-assets/training_runs/ljs_majestic_100h_imf_h1_b48_from21k_500ep_20260915/eval/step_00015000/summary.json",
+      "summary_sha256": "e86cc66f1b4fe5dd872a104d28856a5e94f5344f6b8c055d8e0ab93a4c7afe36",
+      "details_sha256": "a9e4d5274f92b5fb26671122f01398022eabc661ab9104929899017932114286",
+      "checkpoint_sha256": "63bb0b2e1c140397a05a2509d5043448d063f00fde7444abe07d06cd4cbd1427"
+    },
+    {
+      "step": 20000,
+      "model": "FM",
+      "summary": "/119010446/tts-assets/training_runs/ljs_majestic_100h_backbone21k_20260914/eval/step_00020000/summary.json",
+      "summary_sha256": "193d4d506cc682bf34774a15bec95b41765cb5e541fc33afbdac83f940d27f9a",
+      "details_sha256": "ee45b0fc435cbb17df628cdd835cd1555ffa29d2fd57a5a9673d15459437945e",
+      "checkpoint_sha256": "8f7a56a5bd7b03f45faa74957f537f9602ffcdc88f56aac1cbc3cc3c3298d22a"
+    },
+    {
+      "step": 20000,
+      "model": "IMF",
+      "summary": "/119010446/tts-assets/training_runs/ljs_majestic_100h_imf_h1_b48_from21k_500ep_20260915/eval/step_00020000/summary.json",
+      "summary_sha256": "d9993b4cb618b8cb6ee55733f079a45fbfbb3388c83777196e066e56cc9a8baf",
+      "details_sha256": "5054935bc4fc955f129e74d986b5fcf8200051c3f2ab980dc68d858c042966fc",
+      "checkpoint_sha256": "cb5bae66d98e86374064808dec63952ab2f1bb41474efe9125ae686a74d55dd3"
+    },
+    {
+      "step": 25000,
+      "model": "FM",
+      "summary": "/119010446/tts-assets/training_runs/ljs_majestic_100h_backbone21k_20260914/eval/step_00025000/summary.json",
+      "summary_sha256": "aac1c76e83d00c496d9c96afb2f18917cb691ecb10b1d988398e7cdfabbcfcbf",
+      "details_sha256": "8edc75c698bf1d64b32bc942e4b7b9ad85eb8a0286db31572c49e6aecfb592af",
+      "checkpoint_sha256": "835faf70c2271735df8f8f84af78ebb47640ad539b567e171a8783f93a3e3bdf"
+    },
+    {
+      "step": 25000,
+      "model": "IMF",
+      "summary": "/119010446/tts-assets/training_runs/ljs_majestic_100h_imf_h1_b48_from21k_500ep_20260915/eval/step_00025000/summary.json",
+      "summary_sha256": "2434ed17194826020983d5f0415c0c66c339cb0ac1ef30b51712922e74dab916",
+      "details_sha256": "99b19a602f68172f2ad4596185d274d5ea3b7c7346d37ddf518d3943aef7618a",
+      "checkpoint_sha256": "30964389fff44c550c54fa99efe6d64e3dd42bb4a39c9effcc08ba3a455f53f0"
+    },
+    {
+      "step": 30000,
+      "model": "FM",
+      "summary": "/119010446/tts-assets/training_runs/ljs_majestic_100h_backbone21k_20260914/eval/step_00030000/summary.json",
+      "summary_sha256": "b634918d391626e5d911a2e6a6ae21d58366a05f0ac62ad2cb256b9f4934f274",
+      "details_sha256": "73b89ad51aaac6ad32d9cf737731e3e7a50b9c114d646d23a513e884a4f53da4",
+      "checkpoint_sha256": "48e0144233483fbff71e75dce7d0abc30cf572dad89763dda37ddef66f55a033"
+    },
+    {
+      "step": 30000,
+      "model": "IMF",
+      "summary": "/119010446/tts-assets/training_runs/ljs_majestic_100h_imf_h1_b48_from21k_500ep_20260915/eval/step_00030000/summary.json",
+      "summary_sha256": "969e6e88164edf386e975490566b3d64a34b02987c57967c214c6feffc96950b",
+      "details_sha256": "d3ef68ceef5f5b16beb855c4c4e1d53b3c41a6c9f2d87a1a985ad4596349c772",
+      "checkpoint_sha256": "f4367aff3759ad660f06ddadfd7579e7b209b668e153db32ca22e16753347a0d"
+    },
+    {
+      "step": 35000,
+      "model": "FM",
+      "summary": "/119010446/tts-assets/training_runs/ljs_majestic_100h_backbone21k_20260914/eval/step_00035000/summary.json",
+      "summary_sha256": "0eb96c899fe1966be03a5bb0ac921009747aabff9dcefd4aa0dfc99880474e33",
+      "details_sha256": "19d4feeee7b5be55db5127b0e0166ea9458d1324af359182f08bccc979030869",
+      "checkpoint_sha256": "198843851b80f0bebe7939748107f64e66158e1a4b033bc765177bf93379768f"
+    },
+    {
+      "step": 35000,
+      "model": "IMF",
+      "summary": "/119010446/tts-assets/training_runs/ljs_majestic_100h_imf_h1_b48_from21k_500ep_20260915/eval/step_00035000/summary.json",
+      "summary_sha256": "c772b498e683ee6947e31117b3e5a938a6b30a3d8e6bf0f27849cca3a0cdcae0",
+      "details_sha256": "c2a0b406417def3b266eba4bf1513a385e90964e6e6dce11370898f2f28fbcf2",
+      "checkpoint_sha256": "b40829817a441012b919f4e95029179c5bd6bc97176f9ab5b402f3b7faf98cdc"
+    },
+    {
+      "step": 40000,
+      "model": "FM",
+      "summary": "/119010446/tts-assets/training_runs/ljs_majestic_100h_backbone21k_20260914/eval/step_00040000/summary.json",
+      "summary_sha256": "c88e37dc1925dbd06ffbbbc8349bb7588167dd4b84fc3e57492873ede8702829",
+      "details_sha256": "e7b8a640bae467b0c7ac6161736664377a8757d4d21c65606e8f7f1a2db36b4e",
+      "checkpoint_sha256": "a7465360b689e24d67dcdb91d7646313f556e8d4801da24b1fa83fe632c31f88"
+    },
+    {
+      "step": 40000,
+      "model": "IMF",
+      "summary": "/119010446/tts-assets/training_runs/ljs_majestic_100h_imf_h1_b48_from21k_500ep_20260915/eval/step_00040000/summary.json",
+      "summary_sha256": "6ae2e352d08bbc59d5f25ffcbf960e8076e27d7544f55837f1ff54d9a2c443f1",
+      "details_sha256": "188e95fda043c98c9d8738a39ed6c974e8396fcba069cc3561b18a373d4ad969",
+      "checkpoint_sha256": "a912e960eae8c9a00ed4c4d1f3f39a25e0191dabfc5376bb3c43ba33a1b31245"
+    },
+    {
+      "step": 45000,
+      "model": "FM",
+      "summary": "/119010446/tts-assets/training_runs/ljs_majestic_100h_backbone21k_20260914/eval/step_00045000/summary.json",
+      "summary_sha256": "2cd5394c6b95a8e33967226ba29bf065254e7fc8d5d5d3821e52eaa1a0c8c402",
+      "details_sha256": "1b02db9720a2e9bf7cabfa1afbceb7313634a6d907b2a28d92e956fa8927635d",
+      "checkpoint_sha256": "1ca4f8e6ca729587f29b4533f596a67f0e53c0651ae40fbfcf99e1acb23d2d84"
+    },
+    {
+      "step": 45000,
+      "model": "IMF",
+      "summary": "/119010446/tts-assets/training_runs/ljs_majestic_100h_imf_h1_b48_from21k_500ep_20260915/eval/step_00045000/summary.json",
+      "summary_sha256": "e60051f2068210d7c8f7c4b05a4d4013eabaf08f91117dec33e4fdcf52bd2cd3",
+      "details_sha256": "e080ab2b259fb801af2e701ce71a9b1d591f094ec7f62f96c18091dfd70ab589",
+      "checkpoint_sha256": "82a23f4334d44f54059e34b86734b69784ad0bb44eefa5d543d1b5100c09c509"
+    },
+    {
+      "step": 50000,
+      "model": "FM",
+      "summary": "/119010446/tts-assets/training_runs/ljs_majestic_100h_backbone21k_20260914/eval/step_00050000/summary.json",
+      "summary_sha256": "5c677a48aa829e460bcab19335c4ef031c24d312c64c684ebf8be3dc3986cde4",
+      "details_sha256": "db844bf539b9dbb17257d18fdd56e9d1c668fcc4e379c0bdeb950099966318f7",
+      "checkpoint_sha256": "f6e8416af49f30f6886ef99fb4ebdef9b75f60dee249b6cb21102118cc98da8f"
+    },
+    {
+      "step": 50000,
+      "model": "IMF",
+      "summary": "/119010446/tts-assets/training_runs/ljs_majestic_100h_imf_h1_b48_from21k_500ep_20260915/eval/step_00050000/summary.json",
+      "summary_sha256": "ab722b30621610e1316609f11f8bbc8d1b6af1a1aa70ae3427684f1506465e99",
+      "details_sha256": "a26595a870ac8b441ac19f955b227e3405c41bf4cece163e6261594f2e96961f",
+      "checkpoint_sha256": "bbe9a5013309840d3619249dd9b3a878ac80a6efcd9a9cb3ac6b18469351b2a4"
+    },
+    {
+      "step": 55000,
+      "model": "FM",
+      "summary": "/119010446/tts-assets/training_runs/ljs_majestic_100h_backbone21k_20260914/eval/step_00055000/summary.json",
+      "summary_sha256": "6f84a3d0c9154aade3f324a3c088910c190025f086ba5ac7f592d32b11a83076",
+      "details_sha256": "c49dcf67d99c6c9c50357c8c41bf3a276d238fb14de69348a4f4f84a06f337e7",
+      "checkpoint_sha256": "c8483395200d1d9d45bf5af24c078f3c2e6b8e65776be2bac46c424a372f3b52"
+    },
+    {
+      "step": 55000,
+      "model": "IMF",
+      "summary": "/119010446/tts-assets/training_runs/ljs_majestic_100h_imf_h1_b48_from21k_500ep_20260915/eval/step_00055000/summary.json",
+      "summary_sha256": "1a9a1fe735ec3bb259bee448d1664e866d6ca51d6e7bef647ca3b068c80bc13d",
+      "details_sha256": "ee4413275ab06feeae1e2c61080f0bbcf4615e63f9506134bc9140f7010e861b",
+      "checkpoint_sha256": "c55c32b9c73500c5639dadfccf502b9e9b80c476df5d51728e07c586a1377ddf"
+    },
+    {
+      "step": 60000,
+      "model": "FM",
+      "summary": "/119010446/tts-assets/training_runs/ljs_majestic_100h_backbone21k_20260914/eval/step_00060000/summary.json",
+      "summary_sha256": "6637c80eb7a83699bf448525612084dc95c5fc0cdc593c18118afb5810b0b98b",
+      "details_sha256": "c310d330a210afbe563339a8c0ac87c4ebd335b109dad52729816fc9d2d51f56",
+      "checkpoint_sha256": "25bad0ee7e8e482f6de9686e1bc6ef74aad09f66715e77b7b59dbc3607f8ea6e"
+    },
+    {
+      "step": 60000,
+      "model": "IMF",
+      "summary": "/119010446/tts-assets/training_runs/ljs_majestic_100h_imf_h1_b48_from21k_500ep_20260915/eval/step_00060000/summary.json",
+      "summary_sha256": "27dc8d1bae6be2c92fe08f0939a9e1b268e18c292d5f9af4a8c1ed6e4325196a",
+      "details_sha256": "be2bbb42138ed34c9f9d1f3f5f259e318b3a25d3245befced1081d211efeaf9a",
+      "checkpoint_sha256": "d1c17e00ae297cf2c16b559ec1e0c392f6800431f63c772b64798ed5038902ea"
+    },
+    {
+      "step": 65000,
+      "model": "FM",
+      "summary": "/119010446/tts-assets/training_runs/ljs_majestic_100h_backbone21k_20260914/eval/step_00065000/summary.json",
+      "summary_sha256": "c8f2204824bd1002236a659a590a67d854f33ae1f40b9233597d730e3a60ab3b",
+      "details_sha256": "9214894b8053d555e7a3f4401c8f19ea9580494b4dd421bfeb8fda8227712f3c",
+      "checkpoint_sha256": "4efad986ab0366e7f1340bd38a591ed7333d0c38b1d14a321ddc243e432e00a0"
+    },
+    {
+      "step": 65000,
+      "model": "IMF",
+      "summary": "/119010446/tts-assets/training_runs/ljs_majestic_100h_imf_h1_b48_from21k_500ep_20260915/eval/step_00065000/summary.json",
+      "summary_sha256": "77c37047c2aabbc631bc72cdf636fb32ab13470d0f8575de430b15b7b846995f",
+      "details_sha256": "6fd2ba6e5a26c6d643532f809fa6b16721b07596d9291ea52f3cb6604574a261",
+      "checkpoint_sha256": "a9a2d5c578157ef14ff3dc949f30de23b6b43be2fd852c98dfda58932bafc2ea"
+    },
+    {
+      "step": 70000,
+      "model": "FM",
+      "summary": "/119010446/tts-assets/training_runs/ljs_majestic_100h_backbone21k_20260914/eval/step_00070000/summary.json",
+      "summary_sha256": "4842b3f7f4453d3dbf67fb75535647dbd176b09cc4c8927ffb6b0a9048a45c6f",
+      "details_sha256": "3e36c29c825ec3f03b0576b92bbe781900353f040c472844b62de06053d13f54",
+      "checkpoint_sha256": "8cc9ab8ad328ebc4ff74040e8b1313a5f5906c27b60289771dc433a02f5b0b55"
+    },
+    {
+      "step": 70000,
+      "model": "IMF",
+      "summary": "/119010446/tts-assets/training_runs/ljs_majestic_100h_imf_h1_b48_from21k_500ep_20260915/eval/step_00070000/summary.json",
+      "summary_sha256": "5d195a82293bcc77f612b744c9afce290484bb92beb2a9dfa8d8aaf271ad4850",
+      "details_sha256": "2b7c1bf41ed2f1f710d8cb8de194c7f11d701d60561e9d12cc6c89c9e3bf2d01",
+      "checkpoint_sha256": "993bede7f4aeea3dcaafad042a43754ab208d88d1e0111b38c9299208717303f"
+    },
+    {
+      "step": 75000,
+      "model": "FM",
+      "summary": "/119010446/tts-assets/training_runs/ljs_majestic_100h_backbone21k_20260914/eval/step_00075000/summary.json",
+      "summary_sha256": "4926c26145c03c7dc0de69ce52f5a7cdf3cceff9d78fe67a4ebae4ead6c7c8d1",
+      "details_sha256": "b23dc7aa4636f31d9dd3a4abec7f15955a89ec3fd8316d9b5a0d92e4b43c2c5a",
+      "checkpoint_sha256": "5460336157dfcad9d658a2cdb17b19164dab70cbcbc1922c0a31329464ad6738"
+    },
+    {
+      "step": 75000,
+      "model": "IMF",
+      "summary": "/119010446/tts-assets/training_runs/ljs_majestic_100h_imf_h1_b48_from21k_500ep_20260915/eval/step_00075000/summary.json",
+      "summary_sha256": "0b012b0ad3bde80de68662f27c50ed86d4e53a60b0de1df61e753e1882580723",
+      "details_sha256": "bb30c4c5a6749df9d6ab02cfea395908aee961f562bbb5ded3d5664695ac0f64",
+      "checkpoint_sha256": "fce7c6bb29c3312d68e20bb2bc26643d6feb16a704b30831c733a5c68a8d5ee4"
+    },
+    {
+      "step": 80000,
+      "model": "FM",
+      "summary": "/119010446/tts-assets/training_runs/ljs_majestic_100h_backbone21k_20260914/eval/step_00080000/summary.json",
+      "summary_sha256": "ea5d44dc89115b932b97e6bcc4b28a9aefcc425c3b311cd0dc921f197a830c46",
+      "details_sha256": "cc7cf147d07dd101d5e3791844c1fc91838c025c93ec0dabde3d683737a783a4",
+      "checkpoint_sha256": "43fb130d8aed478b1421033537dc489e18fb83a6ea6d2218ef8b08e8e579685f"
+    },
+    {
+      "step": 80000,
+      "model": "IMF",
+      "summary": "/119010446/tts-assets/training_runs/ljs_majestic_100h_imf_h1_b48_from21k_500ep_20260915/eval/step_00080000/summary.json",
+      "summary_sha256": "7afee0d08bfc8dbf318455a62cb5256aeac4f170fbdbd689abcfa5dbe4995042",
+      "details_sha256": "a0dbc6edad2a62e8aa98c99f814f1e75c82f0396f13c84c8f8e3ccf4024d0d28",
+      "checkpoint_sha256": "733d9bd26fe366a9f9995694b38692b86051c9ef8325c222be90f48365fdc78a"
+    },
+    {
+      "step": 85000,
+      "model": "FM",
+      "summary": "/119010446/tts-assets/training_runs/ljs_majestic_100h_backbone21k_20260914/eval/step_00085000/summary.json",
+      "summary_sha256": "4e51c291aa9ed021ab06672955ee95e9c8a87ebae7f5f0efe01091f61a0d1c95",
+      "details_sha256": "e0df2ce5a291997f26970b22184457286de2209d9a09f3955a77ce7c033757da",
+      "checkpoint_sha256": "c71ef9eb7ae606284649e603d1f25963276e71558c4b4e0f11eca96c94175740"
+    },
+    {
+      "step": 85000,
+      "model": "IMF",
+      "summary": "/119010446/tts-assets/training_runs/ljs_majestic_100h_imf_h1_b48_from21k_500ep_20260915/eval/step_00085000/summary.json",
+      "summary_sha256": "c522da4af91f988ea3b35f7cdc62d46e477383945b1d8f34ceab37dd71e25b0c",
+      "details_sha256": "cfb7497ccccb18a0becf5433a841be78f34109c5a45bfd0f0b1433d8c268f990",
+      "checkpoint_sha256": "774fa37b89d6c6aa4c32ae1d95454963ee35857fd788269a01a06bf5637458f3"
+    },
+    {
+      "step": 90000,
+      "model": "FM",
+      "summary": "/119010446/tts-assets/training_runs/ljs_majestic_100h_backbone21k_20260914/eval/step_00090000/summary.json",
+      "summary_sha256": "438083fe958e10b5ecdced7117942620781dfccc1637207798ffc45383a4a554",
+      "details_sha256": "424a9a769ac6e4b88f40dc7fa5975e1e8e54da224c53a00cc248225a358d6a17",
+      "checkpoint_sha256": "534777fe58d65eed4867957883719e872b66723571d16c25678b04b31d41265a"
+    },
+    {
+      "step": 90000,
+      "model": "IMF",
+      "summary": "/119010446/tts-assets/training_runs/ljs_majestic_100h_imf_h1_b48_from21k_500ep_20260915/eval/step_00090000/summary.json",
+      "summary_sha256": "e555c37c5ee9f6246ccb1ab1ee68973fddb1be112c1e4c0300f6e109fd19da1c",
+      "details_sha256": "a5395b459b8afd560802363afd95680dfd4e1249a209b9b7144abd26ef92774f",
+      "checkpoint_sha256": "a6775c81550e6389bc26100aede160b2902ff2495caad8da39931931105209ea"
+    },
+    {
+      "step": 95000,
+      "model": "FM",
+      "summary": "/119010446/tts-assets/training_runs/ljs_majestic_100h_backbone21k_20260914/eval/step_00095000/summary.json",
+      "summary_sha256": "7b84c74051381383da42d88e99590838232e550b4108484518babbf8bb0d80b6",
+      "details_sha256": "d6f40eb28f17170a857d3f03a04ccabe1a5dc1342338a5e98db420beeca1b42c",
+      "checkpoint_sha256": "1e1aa1a4d9a571cd44059ee57bf5945ecb417e8cab73587ab86347156241d341"
+    },
+    {
+      "step": 95000,
+      "model": "IMF",
+      "summary": "/119010446/tts-assets/training_runs/ljs_majestic_100h_imf_h1_b48_from21k_500ep_20260915/eval/step_00095000/summary.json",
+      "summary_sha256": "7387c828bca8998dd25dc8c030a0b32a575853057206e7582596814d8849d618",
+      "details_sha256": "34a500eabd782b44531e04bad1535ad3c3bbba0012f4a29e417698010f7aec77",
+      "checkpoint_sha256": "b1c9e7d650b052c65540ddbdb0266ac3e111dd01bec3f1a2f848391558b649a9"
+    },
+    {
+      "step": 100000,
+      "model": "FM",
+      "summary": "/119010446/tts-assets/training_runs/ljs_majestic_100h_backbone21k_20260914/eval/step_00100000/summary.json",
+      "summary_sha256": "5641a451a22b30b3160986e9d6ba7e11ccd08e6b289ec6cf0b888d0d0f8e8ac7",
+      "details_sha256": "9cc596d5c32c10539ff73ecaa5572e769c4ac301429fa411fc0d24b694636c03",
+      "checkpoint_sha256": "8a8cdc61ecc2e58287adb9e8cf7db8eb026c9384ff45d5b5f03958800bf6033f"
+    },
+    {
+      "step": 100000,
+      "model": "IMF",
+      "summary": "/119010446/tts-assets/training_runs/ljs_majestic_100h_imf_h1_b48_from21k_500ep_20260915/eval/step_00100000/summary.json",
+      "summary_sha256": "f241ad2b610d0f30ea600dc9f4166b6d9b9d92c068ba15b57fa107c7296a2e63",
+      "details_sha256": "6a1257f5da38ce286cea5bd07d053fb7f57be3022ec592695b47bb6f983e4121",
+      "checkpoint_sha256": "f1d175d05672eb54e62e8213faad3fff5fa133549ef96b607f0de4dbe4439ed0"
+    },
+    {
+      "step": 105000,
+      "model": "FM",
+      "summary": "/119010446/tts-assets/training_runs/ljs_majestic_100h_backbone21k_20260914/eval/step_00105000/summary.json",
+      "summary_sha256": "b3d127d1b87ccfbebc549672fdf79cd35650e6894749578b4d633150784dc926",
+      "details_sha256": "f83f4be613a694bbd072400d8a7d3455bea84c7f5299d04ed4a8ffdadd0d84c1",
+      "checkpoint_sha256": "1e7a2e4f53e84eb9f03630a097d83a36f0346ae9fb0c1563bc90de96ee23bcd7"
+    },
+    {
+      "step": 105000,
+      "model": "IMF",
+      "summary": "/119010446/tts-assets/training_runs/ljs_majestic_100h_imf_h1_b48_from21k_500ep_20260915/eval/step_00105000/summary.json",
+      "summary_sha256": "c430d1a98d006f11e2e19d58bc7bec0e5c076d82cbd2abe21f569e12a621bb2e",
+      "details_sha256": "d15a7850bd78d57a7c297b295170783545653c69c45090d24b0bfa38c675e392",
+      "checkpoint_sha256": "e15cf3381311d04ac6833658c6e27bd1866d799c17883cf68d09702ee244a1fd"
+    },
+    {
+      "step": 110000,
+      "model": "FM",
+      "summary": "/119010446/tts-assets/training_runs/ljs_majestic_100h_backbone21k_20260914/eval/step_00110000/summary.json",
+      "summary_sha256": "0d5204355c7ae7769443cd24a29e21e20cf6a9a824209481d3847d30b6f62828",
+      "details_sha256": "82ed821749670d9cc5d5e1a2df98fce3636a021545ce0896924ff2523f8e8d6d",
+      "checkpoint_sha256": "0375193c8ae70093475bbeb8ecd1ab743103c08eb7535a2c20c7d52b517c0040"
+    },
+    {
+      "step": 110000,
+      "model": "IMF",
+      "summary": "/119010446/tts-assets/training_runs/ljs_majestic_100h_imf_h1_b48_from21k_500ep_20260915/eval/step_00110000/summary.json",
+      "summary_sha256": "da2507fa81f9f14865d2397d3ed9957624606cc5aa1af3db0dd8982dd5500432",
+      "details_sha256": "78984b948630c74240553ddd9ca976f28f7e8bf92ad7b0f402a8eca77adab4a6",
+      "checkpoint_sha256": "6c8eb1862fab4bd81fe8e13afcce819f5a60b461e034518ed009a7976b44eb59"
+    }
+  ]
+}

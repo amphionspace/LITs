@@ -1,0 +1,22 @@
+{
+  "status": "passed",
+  "initialization_verified": true,
+  "mode": "backbone_init",
+  "initial_parameter_sha256": "a7565dec08d45e1c75f8c231bdc5c909a877010b47cd94243e95959baccdada4",
+  "checkpoint_weights_loaded": true,
+  "optimizer_state_empty": true,
+  "global_step": 0,
+  "all_groups_train_from_step0": true,
+  "source_checkpoint": "/119010446/tts-assets/training_runs/hifitts_premium_stage1_lr3e-4_20260911/eval/step_00021000/checkpoint.ckpt",
+  "speaker_rows_seeded_random": true,
+  "loss_weights": {
+    "duration": 1,
+    "prior": 1,
+    "flow": 1
+  },
+  "normalization": "source backbone scale",
+  "active_speaker_ids": [
+    0,
+    1
+  ]
+}

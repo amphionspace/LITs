@@ -1,0 +1,36 @@
+{
+  "status": "passed",
+  "baseline": "/119010446/tts-assets/training_runs/ljs_majestic_100h_imf_h1_b48_from21k_500ep_20260915",
+  "new_run": "/119010446/tts-assets/training_runs/ljs_majestic_100h_imf_h1_lr5e4_b48_from21k_500ep_20260915",
+  "source_global_step": 21000,
+  "initial_step": 0,
+  "initial_state_tensors_exact": true,
+  "tensor_count": 498,
+  "initial_parameter_sha256": "a7565dec08d45e1c75f8c231bdc5c909a877010b47cd94243e95959baccdada4",
+  "initial_optimizer_state_empty": true,
+  "only_training_hyperparameter_change": {
+    "peak_lr": {
+      "old": 0.0003,
+      "new": 0.0005
+    }
+  },
+  "unchanged": {
+    "interval_time_scale": 1,
+    "max_steps": 170000,
+    "max_epochs": 500,
+    "effective_batch": 192,
+    "batch_per_gpu": 48,
+    "accumulation": 1,
+    "seed": 20260913,
+    "warmup_steps": 1000,
+    "final_lr": 2e-05,
+    "decay_fraction": 0.2,
+    "sampling_time_grid": [
+      0.0,
+      0.5,
+      1.0
+    ]
+  },
+  "source_revision": "206539cc333224989a2a640160de4d3da2916990",
+  "verified_at_unix": 1789461530.4392152
+}

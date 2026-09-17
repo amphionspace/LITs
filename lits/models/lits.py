@@ -461,6 +461,8 @@ class LITS(BaseLits):
         is_tone_mark = self._tone_mark_mask(x)
         if is_tone_mark is None:
             return w_ceil
+        # Durations are [B, 1, T]; [B, T] would broadcast to [B, B, T].
+        is_tone_mark = is_tone_mark.unsqueeze(1)
         min_frames = float(self.tone_floor_frames if self.tone_floor_frames > 0 else 1)
         out = w_ceil
         if self.tone_ceiling_frames > 0:

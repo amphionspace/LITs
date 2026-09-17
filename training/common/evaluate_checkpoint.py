@@ -31,10 +31,37 @@ def synthesize(args):
     from vocos.vocoder import load_vocos_vocoder
     torch.set_num_threads(4)
     torch.set_float32_matmul_precision('highest')
-    model = LITS.load_from_checkpoint(str(args.checkpoint), map_location='cpu', weights_only=False)
+    if args.distilled:
+        from meanflow_distill.stage2_support import load_student
+        model = load_student(args.checkpoint)
+    else:
+        model = LITS.load_from_checkpoint(str(args.checkpoint), map_location='cpu', weights_only=False)
     assert model.n_spks == 2 and model.n_feats == 100 and model.n_vocab == 173
     model = model.to('cuda').eval()
-    vocoder, cfg = load_vocos_vocoder(str(REPO / 'vocos/generator.ckpt'), torch.device('cuda'), REPO)
+    streaming = args.streaming or getattr(model, 'distill_streaming', False)
+    geometry = None
+    if streaming:
+        from meanflow_distill.kv_cache_distill import configure_decoder_streaming_context
+        saved = getattr(model, 'distill_streaming_config', {})
+        estimator = getattr(model.decoder.estimator, 'base', model.decoder.estimator)
+        chunk_size = (args.streaming_chunk_size if args.streaming_chunk_size is not None
+                      else saved.get('distill_chunk_size', estimator.static_chunk_size))
+        left_frames = (args.decoder_left_frames if args.decoder_left_frames is not None
+                       else saved.get('decoder_left_frames', estimator.decoder_left_frames))
+        mu_streaming = (args.mu_streaming if args.mu_streaming is not None
+                        else saved.get('mu_streaming', False))
+        if saved:
+            assert chunk_size == saved['distill_chunk_size'], 'Evaluation chunk size differs from training'
+            assert left_frames == saved['decoder_left_frames'], 'Evaluation left context differs from training'
+            assert mu_streaming == saved['mu_streaming'], 'Evaluation conditioning differs from training'
+        geometry = dict(chunk_size=chunk_size, decoder_left_frames=left_frames,
+                        mu_streaming=mu_streaming, mel_cache_len=args.mel_cache_len,
+                        mu_static_chunk_size=model.decoder.encoder.static_chunk_size,
+                        mu_encoder_left_chunks=model.decoder.encoder_num_decoding_left_chunks)
+        configure_decoder_streaming_context(model, decoder_left_frames=left_frames,
+                                            static_chunk_size=chunk_size)
+        write_json(args.output / 'streaming_geometry.json', geometry)
+    vocoder, cfg = load_vocos_vocoder(str(args.vocoder_checkpoint), torch.device('cuda'), REPO)
     assert cfg.sampling_rate == 24000 and cfg.num_mels == 100 and cfg.hop_size == 384
     sources = records(DATA / 'eval_manifest.jsonl')
     if args.per_group_limit:
@@ -56,17 +83,28 @@ def synthesize(args):
                 speaker = torch.tensor([source['speaker']], dtype=torch.long, device='cuda')
                 with torch.inference_mode():
                     # FM keeps 10 steps; iMF checkpoints carry their sampling budget.
-                    steps = getattr(model.decoder, 'default_n_timesteps', 10)
-                    result = model.synthesise(ids, lengths, steps, temperature=1.0, spks=speaker, x_tones=tones)
-                    mel = result['mel']
-                    assert torch.isfinite(mel).all(), 'Nonfinite predicted Mel'
-                    assert 1 <= mel.shape[-1] <= 7500, 'Predicted duration outside 0..120 seconds'
-                    audio = vocoder(mel)[..., :int(result['mel_lengths'][0]) * 384].squeeze().cpu().numpy()
+                    steps = args.n_timesteps or getattr(model.decoder, 'default_n_timesteps', 10)
+                    if streaming:
+                        from meanflow_distill.streaming_eval import synthesize_streaming
+                        grid = getattr(model, 'distill_t_grid', [i / steps for i in range(steps + 1)])
+                        result = synthesize_streaming(model, vocoder, ids, lengths, speaker,
+                            tones, grid, temperature=args.temperature,
+                            chunk_size=geometry['chunk_size'], mel_cache_len=geometry['mel_cache_len'],
+                            mu_streaming=geometry['mu_streaming'])
+                        audio = result['audio'].cpu().numpy()
+                    else:
+                        result = model.synthesise(ids, lengths, steps, temperature=args.temperature, spks=speaker, x_tones=tones)
+                        mel = result['mel']
+                        assert torch.isfinite(mel).all(), 'Nonfinite predicted Mel'
+                        assert 1 <= mel.shape[-1] <= 7500, 'Predicted duration outside 0..120 seconds'
+                        audio = vocoder(mel)[..., :int(result['mel_lengths'][0]) * 384].squeeze().cpu().numpy()
                 assert audio.ndim == 1 and len(audio) and np.isfinite(audio).all(), 'Invalid waveform'
                 target = args.output / 'wavs' / (source['id'] + '.wav')
                 target.parent.mkdir(parents=True, exist_ok=True)
                 sf.write(target, np.clip(audio, -1, 1), 24000, subtype='PCM_16')
                 row.update(audio=str(target), duration=len(audio) / 24000, flow_steps=steps,
+                           streaming=streaming, vocoder_mode='chunked' if streaming else 'full',
+                           streaming_geometry=geometry,
                            flow_objective=getattr(model.decoder, 'objective', 'cfm'),
                            synthesis_seconds=time.monotonic() - started)
             except Exception as exc:
@@ -169,13 +207,29 @@ def summarize(args):
     print(json.dumps(report, ensure_ascii=False), flush=True)
 
 
-if __name__ == '__main__':
+def build_parser():
+    """Share evaluation options with the Stage 2 compatibility entry point."""
     parser = argparse.ArgumentParser()
     parser.add_argument('--stage', choices=['synthesize', 'asr', 'metrics', 'summarize'], required=True)
     parser.add_argument('--checkpoint', type=Path, required=True)
     parser.add_argument('--output', type=Path, required=True)
     parser.add_argument('--limit', type=int, default=0)
     parser.add_argument('--per-group-limit', type=int, default=0)
-    args = parser.parse_args()
+    parser.add_argument('--distilled', action='store_true')
+    parser.add_argument('--streaming', action='store_true')
+    parser.add_argument('--streaming-chunk-size', type=int)
+    parser.add_argument('--decoder-left-frames', type=int)
+    parser.add_argument('--mel-cache-len', type=int, default=8)
+    parser.add_argument('--mu-streaming', action=argparse.BooleanOptionalAction, default=None)
+    parser.add_argument('--n-timesteps', type=int)
+    parser.add_argument('--temperature', type=float, default=1.0)
+    parser.add_argument('--data-dir', type=Path, default=DATA)
+    parser.add_argument('--vocoder-checkpoint', type=Path, default=REPO / 'vocos/generator.ckpt')
+    return parser
+
+
+if __name__ == '__main__':
+    args = build_parser().parse_args()
+    DATA = args.data_dir
     args.output.mkdir(parents=True, exist_ok=True)
     {'synthesize': synthesize, 'asr': asr, 'metrics': metrics, 'summarize': summarize}[args.stage](args)

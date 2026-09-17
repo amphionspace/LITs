@@ -120,6 +120,17 @@ SPK_ID=0 \
 bash meanflow_distill/infer_distilled.sh en-zh-dict /data/input.txt distilled-demo
 ```
 
+Stage 2 mean-flow distillation supports full-utterance decoding, cached streaming
+with parallel training, and teacher-matched streaming masks. See the
+[recipe and verification guide](meanflow_distill/STAGE2.md) and
+[three-experiment comparison](docs/streaming_comparison_20260916_zh.md).
+
+Training records: [FM](docs/majestic_training_record_zh.md),
+[direct IMF](docs/imf_training_record_zh.md), and
+[FM/IMF comparison](docs/fm_imf_final_comparison_zh.md).
+The discontinued [differentiable-duration experiment](docs/imf_differentiable_duration_zh.md)
+is retained as documentation only.
+
 ## Vocos training
 
 The `vocos/` directory contains the 24 kHz source, `vocos/config.yaml`, and the Git-LFS-managed `vocos/generator.ckpt`. Update the external `filelist_path` values in the configuration before training. After cloning, run `git lfs pull --include=vocos/generator.ckpt` if the checkpoint remains a small pointer file.

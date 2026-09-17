@@ -271,12 +271,23 @@ class BaseLits(LightningModule, ABC):
         Restore epoch information from checkpoint for scheduler compatibility.
         """
         self.ckpt_loaded_epoch = checkpoint["epoch"]  # pylint: disable=attribute-defined-outside-init
+        if getattr(self.decoder, 'objective', None) == 'imf':
+            from lits.utils.imf_checkpoint import validate_imf_time_scale
+            validate_imf_time_scale(self, checkpoint)
+
+    def _log_flow_diagnostics(self, split, batch_size):
+        stats = getattr(self.decoder, 'last_loss_stats', {})
+        if stats:
+            self.log_dict({f'imf/{split}_{name}': value for name, value in stats.items()},
+                          on_step=True, on_epoch=True, logger=True, sync_dist=True,
+                          batch_size=batch_size)
 
     def training_step(self, batch: Any, batch_idx: int) -> dict:
         """
         Perform a training step, log all loss components, and return total loss.
         """
         loss_dict = self.get_losses(batch)
+        self._log_flow_diagnostics('train', batch['x'].shape[0])
         self.log(
             "step",
             float(self.global_step),
@@ -388,6 +399,7 @@ class BaseLits(LightningModule, ABC):
         Perform a validation step, log all loss components, and return total loss.
         """
         loss_dict = self.get_losses(batch)
+        self._log_flow_diagnostics('val', batch['x'].shape[0])
         self.log(
             "sub_loss/val_dur_loss",
             loss_dict["dur_loss"],
@@ -468,7 +480,9 @@ class BaseLits(LightningModule, ABC):
                     if one_batch.get("x_tones") is not None
                     else None
                 )
-                output = self.synthesise(x[:, :x_lengths], x_lengths, n_timesteps=10, spks=spks, x_tones=x_tones)
+                output = self.synthesise(x[:, :x_lengths], x_lengths,
+                                         n_timesteps=getattr(self.decoder, 'default_n_timesteps', 10),
+                                         spks=spks, x_tones=x_tones)
                 y_enc, y_dec = output["encoder_outputs"], output["decoder_outputs"]
                 attn = output["attn"]
                 self.logger.experiment.add_image(

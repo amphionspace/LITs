@@ -1,0 +1,9 @@
+--- output_modality.py
++++ output_modality.py
+@@ -11,1 +11,5 @@
+-from enum import Enum, Flag, StrEnum, auto
++from enum import Enum, Flag, auto
++try:
++    from enum import StrEnum
++except ImportError:  # Python 3.10, allowed by vllm-omni 0.20 package metadata
++    from backports.strenum import StrEnum

@@ -208,7 +208,15 @@ class LITS(BaseLits):
             spk_emb_dim,
             n_tones=n_tones,
         )
-        self.decoder = CFM_Causal(
+        flow_name = str(cfm.get('name', 'CFM')).upper()
+        if flow_name == 'IMF':
+            from lits.models.components.improved_mean_flow import IMF_Causal
+            flow_class = IMF_Causal
+        elif flow_name == 'CFM':
+            flow_class = CFM_Causal
+        else:
+            raise ValueError(f'Unknown flow objective: {flow_name}; expected CFM or IMF')
+        self.decoder = flow_class(
             in_channels=2 * encoder.encoder_params.n_feats,
             out_channel=encoder.encoder_params.n_feats,
             cfm_params=cfm,
@@ -453,6 +461,8 @@ class LITS(BaseLits):
         is_tone_mark = self._tone_mark_mask(x)
         if is_tone_mark is None:
             return w_ceil
+        # Durations are [B, 1, T]; [B, T] would broadcast to [B, B, T].
+        is_tone_mark = is_tone_mark.unsqueeze(1)
         min_frames = float(self.tone_floor_frames if self.tone_floor_frames > 0 else 1)
         out = w_ceil
         if self.tone_ceiling_frames > 0:
@@ -1073,7 +1083,7 @@ class LITS(BaseLits):
         self,
         x: torch.Tensor,
         x_lengths: torch.Tensor,
-        n_timesteps: int,
+        n_timesteps: int | None = None,
         temperature: float = 1.0,
         spks: torch.Tensor = None,
         length_scale: float = 1.0,
@@ -1092,6 +1102,8 @@ class LITS(BaseLits):
         Returns:
             dict with keys: encoder_outputs, decoder_outputs, attn, mel, mel_lengths, rtf
         """
+        if n_timesteps is None:
+            n_timesteps = getattr(self.decoder, 'default_n_timesteps', 10)
         t = dt.datetime.now()
         if self.n_spks > 1 and spks is not None:
             spks = self.spk_emb(spks.long())

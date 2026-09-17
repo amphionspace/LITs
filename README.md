@@ -63,6 +63,14 @@ For the default multi-speaker Chinese-English configuration, use `wav|speaker_id
 
 ## Acoustic-model training
 
+Maintained training paths are `training/foundation/`, `training/stage2/`, and its current joint implementation `training/majestic_scratch/`. Shared evaluation/status code lives in `training/common/`. See [source cleanup scope](training/README.md).
+
+The current recipe jointly trains LJSpeech (speaker 0) and MajesticVoice 100 hours (speaker 1) from a 21k acoustic backbone with reset speaker embeddings and fresh Adam, preserving the LR recipe; see [Stage 2 入口](training/stage2/README.md).
+
+See [LITs Stage 1 训练实录](docs/stage1_training_zh.md) for the completed 200,000-step foundation run: data preparation, sampling, model, losses, optimizer, evaluation, and the 197k checkpoint used for adaptation.
+
+See [LITs 模型架构与训练 loss](docs/training_loss_zh.md) for the detailed architecture, duration/prior/flow matching objectives, and historical 48,000-step adaptation recipe.
+
 Set the external manifests and speaker count, then launch Hydra training:
 
 ```bash
@@ -111,6 +119,17 @@ STUDENT_CKPT=/models/student.pt \
 SPK_ID=0 \
 bash meanflow_distill/infer_distilled.sh en-zh-dict /data/input.txt distilled-demo
 ```
+
+Stage 2 mean-flow distillation supports full-utterance decoding, cached streaming
+with parallel training, and teacher-matched streaming masks. See the
+[recipe and verification guide](meanflow_distill/STAGE2.md) and
+[three-experiment comparison](docs/streaming_comparison_20260916_zh.md).
+
+Training records: [FM](docs/majestic_training_record_zh.md),
+[direct IMF](docs/imf_training_record_zh.md), and
+[FM/IMF comparison](docs/fm_imf_final_comparison_zh.md).
+The discontinued [differentiable-duration experiment](docs/imf_differentiable_duration_zh.md)
+is retained as documentation only.
 
 ## Vocos training
 

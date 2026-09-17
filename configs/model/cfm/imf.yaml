@@ -1,0 +1,16 @@
+# Official iMF training objective adapted to conditional variable-length Mel.
+# See training/imf/README.md for pinned upstream versions and adaptations.
+name: IMF
+solver: euler
+sigma_min: 0.0
+P_mean: -0.4
+P_std: 1.0
+data_proportion: 0.5
+norm_p: 1.0
+norm_eps: 0.01
+# Upstream embeds normalized h directly; FM's absolute-time scale stays intact.
+interval_time_scale: 1.0
+guidance_scale: 1.0
+num_steps: 2
+# LITs convention: 0=noise, 1=Mel. Equivalent to upstream [1, .5, 0].
+sampling_time_grid: [0.0, 0.5, 1.0]

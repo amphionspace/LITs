@@ -9,7 +9,7 @@ from libc.stdlib cimport free, malloc
 
 @cython.boundscheck(False)
 @cython.wraparound(False)
-cdef void maximum_path_each(int[:,::1] path, float[:,::1] value, int t_x, int t_y, float max_neg_val) nogil:
+cdef void maximum_path_each(int[:,::1] path, float[:,::1] value, int t_x, int t_y, float max_neg_val) noexcept nogil:
   cdef int x
   cdef int y
   cdef float v_prev
@@ -50,7 +50,7 @@ cpdef void maximum_path_c(int[:,:,::1] paths, float[:,:,::1] values, int[::1] t_
 
 @cython.boundscheck(False)
 @cython.wraparound(False)
-cdef inline int _ceil_limit(int ceiling, int t_y) nogil:
+cdef inline int _ceil_limit(int ceiling, int t_y) noexcept nogil:
   if ceiling <= 0:
     return t_y
   return ceiling
@@ -61,7 +61,7 @@ cdef inline int _ceil_limit(int ceiling, int t_y) nogil:
 cdef void _deque_push(
     int* deque_yp, float* deque_score, int* deque_head, int* deque_tail,
     int yp, float score,
-) nogil:
+) noexcept nogil:
   cdef int tail = deque_tail[0]
   while tail > deque_head[0]:
     if deque_score[tail - 1] <= score:
@@ -75,7 +75,7 @@ cdef void _deque_push(
 
 @cython.boundscheck(False)
 @cython.wraparound(False)
-cdef void _deque_expire(int* deque_yp, int* deque_head, int* deque_tail, int min_yp) nogil:
+cdef void _deque_expire(int* deque_yp, int* deque_head, int* deque_tail, int min_yp) noexcept nogil:
   while deque_head[0] < deque_tail[0] and deque_yp[deque_head[0]] < min_yp:
     deque_head[0] += 1
 
@@ -85,7 +85,7 @@ cdef void _deque_expire(int* deque_yp, int* deque_head, int* deque_tail, int min
 cdef void _best_from_deque(
     int* deque_yp, float* deque_score, int deque_head, int deque_tail,
     float valid_threshold, float* best, int* arg,
-) nogil:
+) noexcept nogil:
   if deque_head < deque_tail and deque_score[deque_head] > valid_threshold:
     best[0] = deque_score[deque_head]
     arg[0] = deque_yp[deque_head]
@@ -98,7 +98,7 @@ cdef void _best_from_deque(
 @cython.wraparound(False)
 cdef void maximum_path_constrained_each(int[:,::1] path, float[:,::1] value, int[::1] floors, int[::1] ceilings,
                                         int t_x, int t_y, float max_neg_val,
-                                        float* score_constrained, float* score_free) nogil:
+                                        float* score_constrained, float* score_free) noexcept nogil:
   """Monotonic alignment with per-token minimum and maximum durations.
 
   DP over E[x, y] = best score of any monotonic path in which token x starts

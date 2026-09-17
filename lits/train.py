@@ -110,6 +110,15 @@ def train(cfg: DictConfig) -> Tuple[Dict[str, Any], Dict[str, Any]]:
     if cfg.get("seed"):
         L.seed_everything(cfg.seed, workers=True)
 
+    initial_checkpoint = None
+    if cfg.get('init_use_checkpoint_statistics', False):
+        if not cfg.get('init_ckpt_path') or cfg.get('ckpt_path'):
+            raise ValueError('init_use_checkpoint_statistics requires a weights-only init_ckpt_path')
+        initial_checkpoint = torch.load(cfg.init_ckpt_path, map_location='cpu', weights_only=False)
+        from lits.utils.imf_checkpoint import checkpoint_statistics
+        cfg.data.data_statistics = checkpoint_statistics(initial_checkpoint)
+        log.info(f'Using checkpoint Mel statistics for both dataset and model: {cfg.data.data_statistics}')
+
     log.info(f"Instantiating datamodule <{cfg.data._target_}>")  # pylint: disable=protected-access
     datamodule: LightningDataModule = hydra.utils.instantiate(cfg.data)
 
@@ -125,12 +134,19 @@ def train(cfg: DictConfig) -> Tuple[Dict[str, Any], Dict[str, Any]]:
             )
         init_ckpt_path = cfg.get("init_ckpt_path")
         log.info(f"Warm-starting model weights from: {init_ckpt_path}")
-        checkpoint = torch.load(init_ckpt_path, map_location="cpu", weights_only=False)
-        missing_keys, unexpected_keys = model.load_state_dict(checkpoint["state_dict"], strict=False)
-        if missing_keys:
-            log.warning(f"Missing keys when loading warm-start checkpoint: {missing_keys}")
-        if unexpected_keys:
-            log.warning(f"Unexpected keys when loading warm-start checkpoint: {unexpected_keys}")
+        checkpoint = initial_checkpoint if initial_checkpoint is not None else torch.load(init_ckpt_path, map_location="cpu", weights_only=False)
+        if getattr(model.decoder, 'objective', None) == 'imf':
+            from lits.utils.imf_checkpoint import load_imf_initial_weights
+            audit = load_imf_initial_weights(model, checkpoint, cfg.get('init_reset_speaker_embeddings', False))
+            log.info(f'iMF weights-only initialization: {audit}')
+        else:
+            if cfg.get('init_reset_speaker_embeddings', False):
+                raise ValueError('init_reset_speaker_embeddings is currently supported only for iMF warm starts')
+            missing_keys, unexpected_keys = model.load_state_dict(checkpoint["state_dict"], strict=False)
+            if missing_keys:
+                log.warning(f"Missing keys when loading warm-start checkpoint: {missing_keys}")
+            if unexpected_keys:
+                log.warning(f"Unexpected keys when loading warm-start checkpoint: {unexpected_keys}")
 
     log.info("Instantiating callbacks...")
     callbacks: List[Callback] = utils.instantiate_callbacks(cfg.get("callbacks"))

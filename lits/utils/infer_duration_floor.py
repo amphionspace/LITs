@@ -203,7 +203,7 @@ def _cap_tensor_per_position(
 ) -> torch.Tensor:
     if not need.any():
         return w_ceil
-    return torch.where(need.unsqueeze(1), caps, w_ceil)
+    return torch.where(need.unsqueeze(1), caps.unsqueeze(1), w_ceil)
 
 
 def apply_en_phone_duration_floor(

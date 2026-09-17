@@ -51,5 +51,9 @@ ckpt_path: null
 # this keeps new hyperparameters (e.g. lr and batch_size) from current config
 init_ckpt_path: null
 
+# Opt-in FM -> iMF warm start can reset speaker rows while reusing the backbone.
+init_reset_speaker_embeddings: false
+init_use_checkpoint_statistics: false
+
 # seed for random number generators in pytorch, numpy and python.random
 seed: 1234
